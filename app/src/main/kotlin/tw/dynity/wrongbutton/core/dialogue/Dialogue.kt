@@ -57,7 +57,7 @@ data class ParsedLine(val text: String, val mood: Mood?, val tell: Tell?)
  * 讓表情跟著台詞一起資料化，關卡程式碼不需要知道每句台詞的表情。
  */
 object LineMarkup {
-    // 注意：Android 的正規表示式引擎（ICU）不接受沒有跳脫的 ] 與 }，JVM 卻接受，所以單元測試抓不到。
+    // ] 跳脫與否 ICU 都接受；這裡跳脫只是為了和下面的 } 保持一致。
     private val pattern = Regex("""^\[([a-z|]+)\]\s*""")
 
     fun parse(raw: String): ParsedLine {
@@ -79,7 +79,8 @@ object LineMarkup {
 
 /** `{name}` 形式的記憶變數帶入。缺少的變數保留原樣，方便在測試裡發現。 */
 object LineTemplate {
-    // 注意：} 必須跳脫，否則在 Android 上會丟 PatternSyntaxException（JVM 不會）。
+    // 注意：} 必須跳脫。Android 的正規表示式引擎（ICU）遇到沒跳脫的 } 會丟 PatternSyntaxException，
+    // JVM 卻會放行，所以 Robolectric 測不出來（見 AndroidRegexTest）。
     private val pattern = Regex("""\{([a-z0-9_]+)\}""")
 
     fun format(template: String, vars: Map<String, String>): String =
