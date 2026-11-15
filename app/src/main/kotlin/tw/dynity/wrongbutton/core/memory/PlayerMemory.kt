@@ -42,7 +42,6 @@ data class PlayerMemory(
     val levels: Map<Int, LevelRecord> = emptyMap(),
     val totalMistakes: Int = 0,
     val facts: Map<String, MemoryValue> = emptyMap(),
-    val unlockedLevel: Int = 1,
 ) {
     fun record(levelId: Int): LevelRecord? = levels[levelId]
 

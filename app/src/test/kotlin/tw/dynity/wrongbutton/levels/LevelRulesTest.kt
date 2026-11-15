@@ -93,10 +93,11 @@ class Level06RulesTest {
 
     @Test
     fun firstAttemptMatchesTheScript() {
-        val (r1, r2, r3) = r.firstAttempt
+        val (r1, r2, r3, r4) = r.firstAttempt
         assertEquals(Tell.LieObvious, r1.tell); assertEquals(1, r1.answer) // 「是左邊」＋謊 → 右邊
         assertEquals(Tell.Honest, r2.tell); assertEquals(1, r2.answer)     // 「是右邊」＋實話 → 右邊
         assertEquals(Tell.LieSubtle, r3.tell); assertEquals(1, r3.answer)  // 「不是中間」＋謊 → 中間
+        assertEquals(Tell.Honest, r4.tell); assertEquals(0, r4.answer)     // 「是左邊」＋實話 → 左邊
         r.firstAttempt.forEach { assertEquals(it.answer, r.solve(it)) }
     }
 
@@ -124,10 +125,14 @@ class Level06RulesTest {
     }
 
     @Test
-    fun threeRightAnswersClear() {
+    fun fourRightAnswersClear() {
         var s = Level06Advisor.State(seed = 1)
         var last: Level06Advisor.Rules.Outcome? = null
-        repeat(3) { val (n, o) = r.choose(s, s.rounds[s.index].answer); s = n; last = o }
+        repeat(4) { i ->
+            val (n, o) = r.choose(s, s.rounds[s.index].answer)
+            s = n; last = o
+            if (i < 3) assertEquals(Level06Advisor.Rules.Outcome.NextRound, o)
+        }
         assertEquals(Level06Advisor.Rules.Outcome.Cleared, last)
     }
 }
@@ -157,24 +162,13 @@ class Level08RulesTest {
     private val r = Level08Mistakes.Rules
 
     @Test
-    fun optionsAlwaysContainTheCurrentAnswerAndAreValid() {
-        (0..30).forEach { current ->
-            repeat(200) { seed ->
-                val opts = r.options(current, Random(seed))
-                assertEquals(4, opts.size)
-                assertEquals(4, opts.toSet().size)
-                assertTrue("current=$current $opts", current in opts)
-                assertTrue(opts.all { it >= 0 })
-                assertEquals(opts.max() - opts.min(), 3)
-            }
-        }
-    }
-
-    @Test
-    fun correctAnswerPositionIsNotFixed() {
-        // 「一直按最大的那個」不再是必勝法：正解在範圍裡的位置會變。
-        val ranks = (0 until 200).map { seed -> r.options(10, Random(seed)).sorted().indexOf(10) }.toSet()
-        assertEquals(setOf(0, 1, 2, 3), ranks)
+    fun stepperStaysInRange() {
+        var st = Level08Mistakes.State()
+        st = r.step(st, -1)
+        assertEquals(0, st.value)
+        repeat(5) { st = r.step(st, +1) }
+        assertEquals(5, st.value)
+        assertEquals(Level08Mistakes.MAX_VALUE, r.step(Level08Mistakes.State(value = Level08Mistakes.MAX_VALUE), +1).value)
     }
 
     @Test
@@ -210,18 +204,33 @@ class Level09RulesTest {
     }
 
     @Test
-    fun surprisingTwiceClears() {
+    fun surprisingThreeTimesClears() {
+        // 沒有紀錄：預測第二題選左邊。
+        val memory = PlayerMemory()
         var s = r.afterReveal(r.swipe(Level09Predict.State(), SwipeDirection.Left, SwipeDirection.Right))
         assertEquals(2, s.round)
-        s = r.afterReveal(r.pick(s, Level09Predict.Side.Right, Level09Predict.Side.Left))
+        s = r.afterReveal(r.pick(s, Level09Predict.Side.Right, memory))
+        assertEquals(3, s.round)
+        // 第三題：它賭妳會換邊（選左），所以選同一邊（右）才出乎意料。
+        assertEquals(Level09Predict.Side.Left, r.predictedThird(Level09Predict.Side.Right))
+        s = r.afterReveal(r.pick(s, Level09Predict.Side.Right, memory))
         assertEquals(Level09Predict.Phase.Done, s.phase)
     }
 
     @Test
     fun beingPredictedInRoundTwoAlsoResets() {
         var s = r.afterReveal(r.swipe(Level09Predict.State(), SwipeDirection.Left, SwipeDirection.Right))
-        s = r.afterReveal(r.pick(s, Level09Predict.Side.Left, Level09Predict.Side.Left))
+        s = r.afterReveal(r.pick(s, Level09Predict.Side.Left, PlayerMemory()))
         assertEquals(1, s.round)
+    }
+
+    @Test
+    fun switchingSidesInRoundThreeIsPredicted() {
+        var s = r.afterReveal(r.swipe(Level09Predict.State(), SwipeDirection.Left, SwipeDirection.Right))
+        s = r.afterReveal(r.pick(s, Level09Predict.Side.Right, PlayerMemory()))
+        s = r.pick(s, Level09Predict.Side.Left, PlayerMemory())
+        assertTrue(s.caught && s.card3Open)
+        assertEquals(1, r.afterReveal(s).round)
     }
 }
 

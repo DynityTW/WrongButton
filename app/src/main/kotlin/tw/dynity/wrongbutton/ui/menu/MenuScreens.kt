@@ -20,6 +20,7 @@ import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.rememberScrollState
@@ -88,7 +89,8 @@ fun ScreenScaffold(title: String, onBack: () -> Unit, content: @Composable Colum
 @Composable
 fun TitleScreen(
     memory: PlayerMemory,
-    levelCount: Int,
+    /** （關卡 id, 顯示編號），全部通關時為 null。 */
+    continueTarget: Pair<Int, Int>?,
     onContinue: (Int) -> Unit,
     onLevels: () -> Unit,
     onRecords: () -> Unit,
@@ -96,7 +98,6 @@ fun TitleScreen(
 ) {
     val cue = rememberCuePlayer()
     val fresh = memory.levels.isEmpty()
-    val next = (1..levelCount).firstOrNull { it <= memory.unlockedLevel && !memory.isCleared(it) }
     var poked by rememberSaveable { mutableStateOf(0) }
     val greetings = listOf(
         if (fresh) R.string.title_greeting_new else R.string.title_greeting_back,
@@ -136,9 +137,9 @@ fun TitleScreen(
             }
             val menu: @Composable () -> Unit = {
                 Column(Modifier.widthIn(max = 360.dp).fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                    if (next != null) {
-                        Button(onClick = { onContinue(next) }, modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp).testTag("menu_continue")) {
-                            Text(stringResource(if (fresh) R.string.menu_start else R.string.menu_continue, next))
+                    if (continueTarget != null) {
+                        Button(onClick = { onContinue(continueTarget.first) }, modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp).testTag("menu_continue")) {
+                            Text(stringResource(if (fresh) R.string.menu_start else R.string.menu_continue, continueTarget.second))
                         }
                     }
                     FilledTonalButton(onClick = onLevels, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("menu_levels")) {
@@ -176,7 +177,14 @@ fun TitleScreen(
 }
 
 @Composable
-fun LevelSelectScreen(levels: List<Level>, memory: PlayerMemory, onPlay: (Int) -> Unit, onBack: () -> Unit) {
+fun LevelSelectScreen(
+    chapters: List<Pair<Int, List<Level>>>,
+    numberOf: (Int) -> Int,
+    isUnlocked: (Int) -> Boolean,
+    memory: PlayerMemory,
+    onPlay: (Int) -> Unit,
+    onBack: () -> Unit,
+) {
     ScreenScaffold(title = stringResource(R.string.select_title), onBack = onBack) {
         LazyVerticalGrid(
             columns = GridCells.Adaptive(160.dp),
@@ -184,8 +192,18 @@ fun LevelSelectScreen(levels: List<Level>, memory: PlayerMemory, onPlay: (Int) -
             horizontalArrangement = Arrangement.spacedBy(12.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
+            chapters.forEach { (chapterTitle, levels) ->
+            item(key = "chapter_$chapterTitle", span = { GridItemSpan(maxLineSpan) }) {
+                Text(
+                    stringResource(chapterTitle),
+                    style = MaterialTheme.typography.titleMedium,
+                    color = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier.padding(top = 12.dp, bottom = 4.dp, start = 4.dp).semantics { heading() },
+                )
+            }
             items(levels, key = { it.id }) { level ->
-                val unlocked = level.id <= memory.unlockedLevel
+                val unlocked = isUnlocked(level.id)
+                val number = numberOf(level.id)
                 val cleared = memory.isCleared(level.id)
                 val status = stringResource(
                     when {
@@ -195,7 +213,7 @@ fun LevelSelectScreen(levels: List<Level>, memory: PlayerMemory, onPlay: (Int) -
                     },
                 )
                 val title = stringResource(level.titleRes)
-                val cd = stringResource(R.string.select_card_cd, level.id, title, status)
+                val cd = stringResource(R.string.select_card_cd, number, title, status)
                 Surface(
                     onClick = { onPlay(level.id) },
                     enabled = unlocked,
@@ -208,7 +226,7 @@ fun LevelSelectScreen(levels: List<Level>, memory: PlayerMemory, onPlay: (Int) -
                 ) {
                     Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
                         Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                            Text(stringResource(R.string.select_number, level.id), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
+                            Text(stringResource(R.string.select_number, number), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
                             if (!unlocked) Icon(WbIcons.Lock, contentDescription = null, modifier = Modifier.size(16.dp))
                             if (cleared) Icon(WbIcons.Check, contentDescription = null, modifier = Modifier.size(16.dp))
                         }
@@ -217,7 +235,8 @@ fun LevelSelectScreen(levels: List<Level>, memory: PlayerMemory, onPlay: (Int) -
                     }
                 }
             }
-            item { Spacer(Modifier.height(24.dp)) }
+            }
+            item(span = { GridItemSpan(maxLineSpan) }) { Spacer(Modifier.height(24.dp)) }
         }
     }
 }

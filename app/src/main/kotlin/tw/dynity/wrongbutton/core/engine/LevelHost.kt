@@ -75,6 +75,8 @@ private class HostScope(
 @Composable
 fun LevelHost(
     vm: LevelHostViewModel,
+    /** 這一關在遊戲裡的顯示編號（依關卡順序，不是內部 id）。 */
+    number: Int,
     hasNext: Boolean,
     onExit: () -> Unit,
     onNext: () -> Unit,
@@ -115,7 +117,7 @@ fun LevelHost(
             return@Box
         }
 
-        val title = stringResource(R.string.level_title_format, level.id, stringResource(level.titleRes))
+        val title = stringResource(R.string.level_title_format, number, stringResource(level.titleRes))
         val chrome = level.chrome
         Column(Modifier.fillMaxSize().safeDrawingPadding()) {
             if (chrome.topBar) {

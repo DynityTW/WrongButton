@@ -28,9 +28,11 @@ import org.junit.runner.RunWith
 import tw.dynity.wrongbutton.app.MainActivity
 import tw.dynity.wrongbutton.app.WrongButtonApp
 import tw.dynity.wrongbutton.levels.Keys
+import tw.dynity.wrongbutton.levels.Levels
+import androidx.compose.ui.unit.dp
 
 /**
- * 從第 1 關連續玩到第 10 關，只用單指操作、不靠運氣：
+ * 依關卡順序連續玩完全部關卡，只用單指操作、不靠運氣：
  * 需要讀臉的關卡，透過 TalkBack 會讀到的資訊（台詞文字＋The Button 的外觀描述）來推理。
  */
 @RunWith(AndroidJUnit4::class)
@@ -62,23 +64,24 @@ class FullPlaythroughTest {
         rule.onNodeWithTag(tag).performScrollTo().performClick()
     }
 
-    private fun nextLevel(expectId: Int) {
+    /** 確認 id 為 [clearedId] 的關卡已通關，按「下一關」。 */
+    private fun finished(clearedId: Int) {
         waitForTag("result_title")
-        assertTrue("第 ${expectId - 1} 關應已通關", memory.isCleared(expectId - 1))
+        assertTrue("id $clearedId 的關卡應已通關", memory.isCleared(clearedId))
         rule.onNodeWithTag("result_next").performScrollTo().performClick()
     }
 
     @Test
-    fun allTenLevelsCanBeClearedWithOneFinger() {
+    fun everyLevelCanBeClearedWithOneFinger() {
         waitForTag("menu_continue")
         rule.onNodeWithTag("menu_continue").performClick()
 
-        // 第 1 關：按下去。
+        // 〈按下按鈕〉
         waitForTag("the_button")
         rule.onNodeWithTag("the_button").performClick()
-        nextLevel(2)
+        finished(1)
 
-        // 第 2 關：下拉重新整理兩次，按有臉的那顆。
+        // 〈空空如也〉下拉重新整理兩次，按有臉的那顆。
         waitForTag("l02_list")
         repeat(2) {
             rule.onNodeWithTag("l02_list").performTouchInput { swipeDown() }
@@ -86,36 +89,120 @@ class FullPlaythroughTest {
         }
         waitForTag("the_button")
         rule.onNodeWithTag("the_button").performClick()
-        nextLevel(3)
+        finished(2)
 
-        // 第 3 關：展開任務文字，往下捲找到 The Button。
+        // 〈⋯〉展開任務文字，往下捲找到 The Button。
         waitForTag("l03_task")
         rule.onNodeWithTag("l03_task").performClick()
         rule.mainClock.advanceTimeBy(500)
         rule.onNodeWithTag("the_button").performScrollTo().performClick()
-        nextLevel(4)
+        finished(3)
 
-        // 第 4 關：第三個對話框勾「不要再問我」。
+        // 〈全部〉切到「已封存」分頁。
+        waitForTag("l11_tab_archived")
+        rule.onNodeWithTag("l11_tab_archived").performClick()
+        waitForTag("the_button")
+        rule.onNodeWithTag("the_button").performClick()
+        finished(11)
+
+        // 〈不要再問我〉第三個對話框勾「不要再問我」。
         waitForTag("the_button")
         rule.onNodeWithTag("the_button").performClick()
         rule.onNodeWithTag("l04_confirm").performClick()
         rule.onNodeWithTag("l04_confirm").performClick()
         rule.onNodeWithTag("l04_dont_ask").performClick()
         rule.onNodeWithTag("l04_confirm").performClick()
-        nextLevel(5)
+        finished(4)
 
-        // 第 5 關（單指替代解）：Slider 拉滿，雙擊 The Button，再按一下。
+        // 〈請詳閱〉條款捲到底 → 勾同意 → 按。
+        waitForTag("l12_terms")
+        rule.onNodeWithTag("l12_terms").performScrollTo().performTouchInput { repeat(8) { swipeUp() } }
+        rule.mainClock.advanceTimeBy(500)
+        tap("l12_agree")
+        tap("the_button")
+        finished(12)
+
+        // 〈至少 48dp〉單指替代解：Slider 拉滿，雙擊，再按一下。
         waitForTag("l05_slider")
         rule.onNodeWithTag("l05_slider").performSemanticsAction(SemanticsActions.SetProgress) { it(47f) }
         rule.onNodeWithTag("the_button").performTouchInput { doubleClick() }
         rule.mainClock.advanceTimeBy(600)
         rule.onNodeWithTag("the_button").performClick()
         rule.mainClock.advanceTimeBy(600)
-        nextLevel(6)
+        finished(5)
         assertEquals("doubletap", memory.text(Keys.L5Solution))
 
-        // 第 6 關：讀臉。
-        repeat(3) { round ->
+        // 〈排第一〉用把手把 The Button 拖到最上面。
+        // 把手在可點的整列裡面，語意樹合併後看不到，要查未合併的樹。
+        rule.waitUntil(15_000) { rule.onAllNodesWithTag("l13_handle_btn", useUnmergedTree = true).fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithTag("the_button").performScrollTo()
+        rule.onNodeWithTag("l13_handle_btn", useUnmergedTree = true).performTouchInput {
+            down(center)
+            repeat(40) { moveBy(androidx.compose.ui.geometry.Offset(0f, -9.dp.toPx())) }
+            up()
+        }
+        rule.mainClock.advanceTimeBy(300)
+        tap("the_button")
+        finished(13)
+
+        // 〈略過〉「下一步」只會繞圈，按「略過」。
+        waitForTag("l14_next")
+        repeat(3) { rule.onNodeWithTag("l14_next").performClick() }
+        rule.onNodeWithTag("l14_skip").performClick()
+        waitForTag("the_button")
+        rule.onNodeWithTag("the_button").performClick()
+        finished(14)
+
+        // 〈畫面外〉點邊緣的箭頭移過去。
+        waitForTag("l15_indicator")
+        rule.onNodeWithTag("l15_indicator").performClick()
+        rule.mainClock.advanceTimeBy(800)
+        rule.onNodeWithTag("the_button").performClick()
+        finished(15)
+
+        // 〈篩選中〉取消「正常按鈕」篩選。
+        waitForTag("l16_chip_normal")
+        rule.onNodeWithTag("l16_chip_normal").performClick()
+        tap("the_button")
+        finished(16)
+
+        // 〈拉上來〉把底部面板拉起來。
+        waitForTag("l17_handle")
+        rule.onNodeWithTag("l17_handle").performTouchInput { swipeUp(startY = centerY, endY = centerY - 400.dp.toPx()) }
+        rule.mainClock.advanceTimeBy(800)
+        rule.onNodeWithTag("the_button").performClick()
+        finished(17)
+
+        // 〈又是那個問題〉剛才勾了「不要再問我」→ 它問 0 次、不肯被按 → 偏好設定調成 1。
+        waitForTag("l18_prefs")
+        assertEquals(Level04Checkbox, memory.text(Keys.L4Solution))
+        rule.onNodeWithTag("l18_prefs").performClick()
+        rule.onNodeWithTag("l18_slider").performSemanticsAction(SemanticsActions.SetProgress) { it(1f) }
+        tap("l18_prefs_close")
+        rule.onNodeWithTag("the_button").performClick()
+        tap("l18_confirm")
+        finished(18)
+
+        // 〈⋮〉從 The Button 那一列的「⋮」選「按下」。
+        waitForTag("l19_more_btn")
+        tap("l19_more_btn")
+        rule.onNodeWithTag("l19_menu_press").performClick()
+        finished(19)
+
+        // 〈全部一起〉下拉重新整理 → 取消篩選 → ⋮ → 按下。
+        waitForTag("l20_list")
+        rule.onNodeWithTag("l20_list").performTouchInput { swipeDown() }
+        rule.mainClock.advanceTimeBy(1_500)
+        waitForTag("l20_chip_normal")
+        rule.onNodeWithTag("l20_chip_normal").performClick()
+        waitForTag("l20_more")
+        tap("l20_more")
+        rule.onNodeWithTag("l20_menu_press").performClick()
+        finished(20)
+        assertEquals("第 1 章一次都沒錯", 0, memory.totalMistakes)
+
+        // 〈顧問〉讀臉，四題。
+        repeat(4) { round ->
             rule.waitUntil(15_000) { enabled("l06_candidate_0") && speech().let { it.startsWith("是") || it.startsWith("不是") } }
             val count = if (exists("l06_candidate_2")) 3 else 2
             val text = speech()
@@ -130,12 +217,12 @@ class FullPlaythroughTest {
                 claim // 三顆時只會出現「是 X＋實話」或「不是 X＋謊話」，兩者答案都是 X。
             }
             tap("l06_candidate_$pick")
-            if (round < 2) rule.mainClock.advanceTimeBy(300)
+            if (round < 3) rule.mainClock.advanceTimeBy(300)
         }
-        nextLevel(7)
+        finished(6)
         assertEquals(0, memory.totalMistakes)
 
-        // 第 7 關：往上捲 → 把 The Button 向左滑掉 → 等 Snackbar 消失 → 按計數器的 ×。
+        // 〈一個都不留〉往上捲 → 把 The Button 向左滑掉 → 等 Snackbar 消失 → 按計數器的 ×。
         waitForTag("l07_content")
         rule.onNodeWithTag("l07_content").performTouchInput { swipeUp() }
         rule.mainClock.advanceTimeBy(800)
@@ -143,45 +230,49 @@ class FullPlaythroughTest {
         rule.mainClock.advanceTimeBy(6_000)
         rule.onNodeWithTag("l07_count").assertTextEqualsCount(1)
         rule.onNodeWithTag("l07_chip_close").performClick()
-        nextLevel(8)
+        finished(7)
         assertEquals(Keys.LEFT, memory.text(Keys.L7SwipeDirection))
 
-        // 第 8 關：照「紀錄」裡的錯誤總數回答（這一輪一次都沒錯 → 特殊解 0）。
-        waitForTag("l08_option_${memory.totalMistakes}")
-        tap("l08_option_${memory.totalMistakes}")
-        nextLevel(9)
+        // 〈妳錯了幾次〉照紀錄回答：一次都沒錯 → 步進器維持 0 送出（特殊解）。
+        waitForTag("l08_submit")
+        repeat(memory.totalMistakes) { tap("l08_plus") }
+        tap("l08_submit")
+        finished(8)
         assertTrue(memory.record(8)!!.special)
 
-        // 第 9 關：反著紀錄做。第 7 關向左 → 向右滑；第 6 關先選的那邊 → 選另一邊。
+        // 〈我很了解妳〉反著紀錄做；第三題選跟第二題同一邊。
         waitForTag("the_button")
         rule.mainClock.advanceTimeBy(500)
         rule.onNodeWithTag("the_button").performTouchInput { swipeRight() }
         rule.mainClock.advanceTimeBy(3_000)
-        val firstSide = memory.text(Keys.L6FirstSide)
-        val other = if (firstSide == Keys.RIGHT) "l09_left" else "l09_right"
+        val other = if (memory.text(Keys.L6FirstSide) == Keys.RIGHT) "l09_left" else "l09_right"
         rule.waitUntil(5_000) { enabled(other) }
         tap(other)
         rule.mainClock.advanceTimeBy(3_000)
-        nextLevel(10)
+        rule.waitUntil(5_000) { enabled(other) }
+        tap(other)
+        rule.mainClock.advanceTimeBy(3_000)
+        finished(9)
 
-        // 第 10 關：讀臉；最後一回合按 The Button。
+        // 〈相信我〉讀臉；最後一回合按 The Button。
         repeat(2) {
             rule.waitUntil(15_000) { enabled("l10_left") && speech().startsWith("按『") }
             val said = if (speech().contains("正確")) "正確" else "錯誤"
             val want = if (buttonLooksAway()) (if (said == "正確") "錯誤" else "正確") else said
-            val leftText = rule.onNodeWithTag("l10_left", useUnmergedTree = false).node().config
+            val leftText = rule.onNodeWithTag("l10_left").node().config
                 .getOrNull(SemanticsProperties.Text)?.joinToString { it.text }
                 ?: rule.onNodeWithTag("l10_left").node().children.joinToString { c -> c.config.getOrNull(SemanticsProperties.Text)?.joinToString { it.text }.orEmpty() }
             tap(if (leftText.contains(want)) "l10_left" else "l10_right")
         }
         rule.waitUntil(15_000) { speech().contains("按我") && enabled("l10_left") }
         assertTrue("最後一回合要是實話", !buttonLooksAway())
-        rule.onNodeWithTag("the_button").performClick()
+        tap("the_button")
         waitForTag("result_title")
-        assertTrue(memory.isCleared(10))
         assertTrue(!exists("result_next")) // 最後一關沒有下一關
-        assertEquals((1..10).toList(), (1..10).filter { memory.isCleared(it) })
+        assertTrue("每一關都應通關", Levels.all.all { memory.isCleared(it.id) })
     }
+
+    private val Level04Checkbox = tw.dynity.wrongbutton.levels.Level04DontAsk.SOLUTION_CHECKBOX
 
     private fun SemanticsNodeInteraction.assertTextEqualsCount(n: Int) {
         val text = node().config.getOrNull(SemanticsProperties.Text)?.joinToString { it.text }.orEmpty()

@@ -89,8 +89,8 @@ object Level04DontAsk : Level {
     }
 
     override fun memoryFacts(memory: MemorySnapshot): List<Fact> = when (memory.text(Keys.L4Solution)) {
-        SOLUTION_CHECKBOX -> listOf(Fact(R.string.fact_l4_checkbox))
-        SOLUTION_BRUTE -> listOf(Fact(R.string.fact_l4_brute))
+        SOLUTION_CHECKBOX -> listOf(Fact(R.string.fact_l4_checkbox, listOf(Levels.numberOf(id))))
+        SOLUTION_BRUTE -> listOf(Fact(R.string.fact_l4_brute, listOf(Levels.numberOf(id))))
         else -> emptyList()
     }
 

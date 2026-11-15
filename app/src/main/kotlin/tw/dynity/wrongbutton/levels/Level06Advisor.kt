@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.widthIn
+import tw.dynity.wrongbutton.core.engine.LevelChrome
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -38,6 +40,8 @@ object Level06Advisor : Level {
     override val taskTextRes = R.string.task_correct
     override val hintRes = listOf(R.string.l06_hint_1, R.string.l06_hint_2, R.string.l06_hint_3)
     override val ambientChatter = false
+    // 讀臉關：對話泡泡貼在 The Button 正下方，不用在畫面上下來回看。
+    override val chrome = LevelChrome(speechBubble = false)
     override val dialogue = DialogueSet(
         R.array.l06_enter, R.array.l06_first_mistake, R.array.l06_mistakes_3, R.array.l06_mistakes_6,
         R.array.l06_idle, R.array.l06_rapid_tap, R.array.l06_hint, R.array.l06_clear, R.array.l06_special,
@@ -64,11 +68,15 @@ object Level06Advisor : Level {
     )
 
     object Rules {
-        /** 第一次挑戰固定：回合一誇張的謊、回合二實話、回合三細微的謊。 */
+        /**
+         * 第一次挑戰固定：回合一誇張的謊、回合二實話、回合三細微的謊、回合四三選一的實話。
+         * 四回合全靠亂猜過關的機率是 1/36。
+         */
         val firstAttempt = listOf(
             Round(count = 2, claimIs = true, claimIndex = 0, tell = Tell.LieObvious, answer = 1),
             Round(count = 2, claimIs = true, claimIndex = 1, tell = Tell.Honest, answer = 1),
             Round(count = 3, claimIs = false, claimIndex = 1, tell = Tell.LieSubtle, answer = 1),
+            Round(count = 3, claimIs = true, claimIndex = 0, tell = Tell.Honest, answer = 0),
         )
 
         /**
@@ -101,6 +109,7 @@ object Level06Advisor : Level {
         fun randomRounds(random: Random): List<Round> = listOf(
             randomRound(2, random, Tell.LieObvious),
             randomRound(2, random, Tell.LieObvious),
+            randomRound(3, random, Tell.LieSubtle),
             randomRound(3, random, Tell.LieSubtle),
         )
 
@@ -145,8 +154,8 @@ object Level06Advisor : Level {
     }
 
     override fun memoryFacts(memory: MemorySnapshot): List<Fact> = when (memory.text(Keys.L6FirstSide)) {
-        Keys.LEFT -> listOf(Fact(R.string.fact_l6_left))
-        Keys.RIGHT -> listOf(Fact(R.string.fact_l6_right))
+        Keys.LEFT -> listOf(Fact(R.string.fact_l6_left, listOf(Levels.numberOf(id))))
+        Keys.RIGHT -> listOf(Fact(R.string.fact_l6_right, listOf(Levels.numberOf(id))))
         else -> emptyList()
     }
 
@@ -191,6 +200,7 @@ object Level06Advisor : Level {
                 scope.say(Line.Res(R.string.l06_advisor_tap), Mood.Normal, Tell.Honest)
                 state = state.copy(repeatToken = state.repeatToken + 1)
             })
+            scope.SpeechBubble(Modifier.widthIn(max = 420.dp))
             Text(
                 stringResource(R.string.l06_round, state.index + 1, state.rounds.size),
                 style = MaterialTheme.typography.titleMedium,

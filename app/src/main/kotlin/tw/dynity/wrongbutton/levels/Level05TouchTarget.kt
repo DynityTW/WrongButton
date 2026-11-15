@@ -105,8 +105,8 @@ object Level05TouchTarget : Level {
     }
 
     override fun memoryFacts(memory: MemorySnapshot): List<Fact> = when (memory.text(Keys.L5Solution)) {
-        SOLUTION_PINCH -> listOf(Fact(R.string.fact_l5_pinch))
-        SOLUTION_DOUBLE_TAP -> listOf(Fact(R.string.fact_l5_doubletap))
+        SOLUTION_PINCH -> listOf(Fact(R.string.fact_l5_pinch, listOf(Levels.numberOf(id))))
+        SOLUTION_DOUBLE_TAP -> listOf(Fact(R.string.fact_l5_doubletap, listOf(Levels.numberOf(id))))
         else -> emptyList()
     }
 

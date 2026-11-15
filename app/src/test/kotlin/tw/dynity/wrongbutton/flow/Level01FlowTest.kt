@@ -15,6 +15,7 @@ import org.junit.runner.RunWith
 import tw.dynity.wrongbutton.app.MainActivity
 import tw.dynity.wrongbutton.app.WrongButtonApp
 import tw.dynity.wrongbutton.levels.Keys
+import tw.dynity.wrongbutton.levels.Levels
 
 /** 從主選單進第 1 關、按下 The Button、看到結算畫面，並確認紀錄已寫入。 */
 @RunWith(AndroidJUnit4::class)
@@ -41,7 +42,7 @@ class Level01FlowTest {
 
         val memory = ApplicationProvider.getApplicationContext<WrongButtonApp>().container.memory.memory.value
         assertTrue(memory.isCleared(1))
-        assertEquals(2, memory.unlockedLevel)
+        assertTrue(Levels.isUnlocked(memory, Levels.all[1].id))
         assertEquals(1, memory.record(1)?.attempts)
         assertNotNull(memory.long(Keys.L1PressDelay))
 

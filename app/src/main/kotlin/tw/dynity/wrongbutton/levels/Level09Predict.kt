@@ -61,9 +61,12 @@ object Level09Predict : Level {
         val round: Int = 1,
         val card1Open: Boolean = false,
         val card2Open: Boolean = false,
+        val card3Open: Boolean = false,
         val phase: Phase = Phase.Playing,
         /** 這次的結果是否被料中（決定 Resolving 之後要去哪裡）。 */
         val caught: Boolean = false,
+        /** 回合二妳選的那一側；回合三的預測依據。 */
+        val round2Pick: Side? = null,
         val swipeToken: Int = 0,
     )
 
@@ -76,16 +79,26 @@ object Level09Predict : Level {
         fun predictedSide(memory: MemorySnapshot): Side =
             if (memory.text(Keys.L6FirstSide) == Keys.RIGHT) Side.Right else Side.Left
 
+        fun other(side: Side) = if (side == Side.Left) Side.Right else Side.Left
+
+        /**
+         * 回合三：它不翻舊帳了，改看妳「剛剛」怎麼做。
+         * 妳剛在回合二躲開它，它賭妳會再換一邊——所以要出乎意料，就得選跟回合二同一邊。
+         */
+        fun predictedThird(round2Pick: Side?): Side = other(round2Pick ?: Side.Right)
+
         fun swipe(s: State, dir: SwipeDirection, predicted: SwipeDirection): State =
             s.copy(card1Open = true, phase = Phase.Resolving, caught = dir == predicted)
 
-        fun pick(s: State, side: Side, predicted: Side): State =
-            s.copy(card2Open = true, phase = Phase.Resolving, caught = side == predicted)
+        fun pick(s: State, side: Side, memory: MemorySnapshot): State = when (s.round) {
+            2 -> s.copy(card2Open = true, phase = Phase.Resolving, caught = side == predictedSide(memory), round2Pick = side)
+            else -> s.copy(card3Open = true, phase = Phase.Resolving, caught = side == predictedThird(s.round2Pick))
+        }
 
-        /** 揭曉之後：被料中就回到回合一（預測內容不變）；沒被料中就往下一回合或通關。 */
+        /** 揭曉之後：被料中就回到回合一（預測依據不變）；沒被料中就往下一回合或通關。 */
         fun afterReveal(s: State): State = when {
             s.caught -> State(swipeToken = s.swipeToken + 1)
-            s.round == 1 -> s.copy(round = 2, phase = Phase.Playing, swipeToken = s.swipeToken + 1)
+            s.round < 3 -> s.copy(round = s.round + 1, phase = Phase.Playing, swipeToken = s.swipeToken + 1)
             else -> s.copy(phase = Phase.Done)
         }
     }
@@ -100,15 +113,25 @@ object Level09Predict : Level {
             when (state.phase) {
                 Phase.Resolving -> {
                     if (state.caught) {
-                        scope.mistake("l09_caught", Line.Res(if (state.round == 1) R.string.l09_caught_swipe else R.string.l09_caught_pick), Mood.Smug)
-                    } else if (state.round == 1) {
+                        val line = when (state.round) {
+                            1 -> R.string.l09_caught_swipe
+                            2 -> R.string.l09_caught_pick
+                            else -> R.string.l09_caught_third
+                        }
+                        scope.mistake("l09_caught", Line.Res(line), Mood.Smug)
+                    } else if (state.round < 3) {
                         scope.cue(Cue.Success)
                         scope.say(Line.Res(R.string.l09_surprised_1), Mood.Guilty)
                     }
                     delay(2_200)
                     state = Rules.afterReveal(state)
                     if (state.phase == Phase.Playing) {
-                        scope.say(Line.Res(if (state.round == 1) R.string.l09_round1 else R.string.l09_round2), Mood.Smug)
+                        val prompt = when (state.round) {
+                            1 -> R.string.l09_round1
+                            2 -> R.string.l09_round2
+                            else -> R.string.l09_round3
+                        }
+                        scope.say(Line.Res(prompt), Mood.Smug)
                     }
                 }
                 Phase.Done -> {
@@ -119,18 +142,24 @@ object Level09Predict : Level {
         }
 
         LevelColumn { compact ->
-            Row(Modifier.fillMaxWidth().widthIn(max = 560.dp), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            Row(Modifier.fillMaxWidth().widthIn(max = 640.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 PredictionCard(
                     open = state.card1Open,
-                    basis = stringResource(R.string.l09_basis, 7),
+                    basis = stringResource(R.string.l09_basis, Levels.numberOf(Level07LeaveNone.id)),
                     prediction = stringResource(if (predictedSwipe == SwipeDirection.Left) R.string.l09_predict_swipe_left else R.string.l09_predict_swipe_right),
                     modifier = Modifier.weight(1f).testTag("l09_card1"),
                 )
                 PredictionCard(
                     open = state.card2Open,
-                    basis = stringResource(R.string.l09_basis, 6),
+                    basis = stringResource(R.string.l09_basis, Levels.numberOf(Level06Advisor.id)),
                     prediction = stringResource(if (predictedSide == Side.Left) R.string.l09_predict_left else R.string.l09_predict_right),
                     modifier = Modifier.weight(1f).testTag("l09_card2"),
+                )
+                PredictionCard(
+                    open = state.card3Open,
+                    basis = stringResource(R.string.l09_basis_recent),
+                    prediction = stringResource(if (Rules.predictedThird(state.round2Pick) == Side.Left) R.string.l09_predict_left else R.string.l09_predict_right),
+                    modifier = Modifier.weight(1f).testTag("l09_card3"),
                 )
             }
 
@@ -156,21 +185,21 @@ object Level09Predict : Level {
                 )
             }
 
-            if (state.round == 2) {
+            if (state.round >= 2) {
                 Row(horizontalArrangement = Arrangement.spacedBy(24.dp)) {
                     FacelessButton(
                         label = stringResource(R.string.l09_candidate),
                         description = stringResource(R.string.l06_candidate_cd, stringResource(R.string.l06_pos_left)),
                         enabled = state.phase == Phase.Playing,
                         tag = "l09_left",
-                        onClick = { state = Rules.pick(state, Side.Left, predictedSide) },
+                        onClick = { state = Rules.pick(state, Side.Left, scope.memory) },
                     )
                     FacelessButton(
                         label = stringResource(R.string.l09_candidate),
                         description = stringResource(R.string.l06_candidate_cd, stringResource(R.string.l06_pos_right)),
                         enabled = state.phase == Phase.Playing,
                         tag = "l09_right",
-                        onClick = { state = Rules.pick(state, Side.Right, predictedSide) },
+                        onClick = { state = Rules.pick(state, Side.Right, scope.memory) },
                     )
                 }
             }
@@ -183,13 +212,13 @@ object Level09Predict : Level {
             shape = RoundedCornerShape(16.dp),
             color = if (open) MaterialTheme.colorScheme.tertiaryContainer else MaterialTheme.colorScheme.surfaceContainerHigh,
             border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline),
-            modifier = modifier.heightIn(min = 104.dp),
+            modifier = modifier.heightIn(min = 112.dp),
         ) {
-            Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+            Column(Modifier.padding(10.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
                 Text(basis, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 Text(
                     if (open) prediction else stringResource(R.string.l09_card_closed),
-                    style = MaterialTheme.typography.titleMedium,
+                    style = MaterialTheme.typography.titleSmall,
                     textAlign = TextAlign.Start,
                 )
             }

@@ -1,27 +1,78 @@
 package tw.dynity.wrongbutton.levels
 
+import androidx.annotation.StringRes
+import tw.dynity.wrongbutton.R
 import tw.dynity.wrongbutton.core.engine.Level
 import tw.dynity.wrongbutton.core.memory.MemoryKey
+import tw.dynity.wrongbutton.core.memory.PlayerMemory
 
-/** 關卡註冊表。新增一關：寫一個 Level 檔案，加進這個清單。 */
+/** 一章。章內關卡依序排列。 */
+data class Chapter(@StringRes val titleRes: Int, val levels: List<Level>)
+
+/**
+ * 關卡註冊表。
+ *
+ * - 關卡的 [Level.id] 是內部、永久的存檔鍵，一旦發布就不能改。
+ * - 玩家看到的「第 N 關」是關卡在這份清單裡的位置，可以隨時重新排序。
+ *
+ * 新增一關：寫一個 Level 檔案，放進某一章的清單。
+ */
 object Levels {
-    val all: List<Level> = listOf(
-        Level01Press,
-        Level02Empty,
-        Level03Ellipsis,
-        Level04DontAsk,
-        Level05TouchTarget,
-        Level06Advisor,
-        Level07LeaveNone,
-        Level08Mistakes,
-        Level09Predict,
-        Level10TrustMe,
+    val chapters: List<Chapter> = listOf(
+        Chapter(
+            R.string.chapter_1,
+            listOf(
+                Level01Press,
+                Level02Empty,
+                Level03Ellipsis,
+                Level11Tabs,
+                Level04DontAsk,
+                Level12Terms,
+                Level05TouchTarget,
+                Level13Reorder,
+                Level14Onboarding,
+                Level15OffScreen,
+                Level16Filter,
+                Level17BottomSheet,
+                Level18AskAgain,
+                Level19Overflow,
+                Level20AllTogether,
+            ),
+        ),
+        // 垂直切片的第 6–10 關。它們在完整版裡分屬第 2、3、4、8 章，相關章節完成前先放在這裡試玩。
+        Chapter(
+            R.string.chapter_preview,
+            listOf(
+                Level06Advisor,
+                Level07LeaveNone,
+                Level08Mistakes,
+                Level09Predict,
+                Level10TrustMe,
+            ),
+        ),
     )
 
+    val all: List<Level> = chapters.flatMap { it.levels }
+
     fun byId(id: Int): Level = all.first { it.id == id }
+
+    /** 玩家看到的關卡編號（從 1 開始）。 */
+    fun numberOf(id: Int): Int = all.indexOfFirst { it.id == id } + 1
+
+    fun next(id: Int): Level? = all.getOrNull(all.indexOfFirst { it.id == id } + 1)
+
+    /** 第一關永遠開放；其餘關卡在前一關通關後解鎖。 */
+    fun isUnlocked(memory: PlayerMemory, id: Int): Boolean {
+        val index = all.indexOfFirst { it.id == id }
+        return index == 0 || (index > 0 && memory.isCleared(all[index - 1].id))
+    }
+
+    /** 「繼續」要去的關卡：第一個已解鎖但還沒通關的關卡。 */
+    fun continueTarget(memory: PlayerMemory): Level? =
+        all.firstOrNull { isUnlocked(memory, it.id) && !memory.isCleared(it.id) }
 }
 
-/** 跨關卡共用的記憶鍵（第 9、10 關會讀前面關卡留下的紀錄）。 */
+/** 跨關卡共用的記憶鍵（後面的關卡會讀前面關卡留下的紀錄）。 */
 object Keys {
     val L1PressDelay = MemoryKey("l1_press_delay_ms")
     val L4Solution = MemoryKey("l4_solution")

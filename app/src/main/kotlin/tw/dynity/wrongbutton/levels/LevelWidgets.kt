@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.Alignment
@@ -102,5 +103,95 @@ fun LevelColumn(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(if (compact) spacing * 0.6f else spacing, Alignment.CenterVertically),
         ) { content(compact) }
+    }
+}
+
+/** 清單裡的一列：左邊圖示、中間標題、右邊附加元件。整列可點。 */
+@Composable
+fun ItemRow(
+    title: String,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    leading: @Composable () -> Unit = {},
+    trailing: @Composable () -> Unit = {},
+) {
+    androidx.compose.material3.Surface(
+        onClick = onClick,
+        shape = androidx.compose.foundation.shape.RoundedCornerShape(16.dp),
+        color = MaterialTheme.colorScheme.surfaceContainer,
+        modifier = modifier.fillMaxWidth().heightIn(min = 64.dp),
+    ) {
+        androidx.compose.foundation.layout.Row(
+            Modifier.padding(start = 12.dp, end = 4.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
+        ) {
+            leading()
+            Text(title, style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
+            trailing()
+        }
+    }
+}
+
+/** 檔案類型的小圖示（純文字標籤，不用圖片素材）。 */
+@Composable
+fun FileBadge(label: String) {
+    androidx.compose.material3.Surface(
+        shape = androidx.compose.foundation.shape.RoundedCornerShape(8.dp),
+        color = MaterialTheme.colorScheme.surfaceVariant,
+        modifier = Modifier.size(40.dp),
+    ) {
+        androidx.compose.foundation.layout.Box(contentAlignment = Alignment.Center) {
+            Text(label, style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
+    }
+}
+
+/** 一個動作選項。 */
+data class MenuAction(val label: String, val tag: String, val onClick: () -> Unit)
+
+/** 「⋮」溢位選單：清單項目的動作都收在這裡。 */
+@Composable
+fun MoreMenu(
+    expanded: Boolean,
+    onExpand: () -> Unit,
+    onDismiss: () -> Unit,
+    actions: List<MenuAction>,
+    contentDescription: String,
+    tag: String,
+) {
+    androidx.compose.foundation.layout.Box {
+        androidx.compose.material3.IconButton(onClick = onExpand, modifier = Modifier.testTag(tag).semantics { this.contentDescription = contentDescription }) {
+            Text("⋮", style = MaterialTheme.typography.titleLarge)
+        }
+        androidx.compose.material3.DropdownMenu(expanded = expanded, onDismissRequest = onDismiss) {
+            actions.forEach { action ->
+                androidx.compose.material3.DropdownMenuItem(
+                    text = { Text(action.label) },
+                    onClick = action.onClick,
+                    modifier = Modifier.testTag(action.tag),
+                )
+            }
+        }
+    }
+}
+
+/** 篩選 Chip 列。 */
+@Composable
+fun FilterRow(filters: List<Triple<String, Boolean, () -> Unit>>, tags: List<String>) {
+    androidx.compose.foundation.layout.Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+        filters.forEachIndexed { i, (label, selected, onToggle) ->
+            androidx.compose.material3.FilterChip(
+                selected = selected,
+                onClick = onToggle,
+                label = { Text(label) },
+                leadingIcon = if (selected) {
+                    { androidx.compose.material3.Icon(tw.dynity.wrongbutton.core.ui.WbIcons.Check, contentDescription = null, modifier = Modifier.size(18.dp)) }
+                } else {
+                    null
+                },
+                modifier = Modifier.heightIn(min = 48.dp).testTag(tags[i]),
+            )
+        }
     }
 }

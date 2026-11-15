@@ -43,7 +43,7 @@ object Level01Press : Level {
     }
 
     override fun memoryFacts(memory: MemorySnapshot): List<Fact> =
-        memory.long(Keys.L1PressDelay)?.let { listOf(Fact(R.string.fact_l1, listOf(formatSeconds(it)))) } ?: emptyList()
+        memory.long(Keys.L1PressDelay)?.let { listOf(Fact(R.string.fact_l1, listOf(Levels.numberOf(id), formatSeconds(it)))) } ?: emptyList()
 
     @Composable
     override fun Content(scope: LevelScope) {

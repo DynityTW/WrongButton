@@ -32,9 +32,9 @@ class MemoryOpsTest {
     fun attemptsAccumulateButStatsUseLatestRun() {
         var m = PlayerMemory()
         m = MemoryOps.startAttempt(m, 3)
-        m = MemoryOps.completeLevel(m, 3, run, levelCount = 10)
+        m = MemoryOps.completeLevel(m, 3, run)
         m = MemoryOps.startAttempt(m, 3)
-        m = MemoryOps.completeLevel(m, 3, run.copy(mistakes = 0, hintTier = 3, special = true), levelCount = 10)
+        m = MemoryOps.completeLevel(m, 3, run.copy(mistakes = 0, hintTier = 3, special = true))
 
         val r = m.record(3)!!
         assertEquals(2, r.attempts)
@@ -45,21 +45,10 @@ class MemoryOpsTest {
     }
 
     @Test
-    fun completingUnlocksNextLevelButNeverPastTheLast() {
-        var m = MemoryOps.completeLevel(PlayerMemory(), 1, run, levelCount = 10)
-        assertEquals(2, m.unlockedLevel)
-        m = MemoryOps.completeLevel(m, 10, run, levelCount = 10)
-        assertEquals(10, m.unlockedLevel)
-        // 重玩前面的關卡不會降低解鎖進度。
-        m = MemoryOps.completeLevel(m, 2, run, levelCount = 10)
-        assertEquals(10, m.unlockedLevel)
-    }
-
-    @Test
     fun totalMistakesIsLifetimeAndOnlyForgetResetsIt() {
         var m = PlayerMemory()
         repeat(5) { m = MemoryOps.addMistake(m) }
-        m = MemoryOps.completeLevel(m, 1, run.copy(mistakes = 0), 10)
+        m = MemoryOps.completeLevel(m, 1, run.copy(mistakes = 0))
         assertEquals(5, m.totalMistakes)
         assertEquals(PlayerMemory(), MemoryOps.forget())
     }
@@ -96,7 +85,7 @@ class MemoryRepositoryTest {
         repo1.update { MemoryOps.startAttempt(it, 1) }
         repo1.update(MemoryOps::addMistake)
         repo1.update { MemoryOps.remember(it, key, MemoryValue.Num(3_456)) }
-        repo1.update { MemoryOps.completeLevel(it, 1, RunResult(1, 100, 3_456, 0, false), 10) }
+        repo1.update { MemoryOps.completeLevel(it, 1, RunResult(1, 100, 3_456, 0, false)) }
         // 更新是同步套用到記憶體裡的。
         assertEquals(1, repo1.memory.value.totalMistakes)
         repo1.flush()
@@ -110,7 +99,6 @@ class MemoryRepositoryTest {
         assertEquals(1, m.totalMistakes)
         assertEquals(3_456L, m.long(key))
         assertEquals(LevelRecord(attempts = 1, mistakes = 1, firstTouchMs = 100, clearTimeMs = 3_456, hintTier = 0, special = false, cleared = true), m.record(1))
-        assertEquals(2, m.unlockedLevel)
         scope2.coroutineContext[kotlinx.coroutines.Job]!!.cancelAndJoin()
     }
 

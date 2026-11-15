@@ -29,7 +29,9 @@ class RotationTest {
     fun level3KeepsItsExpandedTaskAcrossRotation() {
         val memory = ApplicationProvider.getApplicationContext<WrongButtonApp>().container.memory
         waitForTag("menu_levels")
-        memory.update { it.copy(unlockedLevel = 3) }
+        // 前兩關通關，第 3 關才會解鎖。
+        val run = tw.dynity.wrongbutton.core.memory.RunResult(0, 0, 1_000, 0, false)
+        memory.update { m -> listOf(1, 2).fold(m) { acc, id -> tw.dynity.wrongbutton.core.memory.MemoryOps.completeLevel(acc, id, run) } }
         rule.onNodeWithTag("menu_levels").performClick()
         waitForTag("select_level_3")
         rule.onNodeWithTag("select_level_3").performClick()

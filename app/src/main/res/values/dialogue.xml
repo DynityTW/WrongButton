@@ -406,6 +406,378 @@
         <item>[guilty]妳……用了我沒想到的方法相信我。</item>
         <item>[serious]這樣也算。</item>
     </string-array>
+    <string-array name="l11_enter">
+        <item>[guilty]我不在這裡。……嚴格來說，我不在「全部」裡。</item>
+        <item>[normal]這個 App 把東西分成兩堆。</item>
+    </string-array>
+    <string-array name="l11_first_mistake">
+        <item>[smug]那是普通按鈕。</item>
+        <item>[normal]不是那個。</item>
+    </string-array>
+    <string-array name="l11_mistakes_3">
+        <item>[normal]上面有兩個分頁喔。</item>
+        <item>[guilty]「全部」不一定是全部。</item>
+    </string-array>
+    <string-array name="l11_mistakes_6">
+        <item>[sad]我被收起來了。</item>
+        <item>[guilty]看看另一個分頁吧。</item>
+    </string-array>
+    <string-array name="l11_idle">
+        <item>[normal]分頁上的數字，是在數什麼？</item>
+        <item>[sleeping]……</item>
+    </string-array>
+    <string-array name="l11_rapid_tap">
+        <item>[angry]那些按鈕都不是我。</item>
+        <item>[angry]換個地方找。</item>
+    </string-array>
+    <string-array name="l11_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示。我記下了。</item>
+    </string-array>
+    <string-array name="l11_clear">
+        <item>[smug]封存不等於消失。</item>
+        <item>[normal]下次記得看另一個分頁。</item>
+    </string-array>
+    <string-array name="l11_special">
+        <item>[guilty]妳怎麼找到我的？</item>
+        <item>[normal]這條路我沒想過。</item>
+    </string-array>
+    <string-array name="l12_enter">
+        <item>[smug]按我之前，請先同意我的使用條款。</item>
+        <item>[normal]我有條款。很長的那種。</item>
+    </string-array>
+    <string-array name="l12_first_mistake">
+        <item>[smug]這樣不行喔。</item>
+        <item>[normal]先讀條款。</item>
+    </string-array>
+    <string-array name="l12_mistakes_3">
+        <item>[guilty]條款要讀到最底。</item>
+        <item>[normal]方塊旁邊有小字。</item>
+    </string-array>
+    <string-array name="l12_mistakes_6">
+        <item>[sad]沒有人讀條款。我知道。</item>
+        <item>[guilty]捲下去就好，不用真的讀……好吧，最好還是讀一下。</item>
+    </string-array>
+    <string-array name="l12_idle">
+        <item>[normal]第 8 條寫得特別好。</item>
+        <item>[normal]讀到哪了？</item>
+    </string-array>
+    <string-array name="l12_rapid_tap">
+        <item>[angry]停用的按鈕，戳再多次也是停用。</item>
+        <item>[angry]我現在不能被按！</item>
+    </string-array>
+    <string-array name="l12_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]看提示比讀條款快，對吧？</item>
+    </string-array>
+    <string-array name="l12_clear">
+        <item>[smug]妳是少數讀完條款的人。</item>
+        <item>[normal]同意了。很好。</item>
+    </string-array>
+    <string-array name="l12_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l13_enter">
+        <item>[smug]我只在排第一的時候接受被按。</item>
+        <item>[normal]這份清單的順序，我不太滿意。</item>
+    </string-array>
+    <string-array name="l13_first_mistake">
+        <item>[smug]那是別的項目。</item>
+        <item>[normal]不是那個。</item>
+    </string-array>
+    <string-array name="l13_mistakes_3">
+        <item>[guilty]我在最下面喔。</item>
+        <item>[normal]右邊那個「≡」可以抓。</item>
+    </string-array>
+    <string-array name="l13_mistakes_6">
+        <item>[sad]我排在最後面……</item>
+        <item>[guilty]把我拉上去就好。</item>
+    </string-array>
+    <string-array name="l13_idle">
+        <item>[normal]排序是可以改的。</item>
+        <item>[normal]我在等我的名次。</item>
+    </string-array>
+    <string-array name="l13_rapid_tap">
+        <item>[angry]點不會改變順序。</item>
+        <item>[angry]用拖的！</item>
+    </string-array>
+    <string-array name="l13_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]需要幫忙排隊嗎？</item>
+    </string-array>
+    <string-array name="l13_clear">
+        <item>[smug]第一名的感覺真好。</item>
+        <item>[normal]謝謝妳把我排在最前面。</item>
+    </string-array>
+    <string-array name="l13_special">
+        <item>[guilty]這樣也可以？</item>
+        <item>[normal]妳找到了別的方法。</item>
+    </string-array>
+    <string-array name="l14_enter">
+        <item>[normal]第一次使用？我準備了一段教學。</item>
+        <item>[smug]歡迎！請先看完新手教學。</item>
+    </string-array>
+    <string-array name="l14_first_mistake">
+        <item>[smug]嗯？</item>
+        <item>[normal]不是這樣。</item>
+    </string-array>
+    <string-array name="l14_mistakes_3">
+        <item>[guilty]教學好像一直在繞。</item>
+        <item>[normal]數數圓點。</item>
+    </string-array>
+    <string-array name="l14_mistakes_6">
+        <item>[sad]我的教學寫得太長了。</item>
+        <item>[guilty]妳可以不用看完的。</item>
+    </string-array>
+    <string-array name="l14_idle">
+        <item>[normal]第四頁有我。</item>
+        <item>[normal]教學有點長，對吧？</item>
+    </string-array>
+    <string-array name="l14_rapid_tap">
+        <item>[angry]連按「下一步」也只會繞圈。</item>
+        <item>[angry]慢一點。</item>
+    </string-array>
+    <string-array name="l14_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]連教學都要看提示？</item>
+    </string-array>
+    <string-array name="l14_clear">
+        <item>[smug]有時候，略過才是對的。</item>
+        <item>[normal]這次的略過，是真的。</item>
+    </string-array>
+    <string-array name="l14_special">
+        <item>[guilty]妳怎麼到第四頁的？</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l15_enter">
+        <item>[normal]我在這張地圖上。不在妳看得到的那一塊。</item>
+        <item>[smug]這次我躲得比較遠。</item>
+    </string-array>
+    <string-array name="l15_first_mistake">
+        <item>[smug]那是路標。</item>
+        <item>[normal]不是那個。</item>
+    </string-array>
+    <string-array name="l15_mistakes_3">
+        <item>[normal]地圖可以拖。</item>
+        <item>[guilty]看看畫面邊緣。</item>
+    </string-array>
+    <string-array name="l15_mistakes_6">
+        <item>[sad]我在很遠的地方。</item>
+        <item>[guilty]跟著箭頭走。</item>
+    </string-array>
+    <string-array name="l15_idle">
+        <item>[normal]箭頭指的方向，就是我。</item>
+        <item>[normal]地圖很大，慢慢來。</item>
+    </string-array>
+    <string-array name="l15_rapid_tap">
+        <item>[angry]戳路標沒有用。</item>
+        <item>[angry]用拖的。</item>
+    </string-array>
+    <string-array name="l15_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]迷路了？</item>
+    </string-array>
+    <string-array name="l15_clear">
+        <item>[smug]找到了。</item>
+        <item>[normal]畫面外也是畫面的一部分。</item>
+    </string-array>
+    <string-array name="l15_special">
+        <item>[guilty]妳怎麼找到我的？</item>
+        <item>[normal]這條路我沒想過。</item>
+    </string-array>
+    <string-array name="l16_enter">
+        <item>[guilty]我好像被過濾掉了。</item>
+        <item>[normal]這份清單只顯示「正常」的按鈕。</item>
+    </string-array>
+    <string-array name="l16_first_mistake">
+        <item>[smug]那是正常按鈕。</item>
+        <item>[normal]不是那個。</item>
+    </string-array>
+    <string-array name="l16_mistakes_3">
+        <item>[guilty]上面寫顯示幾項？</item>
+        <item>[normal]有個篩選條件開著。</item>
+    </string-array>
+    <string-array name="l16_mistakes_6">
+        <item>[sad]我不正常，所以被篩掉了。</item>
+        <item>[guilty]把篩選關掉就好。</item>
+    </string-array>
+    <string-array name="l16_idle">
+        <item>[normal]3／4。少了一個。</item>
+        <item>[normal]篩選條件會藏東西。</item>
+    </string-array>
+    <string-array name="l16_rapid_tap">
+        <item>[angry]那些都是正常按鈕！</item>
+        <item>[angry]我不在那裡面。</item>
+    </string-array>
+    <string-array name="l16_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]需要我幫忙清除篩選嗎？</item>
+    </string-array>
+    <string-array name="l16_clear">
+        <item>[smug]不正常也有不正常的好。</item>
+        <item>[normal]謝謝妳把我放回來。</item>
+    </string-array>
+    <string-array name="l16_special">
+        <item>[guilty]這樣也可以？</item>
+        <item>[normal]妳找到了別的方法。</item>
+    </string-array>
+    <string-array name="l17_enter">
+        <item>[guilty]我被壓在下面了。</item>
+        <item>[normal]我在畫面底下。看到我的眼睛了嗎？</item>
+    </string-array>
+    <string-array name="l17_first_mistake">
+        <item>[smug]那是佔位用的。</item>
+        <item>[normal]不是那個。</item>
+    </string-array>
+    <string-array name="l17_mistakes_3">
+        <item>[guilty]我在下面。</item>
+        <item>[normal]最下面那條可以拉。</item>
+    </string-array>
+    <string-array name="l17_mistakes_6">
+        <item>[sad]被壓著好難受。</item>
+        <item>[guilty]把我拉上來吧。</item>
+    </string-array>
+    <string-array name="l17_idle">
+        <item>[normal]底部面板可以拉起來。</item>
+        <item>[normal]我在這裡看著妳。</item>
+    </string-array>
+    <string-array name="l17_rapid_tap">
+        <item>[angry]那個大按鈕是假的！</item>
+        <item>[angry]往下看。</item>
+    </string-array>
+    <string-array name="l17_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]找不到把手？</item>
+    </string-array>
+    <string-array name="l17_clear">
+        <item>[smug]呼，終於可以喘口氣了。</item>
+        <item>[normal]謝謝妳把我拉上來。</item>
+    </string-array>
+    <string-array name="l17_special">
+        <item>[guilty]這樣也可以？</item>
+        <item>[normal]妳找到了別的方法。</item>
+    </string-array>
+    <string-array name="l18_enter">
+        <item>[normal]上次的事，我都記得。</item>
+        <item>[smug]這次的規矩，是妳上次教我的。</item>
+    </string-array>
+    <string-array name="l18_first_mistake">
+        <item>[smug]不是這樣。</item>
+        <item>[normal]嗯？</item>
+    </string-array>
+    <string-array name="l18_mistakes_3">
+        <item>[normal]我照著妳上次的做法。</item>
+        <item>[guilty]右上角有我的偏好設定。</item>
+    </string-array>
+    <string-array name="l18_mistakes_6">
+        <item>[sad]我只是學妳而已。</item>
+        <item>[guilty]調一下我的偏好吧。</item>
+    </string-array>
+    <string-array name="l18_idle">
+        <item>[normal]紀錄裡寫著妳上次怎麼對我。</item>
+        <item>[normal]我很聽話的。</item>
+    </string-array>
+    <string-array name="l18_rapid_tap">
+        <item>[angry]戳我也不會改變規矩。</item>
+        <item>[angry]去改設定啦。</item>
+    </string-array>
+    <string-array name="l18_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]我照妳上次的規矩辦事。</item>
+    </string-array>
+    <string-array name="l18_clear">
+        <item>[normal]這次，問一次就夠了。</item>
+        <item>[smug]規矩是可以改的。</item>
+    </string-array>
+    <string-array name="l18_special">
+        <item>[sad]……二十次。妳一點都沒變。</item>
+        <item>[guilty]妳真的又按了二十次。</item>
+    </string-array>
+    <string-array name="l19_enter">
+        <item>[normal]我現在是清單裡的一個項目。</item>
+        <item>[smug]這一關，我是一個檔案。</item>
+    </string-array>
+    <string-array name="l19_first_mistake">
+        <item>[smug]不是那個。</item>
+        <item>[normal]不是那個選項。</item>
+    </string-array>
+    <string-array name="l19_mistakes_3">
+        <item>[guilty]點我只會打開我。</item>
+        <item>[normal]右邊那三個點呢？</item>
+    </string-array>
+    <string-array name="l19_mistakes_6">
+        <item>[sad]我只是想被按一下。</item>
+        <item>[guilty]動作都收在「⋮」裡。</item>
+    </string-array>
+    <string-array name="l19_idle">
+        <item>[normal]檔案要怎麼操作，妳平常怎麼做？</item>
+        <item>[normal]三個點，打開看看。</item>
+    </string-array>
+    <string-array name="l19_rapid_tap">
+        <item>[angry]點再多次也只是打開。</item>
+        <item>[angry]我說了，動作在選單裡！</item>
+    </string-array>
+    <string-array name="l19_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]找不到選單？</item>
+    </string-array>
+    <string-array name="l19_clear">
+        <item>[smug]「按下」，很好的選項。</item>
+        <item>[normal]謝謝妳選了對的那個。</item>
+    </string-array>
+    <string-array name="l19_special">
+        <item>[guilty]這樣也可以？</item>
+        <item>[normal]妳找到了別的方法。</item>
+    </string-array>
+    <string-array name="l20_enter">
+        <item>[smug]第一章的最後一關。妳學過的都會用到。</item>
+        <item>[normal]全部一起來。</item>
+    </string-array>
+    <string-array name="l20_first_mistake">
+        <item>[smug]不是那個。</item>
+        <item>[normal]嗯？</item>
+    </string-array>
+    <string-array name="l20_mistakes_3">
+        <item>[normal]一步一步來。</item>
+        <item>[guilty]先讓清單出現。</item>
+    </string-array>
+    <string-array name="l20_mistakes_6">
+        <item>[sad]這關有點多。</item>
+        <item>[guilty]看一下提示吧。</item>
+    </string-array>
+    <string-array name="l20_idle">
+        <item>[normal]空的清單、開著的篩選、收起來的選項。</item>
+        <item>[normal]慢慢來。</item>
+    </string-array>
+    <string-array name="l20_rapid_tap">
+        <item>[angry]不要亂戳。</item>
+        <item>[angry]冷靜。</item>
+    </string-array>
+    <string-array name="l20_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]最後一關也要看提示？</item>
+    </string-array>
+    <string-array name="l20_clear">
+        <item>[smug]第一章，結束。妳開始懂這些介面了。</item>
+        <item>[normal]妳學得很快。接下來，我要開始認真了。</item>
+    </string-array>
+    <string-array name="l20_special">
+        <item>[guilty]這樣也可以？</item>
+        <item>[normal]妳找到了別的方法。</item>
+    </string-array>
+    <string-array name="l12_clauses">
+        <item>第 1 條：本按鈕（以下簡稱「我」）是一顆按鈕。</item>
+        <item>第 2 條：使用者（以下簡稱「妳」）同意，按下我之前會先讀完本條款。</item>
+        <item>第 3 條：我有權在任何時候覺得被冒犯。</item>
+        <item>第 4 條：連點不會讓我比較快被按下，只會讓我比較痛。</item>
+        <item>第 5 條：我記得的事，只存在妳的裝置上。這一條是真的。</item>
+        <item>第 6 條：妳同意不把我和沒有臉的按鈕搞混。</item>
+        <item>第 7 條：我偶爾會說反話。何時說、怎麼看出來，本條款不負責說明。</item>
+        <item>第 8 條：如果妳讀到這裡，代表妳比大部分人有耐心。</item>
+        <item>第 9 條：本條款的效力及於妳按下我的那一刻。</item>
+        <item>第 10 條：讀到這裡的人，可以勾選下面的方塊了。</item>
+    </string-array>
     <string-array name="l04_questions">
         <item>真的嗎？</item>
         <item>妳有考慮過我的感受嗎？</item>

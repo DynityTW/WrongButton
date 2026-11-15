@@ -22,8 +22,8 @@ object MemoryOps {
     fun remember(memory: PlayerMemory, key: MemoryKey, value: MemoryValue): PlayerMemory =
         memory.copy(facts = memory.facts + (key.id to value))
 
-    /** 通關：本關紀錄以這一次為準（嘗試次數保留累計），並解鎖下一關。 */
-    fun completeLevel(memory: PlayerMemory, levelId: Int, run: RunResult, levelCount: Int): PlayerMemory {
+    /** 通關：本關紀錄以這一次為準（嘗試次數保留累計）。解鎖由關卡順序決定（前一關通關即解鎖）。 */
+    fun completeLevel(memory: PlayerMemory, levelId: Int, run: RunResult): PlayerMemory {
         val old = memory.levels[levelId] ?: LevelRecord(attempts = 1)
         val record = LevelRecord(
             attempts = maxOf(old.attempts, 1),
@@ -34,8 +34,7 @@ object MemoryOps {
             special = run.special,
             cleared = true,
         )
-        val unlocked = maxOf(memory.unlockedLevel, minOf(levelId + 1, levelCount))
-        return memory.copy(levels = memory.levels + (levelId to record), unlockedLevel = unlocked)
+        return memory.copy(levels = memory.levels + (levelId to record))
     }
 
     fun forget(): PlayerMemory = PlayerMemory()

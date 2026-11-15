@@ -1,7 +1,8 @@
-# Wrong Button（v0.2 垂直切片）
+# Wrong Button（v0.3）
 
 一個看起來像普通 Android App 的畫面裡，住著一顆有感情、會說謊、而且記得玩家做過什麼的按鈕。
-這個切片包含 10 關，從「不信任它」走到「相信它」。
+目前可玩 20 關：第 1 章〈信任問題〉15 關，加上垂直切片留下來的 5 關（暫放在「搶先體驗」）。
+完整版 120 關的規劃見 [`docs/DESIGN.md`](docs/DESIGN.md)。
 
 ## 建置與測試
 
@@ -43,9 +44,9 @@ app/src/main/kotlin/tw/dynity/wrongbutton/
 
 ### 新增一關
 
-1. 在 `levels/` 新增 `LevelNNXxx.kt`，實作 `Level`。
+1. 在 `levels/` 新增 `LevelNNXxx.kt`，實作 `Level`，取一個沒用過的 `id`。`id` 是永久的存檔鍵，發布後不能改。
 2. 在 `res/values/` 加上該關的字串、三階提示與台詞表（`lNN_enter`、`lNN_first_mistake` …每種事件至少 2 句）。
-3. 把它加進 `Levels.all`。
+3. 把它放進 `Levels.chapters` 的某一章。玩家看到的「第 N 關」是它在清單裡的位置；解鎖規則是前一關通關才開。
 
 引擎不需要修改。`ResourcesTest` 會自動檢查新關卡的台詞與提示是否齊全。
 
@@ -75,10 +76,11 @@ TalkBack 會讀出外觀描述（「它的眼睛看向旁邊，一邊嘴角翹�
 - `MemoryTest`：記憶讀寫、重開 App 後資料仍在、「以最新一次為準」、檔案損毀時的回復。
 - `DialogueTest`：最近 5 句不重複、全域備用池、標記解析、變數帶入。
 - `FaceGeometryTest`：說謊特徵在靜態畫面上的可辨識下限。
-- `LevelRulesTest`：第 1、4、5、6、7、8、9、10 關的規則判定。
+- `LevelRulesTest`、`Chapter1RulesTest`：各關的規則判定、關卡順序與解鎖。
 - `Level01FlowTest`：從主選單玩第 1 關到結算。
-- `FullPlaythroughTest`：只用單指、不限時，從第 1 關連續玩到第 10 關。需要讀臉的關卡只用 TalkBack 讀得到的資訊來推理。
+- `FullPlaythroughTest`：只用單指、不限時，依順序連續玩完全部關卡。需要讀臉的關卡只用 TalkBack 讀得到的資訊來推理。
 - `RotationTest`：旋轉（Activity 重建）後關卡狀態與統計不遺失。
 - `ResourcesTest`：台詞與提示是否齊全。
+- `AndroidRegexTest`：原始碼裡的正規表示式在 Android（ICU）上是否合法。
 
 設計上的假設與偏離規格之處，見 [`docs/ASSUMPTIONS.md`](docs/ASSUMPTIONS.md)。

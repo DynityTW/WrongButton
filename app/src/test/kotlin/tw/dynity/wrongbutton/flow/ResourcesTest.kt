@@ -33,7 +33,7 @@ class ResourcesTest {
     @Test
     fun levelsHaveThreeHintsAndUniqueIds() {
         Levels.all.forEach { assertEquals("第 ${it.id} 關提示數", 3, it.hintRes.size) }
-        assertEquals((1..10).toList(), Levels.all.map { it.id })
+        assertEquals("關卡 id 不可重複", Levels.all.size, Levels.all.map { it.id }.toSet().size)
     }
 
     @Test

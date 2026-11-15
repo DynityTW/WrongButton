@@ -29,13 +29,13 @@ import tw.dynity.wrongbutton.ui.menu.ScreenScaffold
 
 /** 紀錄頁上每一條的資料（純資料，方便測試）。 */
 object RecordsFormatter {
-    fun levelFact(level: Level, record: LevelRecord?): Fact? {
+    fun levelFact(number: Int, record: LevelRecord?): Fact? {
         if (record == null || record.attempts == 0) return null
-        if (!record.cleared) return Fact(R.string.records_level_attempted, listOf(level.id, record.attempts))
+        if (!record.cleared) return Fact(R.string.records_level_attempted, listOf(number, record.attempts))
         return Fact(
             R.string.records_level_cleared,
             listOf(
-                level.id,
+                number,
                 record.attempts,
                 record.mistakes,
                 record.firstTouchMs?.let(::formatSeconds) ?: "—",
@@ -60,8 +60,8 @@ fun RecordsContent(memory: PlayerMemory, levels: List<Level>, modifier: Modifier
             RecordsFormatter.globalFacts(memory, levels).forEach { RecordLine(it.text()) }
         }
         Section(stringResource(R.string.records_section_levels)) {
-            val lines = levels.mapNotNull { level ->
-                RecordsFormatter.levelFact(level, memory.record(level.id))?.let { fact ->
+            val lines = levels.mapIndexedNotNull { index, level ->
+                RecordsFormatter.levelFact(index + 1, memory.record(level.id))?.let { fact ->
                     val special = if (memory.record(level.id)?.special == true) stringResource(R.string.records_special_suffix) else ""
                     fact.text() + special
                 }

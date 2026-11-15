@@ -76,7 +76,6 @@ fun formatSeconds(ms: Long): String = String.format(Locale.TAIWAN, "%.1f", ms / 
  */
 class LevelHostViewModel(
     val level: Level,
-    private val levelCount: Int,
     private val repository: MemoryRepository,
     private val director: DialogueDirector,
     private val text: TextSource,
@@ -185,7 +184,7 @@ class LevelHostViewModel(
             hintTier = _hintTier.value,
             special = special,
         )
-        repository.update { MemoryOps.completeLevel(it, level.id, run, levelCount) }
+        repository.update { MemoryOps.completeLevel(it, level.id, run) }
         val event = if (special) DialogueEvent.Special else DialogueEvent.Clear
         val raw = if (line != null) resolve(line).also(director::markUsed) else pick(event).orEmpty()
         val parsed = LineMarkup.parse(raw)

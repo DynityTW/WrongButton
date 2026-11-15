@@ -98,7 +98,7 @@ object Level07LeaveNone : Level {
         R.array.l07_idle, R.array.l07_rapid_tap, R.array.l07_hint, R.array.l07_clear, R.array.l07_special,
     )
 
-    const val IDLE_RESTORE_MS = 20_000L
+    const val IDLE_RESTORE_MS = 12_000L
     const val SNACKBAR_MS = 5_000L
 
     @Serializable
@@ -122,7 +122,7 @@ object Level07LeaveNone : Level {
     override fun memoryFacts(memory: MemorySnapshot): List<Fact> {
         val dir = memory.text(Keys.L7SwipeDirection) ?: return emptyList()
         val held = formatSeconds(memory.long(Keys.L7Hesitation) ?: 0L)
-        return listOf(Fact(if (dir == Keys.LEFT) R.string.fact_l7_left else R.string.fact_l7_right, listOf(held)))
+        return listOf(Fact(if (dir == Keys.LEFT) R.string.fact_l7_left else R.string.fact_l7_right, listOf(Levels.numberOf(id), held)))
     }
 
     @Composable
@@ -143,7 +143,7 @@ object Level07LeaveNone : Level {
         val chipShake = remember { Animatable(0f) }
         val coroutines = rememberCoroutineScope()
 
-        // 閒置 20 秒，頂端列與提示鈕自己滑回來。任何捲動都會再收起來。
+        // 閒置 12 秒，頂端列與提示鈕自己滑回來。任何捲動都會再收起來。
         LaunchedEffect(Unit) {
             while (true) {
                 delay(500)
@@ -194,7 +194,7 @@ object Level07LeaveNone : Level {
                         Icon(WbIcons.Back, contentDescription = stringResource(R.string.l07_back_cd))
                     }
                     Text(
-                        stringResource(R.string.level_title_format, id, stringResource(titleRes)),
+                        stringResource(R.string.level_title_format, Levels.numberOf(id), stringResource(titleRes)),
                         style = MaterialTheme.typography.titleMedium,
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis,

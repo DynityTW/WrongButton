@@ -51,6 +51,8 @@ object Level10TrustMe : Level {
     override val taskTextRes = R.string.task_trust
     override val hintRes = listOf(R.string.l10_hint_1, R.string.l10_hint_2, R.string.l10_hint_3)
     override val ambientChatter = false
+    // 讀臉關：對話泡泡貼在 The Button 正下方。
+    override val chrome = tw.dynity.wrongbutton.core.engine.LevelChrome(speechBubble = false)
     override val dialogue = DialogueSet(
         R.array.l10_enter, R.array.l10_first_mistake, R.array.l10_mistakes_3, R.array.l10_mistakes_6,
         R.array.l10_idle, R.array.l10_rapid_tap, R.array.l10_hint, R.array.l10_clear, R.array.l10_special,
@@ -139,7 +141,7 @@ object Level10TrustMe : Level {
     }
 
     override fun memoryFacts(memory: MemorySnapshot): List<Fact> =
-        memory.long(Keys.L10PressDelay)?.let { listOf(Fact(R.string.fact_l10, listOf(formatSeconds(it)))) } ?: emptyList()
+        memory.long(Keys.L10PressDelay)?.let { listOf(Fact(R.string.fact_l10, listOf(Levels.numberOf(id), formatSeconds(it)))) } ?: emptyList()
 
     @Composable
     override fun Content(scope: LevelScope) {
@@ -219,6 +221,7 @@ object Level10TrustMe : Level {
 
         LevelColumn { compact ->
             PressableButton(scope, if (compact) 100.dp else 140.dp, onClick = { press(Target.TheButton) })
+            scope.SpeechBubble(Modifier.widthIn(max = 420.dp))
             val final = state.index >= FINAL_ROUND
             val round = state.rounds.getOrNull(state.index)
             val leftLabel = when {

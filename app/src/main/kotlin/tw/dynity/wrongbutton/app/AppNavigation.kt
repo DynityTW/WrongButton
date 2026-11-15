@@ -64,7 +64,7 @@ fun WrongButtonNavigation(container: AppContainer) {
             entry<TitleKey> {
                 TitleScreen(
                     memory = memory,
-                    levelCount = Levels.all.size,
+                    continueTarget = Levels.continueTarget(memory)?.let { it.id to Levels.numberOf(it.id) },
                     onContinue = { openLevel(it) },
                     onLevels = { backStack.add(LevelSelectKey) },
                     onRecords = { backStack.add(RecordsKey) },
@@ -73,7 +73,9 @@ fun WrongButtonNavigation(container: AppContainer) {
             }
             entry<LevelSelectKey> {
                 LevelSelectScreen(
-                    levels = Levels.all,
+                    chapters = Levels.chapters.map { it.titleRes to it.levels },
+                    numberOf = Levels::numberOf,
+                    isUnlocked = { Levels.isUnlocked(memory, it) },
                     memory = memory,
                     onPlay = { openLevel(it) },
                     onBack = { popTo(TitleKey) },
@@ -91,14 +93,15 @@ fun WrongButtonNavigation(container: AppContainer) {
             entry<LevelKey> { key ->
                 val level = Levels.byId(key.id)
                 val vm = viewModel(key = "level-${key.id}") {
-                    LevelHostViewModel(level, Levels.all.size, container.memory, container.director, container.text, container.clock)
+                    LevelHostViewModel(level, container.memory, container.director, container.text, container.clock)
                 }
-                val hasNext = key.id < Levels.all.size
+                val next = Levels.next(key.id)
                 LevelHost(
                     vm = vm,
-                    hasNext = hasNext,
+                    number = Levels.numberOf(key.id),
+                    hasNext = next != null,
                     onExit = { popTo(LevelSelectKey) },
-                    onNext = { if (hasNext) openLevel(key.id + 1) },
+                    onNext = { next?.let { openLevel(it.id) } },
                     recordsContent = { RecordsContent(memory, Levels.all) },
                 )
             }
