@@ -3,6 +3,7 @@ package tw.dynity.wrongbutton.ui.theme
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Typography
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
@@ -89,7 +90,11 @@ fun WrongButtonTheme(
         MaterialTheme(
             colorScheme = if (darkTheme) DarkColors else LightColors,
             typography = AppTypography,
-            content = content,
-        )
+        ) {
+            // 整個 App 包在 Surface 裡：沒有指定顏色的文字與圖示才會跟著主題（深色模式下是淺色字）。
+            Surface(color = MaterialTheme.colorScheme.background, contentColor = MaterialTheme.colorScheme.onBackground) {
+                content()
+            }
+        }
     }
 }
