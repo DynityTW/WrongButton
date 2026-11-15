@@ -1,0 +1,107 @@
+package tw.dynity.wrongbutton.app
+
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
+import androidx.navigation3.runtime.NavKey
+import androidx.navigation3.runtime.entryProvider
+import androidx.navigation3.runtime.rememberNavBackStack
+import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
+import androidx.navigation3.ui.NavDisplay
+import kotlinx.serialization.Serializable
+import tw.dynity.wrongbutton.core.engine.LevelHost
+import tw.dynity.wrongbutton.core.engine.LevelHostViewModel
+import tw.dynity.wrongbutton.levels.Levels
+import tw.dynity.wrongbutton.ui.menu.LevelSelectScreen
+import tw.dynity.wrongbutton.ui.menu.SettingsScreen
+import tw.dynity.wrongbutton.ui.menu.TitleScreen
+import tw.dynity.wrongbutton.ui.records.RecordsContent
+import tw.dynity.wrongbutton.ui.records.RecordsScreen
+
+@Serializable data object TitleKey : NavKey
+@Serializable data object LevelSelectKey : NavKey
+@Serializable data object RecordsKey : NavKey
+@Serializable data object SettingsKey : NavKey
+@Serializable data class LevelKey(val id: Int) : NavKey
+
+@Composable
+fun WrongButtonNavigation(container: AppContainer) {
+    val backStack = rememberNavBackStack(TitleKey)
+    val memory by container.memory.memory.collectAsStateWithLifecycle()
+    val ready by container.memory.isReady.collectAsStateWithLifecycle()
+
+    if (!ready) {
+        Box(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background))
+        return
+    }
+
+    /** 進關時保證返回堆疊是 標題 → 選關 → 關卡，所以系統返回永遠回到選關畫面。 */
+    fun openLevel(id: Int) {
+        while (backStack.size > 1) backStack.removeAt(backStack.lastIndex)
+        backStack.add(LevelSelectKey)
+        backStack.add(LevelKey(id))
+    }
+
+    fun popTo(key: NavKey) {
+        while (backStack.size > 1 && backStack.last() != key) backStack.removeAt(backStack.lastIndex)
+    }
+
+    NavDisplay(
+        backStack = backStack,
+        onBack = { if (backStack.size > 1) backStack.removeAt(backStack.lastIndex) },
+        entryDecorators = listOf(
+            rememberSaveableStateHolderNavEntryDecorator(),
+            rememberViewModelStoreNavEntryDecorator(),
+        ),
+        entryProvider = entryProvider {
+            entry<TitleKey> {
+                TitleScreen(
+                    memory = memory,
+                    levelCount = Levels.all.size,
+                    onContinue = { openLevel(it) },
+                    onLevels = { backStack.add(LevelSelectKey) },
+                    onRecords = { backStack.add(RecordsKey) },
+                    onSettings = { backStack.add(SettingsKey) },
+                )
+            }
+            entry<LevelSelectKey> {
+                LevelSelectScreen(
+                    levels = Levels.all,
+                    memory = memory,
+                    onPlay = { openLevel(it) },
+                    onBack = { popTo(TitleKey) },
+                )
+            }
+            entry<RecordsKey> {
+                RecordsScreen(memory = memory, levels = Levels.all, onBack = { popTo(TitleKey) })
+            }
+            entry<SettingsKey> {
+                SettingsScreen(
+                    container = container,
+                    onBack = { popTo(TitleKey) },
+                )
+            }
+            entry<LevelKey> { key ->
+                val level = Levels.byId(key.id)
+                val vm = viewModel(key = "level-${key.id}") {
+                    LevelHostViewModel(level, Levels.all.size, container.memory, container.director, container.text, container.clock)
+                }
+                val hasNext = key.id < Levels.all.size
+                LevelHost(
+                    vm = vm,
+                    hasNext = hasNext,
+                    onExit = { popTo(LevelSelectKey) },
+                    onNext = { if (hasNext) openLevel(key.id + 1) },
+                    recordsContent = { RecordsContent(memory, Levels.all) },
+                )
+            }
+        },
+    )
+}

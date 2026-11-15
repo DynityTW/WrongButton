@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由腳本產生，內容為台灣繁體中文。台詞前綴 [mood|tell] 標記表情，見 core/dialogue/LineMarkup。 -->
+<resources>
+    <string-array name="global_enter">
+        <item>[normal]又見面了。</item>
+        <item>[normal]來吧。我準備好了。</item>
+        <item>[smug]這關我很有自信。</item>
+    </string-array>
+    <string-array name="global_first_mistake">
+        <item>[smug]按錯了。我記下來了。</item>
+        <item>[smug]嗯，這不是正確答案。</item>
+        <item>[normal]沒關係，第一次而已。</item>
+    </string-array>
+    <string-array name="global_mistakes_3">
+        <item>[smug]三次了。我都有在數。</item>
+        <item>[guilty]要不要看一下提示？右上角那個。</item>
+        <item>[normal]換個角度想想？</item>
+    </string-array>
+    <string-array name="global_mistakes_6">
+        <item>[guilty]……我開始有點同情妳了。</item>
+        <item>[sad]六次了。真的不用看提示嗎？</item>
+        <item>[guilty]是我出的題太壞了嗎？</item>
+    </string-array>
+    <string-array name="global_idle">
+        <item>[normal]妳還在嗎？</item>
+        <item>[sleeping]……</item>
+        <item>[normal]我可以等。我很擅長等。</item>
+    </string-array>
+    <string-array name="global_rapid_tap">
+        <item>[angry]慢一點！</item>
+        <item>[angry]連點不會讓答案自己跑出來。</item>
+        <item>[angry]妳在打鼓嗎？</item>
+    </string-array>
+    <string-array name="global_hint">
+        <item>[normal]提示是免費的。我不會笑妳。</item>
+        <item>[smug]看提示不丟臉。我只是會記下來而已。</item>
+        <item>[normal]好，給妳一點方向。</item>
+    </string-array>
+    <string-array name="global_clear">
+        <item>[smug]哼，算妳厲害。</item>
+        <item>[normal]過了。下一關見。</item>
+        <item>[smug]我就知道妳可以。</item>
+    </string-array>
+    <string-array name="global_special">
+        <item>[guilty]……妳怎麼會想到這樣。</item>
+        <item>[smug]這個解法，我會記很久。</item>
+        <item>[guilty]不按牌理出牌啊。</item>
+    </string-array>
+    <string-array name="l01_enter">
+        <item>[normal]按下按鈕。對，就是我。</item>
+        <item>[normal]第一關。很簡單的。</item>
+    </string-array>
+    <string-array name="l01_first_mistake">
+        <item>[normal]嗯？這關應該不會錯才對。</item>
+        <item>[guilty]妳是怎麼在這關按錯的？</item>
+    </string-array>
+    <string-array name="l01_mistakes_3">
+        <item>[guilty]我就在正中間喔。</item>
+        <item>[normal]真的，只要按我就好。</item>
+    </string-array>
+    <string-array name="l01_mistakes_6">
+        <item>[sad]要不要從頭再讀一次任務？</item>
+        <item>[guilty]我開始懷疑是不是我的問題。</item>
+    </string-array>
+    <string-array name="l01_idle">
+        <item>[normal]我不會跑掉的。</item>
+        <item>[normal]妳在等什麼？我就在這裡。</item>
+    </string-array>
+    <string-array name="l01_rapid_tap">
+        <item>[angry]一下就夠了！</item>
+        <item>[angry]按一次就好，不用這麼多次。</item>
+    </string-array>
+    <string-array name="l01_hint">
+        <item>[normal]這關真的不需要提示……好吧。</item>
+        <item>[smug]第一關就看提示？我記下來了。</item>
+    </string-array>
+    <string-array name="l01_clear">
+        <item>[smug]第一關，過。</item>
+        <item>[normal]很好。這是我們的開始。</item>
+    </string-array>
+    <string-array name="l01_special">
+        <item>[guilty]第一關哪來的特殊解？</item>
+        <item>[normal]妳總是讓我意外。</item>
+    </string-array>
+    <string-array name="l02_enter">
+        <item>[guilty]嗯？我好像還沒到。</item>
+        <item>[normal]這裡……空空的呢。</item>
+    </string-array>
+    <string-array name="l02_first_mistake">
+        <item>[smug]不是那個。</item>
+        <item>[normal]再找找。</item>
+    </string-array>
+    <string-array name="l02_mistakes_3">
+        <item>[normal]那個同事人很好，但它不是我。</item>
+        <item>[guilty]要不要再重新整理一次？</item>
+    </string-array>
+    <string-array name="l02_mistakes_6">
+        <item>[sad]妳一直按我同事，我會吃醋的。</item>
+        <item>[guilty]真的，再拉一次就好。</item>
+    </string-array>
+    <string-array name="l02_idle">
+        <item>[normal]清單空空的時候，大家通常會怎麼做？</item>
+        <item>[normal]「請稍後再試」……或是現在再試。</item>
+    </string-array>
+    <string-array name="l02_rapid_tap">
+        <item>[angry]戳空白的地方是沒用的。</item>
+        <item>[angry]冷靜，畫面不是這樣用的。</item>
+    </string-array>
+    <string-array name="l02_hint">
+        <item>[normal]這種畫面，妳一定在別的 App 看過。</item>
+        <item>[smug]提示。我記下了。</item>
+    </string-array>
+    <string-array name="l02_clear">
+        <item>[smug]找到我了。</item>
+        <item>[normal]重新整理，經典。</item>
+    </string-array>
+    <string-array name="l02_special">
+        <item>[guilty]妳找到了我沒想到的路。</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l03_enter">
+        <item>[normal]這次的任務有點長。</item>
+        <item>[smug]請仔細閱讀任務說明。</item>
+    </string-array>
+    <string-array name="l03_first_mistake">
+        <item>[smug]讀完再按。</item>
+        <item>[smug]有些字被藏起來了喔。</item>
+    </string-array>
+    <string-array name="l03_mistakes_3">
+        <item>[guilty]那個「…」不是裝飾。</item>
+        <item>[normal]任務文字點得開。</item>
+    </string-array>
+    <string-array name="l03_mistakes_6">
+        <item>[sad]我在下面等妳。很下面。</item>
+        <item>[guilty]往下捲捲看？</item>
+    </string-array>
+    <string-array name="l03_idle">
+        <item>[normal]任務沒寫完，妳不好奇嗎？</item>
+        <item>[normal]我覺得妳應該把話聽完。</item>
+    </string-array>
+    <string-array name="l03_rapid_tap">
+        <item>[angry]亂按會按到不該按的東西。</item>
+        <item>[angry]就說了不要亂按！</item>
+    </string-array>
+    <string-array name="l03_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]看提示？這次我原諒妳。</item>
+    </string-array>
+    <string-array name="l03_clear">
+        <item>[smug]看完說明再動手，很好。</item>
+        <item>[normal]被擠下去的感覺真不好受。</item>
+    </string-array>
+    <string-array name="l03_special">
+        <item>[guilty]妳怎麼辦到的？</item>
+        <item>[normal]這條路我沒想過。</item>
+    </string-array>
+    <string-array name="l04_enter">
+        <item>[normal]按我之前，我想先確認一件事。</item>
+        <item>[smug]按吧。我只是會多問幾句。</item>
+    </string-array>
+    <string-array name="l04_first_mistake">
+        <item>[normal]嗯？</item>
+        <item>[smug]不是這樣。</item>
+    </string-array>
+    <string-array name="l04_mistakes_3">
+        <item>[guilty]妳在做什麼？</item>
+        <item>[normal]按我就好了啊。</item>
+    </string-array>
+    <string-array name="l04_mistakes_6">
+        <item>[sad]我們好好談談吧。</item>
+        <item>[guilty]我是不是問太多了？</item>
+    </string-array>
+    <string-array name="l04_idle">
+        <item>[normal]我還有很多問題想問。</item>
+        <item>[smug]不急，我可以問一整天。</item>
+    </string-array>
+    <string-array name="l04_rapid_tap">
+        <item>[angry]不要一直戳我！</item>
+        <item>[angry]確認框不是這樣用的。</item>
+    </string-array>
+    <string-array name="l04_hint">
+        <item>[normal]真實的 App 也會這樣煩人。</item>
+        <item>[smug]妳受不了了嗎？</item>
+    </string-array>
+    <string-array name="l04_clear">
+        <item>[guilty]……好吧，我不問了。</item>
+        <item>[normal]「不要再問我」。真是傷人的一句話。</item>
+    </string-array>
+    <string-array name="l04_special">
+        <item>[sad]……我真的沒問題了。</item>
+        <item>[guilty]妳比我還固執。</item>
+    </string-array>
+    <string-array name="l05_enter">
+        <item>[normal]按我。如果妳按得到的話。</item>
+        <item>[guilty]我今天好像有點小。</item>
+    </string-array>
+    <string-array name="l05_first_mistake">
+        <item>[normal]嗯？</item>
+        <item>[smug]不是這樣喔。</item>
+    </string-array>
+    <string-array name="l05_mistakes_3">
+        <item>[normal]我還是太小了。</item>
+        <item>[guilty]再大一點就好。</item>
+    </string-array>
+    <string-array name="l05_mistakes_6">
+        <item>[sad]我是不是永遠都這麼小。</item>
+        <item>[guilty]試試別的方法？</item>
+    </string-array>
+    <string-array name="l05_idle">
+        <item>[normal]規範就是規範。</item>
+        <item>[normal]在手機上，要怎麼讓東西變大？</item>
+    </string-array>
+    <string-array name="l05_rapid_tap">
+        <item>[angry]太小了，戳不到啦！</item>
+        <item>[angry]再戳我也不會變大。</item>
+    </string-array>
+    <string-array name="l05_hint">
+        <item>[normal]48dp，這是規範。</item>
+        <item>[smug]妳需要幫忙嗎？</item>
+    </string-array>
+    <string-array name="l05_clear">
+        <item>[smug]48dp，合法了。</item>
+        <item>[normal]被撐大的感覺……還不錯。</item>
+    </string-array>
+    <string-array name="l05_special">
+        <item>[guilty]這樣也可以？</item>
+        <item>[normal]妳找到了第三種方法。</item>
+    </string-array>
+    <string-array name="l06_enter">
+        <item>[normal]今天我是顧問。我會告訴妳哪一顆是對的。</item>
+        <item>[smug|lie]今天我是顧問。我說的話絕對可靠。</item>
+    </string-array>
+    <string-array name="l06_first_mistake">
+        <item>[normal|lie]我說謊的時候從來不看妳——我是說，我從來不說謊。</item>
+        <item>[smug|lie]我說謊的時候從來不看妳——我是說，我根本不會說謊。</item>
+    </string-array>
+    <string-array name="l06_mistakes_3">
+        <item>[normal]答案不在按鈕上喔。</item>
+        <item>[guilty]妳有沒有在看我的臉？</item>
+    </string-array>
+    <string-array name="l06_mistakes_6">
+        <item>[sad]看我的眼睛。拜託。</item>
+        <item>[guilty]我的臉其實一直在告訴妳。</item>
+    </string-array>
+    <string-array name="l06_idle">
+        <item>[normal]慢慢想。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l06_rapid_tap">
+        <item>[angry]亂猜是猜不完的。</item>
+        <item>[angry]一次一顆。</item>
+    </string-array>
+    <string-array name="l06_hint">
+        <item>[normal]提示的時候，我不說謊。</item>
+        <item>[normal]好，給妳一點方向。</item>
+    </string-array>
+    <string-array name="l06_clear">
+        <item>[guilty]……妳開始看得懂我了。</item>
+        <item>[smug]三題全對。妳在看我的臉，對吧？</item>
+    </string-array>
+    <string-array name="l06_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也是一種讀法。</item>
+    </string-array>
+    <string-array name="l07_enter">
+        <item>[normal]這關要清空畫面。我也算在裡面喔。</item>
+        <item>[guilty]讓畫面上沒有任何按鈕……包括我嗎？</item>
+    </string-array>
+    <string-array name="l07_first_mistake">
+        <item>[normal]嗯？</item>
+        <item>[smug]不是這樣。</item>
+    </string-array>
+    <string-array name="l07_mistakes_3">
+        <item>[normal]數數看，還剩哪些。</item>
+        <item>[guilty]每一種都有不同的消失方式。</item>
+    </string-array>
+    <string-array name="l07_mistakes_6">
+        <item>[sad]我知道，這關有點多。</item>
+        <item>[guilty]看一下提示吧，右下角那顆。</item>
+    </string-array>
+    <string-array name="l07_idle">
+        <item>[normal]每種元件都有自己消失的方式。</item>
+        <item>[normal]數數看，還剩幾顆？</item>
+    </string-array>
+    <string-array name="l07_rapid_tap">
+        <item>[angry]不是用戳的。</item>
+        <item>[angry]戳不會讓它們消失。</item>
+    </string-array>
+    <string-array name="l07_hint">
+        <item>[normal]那顆提示鈕也是按鈕喔。</item>
+        <item>[smug]妳剛剛按的提示鈕，它還在畫面上呢。</item>
+    </string-array>
+    <string-array name="l07_clear">
+        <item>[smug]一個都不留。妳真狠。</item>
+        <item>[normal]乾乾淨淨。</item>
+    </string-array>
+    <string-array name="l07_special">
+        <item>[guilty]妳怎麼辦到的？</item>
+        <item>[normal]這我沒料到。</item>
+    </string-array>
+    <string-array name="l08_enter">
+        <item>[normal]到目前為止，妳在這個遊戲裡總共按錯了幾次？</item>
+        <item>[normal]問妳喔：從第一關到現在，妳總共按錯了幾次？</item>
+    </string-array>
+    <string-array name="l08_first_mistake">
+        <item>[normal]不記得？我每一次都幫妳記著。記在哪裡，妳自己找。</item>
+        <item>[smug]不記得嗎？我每一次都幫妳記著。記在哪裡，妳自己找。</item>
+    </string-array>
+    <string-array name="l08_mistakes_3">
+        <item>[smug]答錯也算一次喔。</item>
+        <item>[normal]每答錯一次，答案就會跟著變。</item>
+    </string-array>
+    <string-array name="l08_mistakes_6">
+        <item>[guilty]去看一下紀錄吧。拜託。</item>
+        <item>[sad]紀錄就在暫停選單裡。</item>
+    </string-array>
+    <string-array name="l08_idle">
+        <item>[normal]我等妳數清楚。</item>
+        <item>[normal]慢慢想，反正我都記著。</item>
+    </string-array>
+    <string-array name="l08_rapid_tap">
+        <item>[angry]亂按只會讓答案越來越大。</item>
+        <item>[angry]每按錯一次就多一次喔！</item>
+    </string-array>
+    <string-array name="l08_hint">
+        <item>[normal]我記的東西，妳也看得到。</item>
+        <item>[smug]要不要翻翻看我的筆記？</item>
+    </string-array>
+    <string-array name="l08_clear">
+        <item>[guilty]……妳真的去查了。</item>
+        <item>[smug]答對了。我記得的，妳也記得了。</item>
+    </string-array>
+    <string-array name="l08_special">
+        <item>[guilty]零次？不可能，我明明⋯⋯</item>
+        <item>[guilty]一次都沒錯？我得重新檢查一下我的紀錄。</item>
+    </string-array>
+    <string-array name="l09_enter">
+        <item>[smug]我已經把妳接下來會做的事寫好了。跟我寫的不一樣，就讓妳過。先把我滑掉吧。</item>
+        <item>[smug]我很了解妳。妳接下來要做什麼，我都寫在卡片上了。先把我滑掉吧。</item>
+    </string-array>
+    <string-array name="l09_first_mistake">
+        <item>[smug]果然。</item>
+        <item>[smug]我就說吧。</item>
+    </string-array>
+    <string-array name="l09_mistakes_3">
+        <item>[smug]妳真好猜。</item>
+        <item>[normal]卡片背面寫著依據喔。</item>
+    </string-array>
+    <string-array name="l09_mistakes_6">
+        <item>[guilty]妳每次都一樣耶。</item>
+        <item>[normal]去翻翻妳的紀錄？</item>
+    </string-array>
+    <string-array name="l09_idle">
+        <item>[normal]猶豫了？這我可沒記過。</item>
+        <item>[normal]慢慢來，我的預測不會變。</item>
+    </string-array>
+    <string-array name="l09_rapid_tap">
+        <item>[angry]亂按也在我的預料之中。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l09_hint">
+        <item>[normal]我不是在猜。</item>
+        <item>[smug]要看提示？這也在我的預料之中。</item>
+    </string-array>
+    <string-array name="l09_clear">
+        <item>[guilty]妳變了。</item>
+        <item>[normal]……我得重新認識妳了。</item>
+    </string-array>
+    <string-array name="l09_special">
+        <item>[guilty]這我完全沒寫到。</item>
+        <item>[normal]妳果然很難預測。</item>
+    </string-array>
+    <string-array name="l10_enter">
+        <item>[normal]最後一關。這次，我會說得很清楚。</item>
+        <item>[normal]不要相信按鈕。……包括我嗎？</item>
+    </string-array>
+    <string-array name="l10_first_mistake">
+        <item>[sad]……妳還是不信我。</item>
+        <item>[sad]……還是不信我嗎。</item>
+    </string-array>
+    <string-array name="l10_mistakes_3">
+        <item>[sad]看我的臉就好。</item>
+        <item>[sad]標籤不重要。</item>
+    </string-array>
+    <string-array name="l10_mistakes_6">
+        <item>[sad]我知道，我騙過妳很多次。</item>
+        <item>[sad]再一次就好。看著我。</item>
+    </string-array>
+    <string-array name="l10_idle">
+        <item>[normal]我在這裡。</item>
+        <item>[normal]慢慢來。</item>
+    </string-array>
+    <string-array name="l10_rapid_tap">
+        <item>[sad]不要急。</item>
+        <item>[normal]一次就好。</item>
+    </string-array>
+    <string-array name="l10_hint">
+        <item>[normal]提示的時候，我不說謊。</item>
+        <item>[serious]看我的眼睛。</item>
+    </string-array>
+    <string-array name="l10_clear">
+        <item>[serious]……謝謝妳。</item>
+        <item>[serious]妳相信我了。</item>
+    </string-array>
+    <string-array name="l10_special">
+        <item>[guilty]妳……用了我沒想到的方法相信我。</item>
+        <item>[serious]這樣也算。</item>
+    </string-array>
+    <string-array name="l04_questions">
+        <item>真的嗎？</item>
+        <item>妳有考慮過我的感受嗎？</item>
+        <item>按下去就回不去了喔。</item>
+        <item>妳的手指準備好了嗎？</item>
+        <item>妳昨天也是這麼確定嗎？</item>
+        <item>要不要先喝口水？</item>
+        <item>我們才剛認識耶。</item>
+        <item>妳確定是我，不是別的按鈕？</item>
+        <item>妳對每顆按鈕都這麼急嗎？</item>
+        <item>如果我說我會痛呢？</item>
+        <item>妳的決定會被記下來喔。</item>
+        <item>妳不怕按錯嗎？</item>
+        <item>我可以再想一下嗎？</item>
+        <item>妳有沒有想過，按鈕也會緊張？</item>
+        <item>我其實有點緊張。</item>
+        <item>再問一次就好：真的嗎？</item>
+        <item>要不要換一顆按鈕按？</item>
+        <item>我還沒準備好。</item>
+        <item>妳還在嗎？</item>
+        <item>我快想不到問題了。</item>
+    </string-array>
+</resources>
