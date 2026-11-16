@@ -71,6 +71,8 @@ object Level10TrustMe : Level {
     @Serializable
     data class State(
         val rounds: List<Round> = Rules.firstAttempt,
+        /** 第 117 關關掉了「可以說謊」：這一關它一句謊都不說。 */
+        val honestOnly: Boolean = false,
         /** 0、1 是標籤回合，2 是最後一回合。 */
         val index: Int = 0,
         val failures: Int = 0,
@@ -88,6 +90,9 @@ object Level10TrustMe : Level {
             Round(Label.Correct, honest = false, correctOnLeft = true, tell = Tell.LieObvious),
             Round(Label.Wrong, honest = true, correctOnLeft = false),
         )
+
+        /** 同樣的回合，全部改成實話。 */
+        fun honest(rounds: List<Round>) = rounds.map { it.copy(honest = true, tell = Tell.Honest) }
 
         fun other(label: Label) = if (label == Label.Correct) Label.Wrong else Label.Correct
 
@@ -130,7 +135,7 @@ object Level10TrustMe : Level {
             } else {
                 val failures = s.failures + 1
                 s.copy(
-                    rounds = randomRounds(Random(s.seed + failures)),
+                    rounds = randomRounds(Random(s.seed + failures)).let { if (s.honestOnly) honest(it) else it },
                     index = 0,
                     failures = failures,
                     phase = Phase.Feedback,
@@ -145,11 +150,19 @@ object Level10TrustMe : Level {
 
     @Composable
     override fun Content(scope: LevelScope) {
-        var state by rememberLevelState(State.serializer()) { State() }
+        val lying = scope.memory.text(Keys.LyingSwitch)
+        var state by rememberLevelState(State.serializer()) {
+            if (lying == Level117LieSwitch.OFF) State(rounds = Rules.honest(Rules.firstAttempt), honestOnly = true) else State()
+        }
 
         fun present() {
             if (state.index >= FINAL_ROUND) {
-                scope.say(Line.Res(R.string.l10_final), Mood.Serious, Tell.Honest)
+                val finalLine = when (lying) {
+                    Level117LieSwitch.OFF -> R.string.l10_final_off
+                    Level117LieSwitch.ON -> R.string.l10_final_on
+                    else -> R.string.l10_final
+                }
+                scope.say(Line.Res(finalLine), Mood.Serious, Tell.Honest)
                 return
             }
             val r = state.rounds[state.index]

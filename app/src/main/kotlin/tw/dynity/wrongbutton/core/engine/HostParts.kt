@@ -54,7 +54,7 @@ import tw.dynity.wrongbutton.core.ui.WbOverlay
 import tw.dynity.wrongbutton.ui.theme.TaskTextStyle
 
 @Composable
-fun HostTopBar(title: String, onPause: () -> Unit, onHint: () -> Unit, modifier: Modifier = Modifier) {
+fun HostTopBar(title: String, onPause: () -> Unit, onHint: () -> Unit, modifier: Modifier = Modifier, hintFace: Boolean = false) {
     Row(
         modifier
             .fillMaxWidth()
@@ -76,7 +76,15 @@ fun HostTopBar(title: String, onPause: () -> Unit, onHint: () -> Unit, modifier:
             overflow = TextOverflow.Ellipsis,
         )
         IconButton(onClick = onHint, modifier = Modifier.testTag("host_hint")) {
-            Icon(WbIcons.Hint, contentDescription = stringResource(R.string.host_hint_cd))
+            if (hintFace) {
+                val cd = stringResource(R.string.host_hint_face_cd)
+                tw.dynity.wrongbutton.core.character.ButtonCharacter(
+                    tw.dynity.wrongbutton.core.character.Mood.Normal, tw.dynity.wrongbutton.core.character.Tell.Honest, 28.dp,
+                    modifier = Modifier.semantics { contentDescription = cd }, describe = false,
+                )
+            } else {
+                Icon(WbIcons.Hint, contentDescription = stringResource(R.string.host_hint_cd))
+            }
         }
     }
 }

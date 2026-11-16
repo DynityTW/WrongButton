@@ -1,8 +1,8 @@
-# Wrong Button（v0.3）
+# Wrong Button（v0.4）
 
 一個看起來像普通 Android App 的畫面裡，住著一顆有感情、會說謊、而且記得玩家做過什麼的按鈕。
-目前可玩 20 關：第 1 章〈信任問題〉15 關，加上垂直切片留下來的 5 關（暫放在「搶先體驗」）。
-完整版 120 關的規劃見 [`docs/DESIGN.md`](docs/DESIGN.md)。
+全部 120 關、8 章都可以玩：信任問題、讀臉、手勢、它記得妳、填好再送出、改版、後台、相信我。
+設計與每一關的細節見 [`docs/DESIGN.md`](docs/DESIGN.md) 和 [`docs/levels/`](docs/levels/)。
 
 ## 建置與測試
 

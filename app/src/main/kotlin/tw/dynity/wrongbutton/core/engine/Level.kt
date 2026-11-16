@@ -22,6 +22,8 @@ data class LevelChrome(
     val taskText: Boolean = true,
     /** 對話泡泡由 Host 擺放；為 false 時關卡自己用 [LevelScope.SpeechBubble] 擺。 */
     val speechBubble: Boolean = true,
+    /** 提示鈕的圖示換成 The Button 的小臉（第 118 關）。 */
+    val hintFace: Boolean = false,
 )
 
 /** 紀錄頁上的一行字：字串資源加參數。 */

@@ -135,10 +135,13 @@ object Levels {
                 Level102KeepState, Level103ZeroWidth, Level104Rules, Level105Trust, Level106Rebuild,
             ),
         ),
-        // 〈相信我〉在完整版是第 120 關；第 8 章完成前先放在這裡試玩。
         Chapter(
-            R.string.chapter_preview,
+            R.string.chapter_8,
             listOf(
+                Level107YourTurn, Level108FewerLies, Level109HonestMistake, Level110YouAdvise, Level111LastAdvice,
+                Level112KeepOne, Level113OnlyYou, Level114AboutYouForm, Level115LetMeChoose, Level116DoYouRemember,
+                Level117LieSwitch, Level118LastHint, Level119TryLater, Level120ReadAloud,
+                // 〈相信我〉：最後一關。內部 id 是 10（早期試玩版就有的存檔鍵）。
                 Level10TrustMe,
             ),
         ),
@@ -187,7 +190,12 @@ object Keys {
     val FragName = MemoryKey("frag_name")
     val FragMemory = MemoryKey("frag_memory")
     val DevMode = MemoryKey("l92_dev_mode")
-    val LyingSwitch = MemoryKey("l116_lying_switch")
+    val LyingSwitch = MemoryKey("l117_lying_switch")
+    val Annoying = MemoryKey("l107_annoying")
+    /** 第 113 關的願望。刻意不顯示在紀錄頁（只有妳記得）。 */
+    val Wish = MemoryKey("l113_wish")
+    val FormLike = MemoryKey("l114_like")
+    val KeepRemembering = MemoryKey("l120_keep")
 
     const val LEFT = "left"
     const val RIGHT = "right"

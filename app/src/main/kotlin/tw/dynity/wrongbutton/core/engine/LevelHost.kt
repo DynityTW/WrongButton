@@ -128,6 +128,7 @@ fun LevelHost(
                     title = title,
                     onPause = { vm.openOverlay(HostOverlay.Pause) },
                     onHint = { vm.openOverlay(HostOverlay.Hints) },
+                    hintFace = chrome.hintFace,
                 )
             }
             BoxWithConstraints(Modifier.weight(1f)) {
