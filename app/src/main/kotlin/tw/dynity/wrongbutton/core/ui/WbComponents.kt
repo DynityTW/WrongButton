@@ -7,6 +7,7 @@ import androidx.compose.foundation.gestures.awaitEachGesture
 import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.awaitHorizontalTouchSlopOrCancellation
 import androidx.compose.foundation.gestures.horizontalDrag
+import androidx.compose.ui.input.pointer.util.VelocityTracker
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -54,6 +55,23 @@ fun WbPullToRefresh(
 
 enum class SwipeDirection { Left, Right }
 
+/** 放手時要不要算「滑掉」。純函式，單位都是 px 與 px/秒。 */
+object SwipeRules {
+    /** 拖過元件寬度的這個比例就算滑掉（不看速度）。 */
+    const val DISTANCE_FRACTION = 0.4f
+
+    /**
+     * 慢慢拖：超過寬度 40%（至少 [minDistancePx]）。
+     * 快速一甩：朝同一個方向、速度超過 [flingVelocityPx]，而且至少拖了 [minFlingTravelPx]。
+     */
+    fun shouldDismiss(travelPx: Float, velocityPx: Float, widthPx: Float, minDistancePx: Float, flingVelocityPx: Float, minFlingTravelPx: Float): Boolean {
+        val distance = maxOf(widthPx * DISTANCE_FRACTION, minDistancePx)
+        if (abs(travelPx) >= distance) return true
+        val sameDirection = travelPx != 0f && sign(travelPx) == sign(velocityPx)
+        return sameDirection && abs(velocityPx) >= flingVelocityPx && abs(travelPx) >= minFlingTravelPx
+    }
+}
+
 /** 水平滑掉的狀態。[offsetX] 可以拿來算傾斜角度。 */
 @Stable
 class SwipeDismissState {
@@ -99,20 +117,31 @@ fun Modifier.swipeToDismiss(
             awaitEachGesture {
                 val down = awaitFirstDown(requireUnconsumed = false)
                 var lastTime = down.uptimeMillis
+                val velocity = VelocityTracker()
+                velocity.addPosition(down.uptimeMillis, down.position)
                 val slop = awaitHorizontalTouchSlopOrCancellation(down.id) { change, over ->
                     change.consume()
                     state.offsetX += over
                     lastTime = change.uptimeMillis
+                    velocity.addPosition(change.uptimeMillis, change.position)
                 } ?: return@awaitEachGesture
                 start()
                 horizontalDrag(slop.id) { change ->
                     state.offsetX += change.positionChange().x
                     lastTime = change.uptimeMillis
+                    velocity.addPosition(change.uptimeMillis, change.position)
                     change.consume()
                 }
                 val travel = state.offsetX
-                val threshold = maxOf(state.widthPx * 0.6f, 72.dp.toPx())
-                if (abs(travel) >= threshold) {
+                val dismiss = SwipeRules.shouldDismiss(
+                    travelPx = travel,
+                    velocityPx = velocity.calculateVelocity().x,
+                    widthPx = state.widthPx,
+                    minDistancePx = 72.dp.toPx(),
+                    flingVelocityPx = 800.dp.toPx(),
+                    minFlingTravelPx = 24.dp.toPx(),
+                )
+                if (dismiss) {
                     val dir = if (travel < 0) SwipeDirection.Left else SwipeDirection.Right
                     val held = lastTime - down.uptimeMillis
                     scope.launch {

@@ -177,6 +177,8 @@ object Keys {
     val L7Hesitation = MemoryKey("l7_hesitation_ms")
     val L10PressDelay = MemoryKey("l10_press_delay_ms")
     val Grudge = MemoryKey("l49_grudge")
+    /** 〈忘掉一件事〉這一輪已經記過仇了（"1"）；通關後設回 "0"，重玩時才會再記一次。 */
+    val GrudgePlanted = MemoryKey("l49_grudge_planted")
     val KeptShape = MemoryKey("l51_kept_shape")
     val Achievement = MemoryKey("l54_achievement")
     val DraftStage = MemoryKey("l55_draft_stage")

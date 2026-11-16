@@ -66,5 +66,5 @@
 - 截圖與手勢都在 Robolectric 上驗證過，尚未在實機上試玩。實機上還需要確認的手感：
   - 雙指縮放
   - 下拉重新整理的距離
-  - 滑掉的門檻（元件寬度的 60% 或 72dp）
+  - 滑掉的門檻：慢慢拖要超過元件寬度的 40%（至少 72dp）；快速一甩只要朝同一方向拖 24dp 以上、速度超過 800dp/秒
 - `androidx.profileinstaller` 的 receiver 帶有 `android:permission="android.permission.DUMP"`。這是限制「誰可以呼叫它」的屬性，不是本 App 宣告或請求的權限，所以權限檢查會放行。

@@ -119,7 +119,12 @@ private fun RecordLine(text: String) {
 }
 
 @Composable
-fun RecordsScreen(memory: PlayerMemory, levels: List<Level>, onBack: () -> Unit) {
+fun RecordsScreen(
+    memory: PlayerMemory,
+    levels: List<Level>,
+    onBack: () -> Unit,
+    onForget: (tw.dynity.wrongbutton.core.memory.MemoryKey) -> Unit,
+) {
     ScreenScaffold(title = stringResource(R.string.records_title), onBack = onBack) {
         Column(
             Modifier
@@ -135,7 +140,7 @@ fun RecordsScreen(memory: PlayerMemory, levels: List<Level>, onBack: () -> Unit)
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(bottom = 12.dp),
             )
-            RecordsContent(memory, levels)
+            RecordsContent(memory, levels, onForget = onForget)
         }
     }
 }

@@ -82,7 +82,13 @@ fun WrongButtonNavigation(container: AppContainer) {
                 )
             }
             entry<RecordsKey> {
-                RecordsScreen(memory = memory, levels = Levels.all, onBack = { popTo(TitleKey) })
+                RecordsScreen(
+                    memory = memory,
+                    levels = Levels.all,
+                    onBack = { popTo(TitleKey) },
+                    // 主選單的紀錄頁也要能滑掉（例如〈忘掉一件事〉）。
+                    onForget = { key -> container.memory.update { tw.dynity.wrongbutton.core.memory.MemoryOps.forgetFact(it, key) } },
+                )
             }
             entry<SettingsKey> {
                 SettingsScreen(

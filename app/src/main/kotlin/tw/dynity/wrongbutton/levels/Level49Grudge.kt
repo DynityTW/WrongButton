@@ -50,30 +50,45 @@ object Level49Grudge : Level {
         if (memory.text(Keys.Grudge) != null) listOf(Fact(R.string.fact_l49, listOf(Levels.numberOf(id)), forgettable = Keys.Grudge)) else emptyList()
 
     @Serializable
-    data class State(val planted: Boolean = false, val forgiven: Boolean = false)
+    data class State(val forgiven: Boolean = false)
+
+    object Rules {
+        /**
+         * 這一輪還沒記仇時才記。記過的仇存在記憶裡（不是關卡狀態），
+         * 所以離開關卡、從主選單的紀錄頁滑掉再回來，仇也不會被重新記上。
+         */
+        fun shouldPlant(planted: String?) = planted != PLANTED
+        const val PLANTED = "1"
+        const val DONE = "0"
+    }
 
     @Composable
     override fun Content(scope: LevelScope) {
         var state by rememberLevelState(State.serializer()) { State() }
         val holding = scope.memory.text(Keys.Grudge) != null
+        val planted = !Rules.shouldPlant(scope.memory.text(Keys.GrudgePlanted))
         LaunchedEffect(Unit) {
-            if (!state.planted) {
+            if (Rules.shouldPlant(scope.memory.text(Keys.GrudgePlanted))) {
                 scope.remember(Keys.Grudge, MemoryValue.Text("hello"))
-                state = state.copy(planted = true)
+                scope.remember(Keys.GrudgePlanted, MemoryValue.Text(Rules.PLANTED))
                 delay(1_200)
                 scope.say(Line.Res(R.string.l49_grudge), Mood.Angry, Tell.Honest)
             }
         }
-        LaunchedEffect(holding, state.planted) {
-            if (state.planted && !holding && !state.forgiven) {
+        LaunchedEffect(holding, planted) {
+            if (planted && !holding && !state.forgiven) {
                 state = state.copy(forgiven = true)
                 scope.say(Line.Res(R.string.l49_forgot), Mood.Guilty, Tell.Honest)
             }
         }
         LevelColumn {
             PressableButton(scope, 140.dp, onClick = {
-                if (holding || !state.planted) scope.say(Line.Res(R.string.l49_refuse), Mood.Angry, Tell.Honest)
-                else { scope.cue(Cue.Tap); scope.complete() }
+                if (holding || !planted) scope.say(Line.Res(R.string.l49_refuse), Mood.Angry, Tell.Honest)
+                else {
+                    scope.remember(Keys.GrudgePlanted, MemoryValue.Text(Rules.DONE))
+                    scope.cue(Cue.Tap)
+                    scope.complete()
+                }
             })
         }
     }
