@@ -99,6 +99,26 @@ object Levels {
                 Level61WhoAreYou,
             ),
         ),
+        Chapter(
+            R.string.chapter_5,
+            listOf(
+                Level62Required,
+                Level63RedText,
+                Level64Booking,
+                Level65Other,
+                Level66ClearChoice,
+                Level67SelectAll,
+                Level68Keyboard,
+                Level69Wizard,
+                Level70Autocomplete,
+                Level71LastTime,
+                Level72Typo,
+                Level73OnesDigit,
+                Level74ThreePm,
+                Level75Rating,
+                Level76Dictation,
+            ),
+        ),
         // 〈相信我〉在完整版是第 120 關；第 8 章完成前先放在這裡試玩。
         Chapter(
             R.string.chapter_preview,
@@ -141,6 +161,9 @@ object Keys {
     val KeptShape = MemoryKey("l51_kept_shape")
     val Achievement = MemoryKey("l54_achievement")
     val DraftStage = MemoryKey("l55_draft_stage")
+    /** 第 61 關玩家輸入的「稱呼」。全遊戲唯一存下的文字，只存本機，「忘記我」會清除。 */
+    val Nickname = MemoryKey("l62_nickname")
+    val FirstStars = MemoryKey("l75_first_stars")
 
     const val LEFT = "left"
     const val RIGHT = "right"

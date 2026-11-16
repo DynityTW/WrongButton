@@ -2242,6 +2242,546 @@
         <item>[guilty]這招我沒想到。</item>
         <item>[smug]厲害。</item>
     </string-array>
+    <string-array name="l62_enter">
+        <item>[normal]以前妳想按就按。現在我想確定，妳是認真的。</item>
+        <item>[smug]請填寫按鈕申請表。</item>
+    </string-array>
+    <string-array name="l62_first_mistake">
+        <item>[smug]表單不合格。</item>
+        <item>[normal]有地方填錯了。</item>
+    </string-array>
+    <string-array name="l62_mistakes_3">
+        <item>[guilty]看一下紅字。</item>
+        <item>[normal]表單會告訴妳哪裡不對。</item>
+    </string-array>
+    <string-array name="l62_mistakes_6">
+        <item>[sad]填表很累，我知道。</item>
+        <item>[guilty]看一下提示吧。</item>
+    </string-array>
+    <string-array name="l62_idle">
+        <item>[normal]慢慢填。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l62_rapid_tap">
+        <item>[angry]亂按送出鈕沒有用。</item>
+        <item>[angry]先把表填好！</item>
+    </string-array>
+    <string-array name="l62_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l62_clear">
+        <item>[smug]申請通過。</item>
+        <item>[normal]表單收到了。</item>
+    </string-array>
+    <string-array name="l62_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l63_enter">
+        <item>[normal]填好再送出。</item>
+        <item>[smug]這張表有驗證功能喔。</item>
+    </string-array>
+    <string-array name="l63_first_mistake">
+        <item>[smug]再檢查一次。</item>
+        <item>[normal]這樣不行喔。</item>
+    </string-array>
+    <string-array name="l63_mistakes_3">
+        <item>[guilty]星號、紅字、小字，都是線索。</item>
+        <item>[normal]慢慢填。</item>
+    </string-array>
+    <string-array name="l63_mistakes_6">
+        <item>[sad]我不是故意刁難妳。……大部分不是。</item>
+        <item>[guilty]其實很簡單的。</item>
+    </string-array>
+    <string-array name="l63_idle">
+        <item>[normal]表單不會跑掉。</item>
+        <item>[normal]填好再送出。</item>
+    </string-array>
+    <string-array name="l63_rapid_tap">
+        <item>[angry]冷靜點。</item>
+        <item>[angry]停用的按鈕按再多次也一樣。</item>
+    </string-array>
+    <string-array name="l63_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l63_clear">
+        <item>[smug]填得很好。</item>
+        <item>[normal]謝謝妳認真填。</item>
+    </string-array>
+    <string-array name="l63_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l64_enter">
+        <item>[normal]要按我，請先預約。</item>
+        <item>[smug]我很忙的。</item>
+    </string-array>
+    <string-array name="l64_first_mistake">
+        <item>[smug]表單不合格。</item>
+        <item>[normal]有地方填錯了。</item>
+    </string-array>
+    <string-array name="l64_mistakes_3">
+        <item>[guilty]看一下紅字。</item>
+        <item>[normal]表單會告訴妳哪裡不對。</item>
+    </string-array>
+    <string-array name="l64_mistakes_6">
+        <item>[sad]填表很累，我知道。</item>
+        <item>[guilty]看一下提示吧。</item>
+    </string-array>
+    <string-array name="l64_idle">
+        <item>[normal]慢慢填。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l64_rapid_tap">
+        <item>[angry]亂按送出鈕沒有用。</item>
+        <item>[angry]先把表填好！</item>
+    </string-array>
+    <string-array name="l64_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l64_clear">
+        <item>[smug]申請通過。</item>
+        <item>[normal]表單收到了。</item>
+    </string-array>
+    <string-array name="l64_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l65_enter">
+        <item>[normal]請選擇妳的身分。</item>
+        <item>[smug]選項很多，慢慢挑。</item>
+    </string-array>
+    <string-array name="l65_first_mistake">
+        <item>[smug]再檢查一次。</item>
+        <item>[normal]這樣不行喔。</item>
+    </string-array>
+    <string-array name="l65_mistakes_3">
+        <item>[guilty]星號、紅字、小字，都是線索。</item>
+        <item>[normal]慢慢填。</item>
+    </string-array>
+    <string-array name="l65_mistakes_6">
+        <item>[sad]我不是故意刁難妳。……大部分不是。</item>
+        <item>[guilty]其實很簡單的。</item>
+    </string-array>
+    <string-array name="l65_idle">
+        <item>[normal]表單不會跑掉。</item>
+        <item>[normal]填好再送出。</item>
+    </string-array>
+    <string-array name="l65_rapid_tap">
+        <item>[angry]冷靜點。</item>
+        <item>[angry]停用的按鈕按再多次也一樣。</item>
+    </string-array>
+    <string-array name="l65_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l65_clear">
+        <item>[smug]填得很好。</item>
+        <item>[normal]謝謝妳認真填。</item>
+    </string-array>
+    <string-array name="l65_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l66_enter">
+        <item>[normal]最後一題。</item>
+        <item>[sad]這題……妳想清楚再回答。</item>
+    </string-array>
+    <string-array name="l66_first_mistake">
+        <item>[smug]表單不合格。</item>
+        <item>[normal]有地方填錯了。</item>
+    </string-array>
+    <string-array name="l66_mistakes_3">
+        <item>[guilty]看一下紅字。</item>
+        <item>[normal]表單會告訴妳哪裡不對。</item>
+    </string-array>
+    <string-array name="l66_mistakes_6">
+        <item>[sad]填表很累，我知道。</item>
+        <item>[guilty]看一下提示吧。</item>
+    </string-array>
+    <string-array name="l66_idle">
+        <item>[normal]慢慢填。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l66_rapid_tap">
+        <item>[angry]亂按送出鈕沒有用。</item>
+        <item>[angry]先把表填好！</item>
+    </string-array>
+    <string-array name="l66_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l66_clear">
+        <item>[smug]申請通過。</item>
+        <item>[normal]表單收到了。</item>
+    </string-array>
+    <string-array name="l66_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l67_enter">
+        <item>[smug]妳有看清楚自己同意了什麼嗎？</item>
+        <item>[normal]同意事項都幫妳勾好了。</item>
+    </string-array>
+    <string-array name="l67_first_mistake">
+        <item>[smug]再檢查一次。</item>
+        <item>[normal]這樣不行喔。</item>
+    </string-array>
+    <string-array name="l67_mistakes_3">
+        <item>[guilty]星號、紅字、小字，都是線索。</item>
+        <item>[normal]慢慢填。</item>
+    </string-array>
+    <string-array name="l67_mistakes_6">
+        <item>[sad]我不是故意刁難妳。……大部分不是。</item>
+        <item>[guilty]其實很簡單的。</item>
+    </string-array>
+    <string-array name="l67_idle">
+        <item>[normal]表單不會跑掉。</item>
+        <item>[normal]填好再送出。</item>
+    </string-array>
+    <string-array name="l67_rapid_tap">
+        <item>[angry]冷靜點。</item>
+        <item>[angry]停用的按鈕按再多次也一樣。</item>
+    </string-array>
+    <string-array name="l67_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l67_clear">
+        <item>[smug]填得很好。</item>
+        <item>[normal]謝謝妳認真填。</item>
+    </string-array>
+    <string-array name="l67_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l68_enter">
+        <item>[guilty]我被壓住了。又來。</item>
+        <item>[normal]寫點什麼吧。</item>
+    </string-array>
+    <string-array name="l68_first_mistake">
+        <item>[smug]表單不合格。</item>
+        <item>[normal]有地方填錯了。</item>
+    </string-array>
+    <string-array name="l68_mistakes_3">
+        <item>[guilty]看一下紅字。</item>
+        <item>[normal]表單會告訴妳哪裡不對。</item>
+    </string-array>
+    <string-array name="l68_mistakes_6">
+        <item>[sad]填表很累，我知道。</item>
+        <item>[guilty]看一下提示吧。</item>
+    </string-array>
+    <string-array name="l68_idle">
+        <item>[normal]慢慢填。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l68_rapid_tap">
+        <item>[angry]亂按送出鈕沒有用。</item>
+        <item>[angry]先把表填好！</item>
+    </string-array>
+    <string-array name="l68_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l68_clear">
+        <item>[smug]申請通過。</item>
+        <item>[normal]表單收到了。</item>
+    </string-array>
+    <string-array name="l68_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l69_enter">
+        <item>[normal]三個步驟就好。</item>
+        <item>[smug]我幫妳填了一些。不用謝。</item>
+    </string-array>
+    <string-array name="l69_first_mistake">
+        <item>[smug]再檢查一次。</item>
+        <item>[normal]這樣不行喔。</item>
+    </string-array>
+    <string-array name="l69_mistakes_3">
+        <item>[guilty]星號、紅字、小字，都是線索。</item>
+        <item>[normal]慢慢填。</item>
+    </string-array>
+    <string-array name="l69_mistakes_6">
+        <item>[sad]我不是故意刁難妳。……大部分不是。</item>
+        <item>[guilty]其實很簡單的。</item>
+    </string-array>
+    <string-array name="l69_idle">
+        <item>[normal]表單不會跑掉。</item>
+        <item>[normal]填好再送出。</item>
+    </string-array>
+    <string-array name="l69_rapid_tap">
+        <item>[angry]冷靜點。</item>
+        <item>[angry]停用的按鈕按再多次也一樣。</item>
+    </string-array>
+    <string-array name="l69_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l69_clear">
+        <item>[smug]填得很好。</item>
+        <item>[normal]謝謝妳認真填。</item>
+    </string-array>
+    <string-array name="l69_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l70_enter">
+        <item>[normal]妳想按誰？</item>
+        <item>[smug]打字就好。……大概。</item>
+    </string-array>
+    <string-array name="l70_first_mistake">
+        <item>[smug]表單不合格。</item>
+        <item>[normal]有地方填錯了。</item>
+    </string-array>
+    <string-array name="l70_mistakes_3">
+        <item>[guilty]看一下紅字。</item>
+        <item>[normal]表單會告訴妳哪裡不對。</item>
+    </string-array>
+    <string-array name="l70_mistakes_6">
+        <item>[sad]填表很累，我知道。</item>
+        <item>[guilty]看一下提示吧。</item>
+    </string-array>
+    <string-array name="l70_idle">
+        <item>[normal]慢慢填。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l70_rapid_tap">
+        <item>[angry]亂按送出鈕沒有用。</item>
+        <item>[angry]先把表填好！</item>
+    </string-array>
+    <string-array name="l70_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l70_clear">
+        <item>[smug]申請通過。</item>
+        <item>[normal]表單收到了。</item>
+    </string-array>
+    <string-array name="l70_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l71_enter">
+        <item>[normal]妳填過一次了，對吧？</item>
+        <item>[smug]我有幫妳存。</item>
+    </string-array>
+    <string-array name="l71_first_mistake">
+        <item>[smug]再檢查一次。</item>
+        <item>[normal]這樣不行喔。</item>
+    </string-array>
+    <string-array name="l71_mistakes_3">
+        <item>[guilty]星號、紅字、小字，都是線索。</item>
+        <item>[normal]慢慢填。</item>
+    </string-array>
+    <string-array name="l71_mistakes_6">
+        <item>[sad]我不是故意刁難妳。……大部分不是。</item>
+        <item>[guilty]其實很簡單的。</item>
+    </string-array>
+    <string-array name="l71_idle">
+        <item>[normal]表單不會跑掉。</item>
+        <item>[normal]填好再送出。</item>
+    </string-array>
+    <string-array name="l71_rapid_tap">
+        <item>[angry]冷靜點。</item>
+        <item>[angry]停用的按鈕按再多次也一樣。</item>
+    </string-array>
+    <string-array name="l71_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l71_clear">
+        <item>[smug]填得很好。</item>
+        <item>[normal]謝謝妳認真填。</item>
+    </string-array>
+    <string-array name="l71_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l72_enter">
+        <item>[normal]請確認同意事項。</item>
+        <item>[guilty]我打字有點快。</item>
+    </string-array>
+    <string-array name="l72_first_mistake">
+        <item>[smug]表單不合格。</item>
+        <item>[normal]有地方填錯了。</item>
+    </string-array>
+    <string-array name="l72_mistakes_3">
+        <item>[guilty]看一下紅字。</item>
+        <item>[normal]表單會告訴妳哪裡不對。</item>
+    </string-array>
+    <string-array name="l72_mistakes_6">
+        <item>[sad]填表很累，我知道。</item>
+        <item>[guilty]看一下提示吧。</item>
+    </string-array>
+    <string-array name="l72_idle">
+        <item>[normal]慢慢填。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l72_rapid_tap">
+        <item>[angry]亂按送出鈕沒有用。</item>
+        <item>[angry]先把表填好！</item>
+    </string-array>
+    <string-array name="l72_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l72_clear">
+        <item>[smug]申請通過。</item>
+        <item>[normal]表單收到了。</item>
+    </string-array>
+    <string-array name="l72_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l73_enter">
+        <item>[normal]填一個數字就好。</item>
+        <item>[smug]很簡單的。</item>
+    </string-array>
+    <string-array name="l73_first_mistake">
+        <item>[smug]再檢查一次。</item>
+        <item>[normal]這樣不行喔。</item>
+    </string-array>
+    <string-array name="l73_mistakes_3">
+        <item>[guilty]星號、紅字、小字，都是線索。</item>
+        <item>[normal]慢慢填。</item>
+    </string-array>
+    <string-array name="l73_mistakes_6">
+        <item>[sad]我不是故意刁難妳。……大部分不是。</item>
+        <item>[guilty]其實很簡單的。</item>
+    </string-array>
+    <string-array name="l73_idle">
+        <item>[normal]表單不會跑掉。</item>
+        <item>[normal]填好再送出。</item>
+    </string-array>
+    <string-array name="l73_rapid_tap">
+        <item>[angry]冷靜點。</item>
+        <item>[angry]停用的按鈕按再多次也一樣。</item>
+    </string-array>
+    <string-array name="l73_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l73_clear">
+        <item>[smug]填得很好。</item>
+        <item>[normal]謝謝妳認真填。</item>
+    </string-array>
+    <string-array name="l73_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l74_enter">
+        <item>[normal]下午三點整來按我。</item>
+        <item>[normal]記得，下午三點。</item>
+    </string-array>
+    <string-array name="l74_first_mistake">
+        <item>[smug]表單不合格。</item>
+        <item>[normal]有地方填錯了。</item>
+    </string-array>
+    <string-array name="l74_mistakes_3">
+        <item>[guilty]看一下紅字。</item>
+        <item>[normal]表單會告訴妳哪裡不對。</item>
+    </string-array>
+    <string-array name="l74_mistakes_6">
+        <item>[sad]填表很累，我知道。</item>
+        <item>[guilty]看一下提示吧。</item>
+    </string-array>
+    <string-array name="l74_idle">
+        <item>[normal]慢慢填。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l74_rapid_tap">
+        <item>[angry]亂按送出鈕沒有用。</item>
+        <item>[angry]先把表填好！</item>
+    </string-array>
+    <string-array name="l74_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l74_clear">
+        <item>[smug]申請通過。</item>
+        <item>[normal]表單收到了。</item>
+    </string-array>
+    <string-array name="l74_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l75_enter">
+        <item>[normal]請為我評分。</item>
+        <item>[normal]評分一下吧。</item>
+    </string-array>
+    <string-array name="l75_first_mistake">
+        <item>[smug]再檢查一次。</item>
+        <item>[normal]這樣不行喔。</item>
+    </string-array>
+    <string-array name="l75_mistakes_3">
+        <item>[guilty]星號、紅字、小字，都是線索。</item>
+        <item>[normal]慢慢填。</item>
+    </string-array>
+    <string-array name="l75_mistakes_6">
+        <item>[sad]我不是故意刁難妳。……大部分不是。</item>
+        <item>[guilty]其實很簡單的。</item>
+    </string-array>
+    <string-array name="l75_idle">
+        <item>[normal]表單不會跑掉。</item>
+        <item>[normal]填好再送出。</item>
+    </string-array>
+    <string-array name="l75_rapid_tap">
+        <item>[angry]冷靜點。</item>
+        <item>[angry]停用的按鈕按再多次也一樣。</item>
+    </string-array>
+    <string-array name="l75_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l75_clear">
+        <item>[smug]填得很好。</item>
+        <item>[normal]謝謝妳認真填。</item>
+    </string-array>
+    <string-array name="l75_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l76_enter">
+        <item>[normal]我口述，妳來填。</item>
+        <item>[smug]我說什麼，妳就填什麼。……要看我的臉喔。</item>
+    </string-array>
+    <string-array name="l76_first_mistake">
+        <item>[smug]表單不合格。</item>
+        <item>[normal]有地方填錯了。</item>
+    </string-array>
+    <string-array name="l76_mistakes_3">
+        <item>[guilty]看一下紅字。</item>
+        <item>[normal]表單會告訴妳哪裡不對。</item>
+    </string-array>
+    <string-array name="l76_mistakes_6">
+        <item>[sad]填表很累，我知道。</item>
+        <item>[guilty]看一下提示吧。</item>
+    </string-array>
+    <string-array name="l76_idle">
+        <item>[normal]慢慢填。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l76_rapid_tap">
+        <item>[angry]亂按送出鈕沒有用。</item>
+        <item>[angry]先把表填好！</item>
+    </string-array>
+    <string-array name="l76_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l76_clear">
+        <item>[smug]申請通過。</item>
+        <item>[normal]表單收到了。</item>
+    </string-array>
+    <string-array name="l76_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
     <string-array name="l52_fakes">
         <item>第 2 關：妳一次就重新整理成功了，還誇我可愛。</item>
         <item>第 3 關：妳一眼就看懂了被截斷的任務。</item>
@@ -2251,6 +2791,31 @@
         <item>我其實很喜歡被按。</item>
         <item>我從來沒有說過謊。</item>
         <item>我記得妳的一切，而且一點都不在意。</item>
+    </string-array>
+    <string-array name="l65_options">
+        <item>同事</item>
+        <item>同事的同事</item>
+        <item>一般按鈕</item>
+        <item>按鈕的朋友</item>
+        <item>路過的游標</item>
+        <item>長得像按鈕的標籤</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="l67_items">
+        <item>同意被同事按</item>
+        <item>同意每天收到按鈕冷知識</item>
+        <item>同意把我讓給別人</item>
+        <item>同意我記得妳的一切</item>
+        <item>同意按下按鈕</item>
+        <item>同意按鈕可以不開心</item>
+        <item>同意以後都用雙擊</item>
+        <item>同意不看我的臉</item>
+        <item>同意不再回來</item>
+    </string-array>
+    <string-array name="l70_suggestions">
+        <item>The Bus</item>
+        <item>The Butler</item>
+        <item>The Button</item>
     </string-array>
     <string-array name="l12_clauses">
         <item>第 1 條：本按鈕（以下簡稱「我」）是一顆按鈕。</item>

@@ -31,7 +31,12 @@ class Player(val rule: AndroidComposeTestRule<ActivityScenarioRule<MainActivity>
     fun texts(n: SemanticsNode) = n.config.getOrNull(SemanticsProperties.Text)?.map { it.text }.orEmpty()
     fun desc(n: SemanticsNode) = n.config.getOrNull(SemanticsProperties.ContentDescription).orEmpty().joinToString()
     fun lying(d: String) = d.contains("看向旁邊") || d.contains("翹起")
-    fun tap(tag: String) = rule.onNodeWithTag(tag).performScrollTo().performClick()
+    /** 能捲就先捲到看得見再點；不在可捲動容器裡就直接點。 */
+    fun tap(tag: String) {
+        val n = rule.onNodeWithTag(tag)
+        runCatching { n.performScrollTo() }
+        n.performClick()
+    }
     fun press(tag: String) = rule.onNodeWithTag(tag).performClick()
     fun speech() = texts(rule.onAllNodesWithTag("speech").onLast().fetchSemanticsNode()).joinToString()
     fun advance(ms: Long) = rule.mainClock.advanceTimeBy(ms)

@@ -245,8 +245,8 @@ class FullPlaythroughTest {
         assertTrue(memory.isCleared(7))
         assertEquals(Keys.LEFT, memory.text(Keys.L7SwipeDirection))
 
-        // 第 4 章由 Chapter4PlaythroughTest 負責；標成已通關後直接去〈相信我〉。
-        container.memory.update { m -> Levels.chapters[3].levels.fold(m) { acc, l -> tw.dynity.wrongbutton.core.memory.MemoryOps.completeLevel(acc, l.id, run) } }
+        // 第 4 章以後由各章的測試負責；把〈相信我〉之前的關卡都標成已通關，直接去〈相信我〉。
+        container.memory.update { m -> Levels.all.takeWhile { it.id != 10 }.fold(m) { acc, l -> tw.dynity.wrongbutton.core.memory.MemoryOps.completeLevel(acc, l.id, run) } }
         rule.onNodeWithTag("result_exit").performScrollTo().performClick()
         waitForTag("select_grid")
         rule.onNodeWithTag("select_grid").performScrollToKey(10)
