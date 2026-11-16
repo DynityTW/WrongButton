@@ -188,7 +188,7 @@ fun LevelSelectScreen(
     ScreenScaffold(title = stringResource(R.string.select_title), onBack = onBack) {
         LazyVerticalGrid(
             columns = GridCells.Adaptive(160.dp),
-            modifier = Modifier.fillMaxSize().padding(horizontal = 12.dp),
+            modifier = Modifier.fillMaxSize().padding(horizontal = 12.dp).testTag("select_grid"),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {

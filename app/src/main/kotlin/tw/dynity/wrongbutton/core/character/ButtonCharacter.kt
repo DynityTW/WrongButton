@@ -59,6 +59,7 @@ fun ButtonCharacter(
     tilt: Float = 0f,
     pressed: Boolean = false,
     describe: Boolean = true,
+    cover: FaceCover = FaceCover.None,
 ) {
     val reduceMotion = LocalReduceMotion.current
     val target = FaceGeometry.spec(mood, tell)
@@ -95,7 +96,7 @@ fun ButtonCharacter(
         v
     }
 
-    val description = if (describe) characterDescription(mood, tell) else null
+    val description = if (describe) characterDescription(mood, tell, cover) else null
     val semanticsModifier = if (description != null) Modifier.semantics { contentDescription = description } else Modifier
 
     Canvas(
@@ -113,11 +114,12 @@ fun ButtonCharacter(
     ) {
         drawBody()
         drawFace(eyeOpen, pupil, browTilt, target.browVisible, target.mouthY, mouthWidth, mouthCurve, mouthTilt, target.mouthRound, target.blush, mood == Mood.Sleeping)
+        if (cover == FaceCover.Eyes) drawSunglasses()
     }
 }
 
 @Composable
-private fun characterDescription(mood: Mood, tell: Tell): String {
+private fun characterDescription(mood: Mood, tell: Tell, cover: FaceCover): String {
     val name = stringResource(R.string.character_name)
     val moodText = stringResource(
         when (mood) {
@@ -130,12 +132,40 @@ private fun characterDescription(mood: Mood, tell: Tell): String {
             Mood.Sleeping -> R.string.character_mood_sleeping
         },
     )
-    val face = when {
-        mood == Mood.Sleeping -> ""
-        tell.isLie -> stringResource(R.string.character_face_side)
-        else -> stringResource(R.string.character_face_direct)
+    if (mood == Mood.Sleeping) return "$name。$moodText"
+    // 外觀描述拆成眼睛與嘴兩部分；被遮住的部分 TalkBack 也讀不到，和看得見的玩家一致。
+    val eyes = when (cover) {
+        FaceCover.Eyes -> stringResource(R.string.character_eyes_covered)
+        else -> stringResource(if (tell.isLie) R.string.character_eyes_side else R.string.character_eyes_direct)
     }
-    return "$name。$moodText$face"
+    val mouth = when (cover) {
+        FaceCover.Mouth -> stringResource(R.string.character_mouth_covered)
+        else -> stringResource(if (tell.isLie) R.string.character_mouth_tilt else R.string.character_mouth_sym)
+    }
+    return "$name。$moodText$eyes$mouth"
+}
+
+private fun DrawScope.drawSunglasses() {
+    val w = size.width
+    val h = size.height * 0.92f
+    val lensW = FaceGeometry.EYE_RADIUS_X * w * 2.5f
+    val lensH = FaceGeometry.EYE_RADIUS_Y * h * 2.2f
+    val cy = FaceGeometry.EYE_Y * h
+    listOf(0.5f - FaceGeometry.EYE_DX, 0.5f + FaceGeometry.EYE_DX).forEach { cx ->
+        drawRoundRect(
+            Color(0xFF15100F),
+            topLeft = Offset(cx * w - lensW / 2, cy - lensH / 2),
+            size = Size(lensW, lensH),
+            cornerRadius = CornerRadius(lensH * 0.45f),
+        )
+        drawRoundRect(
+            Color(0x33FFFFFF),
+            topLeft = Offset(cx * w - lensW * 0.3f, cy - lensH * 0.35f),
+            size = Size(lensW * 0.25f, lensH * 0.18f),
+            cornerRadius = CornerRadius(lensH * 0.1f),
+        )
+    }
+    drawLine(Color(0xFF15100F), Offset((0.5f - FaceGeometry.EYE_DX) * w + lensW / 2, cy), Offset((0.5f + FaceGeometry.EYE_DX) * w - lensW / 2, cy), strokeWidth = w * 0.03f)
 }
 
 private fun DrawScope.drawBody() {

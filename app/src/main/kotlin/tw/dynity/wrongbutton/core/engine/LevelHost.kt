@@ -65,7 +65,7 @@ private class HostScope(
     override fun openPause() = vm.openOverlay(HostOverlay.Pause)
 
     @Composable
-    override fun SpeechBubble(modifier: Modifier) = SpeechBubbleView(speechState.value, modifier)
+    override fun SpeechBubble(modifier: Modifier, showFace: Boolean) = SpeechBubbleView(speechState.value, modifier, showFace)
 }
 
 /**

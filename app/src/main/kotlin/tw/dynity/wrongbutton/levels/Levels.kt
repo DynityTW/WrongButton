@@ -39,11 +39,30 @@ object Levels {
                 Level20AllTogether,
             ),
         ),
-        // 垂直切片的第 6–10 關。它們在完整版裡分屬第 2、3、4、8 章，相關章節完成前先放在這裡試玩。
+        Chapter(
+            R.string.chapter_2,
+            listOf(
+                Level06Advisor,
+                Level21Switches,
+                Level22Sunglasses,
+                Level23Banner,
+                Level24Avatar,
+                Level25TwoLines,
+                Level26Edited,
+                Level27Quote,
+                Level28Colleague,
+                Level29Preview,
+                Level30Story,
+                Level31Sticker,
+                Level32Wait,
+                Level33AboutYou,
+                Level34ThreeOfMe,
+            ),
+        ),
+        // 垂直切片的其餘關卡。它們在完整版裡分屬第 3、4、8 章，相關章節完成前先放在這裡試玩。
         Chapter(
             R.string.chapter_preview,
             listOf(
-                Level06Advisor,
                 Level07LeaveNone,
                 Level08Mistakes,
                 Level09Predict,

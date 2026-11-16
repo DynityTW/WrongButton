@@ -101,5 +101,5 @@ interface LevelScope {
 
     /** 自訂外框的關卡用來擺放對話泡泡。 */
     @Composable
-    fun SpeechBubble(modifier: Modifier)
+    fun SpeechBubble(modifier: Modifier, showFace: Boolean = true)
 }

@@ -97,7 +97,7 @@ fun TaskCard(text: String, modifier: Modifier = Modifier) {
 
 /** The Button 的對話泡泡：左邊的小臉和本體表情一致。 */
 @Composable
-fun SpeechBubbleView(speech: Speech?, modifier: Modifier = Modifier) {
+fun SpeechBubbleView(speech: Speech?, modifier: Modifier = Modifier, showFace: Boolean = true) {
     val reduceMotion = LocalReduceMotion.current
     Row(
         modifier
@@ -107,7 +107,8 @@ fun SpeechBubbleView(speech: Speech?, modifier: Modifier = Modifier) {
         horizontalArrangement = Arrangement.spacedBy(10.dp),
     ) {
         val face = speech?.expression ?: Expression.Default
-        ButtonCharacter(face.mood, face.tell, 40.dp, describe = false)
+        // 遮擋關卡不顯示小臉，否則泡泡會洩漏被遮住的表情。
+        if (showFace) ButtonCharacter(face.mood, face.tell, 40.dp, describe = false)
         Surface(
             shape = RoundedCornerShape(topStart = 4.dp, topEnd = 20.dp, bottomEnd = 20.dp, bottomStart = 20.dp),
             color = MaterialTheme.colorScheme.secondaryContainer,

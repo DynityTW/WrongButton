@@ -18,6 +18,18 @@ enum class Tell {
     val isLie: Boolean get() = this != Honest
 }
 
+/** 臉上被遮住的部分。說謊特徵本身不變，只是能讀到的線索變少。 */
+@Serializable
+enum class FaceCover {
+    None,
+
+    /** 墨鏡：看不到眼睛，只剩嘴角。 */
+    Eyes,
+
+    /** 嘴被擋住（由關卡畫遮擋物）：只剩眼睛。 */
+    Mouth,
+}
+
 @Serializable
 data class Expression(val mood: Mood = Mood.Normal, val tell: Tell = Tell.Honest) {
     companion object {

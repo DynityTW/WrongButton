@@ -12,6 +12,7 @@ import androidx.compose.ui.test.onLast
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollTo
+import androidx.compose.ui.test.performScrollToKey
 import androidx.compose.ui.test.performSemanticsAction
 import androidx.compose.ui.test.performTouchInput
 import androidx.compose.ui.test.swipeDown
@@ -221,6 +222,15 @@ class FullPlaythroughTest {
         }
         finished(6)
         assertEquals(0, memory.totalMistakes)
+
+        // 第 2 章由 Chapter2PlaythroughTest 負責；這裡把它標成已通關，直接從選關進入後面的關卡。
+        val container = ApplicationProvider.getApplicationContext<WrongButtonApp>().container
+        val run = tw.dynity.wrongbutton.core.memory.RunResult(0, 0, 1_000, 0, false)
+        container.memory.update { m -> Levels.chapters[1].levels.fold(m) { acc, l -> tw.dynity.wrongbutton.core.memory.MemoryOps.completeLevel(acc, l.id, run) } }
+        rule.activityRule.scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
+        waitForTag("select_grid")
+        rule.onNodeWithTag("select_grid").performScrollToKey(7)
+        rule.onNodeWithTag("select_level_7").performClick()
 
         // 〈一個都不留〉往上捲 → 把 The Button 向左滑掉 → 等 Snackbar 消失 → 按計數器的 ×。
         waitForTag("l07_content")
