@@ -214,8 +214,16 @@ class LevelHostViewModel(
 
     // ---- 提示與選單 ----
 
+    private val _overlayEvents = MutableSharedFlow<HostOverlay>(extraBufferCapacity = 8, onBufferOverflow = BufferOverflow.DROP_OLDEST)
+
+    /** 玩家打開了哪個覆蓋層（暫停、提示）。有些關卡把 Host 的按鈕也算進謎題。 */
+    val overlayEvents: SharedFlow<HostOverlay> = _overlayEvents.asSharedFlow()
+
     fun openOverlay(overlay: HostOverlay) {
-        if (_result.value == null) _overlay.value = overlay
+        if (_result.value == null) {
+            _overlay.value = overlay
+            _overlayEvents.tryEmit(overlay)
+        }
     }
 
     fun closeOverlay() {

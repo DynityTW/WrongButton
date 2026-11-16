@@ -226,7 +226,8 @@ class FullPlaythroughTest {
         // 第 2 章由 Chapter2PlaythroughTest 負責；這裡把它標成已通關，直接從選關進入後面的關卡。
         val container = ApplicationProvider.getApplicationContext<WrongButtonApp>().container
         val run = tw.dynity.wrongbutton.core.memory.RunResult(0, 0, 1_000, 0, false)
-        container.memory.update { m -> Levels.chapters[1].levels.fold(m) { acc, l -> tw.dynity.wrongbutton.core.memory.MemoryOps.completeLevel(acc, l.id, run) } }
+        // 第 2、3 章由各自的章節測試負責（〈一個都不留〉除外，它在這裡玩）。
+        container.memory.update { m -> (Levels.chapters[1].levels + Levels.chapters[2].levels).filter { it.id != 7 }.fold(m) { acc, l -> tw.dynity.wrongbutton.core.memory.MemoryOps.completeLevel(acc, l.id, run) } }
         rule.activityRule.scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
         waitForTag("select_grid")
         rule.onNodeWithTag("select_grid").performScrollToKey(7)

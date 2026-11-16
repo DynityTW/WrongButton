@@ -42,6 +42,9 @@ import tw.dynity.wrongbutton.core.memory.MemoryValue
 import tw.dynity.wrongbutton.core.memory.PlayerMemory
 import tw.dynity.wrongbutton.core.settings.LocalReduceMotion
 
+/** 關卡可以監聽 Host 的暫停／提示鈕被按下。 */
+val LocalHostEvents = androidx.compose.runtime.staticCompositionLocalOf<kotlinx.coroutines.flow.Flow<HostOverlay>> { kotlinx.coroutines.flow.emptyFlow() }
+
 private class HostScope(
     private val vm: LevelHostViewModel,
     private val memoryState: State<PlayerMemory>,
@@ -150,7 +153,11 @@ fun LevelHost(
                             }
                         }
                     },
-                    content = { Box(Modifier.fillMaxSize()) { level.Content(scope) } },
+                    content = {
+                        Box(Modifier.fillMaxSize()) {
+                            androidx.compose.runtime.CompositionLocalProvider(LocalHostEvents provides vm.overlayEvents) { level.Content(scope) }
+                        }
+                    },
                 )
             }
         }

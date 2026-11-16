@@ -59,11 +59,30 @@ object Levels {
                 Level34ThreeOfMe,
             ),
         ),
-        // 垂直切片的其餘關卡。它們在完整版裡分屬第 3、4、8 章，相關章節完成前先放在這裡試玩。
+        Chapter(
+            R.string.chapter_3,
+            listOf(
+                Level35Link,
+                Level36NoLabel,
+                Level37Hold,
+                Level38AllCount,
+                Level39SearchKey,
+                Level40SlideConfirm,
+                Level41Cards,
+                Level42Fab,
+                Level43Recipients,
+                Level44ListGrid,
+                Level45Release,
+                Level46Reveal,
+                Level47Leaderboard,
+                Level48GroupPhoto,
+                Level07LeaveNone,
+            ),
+        ),
+        // 垂直切片的其餘關卡。它們在完整版裡分屬第 4、8 章，相關章節完成前先放在這裡試玩。
         Chapter(
             R.string.chapter_preview,
             listOf(
-                Level07LeaveNone,
                 Level08Mistakes,
                 Level09Predict,
                 Level10TrustMe,

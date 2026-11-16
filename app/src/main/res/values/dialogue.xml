@@ -1270,6 +1270,510 @@
         <item>[guilty]妳是怎麼……</item>
         <item>[normal]這也是一種讀法。</item>
     </string-array>
+    <string-array name="l35_enter">
+        <item>[normal]我在字裡行間。</item>
+        <item>[smug]讀讀看這段文字。</item>
+    </string-array>
+    <string-array name="l35_first_mistake">
+        <item>[smug]按到別的東西了。</item>
+        <item>[normal]再找找。</item>
+    </string-array>
+    <string-array name="l35_mistakes_3">
+        <item>[guilty]按得下去的東西很多。</item>
+        <item>[normal]慢慢找。</item>
+    </string-array>
+    <string-array name="l35_mistakes_6">
+        <item>[sad]我在這裡啦。</item>
+        <item>[guilty]我其實很明顯的。</item>
+    </string-array>
+    <string-array name="l35_idle">
+        <item>[normal]按得下去的，都算。</item>
+        <item>[normal]慢慢想。</item>
+    </string-array>
+    <string-array name="l35_rapid_tap">
+        <item>[angry]不是用戳的。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l35_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l35_clear">
+        <item>[smug]妳越來越會找了。</item>
+        <item>[normal]按鈕可以是任何東西。</item>
+    </string-array>
+    <string-array name="l35_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l36_enter">
+        <item>[guilty]我換了一張臉。這裡沒人寫字，真沒禮貌。</item>
+        <item>[normal]五個圖示，其中一個是我。</item>
+    </string-array>
+    <string-array name="l36_first_mistake">
+        <item>[smug]那不是我。</item>
+        <item>[normal]不是那個。</item>
+    </string-array>
+    <string-array name="l36_mistakes_3">
+        <item>[guilty]按鈕不只長一種樣子。</item>
+        <item>[normal]換個方式按看看。</item>
+    </string-array>
+    <string-array name="l36_mistakes_6">
+        <item>[sad]我藏得太好了嗎？</item>
+        <item>[guilty]看一下提示吧。</item>
+    </string-array>
+    <string-array name="l36_idle">
+        <item>[normal]按鈕可以是任何東西。</item>
+        <item>[normal]我在等妳。</item>
+    </string-array>
+    <string-array name="l36_rapid_tap">
+        <item>[angry]亂按不算。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l36_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l36_clear">
+        <item>[smug]找到了。</item>
+        <item>[normal]這也是按鈕。</item>
+    </string-array>
+    <string-array name="l36_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l37_enter">
+        <item>[normal]輕輕碰一下不算。</item>
+        <item>[smug]按久一點，我才知道妳是認真的。</item>
+    </string-array>
+    <string-array name="l37_first_mistake">
+        <item>[smug]按到別的東西了。</item>
+        <item>[normal]再找找。</item>
+    </string-array>
+    <string-array name="l37_mistakes_3">
+        <item>[guilty]按得下去的東西很多。</item>
+        <item>[normal]慢慢找。</item>
+    </string-array>
+    <string-array name="l37_mistakes_6">
+        <item>[sad]我在這裡啦。</item>
+        <item>[guilty]我其實很明顯的。</item>
+    </string-array>
+    <string-array name="l37_idle">
+        <item>[normal]按得下去的，都算。</item>
+        <item>[normal]慢慢想。</item>
+    </string-array>
+    <string-array name="l37_rapid_tap">
+        <item>[angry]不是用戳的。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l37_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l37_clear">
+        <item>[smug]妳越來越會找了。</item>
+        <item>[normal]按鈕可以是任何東西。</item>
+    </string-array>
+    <string-array name="l37_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l38_enter">
+        <item>[smug]把每一顆按鈕都按一次。每一顆。</item>
+        <item>[normal]按得下去的，都算。</item>
+    </string-array>
+    <string-array name="l38_first_mistake">
+        <item>[smug]那不是我。</item>
+        <item>[normal]不是那個。</item>
+    </string-array>
+    <string-array name="l38_mistakes_3">
+        <item>[guilty]按鈕不只長一種樣子。</item>
+        <item>[normal]換個方式按看看。</item>
+    </string-array>
+    <string-array name="l38_mistakes_6">
+        <item>[sad]我藏得太好了嗎？</item>
+        <item>[guilty]看一下提示吧。</item>
+    </string-array>
+    <string-array name="l38_idle">
+        <item>[normal]按鈕可以是任何東西。</item>
+        <item>[normal]我在等妳。</item>
+    </string-array>
+    <string-array name="l38_rapid_tap">
+        <item>[angry]亂按不算。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l38_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l38_clear">
+        <item>[smug]找到了。</item>
+        <item>[normal]這也是按鈕。</item>
+    </string-array>
+    <string-array name="l38_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l39_enter">
+        <item>[normal]那顆按鈕不在畫面上，在妳手指底下。</item>
+        <item>[smug]搜尋看看，說不定找得到我。</item>
+    </string-array>
+    <string-array name="l39_first_mistake">
+        <item>[smug]按到別的東西了。</item>
+        <item>[normal]再找找。</item>
+    </string-array>
+    <string-array name="l39_mistakes_3">
+        <item>[guilty]按得下去的東西很多。</item>
+        <item>[normal]慢慢找。</item>
+    </string-array>
+    <string-array name="l39_mistakes_6">
+        <item>[sad]我在這裡啦。</item>
+        <item>[guilty]我其實很明顯的。</item>
+    </string-array>
+    <string-array name="l39_idle">
+        <item>[normal]按得下去的，都算。</item>
+        <item>[normal]慢慢想。</item>
+    </string-array>
+    <string-array name="l39_rapid_tap">
+        <item>[angry]不是用戳的。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l39_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l39_clear">
+        <item>[smug]妳越來越會找了。</item>
+        <item>[normal]按鈕可以是任何東西。</item>
+    </string-array>
+    <string-array name="l39_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l40_enter">
+        <item>[normal]這次我不是用按的。</item>
+        <item>[smug]滑過來，我就算被按了。</item>
+    </string-array>
+    <string-array name="l40_first_mistake">
+        <item>[smug]那不是我。</item>
+        <item>[normal]不是那個。</item>
+    </string-array>
+    <string-array name="l40_mistakes_3">
+        <item>[guilty]按鈕不只長一種樣子。</item>
+        <item>[normal]換個方式按看看。</item>
+    </string-array>
+    <string-array name="l40_mistakes_6">
+        <item>[sad]我藏得太好了嗎？</item>
+        <item>[guilty]看一下提示吧。</item>
+    </string-array>
+    <string-array name="l40_idle">
+        <item>[normal]按鈕可以是任何東西。</item>
+        <item>[normal]我在等妳。</item>
+    </string-array>
+    <string-array name="l40_rapid_tap">
+        <item>[angry]亂按不算。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l40_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l40_clear">
+        <item>[smug]找到了。</item>
+        <item>[normal]這也是按鈕。</item>
+    </string-array>
+    <string-array name="l40_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l41_enter">
+        <item>[normal]今天的推薦很多。我在最後面。</item>
+        <item>[smug]推薦卡片一張一張看吧。</item>
+    </string-array>
+    <string-array name="l41_first_mistake">
+        <item>[smug]按到別的東西了。</item>
+        <item>[normal]再找找。</item>
+    </string-array>
+    <string-array name="l41_mistakes_3">
+        <item>[guilty]按得下去的東西很多。</item>
+        <item>[normal]慢慢找。</item>
+    </string-array>
+    <string-array name="l41_mistakes_6">
+        <item>[sad]我在這裡啦。</item>
+        <item>[guilty]我其實很明顯的。</item>
+    </string-array>
+    <string-array name="l41_idle">
+        <item>[normal]按得下去的，都算。</item>
+        <item>[normal]慢慢想。</item>
+    </string-array>
+    <string-array name="l41_rapid_tap">
+        <item>[angry]不是用戳的。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l41_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l41_clear">
+        <item>[smug]妳越來越會找了。</item>
+        <item>[normal]按鈕可以是任何東西。</item>
+    </string-array>
+    <string-array name="l41_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l42_enter">
+        <item>[normal]右下角那顆。</item>
+        <item>[smug]＋ 底下藏了很多東西。</item>
+    </string-array>
+    <string-array name="l42_first_mistake">
+        <item>[smug]那不是我。</item>
+        <item>[normal]不是那個。</item>
+    </string-array>
+    <string-array name="l42_mistakes_3">
+        <item>[guilty]按鈕不只長一種樣子。</item>
+        <item>[normal]換個方式按看看。</item>
+    </string-array>
+    <string-array name="l42_mistakes_6">
+        <item>[sad]我藏得太好了嗎？</item>
+        <item>[guilty]看一下提示吧。</item>
+    </string-array>
+    <string-array name="l42_idle">
+        <item>[normal]按鈕可以是任何東西。</item>
+        <item>[normal]我在等妳。</item>
+    </string-array>
+    <string-array name="l42_rapid_tap">
+        <item>[angry]亂按不算。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l42_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l42_clear">
+        <item>[smug]找到了。</item>
+        <item>[normal]這也是按鈕。</item>
+    </string-array>
+    <string-array name="l42_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l43_enter">
+        <item>[normal]我在收件者裡面。</item>
+        <item>[smug]收件人有三個，我是其中一個。</item>
+    </string-array>
+    <string-array name="l43_first_mistake">
+        <item>[smug]按到別的東西了。</item>
+        <item>[normal]再找找。</item>
+    </string-array>
+    <string-array name="l43_mistakes_3">
+        <item>[guilty]按得下去的東西很多。</item>
+        <item>[normal]慢慢找。</item>
+    </string-array>
+    <string-array name="l43_mistakes_6">
+        <item>[sad]我在這裡啦。</item>
+        <item>[guilty]我其實很明顯的。</item>
+    </string-array>
+    <string-array name="l43_idle">
+        <item>[normal]按得下去的，都算。</item>
+        <item>[normal]慢慢想。</item>
+    </string-array>
+    <string-array name="l43_rapid_tap">
+        <item>[angry]不是用戳的。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l43_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l43_clear">
+        <item>[smug]妳越來越會找了。</item>
+        <item>[normal]按鈕可以是任何東西。</item>
+    </string-array>
+    <string-array name="l43_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l44_enter">
+        <item>[normal]用清單看，我們都長得一樣。</item>
+        <item>[guilty]名字都被截掉了。</item>
+    </string-array>
+    <string-array name="l44_first_mistake">
+        <item>[smug]那不是我。</item>
+        <item>[normal]不是那個。</item>
+    </string-array>
+    <string-array name="l44_mistakes_3">
+        <item>[guilty]按鈕不只長一種樣子。</item>
+        <item>[normal]換個方式按看看。</item>
+    </string-array>
+    <string-array name="l44_mistakes_6">
+        <item>[sad]我藏得太好了嗎？</item>
+        <item>[guilty]看一下提示吧。</item>
+    </string-array>
+    <string-array name="l44_idle">
+        <item>[normal]按鈕可以是任何東西。</item>
+        <item>[normal]我在等妳。</item>
+    </string-array>
+    <string-array name="l44_rapid_tap">
+        <item>[angry]亂按不算。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l44_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l44_clear">
+        <item>[smug]找到了。</item>
+        <item>[normal]這也是按鈕。</item>
+    </string-array>
+    <string-array name="l44_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l45_enter">
+        <item>[normal]真的按鈕，碰到會有反應。放開才算數。</item>
+        <item>[smug]四個我，只有一個是真的。</item>
+    </string-array>
+    <string-array name="l45_first_mistake">
+        <item>[smug]按到別的東西了。</item>
+        <item>[normal]再找找。</item>
+    </string-array>
+    <string-array name="l45_mistakes_3">
+        <item>[guilty]按得下去的東西很多。</item>
+        <item>[normal]慢慢找。</item>
+    </string-array>
+    <string-array name="l45_mistakes_6">
+        <item>[sad]我在這裡啦。</item>
+        <item>[guilty]我其實很明顯的。</item>
+    </string-array>
+    <string-array name="l45_idle">
+        <item>[normal]按得下去的，都算。</item>
+        <item>[normal]慢慢想。</item>
+    </string-array>
+    <string-array name="l45_rapid_tap">
+        <item>[angry]不是用戳的。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l45_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l45_clear">
+        <item>[smug]妳越來越會找了。</item>
+        <item>[normal]按鈕可以是任何東西。</item>
+    </string-array>
+    <string-array name="l45_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l46_enter">
+        <item>[normal]我在這裡。……其中一個是我。</item>
+        <item>[smug]看得到的，不一定按得到。</item>
+    </string-array>
+    <string-array name="l46_first_mistake">
+        <item>[smug]那不是我。</item>
+        <item>[normal]不是那個。</item>
+    </string-array>
+    <string-array name="l46_mistakes_3">
+        <item>[guilty]按鈕不只長一種樣子。</item>
+        <item>[normal]換個方式按看看。</item>
+    </string-array>
+    <string-array name="l46_mistakes_6">
+        <item>[sad]我藏得太好了嗎？</item>
+        <item>[guilty]看一下提示吧。</item>
+    </string-array>
+    <string-array name="l46_idle">
+        <item>[normal]按鈕可以是任何東西。</item>
+        <item>[normal]我在等妳。</item>
+    </string-array>
+    <string-array name="l46_rapid_tap">
+        <item>[angry]亂按不算。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l46_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l46_clear">
+        <item>[smug]找到了。</item>
+        <item>[normal]這也是按鈕。</item>
+    </string-array>
+    <string-array name="l46_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l47_enter">
+        <item>[smug]我躲在妳最丟臉的那一關裡。</item>
+        <item>[normal]這張表，記的是妳。</item>
+    </string-array>
+    <string-array name="l47_first_mistake">
+        <item>[smug]按到別的東西了。</item>
+        <item>[normal]再找找。</item>
+    </string-array>
+    <string-array name="l47_mistakes_3">
+        <item>[guilty]按得下去的東西很多。</item>
+        <item>[normal]慢慢找。</item>
+    </string-array>
+    <string-array name="l47_mistakes_6">
+        <item>[sad]我在這裡啦。</item>
+        <item>[guilty]我其實很明顯的。</item>
+    </string-array>
+    <string-array name="l47_idle">
+        <item>[normal]按得下去的，都算。</item>
+        <item>[normal]慢慢想。</item>
+    </string-array>
+    <string-array name="l47_rapid_tap">
+        <item>[angry]不是用戳的。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l47_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l47_clear">
+        <item>[smug]妳越來越會找了。</item>
+        <item>[normal]按鈕可以是任何東西。</item>
+    </string-array>
+    <string-array name="l47_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l48_enter">
+        <item>[normal]大家來拍團體照。</item>
+        <item>[smug]找得到我嗎？</item>
+    </string-array>
+    <string-array name="l48_first_mistake">
+        <item>[smug]那不是我。</item>
+        <item>[normal]不是那個。</item>
+    </string-array>
+    <string-array name="l48_mistakes_3">
+        <item>[guilty]按鈕不只長一種樣子。</item>
+        <item>[normal]換個方式按看看。</item>
+    </string-array>
+    <string-array name="l48_mistakes_6">
+        <item>[sad]我藏得太好了嗎？</item>
+        <item>[guilty]看一下提示吧。</item>
+    </string-array>
+    <string-array name="l48_idle">
+        <item>[normal]按鈕可以是任何東西。</item>
+        <item>[normal]我在等妳。</item>
+    </string-array>
+    <string-array name="l48_rapid_tap">
+        <item>[angry]亂按不算。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l48_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l48_clear">
+        <item>[smug]找到了。</item>
+        <item>[normal]這也是按鈕。</item>
+    </string-array>
+    <string-array name="l48_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
     <string-array name="l12_clauses">
         <item>第 1 條：本按鈕（以下簡稱「我」）是一顆按鈕。</item>
         <item>第 2 條：使用者（以下簡稱「妳」）同意，按下我之前會先讀完本條款。</item>
