@@ -127,6 +127,14 @@ object Levels {
                 Level87Assemble, Level88Rename, Level89TwoAdvisors, Level90Default, Level91Disable,
             ),
         ),
+        Chapter(
+            R.string.chapter_7,
+            listOf(
+                Level92Knock, Level93Bounds, Level94Layers, Level95Properties, Level96Counts,
+                Level97Direction, Level98SmallPrint, Level99WhiteOnWhite, Level100Clip, Level101TooFast,
+                Level102KeepState, Level103ZeroWidth, Level104Rules, Level105Trust, Level106Rebuild,
+            ),
+        ),
         // 〈相信我〉在完整版是第 120 關；第 8 章完成前先放在這裡試玩。
         Chapter(
             R.string.chapter_preview,
@@ -178,6 +186,8 @@ object Keys {
     val FragRightEye = MemoryKey("frag_right_eye")
     val FragName = MemoryKey("frag_name")
     val FragMemory = MemoryKey("frag_memory")
+    val DevMode = MemoryKey("l92_dev_mode")
+    val LyingSwitch = MemoryKey("l116_lying_switch")
 
     const val LEFT = "left"
     const val RIGHT = "right"
