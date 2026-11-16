@@ -108,7 +108,8 @@ fun SpeechBubbleView(speech: Speech?, modifier: Modifier = Modifier, showFace: B
     ) {
         val face = speech?.expression ?: Expression.Default
         // 遮擋關卡不顯示小臉，否則泡泡會洩漏被遮住的表情。
-        if (showFace) ButtonCharacter(face.mood, face.tell, 40.dp, describe = false)
+        // 小臉也提供外觀描述：只有泡泡在畫面上時，TalkBack 使用者才讀得到這句話的表情。
+        if (showFace) ButtonCharacter(face.mood, face.tell, 40.dp, modifier = Modifier.testTag("speech_face"))
         Surface(
             shape = RoundedCornerShape(topStart = 4.dp, topEnd = 20.dp, bottomEnd = 20.dp, bottomStart = 20.dp),
             color = MaterialTheme.colorScheme.secondaryContainer,

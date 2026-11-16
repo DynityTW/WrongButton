@@ -62,6 +62,8 @@ fun ChatView(
                 Modifier
                     .fillMaxWidth()
                     .testTag("msg_${msg.id}")
+                    // 可點的訊息：整列都能點（不必剛好點在泡泡上）。
+                    .then(if (onMessage != null) Modifier.clickable { onMessage(msg) } else Modifier)
                     .semantics(mergeDescendants = true) {},
                 horizontalArrangement = if (msg.mine) Arrangement.End else Arrangement.Start,
                 verticalAlignment = Alignment.Bottom,
@@ -90,8 +92,7 @@ fun ChatView(
                     modifier = Modifier
                         .padding(start = 8.dp)
                         .widthIn(max = 360.dp)
-                        .heightIn(min = 40.dp)
-                        .then(if (onMessage != null) Modifier.clickable { onMessage(msg) } else Modifier),
+                        .heightIn(min = 40.dp),
                 ) {
                     Column(Modifier.padding(horizontal = 12.dp, vertical = 8.dp)) {
                         msg.quote?.let {

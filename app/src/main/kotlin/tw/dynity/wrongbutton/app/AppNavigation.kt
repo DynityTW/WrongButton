@@ -102,7 +102,11 @@ fun WrongButtonNavigation(container: AppContainer) {
                     hasNext = next != null,
                     onExit = { popTo(LevelSelectKey) },
                     onNext = { next?.let { openLevel(it.id) } },
-                    recordsContent = { RecordsContent(memory, Levels.all) },
+                    recordsContent = {
+                        RecordsContent(memory, Levels.all, onForget = { key ->
+                            container.memory.update { tw.dynity.wrongbutton.core.memory.MemoryOps.forgetFact(it, key) }
+                        })
+                    },
                 )
             }
         },

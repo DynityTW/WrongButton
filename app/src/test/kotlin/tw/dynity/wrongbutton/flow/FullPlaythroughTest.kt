@@ -241,29 +241,16 @@ class FullPlaythroughTest {
         rule.mainClock.advanceTimeBy(6_000)
         rule.onNodeWithTag("l07_count").assertTextEqualsCount(1)
         rule.onNodeWithTag("l07_chip_close").performClick()
-        finished(7)
+        waitForTag("result_title")
+        assertTrue(memory.isCleared(7))
         assertEquals(Keys.LEFT, memory.text(Keys.L7SwipeDirection))
 
-        // 〈妳錯了幾次〉照紀錄回答：一次都沒錯 → 步進器維持 0 送出（特殊解）。
-        waitForTag("l08_submit")
-        repeat(memory.totalMistakes) { tap("l08_plus") }
-        tap("l08_submit")
-        finished(8)
-        assertTrue(memory.record(8)!!.special)
-
-        // 〈我很了解妳〉反著紀錄做；第三題選跟第二題同一邊。
-        waitForTag("the_button")
-        rule.mainClock.advanceTimeBy(500)
-        rule.onNodeWithTag("the_button").performTouchInput { swipeRight() }
-        rule.mainClock.advanceTimeBy(3_000)
-        val other = if (memory.text(Keys.L6FirstSide) == Keys.RIGHT) "l09_left" else "l09_right"
-        rule.waitUntil(5_000) { enabled(other) }
-        tap(other)
-        rule.mainClock.advanceTimeBy(3_000)
-        rule.waitUntil(5_000) { enabled(other) }
-        tap(other)
-        rule.mainClock.advanceTimeBy(3_000)
-        finished(9)
+        // 第 4 章由 Chapter4PlaythroughTest 負責；標成已通關後直接去〈相信我〉。
+        container.memory.update { m -> Levels.chapters[3].levels.fold(m) { acc, l -> tw.dynity.wrongbutton.core.memory.MemoryOps.completeLevel(acc, l.id, run) } }
+        rule.onNodeWithTag("result_exit").performScrollTo().performClick()
+        waitForTag("select_grid")
+        rule.onNodeWithTag("select_grid").performScrollToKey(10)
+        rule.onNodeWithTag("select_level_10").performClick()
 
         // 〈相信我〉讀臉；最後一回合按 The Button。
         repeat(2) {

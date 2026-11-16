@@ -38,4 +38,7 @@ object MemoryOps {
     }
 
     fun forget(): PlayerMemory = PlayerMemory()
+
+    /** 只忘記一件事。 */
+    fun forgetFact(memory: PlayerMemory, key: MemoryKey): PlayerMemory = memory.copy(facts = memory.facts - key.id)
 }

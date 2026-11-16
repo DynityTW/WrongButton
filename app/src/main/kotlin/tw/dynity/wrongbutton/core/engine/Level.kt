@@ -25,7 +25,12 @@ data class LevelChrome(
 )
 
 /** 紀錄頁上的一行字：字串資源加參數。 */
-data class Fact(@StringRes val res: Int, val args: List<Any> = emptyList())
+data class Fact(
+    @StringRes val res: Int,
+    val args: List<Any> = emptyList(),
+    /** 不為 null 時，這一列可以在紀錄頁滑掉，讓它忘記 [forgettable] 這件事。 */
+    val forgettable: MemoryKey? = null,
+)
 
 /**
  * 一個關卡。每關一個 Kotlin 檔案，實作這個介面並登記到 Levels 註冊表即可，引擎不需要修改。

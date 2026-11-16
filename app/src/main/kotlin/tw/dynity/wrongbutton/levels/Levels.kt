@@ -79,12 +79,30 @@ object Levels {
                 Level07LeaveNone,
             ),
         ),
-        // 垂直切片的其餘關卡。它們在完整版裡分屬第 4、8 章，相關章節完成前先放在這裡試玩。
+        Chapter(
+            R.string.chapter_4,
+            listOf(
+                Level08Mistakes,
+                Level49Grudge,
+                Level50Paste,
+                Level51Keep,
+                Level52Misremember,
+                Level53Undo,
+                Level54Achievement,
+                Level55Draft,
+                Level56Storage,
+                Level57FirstAgain,
+                Level09Predict,
+                Level58Capsule,
+                Level59Diary,
+                Level60Guest,
+                Level61WhoAreYou,
+            ),
+        ),
+        // 〈相信我〉在完整版是第 120 關；第 8 章完成前先放在這裡試玩。
         Chapter(
             R.string.chapter_preview,
             listOf(
-                Level08Mistakes,
-                Level09Predict,
                 Level10TrustMe,
             ),
         ),
@@ -119,6 +137,10 @@ object Keys {
     val L7SwipeDirection = MemoryKey("l7_swipe_direction")
     val L7Hesitation = MemoryKey("l7_hesitation_ms")
     val L10PressDelay = MemoryKey("l10_press_delay_ms")
+    val Grudge = MemoryKey("l49_grudge")
+    val KeptShape = MemoryKey("l51_kept_shape")
+    val Achievement = MemoryKey("l54_achievement")
+    val DraftStage = MemoryKey("l55_draft_stage")
 
     const val LEFT = "left"
     const val RIGHT = "right"

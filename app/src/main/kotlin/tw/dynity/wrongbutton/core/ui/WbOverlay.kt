@@ -1,7 +1,8 @@
 package tw.dynity.wrongbutton.core.ui
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -43,8 +44,9 @@ fun WbOverlay(
         modifier
             .fillMaxSize()
             .background(Color.Black.copy(alpha = 0.45f))
-            // 吃掉點擊，避免穿透到底下的關卡。
-            .clickable(interactionSource = remember { MutableInteractionSource() }, indication = null) {}
+            // 吃掉點擊，避免穿透到底下的關卡。用手勢偵測而不是 clickable：
+            // clickable 會把整個對話框合併成一個無障礙節點，TalkBack 就讀不出個別項目。
+            .pointerInput(Unit) { detectTapGestures { } }
             .safeDrawingPadding()
             .semantics { isTraversalGroup = true },
         contentAlignment = Alignment.Center,

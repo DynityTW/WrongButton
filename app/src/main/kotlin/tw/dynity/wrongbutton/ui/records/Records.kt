@@ -26,6 +26,7 @@ import tw.dynity.wrongbutton.core.engine.formatSeconds
 import tw.dynity.wrongbutton.core.memory.LevelRecord
 import tw.dynity.wrongbutton.core.memory.PlayerMemory
 import tw.dynity.wrongbutton.ui.menu.ScreenScaffold
+import tw.dynity.wrongbutton.core.ui.swipeToDismiss
 
 /** 紀錄頁上每一條的資料（純資料，方便測試）。 */
 object RecordsFormatter {
@@ -54,10 +55,22 @@ object RecordsFormatter {
 private fun Fact.text(): String = stringResource(res, *args.toTypedArray())
 
 @Composable
-fun RecordsContent(memory: PlayerMemory, levels: List<Level>, modifier: Modifier = Modifier) {
+fun RecordsContent(
+    memory: PlayerMemory,
+    levels: List<Level>,
+    modifier: Modifier = Modifier,
+    onForget: (tw.dynity.wrongbutton.core.memory.MemoryKey) -> Unit = {},
+) {
     Column(modifier.fillMaxWidth().testTag("records"), verticalArrangement = Arrangement.spacedBy(12.dp)) {
         Section(stringResource(R.string.records_section_memory)) {
-            RecordsFormatter.globalFacts(memory, levels).forEach { RecordLine(it.text()) }
+            RecordsFormatter.globalFacts(memory, levels).forEach { fact ->
+                val key = fact.forgettable
+                if (key == null) {
+                    RecordLine(fact.text())
+                } else {
+                    ForgettableLine(fact.text(), key.id) { onForget(key) }
+                }
+            }
         }
         Section(stringResource(R.string.records_section_levels)) {
             val lines = levels.mapIndexedNotNull { index, level ->
@@ -77,6 +90,25 @@ private fun Section(title: String, content: @Composable () -> Unit) {
         Column(Modifier.fillMaxWidth().padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Text(title, style = MaterialTheme.typography.titleMedium, modifier = Modifier.semantics { heading() })
             content()
+        }
+    }
+}
+
+/** 可以滑掉的一列：滑掉＝讓它忘記這件事。 */
+@Composable
+private fun ForgettableLine(text: String, id: String, onForget: () -> Unit) {
+    val swipe = androidx.compose.runtime.remember(id) { tw.dynity.wrongbutton.core.ui.SwipeDismissState() }
+    Surface(
+        shape = RoundedCornerShape(10.dp),
+        color = MaterialTheme.colorScheme.errorContainer,
+        modifier = Modifier
+            .fillMaxWidth()
+            .testTag("forget_$id")
+            .swipeToDismiss(swipe, enabled = true, onDismissed = { _, _ -> onForget() }),
+    ) {
+        Column(Modifier.padding(10.dp)) {
+            Text(text, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onErrorContainer)
+            Text(stringResource(R.string.records_swipe_to_forget), style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onErrorContainer)
         }
     }
 }

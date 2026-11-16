@@ -1774,6 +1774,484 @@
         <item>[guilty]妳是怎麼……</item>
         <item>[normal]這也行？</item>
     </string-array>
+    <string-array name="l49_enter">
+        <item>[angry]哼。</item>
+        <item>[angry]我不想說話。</item>
+    </string-array>
+    <string-array name="l49_first_mistake">
+        <item>[smug]我都記著。</item>
+        <item>[normal]再想想。</item>
+    </string-array>
+    <string-array name="l49_mistakes_3">
+        <item>[guilty]翻翻紀錄吧。</item>
+        <item>[normal]我記得，妳也可以記得。</item>
+    </string-array>
+    <string-array name="l49_mistakes_6">
+        <item>[sad]我記性很好，妳也可以用我的記性。</item>
+        <item>[guilty]紀錄頁上有小圓點的時候，就是在提醒妳。</item>
+    </string-array>
+    <string-array name="l49_idle">
+        <item>[normal]我記得妳上次也想很久。</item>
+        <item>[normal]不急。</item>
+    </string-array>
+    <string-array name="l49_rapid_tap">
+        <item>[angry]每一下我都記得。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l49_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l49_clear">
+        <item>[smug]很好。</item>
+        <item>[normal]這件事我也會記下來。</item>
+    </string-array>
+    <string-array name="l49_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l50_enter">
+        <item>[normal]我要考妳通關密語。</item>
+        <item>[smug]妳記不住的話，有別的東西可以幫妳記。</item>
+    </string-array>
+    <string-array name="l50_first_mistake">
+        <item>[smug]不對喔。</item>
+        <item>[normal]我記得的不是這樣。</item>
+    </string-array>
+    <string-array name="l50_mistakes_3">
+        <item>[guilty]紀錄就在暫停選單裡。</item>
+        <item>[normal]妳做過的事，我都寫下來了。</item>
+    </string-array>
+    <string-array name="l50_mistakes_6">
+        <item>[sad]看一下提示吧。</item>
+        <item>[guilty]我其實很好懂的。</item>
+    </string-array>
+    <string-array name="l50_idle">
+        <item>[normal]慢慢想。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l50_rapid_tap">
+        <item>[angry]亂按我也會記下來。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l50_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l50_clear">
+        <item>[smug]妳記得。</item>
+        <item>[normal]我們都記得。</item>
+    </string-array>
+    <string-array name="l50_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l51_enter">
+        <item>[normal]選一個。我會幫妳收著，很久以後再問妳。</item>
+        <item>[normal]交給我保管吧。</item>
+    </string-array>
+    <string-array name="l51_first_mistake">
+        <item>[smug]我都記著。</item>
+        <item>[normal]再想想。</item>
+    </string-array>
+    <string-array name="l51_mistakes_3">
+        <item>[guilty]翻翻紀錄吧。</item>
+        <item>[normal]我記得，妳也可以記得。</item>
+    </string-array>
+    <string-array name="l51_mistakes_6">
+        <item>[sad]我記性很好，妳也可以用我的記性。</item>
+        <item>[guilty]紀錄頁上有小圓點的時候，就是在提醒妳。</item>
+    </string-array>
+    <string-array name="l51_idle">
+        <item>[normal]我記得妳上次也想很久。</item>
+        <item>[normal]不急。</item>
+    </string-array>
+    <string-array name="l51_rapid_tap">
+        <item>[angry]每一下我都記得。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l51_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l51_clear">
+        <item>[smug]很好。</item>
+        <item>[normal]這件事我也會記下來。</item>
+    </string-array>
+    <string-array name="l51_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l52_enter">
+        <item>[smug|lie]我記的東西當然都是對的。</item>
+        <item>[smug|lie]我的記憶力完美無缺。</item>
+    </string-array>
+    <string-array name="l52_first_mistake">
+        <item>[smug]不對喔。</item>
+        <item>[normal]我記得的不是這樣。</item>
+    </string-array>
+    <string-array name="l52_mistakes_3">
+        <item>[guilty]紀錄就在暫停選單裡。</item>
+        <item>[normal]妳做過的事，我都寫下來了。</item>
+    </string-array>
+    <string-array name="l52_mistakes_6">
+        <item>[sad]看一下提示吧。</item>
+        <item>[guilty]我其實很好懂的。</item>
+    </string-array>
+    <string-array name="l52_idle">
+        <item>[normal]慢慢想。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l52_rapid_tap">
+        <item>[angry]亂按我也會記下來。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l52_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l52_clear">
+        <item>[smug]妳記得。</item>
+        <item>[normal]我們都記得。</item>
+    </string-array>
+    <string-array name="l52_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l53_enter">
+        <item>[sad]有人把我藏起來了。</item>
+        <item>[guilty]我被改名、被移走、被隱藏。</item>
+    </string-array>
+    <string-array name="l53_first_mistake">
+        <item>[smug]我都記著。</item>
+        <item>[normal]再想想。</item>
+    </string-array>
+    <string-array name="l53_mistakes_3">
+        <item>[guilty]翻翻紀錄吧。</item>
+        <item>[normal]我記得，妳也可以記得。</item>
+    </string-array>
+    <string-array name="l53_mistakes_6">
+        <item>[sad]我記性很好，妳也可以用我的記性。</item>
+        <item>[guilty]紀錄頁上有小圓點的時候，就是在提醒妳。</item>
+    </string-array>
+    <string-array name="l53_idle">
+        <item>[normal]我記得妳上次也想很久。</item>
+        <item>[normal]不急。</item>
+    </string-array>
+    <string-array name="l53_rapid_tap">
+        <item>[angry]每一下我都記得。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l53_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l53_clear">
+        <item>[smug]很好。</item>
+        <item>[normal]這件事我也會記下來。</item>
+    </string-array>
+    <string-array name="l53_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l54_enter">
+        <item>[normal]解鎖一個成就就好。</item>
+        <item>[smug]成就清單在這裡。</item>
+    </string-array>
+    <string-array name="l54_first_mistake">
+        <item>[smug]不對喔。</item>
+        <item>[normal]我記得的不是這樣。</item>
+    </string-array>
+    <string-array name="l54_mistakes_3">
+        <item>[guilty]紀錄就在暫停選單裡。</item>
+        <item>[normal]妳做過的事，我都寫下來了。</item>
+    </string-array>
+    <string-array name="l54_mistakes_6">
+        <item>[sad]看一下提示吧。</item>
+        <item>[guilty]我其實很好懂的。</item>
+    </string-array>
+    <string-array name="l54_idle">
+        <item>[normal]慢慢想。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l54_rapid_tap">
+        <item>[angry]亂按我也會記下來。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l54_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l54_clear">
+        <item>[smug]妳記得。</item>
+        <item>[normal]我們都記得。</item>
+    </string-array>
+    <string-array name="l54_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l55_enter">
+        <item>[normal]我有話想跟妳說。</item>
+        <item>[normal]等一下，我在想。</item>
+    </string-array>
+    <string-array name="l55_first_mistake">
+        <item>[smug]我都記著。</item>
+        <item>[normal]再想想。</item>
+    </string-array>
+    <string-array name="l55_mistakes_3">
+        <item>[guilty]翻翻紀錄吧。</item>
+        <item>[normal]我記得，妳也可以記得。</item>
+    </string-array>
+    <string-array name="l55_mistakes_6">
+        <item>[sad]我記性很好，妳也可以用我的記性。</item>
+        <item>[guilty]紀錄頁上有小圓點的時候，就是在提醒妳。</item>
+    </string-array>
+    <string-array name="l55_idle">
+        <item>[normal]我記得妳上次也想很久。</item>
+        <item>[normal]不急。</item>
+    </string-array>
+    <string-array name="l55_rapid_tap">
+        <item>[angry]每一下我都記得。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l55_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l55_clear">
+        <item>[smug]很好。</item>
+        <item>[normal]這件事我也會記下來。</item>
+    </string-array>
+    <string-array name="l55_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l56_enter">
+        <item>[guilty]我記太多了，裝不下新的東西。</item>
+        <item>[normal]幫我清一點空間。</item>
+    </string-array>
+    <string-array name="l56_first_mistake">
+        <item>[smug]不對喔。</item>
+        <item>[normal]我記得的不是這樣。</item>
+    </string-array>
+    <string-array name="l56_mistakes_3">
+        <item>[guilty]紀錄就在暫停選單裡。</item>
+        <item>[normal]妳做過的事，我都寫下來了。</item>
+    </string-array>
+    <string-array name="l56_mistakes_6">
+        <item>[sad]看一下提示吧。</item>
+        <item>[guilty]我其實很好懂的。</item>
+    </string-array>
+    <string-array name="l56_idle">
+        <item>[normal]慢慢想。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l56_rapid_tap">
+        <item>[angry]亂按我也會記下來。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l56_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l56_clear">
+        <item>[smug]妳記得。</item>
+        <item>[normal]我們都記得。</item>
+    </string-array>
+    <string-array name="l56_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l57_enter">
+        <item>[normal]按下按鈕。</item>
+        <item>[normal]第一關。很簡單的。</item>
+    </string-array>
+    <string-array name="l57_first_mistake">
+        <item>[smug]我都記著。</item>
+        <item>[normal]再想想。</item>
+    </string-array>
+    <string-array name="l57_mistakes_3">
+        <item>[guilty]翻翻紀錄吧。</item>
+        <item>[normal]我記得，妳也可以記得。</item>
+    </string-array>
+    <string-array name="l57_mistakes_6">
+        <item>[sad]我記性很好，妳也可以用我的記性。</item>
+        <item>[guilty]紀錄頁上有小圓點的時候，就是在提醒妳。</item>
+    </string-array>
+    <string-array name="l57_idle">
+        <item>[normal]我記得妳上次也想很久。</item>
+        <item>[normal]不急。</item>
+    </string-array>
+    <string-array name="l57_rapid_tap">
+        <item>[angry]每一下我都記得。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l57_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l57_clear">
+        <item>[smug]很好。</item>
+        <item>[normal]這件事我也會記下來。</item>
+    </string-array>
+    <string-array name="l57_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l58_enter">
+        <item>[normal]很久以前，妳交給我一樣東西。是哪一個？</item>
+        <item>[normal]還記得妳交給我什麼嗎？</item>
+    </string-array>
+    <string-array name="l58_first_mistake">
+        <item>[smug]不對喔。</item>
+        <item>[normal]我記得的不是這樣。</item>
+    </string-array>
+    <string-array name="l58_mistakes_3">
+        <item>[guilty]紀錄就在暫停選單裡。</item>
+        <item>[normal]妳做過的事，我都寫下來了。</item>
+    </string-array>
+    <string-array name="l58_mistakes_6">
+        <item>[sad]看一下提示吧。</item>
+        <item>[guilty]我其實很好懂的。</item>
+    </string-array>
+    <string-array name="l58_idle">
+        <item>[normal]慢慢想。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l58_rapid_tap">
+        <item>[angry]亂按我也會記下來。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l58_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l58_clear">
+        <item>[smug]妳記得。</item>
+        <item>[normal]我們都記得。</item>
+    </string-array>
+    <string-array name="l58_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l59_enter">
+        <item>[normal]幫我把日記補完。</item>
+        <item>[normal]我寫了一些關於妳的事。</item>
+    </string-array>
+    <string-array name="l59_first_mistake">
+        <item>[smug]我都記著。</item>
+        <item>[normal]再想想。</item>
+    </string-array>
+    <string-array name="l59_mistakes_3">
+        <item>[guilty]翻翻紀錄吧。</item>
+        <item>[normal]我記得，妳也可以記得。</item>
+    </string-array>
+    <string-array name="l59_mistakes_6">
+        <item>[sad]我記性很好，妳也可以用我的記性。</item>
+        <item>[guilty]紀錄頁上有小圓點的時候，就是在提醒妳。</item>
+    </string-array>
+    <string-array name="l59_idle">
+        <item>[normal]我記得妳上次也想很久。</item>
+        <item>[normal]不急。</item>
+    </string-array>
+    <string-array name="l59_rapid_tap">
+        <item>[angry]每一下我都記得。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l59_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l59_clear">
+        <item>[smug]很好。</item>
+        <item>[normal]這件事我也會記下來。</item>
+    </string-array>
+    <string-array name="l59_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l60_enter">
+        <item>[smug]我太了解妳了。妳一定會在我還沒準備好的時候按下來。</item>
+        <item>[normal]如果妳是別人就好了。</item>
+    </string-array>
+    <string-array name="l60_first_mistake">
+        <item>[smug]不對喔。</item>
+        <item>[normal]我記得的不是這樣。</item>
+    </string-array>
+    <string-array name="l60_mistakes_3">
+        <item>[guilty]紀錄就在暫停選單裡。</item>
+        <item>[normal]妳做過的事，我都寫下來了。</item>
+    </string-array>
+    <string-array name="l60_mistakes_6">
+        <item>[sad]看一下提示吧。</item>
+        <item>[guilty]我其實很好懂的。</item>
+    </string-array>
+    <string-array name="l60_idle">
+        <item>[normal]慢慢想。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l60_rapid_tap">
+        <item>[angry]亂按我也會記下來。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l60_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l60_clear">
+        <item>[smug]妳記得。</item>
+        <item>[normal]我們都記得。</item>
+    </string-array>
+    <string-array name="l60_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l61_enter">
+        <item>[normal]這三個人裡，哪一個是妳？</item>
+        <item>[smug]我記得妳的一切。妳呢？</item>
+    </string-array>
+    <string-array name="l61_first_mistake">
+        <item>[smug]我都記著。</item>
+        <item>[normal]再想想。</item>
+    </string-array>
+    <string-array name="l61_mistakes_3">
+        <item>[guilty]翻翻紀錄吧。</item>
+        <item>[normal]我記得，妳也可以記得。</item>
+    </string-array>
+    <string-array name="l61_mistakes_6">
+        <item>[sad]我記性很好，妳也可以用我的記性。</item>
+        <item>[guilty]紀錄頁上有小圓點的時候，就是在提醒妳。</item>
+    </string-array>
+    <string-array name="l61_idle">
+        <item>[normal]我記得妳上次也想很久。</item>
+        <item>[normal]不急。</item>
+    </string-array>
+    <string-array name="l61_rapid_tap">
+        <item>[angry]每一下我都記得。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l61_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l61_clear">
+        <item>[smug]很好。</item>
+        <item>[normal]這件事我也會記下來。</item>
+    </string-array>
+    <string-array name="l61_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l52_fakes">
+        <item>第 2 關：妳一次就重新整理成功了，還誇我可愛。</item>
+        <item>第 3 關：妳一眼就看懂了被截斷的任務。</item>
+        <item>第 5 關：妳用三根手指把我撐大。</item>
+    </string-array>
+    <string-array name="l61_statements">
+        <item>我其實很喜歡被按。</item>
+        <item>我從來沒有說過謊。</item>
+        <item>我記得妳的一切，而且一點都不在意。</item>
+    </string-array>
     <string-array name="l12_clauses">
         <item>第 1 條：本按鈕（以下簡稱「我」）是一顆按鈕。</item>
         <item>第 2 條：使用者（以下簡稱「妳」）同意，按下我之前會先讀完本條款。</item>
