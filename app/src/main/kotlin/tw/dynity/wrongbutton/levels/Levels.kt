@@ -119,6 +119,14 @@ object Levels {
                 Level76Dictation,
             ),
         ),
+        Chapter(
+            R.string.chapter_6,
+            listOf(
+                Level77Version2, Level78ChangeLog, Level79Smile, Level80Feedback, Level81Cache,
+                Level82ABTest, Level83CoachMarks, Level84ReadAloud, Level85Versions, Level86Import,
+                Level87Assemble, Level88Rename, Level89TwoAdvisors, Level90Default, Level91Disable,
+            ),
+        ),
         // 〈相信我〉在完整版是第 120 關；第 8 章完成前先放在這裡試玩。
         Chapter(
             R.string.chapter_preview,
@@ -164,6 +172,12 @@ object Keys {
     /** 第 61 關玩家輸入的「稱呼」。全遊戲唯一存下的文字，只存本機，「忘記我」會清除。 */
     val Nickname = MemoryKey("l62_nickname")
     val FirstStars = MemoryKey("l75_first_stars")
+    /** 第 6 章找回的碎片。 */
+    val FragLeftEye = MemoryKey("frag_left_eye")
+    val FragMouth = MemoryKey("frag_mouth")
+    val FragRightEye = MemoryKey("frag_right_eye")
+    val FragName = MemoryKey("frag_name")
+    val FragMemory = MemoryKey("frag_memory")
 
     const val LEFT = "left"
     const val RIGHT = "right"
