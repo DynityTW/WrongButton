@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 tools/s2/gen.py 依 tools/s2/ch15.py 產生，請改規格檔再重新產生。台灣繁體中文。 -->
+<resources>
+    <string-array name="ch15_mistakes_3">
+        <item>[guilty]聽朗讀器念完再按。</item>
+        <item>[normal]「下一個」可以一直往下念。</item>
+        <item>[normal]協助工具裡有答案。</item>
+    </string-array>
+    <string-array name="ch15_mistakes_6">
+        <item>[sad]看不見的時候，要用聽的。</item>
+        <item>[normal]朗讀器念的外觀不會說謊。</item>
+        <item>[guilty]提示鈕在右上角，它也可以被朗讀。</item>
+    </string-array>
+    <string-array name="ch15_idle">
+        <item>[normal]我在黑暗裡等妳。</item>
+        <item>[smug]就算看不見，我也是最帥的。</item>
+        <item>[normal]朗讀器的聲音很好聽吧。</item>
+    </string-array>
+    <string-array name="ch15_rapid_tap">
+        <item>[angry]朗讀器跟不上妳！</item>
+        <item>[angry]一個一個念。</item>
+        <item>[angry]慢一點！</item>
+    </string-array>
+    <string-array name="ch15_hint">
+        <item>[normal]好，我念給妳聽。</item>
+        <item>[smug]要我大聲一點嗎？</item>
+        <item>[normal]提示會告訴妳要用哪個功能。</item>
+    </string-array>
+    <string-array name="ch15_special">
+        <item>[guilty]這樣也找得到？</item>
+        <item>[normal]妳的耳朵比眼睛還厲害。</item>
+        <item>[smug]妳找到另一條路了。</item>
+    </string-array>
+    <string-array name="l211_enter">
+        <item>[normal]燈關了。用聽的。</item>
+        <item>[smug]朗讀器會帶妳找到我。</item>
+    </string-array>
+    <string-array name="l211_first_mistake">
+        <item>[guilty]那不是我。</item>
+        <item>[normal]先聽它念完是什麼。</item>
+    </string-array>
+    <string-array name="l211_clear">
+        <item>[normal]妳在黑暗裡找到我了。</item>
+        <item>[smug]我的名字念起來很好聽吧。</item>
+    </string-array>
+    <string-array name="l212_enter">
+        <item>[guilty]我的名字被拿掉了。</item>
+        <item>[normal]不過有人幫我留了紙條。</item>
+    </string-array>
+    <string-array name="l212_first_mistake">
+        <item>[guilty]那個按鈕不是我。</item>
+        <item>[normal]找找看紙條。</item>
+    </string-array>
+    <string-array name="l212_clear">
+        <item>[normal]妳從紙條找到我了。</item>
+        <item>[smug]有名字還是比較好。</item>
+    </string-array>
+    <string-array name="l213_enter">
+        <item>[normal]有人冒充我。</item>
+        <item>[guilty]它的替代文字寫得跟我一模一樣。</item>
+    </string-array>
+    <string-array name="l213_first_mistake">
+        <item>[sad]那是冒牌貨。</item>
+        <item>[normal]聽一下外觀。</item>
+    </string-array>
+    <string-array name="l213_clear">
+        <item>[normal]替代文字會說謊，臉不會。</item>
+        <item>[smug]冒牌貨長得沒有我帥。</item>
+    </string-array>
+    <string-array name="l214_enter">
+        <item>[normal]這頁很長。</item>
+        <item>[smug]我在最後一節。</item>
+    </string-array>
+    <string-array name="l214_first_mistake">
+        <item>[guilty]那不是我。</item>
+        <item>[normal]試試看用標題跳。</item>
+    </string-array>
+    <string-array name="l214_clear">
+        <item>[normal]跳得好快。</item>
+        <item>[smug]標題是長頁面的捷徑。</item>
+    </string-array>
+    <string-array name="l215_enter">
+        <item>[normal]我躲在某個按鈕後面。</item>
+        <item>[guilty]我的名字又被拿掉了。</item>
+    </string-array>
+    <string-array name="l215_first_mistake">
+        <item>[guilty]不是那一個。</item>
+        <item>[normal]開頭的文字說了我在哪。</item>
+    </string-array>
+    <string-array name="l215_clear">
+        <item>[normal]妳照著說明找到我了。</item>
+        <item>[smug]說明寫得清楚很重要。</item>
+    </string-array>
+    <string-array name="l216_enter">
+        <item>[normal]我傳了一則通知給妳。</item>
+        <item>[smug]妳有收到嗎？</item>
+    </string-array>
+    <string-array name="l216_first_mistake">
+        <item>[guilty]不是那一個。</item>
+        <item>[normal]看一下通知。</item>
+    </string-array>
+    <string-array name="l216_clear">
+        <item>[normal]妳收到我的通知了。</item>
+        <item>[smug]通知要記得看。</item>
+    </string-array>
+    <string-array name="l217_enter">
+        <item>[guilty]我看不出顏色。</item>
+        <item>[normal]妳也看不出來吧？</item>
+    </string-array>
+    <string-array name="l217_first_mistake">
+        <item>[guilty]那是紅色的。</item>
+        <item>[normal]先讓它們有名字。</item>
+    </string-array>
+    <string-array name="l217_clear">
+        <item>[normal]有標籤就不用猜了。</item>
+        <item>[smug]顏色不該是唯一的線索。</item>
+    </string-array>
+    <string-array name="l218_enter">
+        <item>[normal]♪♪♪</item>
+        <item>[smug]♪♪♪♪</item>
+    </string-array>
+    <string-array name="l218_first_mistake">
+        <item>[guilty]妳沒聽到我說什麼。</item>
+        <item>[normal]打開字幕。</item>
+    </string-array>
+    <string-array name="l218_clear">
+        <item>[normal]字幕救了妳。</item>
+        <item>[smug]聽不到也可以看。</item>
+    </string-array>
+    <string-array name="l219_enter">
+        <item>[guilty]我縮小了。</item>
+        <item>[normal]妳按得到嗎？</item>
+    </string-array>
+    <string-array name="l219_first_mistake">
+        <item>[guilty]沒按到。</item>
+        <item>[normal]我太小了。</item>
+    </string-array>
+    <string-array name="l219_clear">
+        <item>[normal]觸控範圍很重要。</item>
+        <item>[smug]48dp，記得嗎？</item>
+    </string-array>
+    <string-array name="l220_enter">
+        <item>[angry]我停不下來！</item>
+        <item>[guilty]救命，我一直在跑。</item>
+    </string-array>
+    <string-array name="l220_first_mistake">
+        <item>[angry]妳按到我剛剛在的地方了。</item>
+        <item>[guilty]我還在動。</item>
+    </string-array>
+    <string-array name="l220_clear">
+        <item>[normal]終於停下來了。</item>
+        <item>[sleeping]好累。</item>
+    </string-array>
+    <string-array name="l221_enter">
+        <item>[guilty]我寫的字太淡了。</item>
+        <item>[normal]上面有一行字。</item>
+    </string-array>
+    <string-array name="l221_first_mistake">
+        <item>[guilty]那行字不是這樣說的。</item>
+        <item>[normal]先讓字清楚一點。</item>
+    </string-array>
+    <string-array name="l221_clear">
+        <item>[normal]看清楚了。</item>
+        <item>[smug]對比很重要。</item>
+    </string-array>
+    <string-array name="l222_enter">
+        <item>[normal]我躲在一個群組裡。</item>
+        <item>[smug]找找看是哪一個。</item>
+    </string-array>
+    <string-array name="l222_first_mistake">
+        <item>[guilty]那不是我。</item>
+        <item>[normal]群組要點兩下才進得去。</item>
+    </string-array>
+    <string-array name="l222_clear">
+        <item>[normal]妳打開了對的群組。</item>
+        <item>[smug]群組讓清單變短，但東西還在。</item>
+    </string-array>
+    <string-array name="l223_enter">
+        <item>[guilty]這次有三個冒牌貨。……兩個。</item>
+        <item>[normal]聽外觀。</item>
+    </string-array>
+    <string-array name="l223_first_mistake">
+        <item>[sad]那是冒牌貨。</item>
+        <item>[normal]聽一下外觀。</item>
+    </string-array>
+    <string-array name="l223_clear">
+        <item>[normal]妳聽出來了。</item>
+        <item>[smug]我的臉不會說謊，這次連聲音都是。</item>
+    </string-array>
+    <string-array name="l224_enter">
+        <item>[normal]還記得第一次在黑暗裡找到我嗎？</item>
+        <item>[smug]我在第幾個？</item>
+    </string-array>
+    <string-array name="l224_first_mistake">
+        <item>[guilty]不是這個數字。</item>
+        <item>[normal]紀錄裡有。</item>
+    </string-array>
+    <string-array name="l224_clear">
+        <item>[normal]妳記得。</item>
+        <item>[smug]那是我們在黑暗裡的第一次。</item>
+    </string-array>
+    <string-array name="l225_enter">
+        <item>[serious]最後一關。燈全關了。</item>
+        <item>[normal]用妳學會的全部。</item>
+    </string-array>
+    <string-array name="l225_first_mistake">
+        <item>[sad]那是冒牌貨。</item>
+        <item>[normal]每個群組都聽一下。</item>
+    </string-array>
+    <string-array name="l225_clear">
+        <item>[normal]妳在黑暗裡也找得到我。</item>
+        <item>[smug]以後關燈我也不怕了。</item>
+    </string-array>
+</resources>
