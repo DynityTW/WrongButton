@@ -6,3 +6,8 @@ local.properties
 .kotlin/
 captures/
 .DS_Store
+
+# 上傳金鑰與密碼：永遠不要提交
+keystore.properties
+*.jks
+*.keystore

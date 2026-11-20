@@ -1,8 +1,22 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
 }
+
+/**
+ * 上傳金鑰（upload key）。金鑰檔與密碼絕對不能進 repo：
+ * 從專案根目錄的 keystore.properties（已列入 .gitignore）或環境變數讀取，兩者都沒有時正式版不簽名。
+ * 步驟見 docs/RELEASE.md。
+ */
+val signingProps = Properties().apply {
+    val f = rootProject.file("keystore.properties")
+    if (f.exists()) f.inputStream().use { load(it) }
+}
+fun signingValue(key: String, env: String): String? = signingProps.getProperty(key) ?: System.getenv(env)
+val uploadStore = signingValue("storeFile", "WB_UPLOAD_STORE_FILE")
 
 android {
     namespace = "tw.dynity.wrongbutton"
@@ -18,8 +32,20 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        if (uploadStore != null) {
+            create("upload") {
+                storeFile = rootProject.file(uploadStore)
+                storePassword = signingValue("storePassword", "WB_UPLOAD_STORE_PASSWORD")
+                keyAlias = signingValue("keyAlias", "WB_UPLOAD_KEY_ALIAS")
+                keyPassword = signingValue("keyPassword", "WB_UPLOAD_KEY_PASSWORD")
+            }
+        }
+    }
+
     buildTypes {
         release {
+            if (uploadStore != null) signingConfig = signingConfigs.getByName("upload")
             isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
@@ -117,6 +143,6 @@ androidComponents {
             allowed.set(variant.applicationId.map { allowedPermissions(it) })
             report.set(layout.buildDirectory.file("reports/permissions/${variant.name}.txt"))
         }
-        tasks.matching { it.name == "assemble$name" }.configureEach { dependsOn(verify) }
+        tasks.matching { it.name == "assemble$name" || it.name == "bundle$name" }.configureEach { dependsOn(verify) }
     }
 }
