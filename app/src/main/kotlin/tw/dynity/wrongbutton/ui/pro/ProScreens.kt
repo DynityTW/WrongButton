@@ -58,7 +58,7 @@ import tw.dynity.wrongbutton.ui.menu.ScreenScaffold
  * 價格寫在最上面、沒有倒數、沒有預先勾選、「以後再說」和購買一樣大、The Button 用誠實的臉說話。
  */
 @Composable
-fun ProScreen(repo: MonetizationRepository, onBack: () -> Unit) {
+fun ProScreen(repo: MonetizationRepository, onBack: () -> Unit, onTerms: () -> Unit = {}) {
     val state by repo.state.collectAsStateWithLifecycle()
     var confirming by rememberSaveable { mutableStateOf(false) }
     var message by rememberSaveable { mutableIntStateOf(0) }
@@ -120,6 +120,15 @@ fun ProScreen(repo: MonetizationRepository, onBack: () -> Unit) {
                 } else {
                     Button(onClick = { confirming = true }, modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp).testTag("pro_buy")) {
                         Text(stringResource(R.string.pro_buy, ProProduct.PRICE_TEXT))
+                    }
+                    Text(
+                        stringResource(R.string.pro_terms_note),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+                    )
+                    TextButton(onClick = onTerms, modifier = Modifier.heightIn(min = 48.dp).testTag("pro_terms")) {
+                        Text(stringResource(R.string.legal_terms))
                     }
                     OutlinedButton(
                         onClick = { message = if (repo.restore()) R.string.pro_line_restored else R.string.pro_line_nothing_to_restore },

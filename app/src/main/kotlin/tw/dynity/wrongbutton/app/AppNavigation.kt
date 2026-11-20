@@ -31,6 +31,7 @@ import tw.dynity.wrongbutton.ui.records.RecordsScreen
 @Serializable data object SettingsKey : NavKey
 @Serializable data class LevelKey(val id: Int) : NavKey
 @Serializable data object ProKey : NavKey
+@Serializable data class LegalKey(val kind: tw.dynity.wrongbutton.core.legal.LegalKind) : NavKey
 
 @Composable
 fun WrongButtonNavigation(container: AppContainer) {
@@ -61,6 +62,10 @@ fun WrongButtonNavigation(container: AppContainer) {
         while (backStack.size > 1) backStack.removeAt(backStack.lastIndex)
         backStack.add(LevelSelectKey)
         backStack.add(LevelKey(id))
+    }
+
+    fun openLegal(kind: tw.dynity.wrongbutton.core.legal.LegalKind) {
+        if (backStack.last() != LegalKey(kind)) backStack.add(LegalKey(kind))
     }
 
     fun popTo(key: NavKey) {
@@ -111,6 +116,7 @@ fun WrongButtonNavigation(container: AppContainer) {
                     onSettings = { backStack.add(SettingsKey) },
                     pro = shop.pro,
                     onPro = ::openPro,
+                    onLegal = ::openLegal,
                 )
             }
             entry<LevelSelectKey> {
@@ -138,11 +144,19 @@ fun WrongButtonNavigation(container: AppContainer) {
                     container = container,
                     onBack = { popTo(TitleKey) },
                     onPro = ::openPro,
+                    onLegal = ::openLegal,
                 )
             }
             entry<ProKey> {
                 tw.dynity.wrongbutton.ui.pro.ProScreen(
                     repo = container.monetization,
+                    onBack = { if (backStack.size > 1) backStack.removeAt(backStack.lastIndex) },
+                    onTerms = { openLegal(tw.dynity.wrongbutton.core.legal.LegalKind.Terms) },
+                )
+            }
+            entry<LegalKey> { key ->
+                tw.dynity.wrongbutton.ui.legal.LegalScreen(
+                    kind = key.kind,
                     onBack = { if (backStack.size > 1) backStack.removeAt(backStack.lastIndex) },
                 )
             }

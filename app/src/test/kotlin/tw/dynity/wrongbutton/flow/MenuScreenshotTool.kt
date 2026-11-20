@@ -6,6 +6,7 @@ import androidx.compose.ui.test.captureToImage
 import androidx.compose.ui.test.junit4.v2.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onRoot
+import androidx.compose.ui.test.performScrollToIndex
 import androidx.compose.ui.test.performScrollToKey
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Assume.assumeTrue
@@ -46,6 +47,13 @@ class MenuScreenshotTool {
             waitFor("select_grid")
             rule.onNodeWithTag("select_grid").performScrollToKey(1)
             tap("select_level_1"); tap("host_hint"); tap("hint_reveal"); waitFor("mock_ad"); advance(2_000); shot("ad")
+            tap("mock_ad_close"); rule.waitUntil(5_000) { !exists("mock_ad") }
+            rule.activityRule.scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
+            rule.activityRule.scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
+            rule.activityRule.scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
+            waitFor("menu_levels"); shot("title")
+            press("menu_settings"); tap("settings_privacy"); waitFor("legal_privacy"); shot("legal_privacy")
+            rule.onNodeWithTag("legal_privacy").performScrollToIndex(4); shot("legal_privacy_table")
         }
     }
 }

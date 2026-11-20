@@ -66,6 +66,7 @@ import tw.dynity.wrongbutton.core.character.Expression
 import tw.dynity.wrongbutton.core.character.Mood
 import tw.dynity.wrongbutton.core.character.Tell
 import tw.dynity.wrongbutton.core.engine.Level
+import tw.dynity.wrongbutton.core.legal.LegalKind
 import tw.dynity.wrongbutton.core.engine.Speech
 import tw.dynity.wrongbutton.core.engine.SpeechBubbleView
 import tw.dynity.wrongbutton.core.memory.MemoryOps
@@ -100,6 +101,7 @@ fun TitleScreen(
     onSettings: () -> Unit,
     pro: Boolean = false,
     onPro: () -> Unit = {},
+    onLegal: (LegalKind) -> Unit = {},
 ) {
     val cue = rememberCuePlayer()
     val fresh = memory.levels.isEmpty()
@@ -161,6 +163,7 @@ fun TitleScreen(
                             Text(stringResource(R.string.menu_pro))
                         }
                     }
+                    LegalNotice(onLegal)
                 }
             }
             if (wide) {
@@ -324,7 +327,7 @@ fun LevelSelectScreen(
 }
 
 @Composable
-fun SettingsScreen(container: AppContainer, onBack: () -> Unit, onPro: () -> Unit = {}) {
+fun SettingsScreen(container: AppContainer, onBack: () -> Unit, onPro: () -> Unit = {}, onLegal: (LegalKind) -> Unit = {}) {
     val settings by container.settings.settings.collectAsStateWithLifecycle()
     val shop by container.monetization.state.collectAsStateWithLifecycle()
     val cue = rememberCuePlayer()
@@ -392,6 +395,21 @@ fun SettingsScreen(container: AppContainer, onBack: () -> Unit, onPro: () -> Uni
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                 }
+
+                Text(
+                    stringResource(R.string.settings_about),
+                    style = MaterialTheme.typography.titleSmall,
+                    color = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier.padding(start = 8.dp, top = 12.dp).semantics { heading() },
+                )
+                LinkRow(stringResource(R.string.legal_terms), "settings_terms") { onLegal(LegalKind.Terms) }
+                LinkRow(stringResource(R.string.legal_privacy), "settings_privacy") { onLegal(LegalKind.Privacy) }
+                Text(
+                    stringResource(R.string.legal_consent),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(horizontal = 8.dp),
+                )
 
                 Spacer(Modifier.height(16.dp))
                 if (forgotten) {
@@ -484,5 +502,44 @@ private fun SettingSwitch(label: String, checked: Boolean, tag: String, descript
             if (description != null) Text(description, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
         Switch(checked = checked, onCheckedChange = null)
+    }
+}
+
+/** 主畫面最下面：使用即同意服務條款，兩份文件都點得開。 */
+@Composable
+private fun LegalNotice(onLegal: (LegalKind) -> Unit) {
+    Column(Modifier.fillMaxWidth().padding(top = 4.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(
+            stringResource(R.string.legal_consent),
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.testTag("legal_consent"),
+        )
+        Row(horizontalArrangement = Arrangement.Center) {
+            TextButton(onClick = { onLegal(LegalKind.Terms) }, modifier = Modifier.heightIn(min = 48.dp).testTag("menu_terms")) {
+                Text(stringResource(R.string.legal_terms), style = MaterialTheme.typography.labelLarge)
+            }
+            TextButton(onClick = { onLegal(LegalKind.Privacy) }, modifier = Modifier.heightIn(min = 48.dp).testTag("menu_privacy")) {
+                Text(stringResource(R.string.legal_privacy), style = MaterialTheme.typography.labelLarge)
+            }
+        }
+    }
+}
+
+/** 設定頁裡「點了會打開另一頁」的一列。 */
+@Composable
+private fun LinkRow(label: String, tag: String, onClick: () -> Unit) {
+    Row(
+        Modifier
+            .fillMaxWidth()
+            .heightIn(min = 56.dp)
+            .clickable(role = Role.Button, onClick = onClick)
+            .testTag(tag)
+            .padding(horizontal = 8.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Text(label, style = MaterialTheme.typography.bodyLarge, modifier = Modifier.weight(1f))
+        Text("›", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
     }
 }
