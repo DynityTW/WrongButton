@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 tools/s2/gen.py 依 tools/s2/ch20.py 產生，請改規格檔再重新產生。台灣繁體中文。 -->
+<resources>
+    <string-array name="ch20_mistakes_3">
+        <item>[guilty]迷路了嗎？看一下上面的頁名。</item>
+        <item>[normal]選單、分頁、連結，都試試看。</item>
+        <item>[normal]畫面裡的 ← 才是這個 App 的返回。</item>
+    </string-array>
+    <string-array name="ch20_mistakes_6">
+        <item>[sad]我在某一頁等妳。</item>
+        <item>[normal]麵包屑、瀏覽紀錄、網址列，都是捷徑。</item>
+        <item>[guilty]提示鈕在右上角。</item>
+    </string-array>
+    <string-array name="ch20_idle">
+        <item>[normal]這個 App 的頁面好多。</item>
+        <item>[smug]我住在最好的那一頁。</item>
+        <item>[normal]迷路也是一種旅行。</item>
+    </string-array>
+    <string-array name="ch20_rapid_tap">
+        <item>[angry]不要亂跳頁！</item>
+        <item>[angry]妳會把返回堆疊弄得一團亂。</item>
+        <item>[angry]一頁一頁來。</item>
+    </string-array>
+    <string-array name="ch20_hint">
+        <item>[normal]好，我告訴妳路怎麼走。</item>
+        <item>[smug]要地圖嗎？</item>
+        <item>[normal]提示會說要用哪一種導覽。</item>
+    </string-array>
+    <string-array name="ch20_special">
+        <item>[guilty]這條路我都不知道。</item>
+        <item>[normal]妳找到捷徑了。</item>
+        <item>[smug]妳比導航還厲害。</item>
+    </string-array>
+    <string-array name="l286_enter">
+        <item>[normal]我住在其中一個分頁。</item>
+        <item>[smug]猜猜是哪一個。</item>
+    </string-array>
+    <string-array name="l286_first_mistake">
+        <item>[guilty]我不在這裡。</item>
+        <item>[normal]換一個分頁。</item>
+    </string-array>
+    <string-array name="l286_clear">
+        <item>[normal]找到了。</item>
+        <item>[smug]我住的分頁最舒服。</item>
+    </string-array>
+    <string-array name="l287_enter">
+        <item>[guilty]我不在分頁裡。</item>
+        <item>[normal]這個 App 還有別的入口。</item>
+    </string-array>
+    <string-array name="l287_first_mistake">
+        <item>[guilty]不在這裡。</item>
+        <item>[normal]左上角。</item>
+    </string-array>
+    <string-array name="l287_clear">
+        <item>[normal]側邊選單是秘密通道。</item>
+        <item>[smug]收藏夾裡就是我。</item>
+    </string-array>
+    <string-array name="l288_enter">
+        <item>[normal]妳走過頭了。</item>
+        <item>[smug]我在上一頁。</item>
+    </string-array>
+    <string-array name="l288_first_mistake">
+        <item>[guilty]不在這裡。</item>
+        <item>[normal]往回走一步。</item>
+    </string-array>
+    <string-array name="l288_clear">
+        <item>[normal]退一步海闊天空。</item>
+        <item>[smug]有時候要往回走。</item>
+    </string-array>
+    <string-array name="l289_enter">
+        <item>[normal]我在路的中間。</item>
+        <item>[smug]上面那排小字很好用。</item>
+    </string-array>
+    <string-array name="l289_first_mistake">
+        <item>[guilty]不在這裡。</item>
+        <item>[normal]看上面那排路徑。</item>
+    </string-array>
+    <string-array name="l289_clear">
+        <item>[normal]一步就跳回來了。</item>
+        <item>[smug]麵包屑比返回快多了。</item>
+    </string-array>
+    <string-array name="l290_enter">
+        <item>[normal]我在文章裡留了一個入口。</item>
+        <item>[smug]找找看。</item>
+    </string-array>
+    <string-array name="l290_first_mistake">
+        <item>[guilty]那不是我。</item>
+        <item>[normal]文章裡有連結。</item>
+    </string-array>
+    <string-array name="l290_clear">
+        <item>[normal]妳點對連結了。</item>
+        <item>[smug]底線的字最可疑。</item>
+    </string-array>
+    <string-array name="l291_enter">
+        <item>[normal]我的地址是 wb://button。</item>
+        <item>[smug]直接來找我。</item>
+    </string-array>
+    <string-array name="l291_first_mistake">
+        <item>[guilty]這個網址沒有我。</item>
+        <item>[normal]地址要打對。</item>
+    </string-array>
+    <string-array name="l291_clear">
+        <item>[normal]妳直接按地址來了。</item>
+        <item>[smug]網址列是最快的捷徑。</item>
+    </string-array>
+    <string-array name="l292_enter">
+        <item>[normal]妳來過我家，記得嗎？</item>
+        <item>[smug]紀錄裡有。</item>
+    </string-array>
+    <string-array name="l292_first_mistake">
+        <item>[guilty]不在這裡。</item>
+        <item>[normal]看一下瀏覽紀錄。</item>
+    </string-array>
+    <string-array name="l292_clear">
+        <item>[normal]妳循著紀錄回來了。</item>
+        <item>[smug]紀錄真好用。</item>
+    </string-array>
+    <string-array name="l293_enter">
+        <item>[normal]妳剛剛在探索分頁走到一半就跑掉了。</item>
+        <item>[smug]我還在那裡等妳。</item>
+    </string-array>
+    <string-array name="l293_first_mistake">
+        <item>[guilty]不在這裡。</item>
+        <item>[normal]回到妳剛剛去的地方。</item>
+    </string-array>
+    <string-array name="l293_clear">
+        <item>[normal]分頁記得妳走到哪了。</item>
+        <item>[smug]我一直在原地等。</item>
+    </string-array>
+    <string-array name="l294_enter">
+        <item>[guilty]有一個彈窗擋住我了。</item>
+        <item>[normal]它要妳登入。</item>
+    </string-array>
+    <string-array name="l294_first_mistake">
+        <item>[sad]這裡不用登入的。</item>
+        <item>[guilty]找別的路。</item>
+    </string-array>
+    <string-array name="l294_clear">
+        <item>[normal]當訪客也很好。</item>
+        <item>[smug]不用登入也能找到我。</item>
+    </string-array>
+    <string-array name="l295_enter">
+        <item>[normal]我在最後一個分頁。</item>
+        <item>[smug]分頁有好多個。</item>
+    </string-array>
+    <string-array name="l295_first_mistake">
+        <item>[guilty]不在這個分頁。</item>
+        <item>[normal]往右滑。</item>
+    </string-array>
+    <string-array name="l295_clear">
+        <item>[normal]最後一個分頁就是我。</item>
+        <item>[smug]妳滑到底了。</item>
+    </string-array>
+    <string-array name="l296_enter">
+        <item>[guilty]我藏在選單的選單裡。</item>
+        <item>[normal]展開看看。</item>
+    </string-array>
+    <string-array name="l296_first_mistake">
+        <item>[guilty]不在這裡。</item>
+        <item>[normal]選單裡有可以展開的東西。</item>
+    </string-array>
+    <string-array name="l296_clear">
+        <item>[normal]兩層都打開了。</item>
+        <item>[smug]選單裡的選單，最安全。</item>
+    </string-array>
+    <string-array name="l297_enter">
+        <item>[guilty]這是一個全螢幕的頁面。</item>
+        <item>[normal]沒有返回鈕。</item>
+    </string-array>
+    <string-array name="l297_first_mistake">
+        <item>[guilty]我不在這裡。</item>
+        <item>[normal]找找看怎麼離開這一頁。</item>
+    </string-array>
+    <string-array name="l297_clear">
+        <item>[normal]妳走出死路了。</item>
+        <item>[smug]× 也是一種返回。</item>
+    </string-array>
+    <string-array name="l298_enter">
+        <item>[normal]我住在迷宮的深處。</item>
+        <item>[smug]房間的門會告訴妳方向。</item>
+    </string-array>
+    <string-array name="l298_first_mistake">
+        <item>[guilty]這個房間沒有我。</item>
+        <item>[normal]試試別扇門。</item>
+    </string-array>
+    <string-array name="l298_clear">
+        <item>[normal]妳走出迷宮了。……走進我家了。</item>
+        <item>[smug]妳很會認路。</item>
+    </string-array>
+    <string-array name="l299_enter">
+        <item>[normal]還記得我第一次在 App 裡等妳嗎？</item>
+        <item>[smug]我住哪個分頁？</item>
+    </string-array>
+    <string-array name="l299_first_mistake">
+        <item>[guilty]不是這個分頁。</item>
+        <item>[normal]紀錄裡有。</item>
+    </string-array>
+    <string-array name="l299_clear">
+        <item>[normal]妳記得。</item>
+        <item>[smug]我一直住在那裡。</item>
+    </string-array>
+    <string-array name="l300_enter">
+        <item>[serious]第 300 關。</item>
+        <item>[normal]這一關會用到妳學過的所有導覽。</item>
+    </string-array>
+    <string-array name="l300_first_mistake">
+        <item>[guilty]還沒到。</item>
+        <item>[normal]我在連結的前一頁。</item>
+    </string-array>
+    <string-array name="l300_clear">
+        <item>[normal]第 300 關，通關。</item>
+        <item>[smug]下一季見。</item>
+    </string-array>
+</resources>

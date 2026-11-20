@@ -132,3 +132,14 @@ class PronounTest {
         }
     }
 }
+
+class MonetizationMergeTest {
+    @org.junit.Test
+    fun earlyChangesSurviveTheInitialRead() {
+        val stored = tw.dynity.wrongbutton.core.monetization.MonetizationState(pro = false, adHints = mapOf(1 to 2, 2 to 1))
+        val early = tw.dynity.wrongbutton.core.monetization.MonetizationState(pro = true, adHints = mapOf(2 to 3))
+        val merged = MonetizationRepository.merge(stored, early)
+        org.junit.Assert.assertTrue(merged.pro)
+        org.junit.Assert.assertEquals(mapOf(1 to 2, 2 to 3), merged.adHints)
+    }
+}

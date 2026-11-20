@@ -1,7 +1,11 @@
-# Wrong Button（v0.4）
+# Wrong Button（v0.5）
 
 一個看起來像普通 Android App 的畫面裡，住著一顆有感情、會說謊、而且記得玩家做過什麼的按鈕。
-全部 120 關、8 章都可以玩：信任問題、讀臉、手勢、它記得妳、填好再送出、改版、後台、相信我。
+全部 300 關、20 章都可以玩。
+
+- **第一季**（1–120 關，8 章）：信任問題、讀臉、手勢、它記得妳、填好再送出、改版、後台、相信我。
+- **第二季**（121–300 關，12 章，每章獨立）：外面、同類、暗黑模式、聽不懂、重播、換妳做、看不見、播放中、設定、檔案、試算表、迷路。
+- 前 100 關免費，其餘 200 關需要 Pro（目前是模擬購買）。
 設計與每一關的細節見 [`docs/DESIGN.md`](docs/DESIGN.md) 和 [`docs/levels/`](docs/levels/)。
 
 ## 建置與測試
@@ -43,6 +47,15 @@ app/src/main/kotlin/tw/dynity/wrongbutton/
 ├─ ui/             主題、主選單、選關、紀錄、設定、Pro 頁與模擬廣告
 └─ levels/         每關一個檔案：上半部是純規則（可單元測試），下半部是 Composable
 ```
+
+### 第二季：新增一章
+
+1. 寫 `tools/s2/chNN.py`：章名、整章共用的台詞池，以及每關的標題、任務、三階提示、進場／第一次錯／通關台詞、關卡專用字串和設計說明。
+2. 執行 `python3 tools/s2/gen.py NN`，產生 `strings_chNN.xml`、`dialogue_chNN.xml`、`levels/s2/ChNNMeta.kt` 和 `docs/levels/chNN.md`。
+3. 寫 `levels/s2/ChNN*.kt`：每關一個 `object LevelXXX : S2Level(ChNNMeta.lXXX)`，只需要實作 `Content`。
+4. 把它加進 `Levels.chapters`（`standalone = true`），並寫一個 `ChapterNNPlaythroughTest`。
+
+開發時可以用 `WB_SCREENSHOTS=121,122 ./gradlew testDebugUnitTest --tests '*ScreenshotTool*'` 把指定關卡的畫面存到 `app/build/screenshots/`。
 
 ### 新增一關
 
@@ -94,7 +107,8 @@ TalkBack 會讀出外觀描述（「它的眼睛看向旁邊，一邊嘴角翹�
 - `FaceGeometryTest`：說謊特徵在靜態畫面上的可辨識下限。
 - `LevelRulesTest`、`Chapter1RulesTest`：各關的規則判定、關卡順序與解鎖。
 - `Level01FlowTest`：從主選單玩第 1 關到結算。
-- `FullPlaythroughTest`：只用單指、不限時，依順序連續玩完全部關卡。需要讀臉的關卡只用 TalkBack 讀得到的資訊來推理。
+- `FullPlaythroughTest`、`ChapterNPlaythroughTest`（第 2–20 章）：只用單指、不限時，依順序玩完每一章。需要讀臉的關卡只用 TalkBack 讀得到的資訊來推理。
+- `SaveSafetyTest`、`MonetizationTest`、`UnlockRulesTest`、`PronounTest`：存檔備份與遷移、提示廣告與 Pro、解鎖規則、你／妳替換。
 - `RotationTest`：旋轉（Activity 重建）後關卡狀態與統計不遺失。
 - `ResourcesTest`：台詞與提示是否齊全。
 - `AndroidRegexTest`：原始碼裡的正規表示式在 Android（ICU）上是否合法。

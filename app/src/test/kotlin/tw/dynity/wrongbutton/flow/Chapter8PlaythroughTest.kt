@@ -141,9 +141,9 @@ class Chapter8PlaythroughTest {
         rule.waitUntil(15_000) { speech().contains("不能說謊") && enabled("l10_left") }
         tap("the_button")
         rule.waitUntil(15_000) { exists("result_title") }
-        assertFalse(exists("result_next"))
+        assertTrue("第一季之後接著第二季", exists("result_next"))
 
-        assertTrue("全部 120 關通關", Levels.all.all { memory.isCleared(it.id) })
+        assertTrue("第一季 120 關全部通關", Levels.chapters.filter { !it.standalone }.flatMap { it.levels }.all { memory.isCleared(it.id) })
         assertEquals("一次都沒錯", 0, memory.totalMistakes)
     }
 }

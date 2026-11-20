@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 tools/s2/gen.py 依 tools/s2/ch20.py 產生，請改規格檔再重新產生。台灣繁體中文。 -->
+<resources>
+    <string name="chapter_20">第 20 章　迷路</string>
+    <string name="l286_title">分頁</string>
+    <string name="l286_task">找到我住的那一頁，按我。</string>
+    <string name="l286_hint_1">下面有三個分頁。</string>
+    <string name="l286_hint_2">我在其中一個。</string>
+    <string name="l286_hint_3">每個分頁都點點看。</string>
+    <string name="l286_fact">第 %1$d 關，The Button 住在「%2$s」分頁。</string>
+    <string name="l287_title">側邊選單</string>
+    <string name="l287_task">找到我住的那一頁，按我。</string>
+    <string name="l287_hint_1">分頁裡都沒有我。</string>
+    <string name="l287_hint_2">左上角有 ☰。</string>
+    <string name="l287_hint_3">打開 ☰ 側邊選單，點「收藏」。</string>
+    <string name="l288_title">上一頁</string>
+    <string name="l288_task">找到我住的那一頁，按我。</string>
+    <string name="l288_hint_1">我在上一頁。</string>
+    <string name="l288_hint_2">畫面裡有 ← 返回鈕。</string>
+    <string name="l288_hint_3">按畫面裡的 ←（不是系統返回）。</string>
+    <string name="l289_title">麵包屑</string>
+    <string name="l289_task">找到我住的那一頁，按我。</string>
+    <string name="l289_hint_1">上面那一排是走過來的路。</string>
+    <string name="l289_hint_2">每一段都可以點。</string>
+    <string name="l289_hint_3">點麵包屑裡的「商店」。</string>
+    <string name="l290_title">連結</string>
+    <string name="l290_task">找到我住的那一頁，按我。</string>
+    <string name="l290_hint_1">文章裡有一個字可以點。</string>
+    <string name="l290_hint_2">有底線的字是連結。</string>
+    <string name="l290_hint_3">點文章裡的「這裡」。</string>
+    <string name="l290_article">The Button 的家在很遠的地方，但是點</string>
+    <string name="l290_here">這裡</string>
+    <string name="l290_article_end">就到了。</string>
+    <string name="l291_title">網址</string>
+    <string name="l291_task">找到我住的那一頁，按我。</string>
+    <string name="l291_hint_1">我告訴妳我的地址了。</string>
+    <string name="l291_hint_2">上面有網址列。</string>
+    <string name="l291_hint_3">在網址列輸入 wb://button，按「前往」。</string>
+    <string name="l291_address">網址</string>
+    <string name="l291_go">前往</string>
+    <string name="l291_not_found">找不到這個網址。</string>
+    <string name="l292_title">瀏覽紀錄</string>
+    <string name="l292_task">找到我住的那一頁，按我。</string>
+    <string name="l292_hint_1">妳之前來過我家。</string>
+    <string name="l292_hint_2">瀏覽紀錄裡有。</string>
+    <string name="l292_hint_3">打開「瀏覽紀錄」，點「The Button 的家」。</string>
+    <string name="l292_history">瀏覽紀錄</string>
+    <string name="l293_title">走到一半</string>
+    <string name="l293_task">找到我住的那一頁，按我。</string>
+    <string name="l293_hint_1">妳剛剛在「探索」走到一半。</string>
+    <string name="l293_hint_2">每個分頁會記得自己走到哪。</string>
+    <string name="l293_hint_3">點「探索」分頁，會回到妳剛剛走到的地方。</string>
+    <string name="l294_title">請先登入</string>
+    <string name="l294_task">找到我住的那一頁，按我。</string>
+    <string name="l294_hint_1">有一個彈窗擋住了。</string>
+    <string name="l294_hint_2">不用登入。</string>
+    <string name="l294_hint_3">按彈窗下面的「以訪客身分繼續」。</string>
+    <string name="l294_heading">請先登入</string>
+    <string name="l294_login">登入</string>
+    <string name="l294_guest">以訪客身分繼續</string>
+    <string name="l294_no_login">這裡沒有帳號可以登入。</string>
+    <string name="l295_title">很多分頁</string>
+    <string name="l295_task">找到我住的那一頁，按我。</string>
+    <string name="l295_hint_1">上面的分頁很多，看不完。</string>
+    <string name="l295_hint_2">分頁那一排可以往右滑。</string>
+    <string name="l295_hint_3">把頂部分頁往右滑到最後，點「The Button」。</string>
+    <string name="l296_title">兩層選單</string>
+    <string name="l296_task">找到我住的那一頁，按我。</string>
+    <string name="l296_hint_1">側邊選單裡有一個可以展開的群組。</string>
+    <string name="l296_hint_2">群組裡還有東西。</string>
+    <string name="l296_hint_3">☰ → 展開「更多」→「進階」。</string>
+    <string name="l297_title">死路</string>
+    <string name="l297_task">找到我住的那一頁，按我。</string>
+    <string name="l297_hint_1">這一頁沒有返回鈕，也沒有分頁。</string>
+    <string name="l297_hint_2">右上角有一個 ×。</string>
+    <string name="l297_hint_3">按右上角的 ×，回到首頁，再到「我的」按我。</string>
+    <string name="l297_notice">公告：本 App 將在下週改版。</string>
+    <string name="l297_close">×</string>
+    <string name="l297_close_cd">關閉</string>
+    <string name="l298_title">迷宮</string>
+    <string name="l298_task">找到我住的那一頁，按我。</string>
+    <string name="l298_hint_1">每個房間有幾扇門。</string>
+    <string name="l298_hint_2">房間名稱會告訴妳方向。</string>
+    <string name="l298_hint_3">從入口：往北 → 往東 → 往北，就是我的房間。</string>
+    <string name="l298_sign">告示：The Button 住在北邊再北邊，中間要往東。</string>
+    <string name="l298_north">往北</string>
+    <string name="l298_south">往南</string>
+    <string name="l298_east">往東</string>
+    <string name="l298_west">往西</string>
+    <string name="l299_title">哪個分頁</string>
+    <string name="l299_task">第 286 關，我住在哪個分頁？</string>
+    <string name="l299_hint_1">第 286 關我住在哪個分頁？</string>
+    <string name="l299_hint_2">紀錄裡有。</string>
+    <string name="l299_hint_3">暫停 →「紀錄」看第 286 關的分頁。</string>
+    <string name="l300_title">第 300 關</string>
+    <string name="l300_task">找到我住的那一頁，按我。</string>
+    <string name="l300_hint_1">彈窗、選單、連結、返回，全部都要用到。</string>
+    <string name="l300_hint_2">一步一步來。</string>
+    <string name="l300_hint_3">以訪客身分繼續 → ☰ → 展開「更多」→「進階」→ 點文章裡的「這裡」→ 按 ← 一次 → 按我。</string>
+    <string name="ch20_back">←</string>
+    <string name="ch20_back_cd">返回上一頁</string>
+    <string name="ch20_menu">☰</string>
+    <string name="ch20_menu_cd">開啟選單</string>
+    <string name="ch20_where">目前位置：%1$s</string>
+    <string name="ch20_tab_home">首頁</string>
+    <string name="ch20_tab_explore">探索</string>
+    <string name="ch20_tab_me">我的</string>
+    <string name="ch20_s_shop">商店</string>
+    <string name="ch20_s_stationery">文具</string>
+    <string name="ch20_s_checkout">結帳</string>
+    <string name="ch20_s_pen">筆</string>
+    <string name="ch20_s_ballpoint">原子筆</string>
+    <string name="ch20_s_blue">藍色</string>
+    <string name="ch20_s_fav">收藏</string>
+    <string name="ch20_s_more">更多</string>
+    <string name="ch20_s_adv">進階</string>
+    <string name="ch20_s_news">最新消息</string>
+    <string name="ch20_s_help">說明</string>
+    <string name="ch20_s_home_page">The Button 的家</string>
+    <string name="ch20_s_link_page">連結的另一頁</string>
+    <string name="ch20_s_level">第 %1$d 層</string>
+    <string name="ch20_s_room">房間 %1$s</string>
+    <string name="ch20_s_notice">公告</string>
+    <string-array name="ch20_top_tabs">
+        <item>推薦</item>
+        <item>熱門</item>
+        <item>新品</item>
+        <item>折扣</item>
+        <item>文具</item>
+        <item>家電</item>
+        <item>服飾</item>
+        <item>食品</item>
+        <item>玩具</item>
+        <item>書籍</item>
+        <item>音樂</item>
+        <item>電影</item>
+        <item>運動</item>
+        <item>旅行</item>
+    </string-array>
+    <string name="ch20_nothing">這一頁什麼都沒有。</string>
+    <string name="ch20_plain_button">一般按鈕</string>
+    <string name="ch20_not_here">我不在這一頁。</string>
+</resources>

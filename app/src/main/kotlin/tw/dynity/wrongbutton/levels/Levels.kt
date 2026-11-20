@@ -161,6 +161,7 @@ object Levels {
         Chapter(R.string.chapter_17, tw.dynity.wrongbutton.levels.s2.Chapter17, standalone = true),
         Chapter(R.string.chapter_18, tw.dynity.wrongbutton.levels.s2.Chapter18, standalone = true),
         Chapter(R.string.chapter_19, tw.dynity.wrongbutton.levels.s2.Chapter19, standalone = true),
+        Chapter(R.string.chapter_20, tw.dynity.wrongbutton.levels.s2.Chapter20, standalone = true),
     )
 
     val all: List<Level> = chapters.flatMap { it.levels }

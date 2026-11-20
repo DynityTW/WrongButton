@@ -53,12 +53,30 @@ class MonetizationRepository(
     override val state: StateFlow<MonetizationState> = _state.asStateFlow()
 
     init {
-        scope.launch { _state.value = store.data.first() }
+        scope.launch {
+            val stored = store.data.first()
+            // 讀檔完成前如果已經有改動（例如很早就買了 Pro），不能被舊資料蓋掉：兩邊合併。
+            // 這份狀態只會增加（買了 Pro、看過的提示變多），所以合併就是取兩邊的聯集與最大值。
+            val before = _state.value
+            _state.update { current -> merge(stored, current) }
+            if (_state.value != stored && before != MonetizationState()) persist()
+        }
+    }
+
+    private fun persist() {
+        scope.launch { writeLock.withLock { val snapshot = _state.value; store.updateData { snapshot } } }
+    }
+
+    companion object {
+        fun merge(a: MonetizationState, b: MonetizationState) = MonetizationState(
+            pro = a.pro || b.pro,
+            adHints = (a.adHints.keys + b.adHints.keys).associateWith { maxOf(a.adHints[it] ?: 0, b.adHints[it] ?: 0) },
+        )
     }
 
     fun update(transform: (MonetizationState) -> MonetizationState) {
         _state.update(transform)
-        scope.launch { writeLock.withLock { val snapshot = _state.value; store.updateData { snapshot } } }
+        persist()
     }
 
     override fun purchasePro(): PurchaseResult {

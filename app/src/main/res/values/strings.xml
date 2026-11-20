@@ -24,7 +24,7 @@
     <string name="pause_records_badge_cd">紀錄，有新的內容</string>
     <string name="pause_exit">回到選關</string>
     <string name="hint_title">提示</string>
-    <string name="hint_none_yet">需要的話，我一階一階給妳。提示免費，也沒有冷卻時間。</string>
+    <string name="hint_none_yet">需要的話，我一階一階給妳。沒有冷卻時間。</string>
     <string name="hint_tier_label">第 %1$d 階</string>
     <string name="hint_reveal">給我第 %1$d 階提示</string>
     <string name="hint_close">關閉</string>
@@ -36,7 +36,7 @@
     <string name="result_special">特殊解</string>
     <string name="result_next">下一關</string>
     <string name="result_select">回到選關</string>
-    <string name="result_thanks">垂直切片到這裡結束。謝謝妳玩到最後。</string>
+    <string name="result_thanks">目前的關卡就到這裡。謝謝妳一路玩到第 300 關。</string>
     <string name="records_title">紀錄</string>
     <string name="records_back">返回</string>
     <string name="records_intro">以下是 The Button 記得的事。這些資料只存在妳的裝置上。</string>
