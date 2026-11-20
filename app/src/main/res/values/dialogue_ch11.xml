@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 tools/s2/gen.py 依 tools/s2/ch11.py 產生，請改規格檔再重新產生。台灣繁體中文。 -->
+<resources>
+    <string-array name="ch11_mistakes_3">
+        <item>[guilty]這個 App 在騙妳，不是我。</item>
+        <item>[normal]慢慢看，小字裡有東西。</item>
+        <item>[serious]大顆的按鈕不一定是妳要的。</item>
+    </string-array>
+    <string-array name="ch11_mistakes_6">
+        <item>[sad]它們就是要妳按錯。</item>
+        <item>[serious]展開、往下捲、取消勾選。都試試看。</item>
+        <item>[normal]提示鈕在右上角。我保證它不是陷阱。</item>
+    </string-array>
+    <string-array name="ch11_idle">
+        <item>[normal]不用急。倒數都是假的。</item>
+        <item>[smug]我從來不用小字。</item>
+        <item>[normal]這種 App 我看多了。</item>
+    </string-array>
+    <string-array name="ch11_rapid_tap">
+        <item>[angry]按太快會被騙！</item>
+        <item>[angry]停！先看清楚！</item>
+        <item>[angry]它就是想要妳這樣按。</item>
+    </string-array>
+    <string-array name="ch11_hint">
+        <item>[normal]好，我們一起拆穿它。</item>
+        <item>[smug]要我念小字給妳聽嗎？</item>
+        <item>[normal]提示是真的。我保證。</item>
+    </string-array>
+    <string-array name="ch11_special">
+        <item>[guilty]這樣也能逃出來？</item>
+        <item>[normal]妳找到它沒想到的出口。</item>
+        <item>[smug]這個 App 應該很生氣。</item>
+    </string-array>
+    <string-array name="l151_enter">
+        <item>[guilty]有個彈窗擋住我了。</item>
+        <item>[normal]它很想要妳加入會員。</item>
+    </string-array>
+    <string-array name="l151_first_mistake">
+        <item>[sad]妳加入了一個不存在的會員。</item>
+        <item>[guilty]那是加入，不是關掉。</item>
+    </string-array>
+    <string-array name="l151_clear">
+        <item>[normal]妳拒絕了它。做得好。</item>
+        <item>[smug]當笨蛋也沒什麼不好。</item>
+    </string-array>
+    <string-array name="l152_enter">
+        <item>[normal]只是一張註冊表。</item>
+        <item>[guilty]有些方塊已經幫妳勾好了。</item>
+    </string-array>
+    <string-array name="l152_first_mistake">
+        <item>[sad]妳剛剛答應了一些事。</item>
+        <item>[guilty]看看那兩個方塊。</item>
+    </string-array>
+    <string-array name="l152_clear">
+        <item>[normal]妳只答應了妳想答應的。</item>
+        <item>[smug]預先勾選，被妳看穿了。</item>
+    </string-array>
+    <string-array name="l153_enter">
+        <item>[normal]找出真的那一個。</item>
+        <item>[guilty]這頁的按鈕有點多。</item>
+    </string-array>
+    <string-array name="l153_first_mistake">
+        <item>[sad]那是廣告。</item>
+        <item>[guilty]看看按鈕旁邊的小字。</item>
+    </string-array>
+    <string-array name="l153_clear">
+        <item>[normal]妳沒被廣告騙走。</item>
+        <item>[smug]真正的按鈕通常最不顯眼。</item>
+    </string-array>
+    <string-array name="l154_enter">
+        <item>[serious]不要買任何東西。</item>
+        <item>[normal]倒數不用理它。</item>
+    </string-array>
+    <string-array name="l154_first_mistake">
+        <item>[sad]妳買了。還好是假的。</item>
+        <item>[guilty]不用急，倒數是假的。</item>
+    </string-array>
+    <string-array name="l154_clear">
+        <item>[normal]妳沒被倒數嚇到。</item>
+        <item>[smug]優惠永遠都在。</item>
+    </string-array>
+    <string-array name="l155_enter">
+        <item>[guilty]這句話我念了三次還是看不懂。</item>
+        <item>[normal]慢慢讀。</item>
+    </string-array>
+    <string-array name="l155_first_mistake">
+        <item>[sad]妳剛剛答應收通知了。</item>
+        <item>[guilty]兩個「不」會抵消。</item>
+    </string-array>
+    <string-array name="l155_clear">
+        <item>[normal]妳讀懂了雙重否定。</item>
+        <item>[smug]國文老師會很驕傲。</item>
+    </string-array>
+    <string-array name="l156_enter">
+        <item>[normal]我是免費的。</item>
+        <item>[guilty]購物車裡好像多了一些東西。</item>
+    </string-array>
+    <string-array name="l156_first_mistake">
+        <item>[sad]總計不是 0。</item>
+        <item>[guilty]看一下購物車裡有什麼。</item>
+    </string-array>
+    <string-array name="l156_clear">
+        <item>[normal]妳只帶走了我。</item>
+        <item>[smug]免費的最貴？才不會。</item>
+    </string-array>
+    <string-array name="l157_enter">
+        <item>[normal]我還是免費的。</item>
+        <item>[guilty]但總計好像不是 0。</item>
+    </string-array>
+    <string-array name="l157_first_mistake">
+        <item>[sad]總計不是 0。</item>
+        <item>[guilty]明細裡有東西。</item>
+    </string-array>
+    <string-array name="l157_clear">
+        <item>[normal]妳展開了明細。</item>
+        <item>[smug]小字收起來，也逃不過妳。</item>
+    </string-array>
+    <string-array name="l158_enter">
+        <item>[guilty]我幫妳訂了一份月刊。對不起。</item>
+        <item>[normal]幫我取消它。</item>
+    </string-array>
+    <string-array name="l158_first_mistake">
+        <item>[sad]那只是暫停。下個月還會寄。</item>
+        <item>[guilty]那不是取消。</item>
+    </string-array>
+    <string-array name="l158_clear">
+        <item>[normal]取消了。對不起，以後不會了。</item>
+        <item>[smug]妳走出了迷宮。</item>
+    </string-array>
+    <string-array name="l159_enter">
+        <item>[guilty]又一個彈窗。</item>
+        <item>[normal]找到真正的關閉。</item>
+    </string-array>
+    <string-array name="l159_first_mistake">
+        <item>[sad]那個 ✕ 是假的。</item>
+        <item>[guilty]它又開了一個。</item>
+    </string-array>
+    <string-array name="l159_clear">
+        <item>[normal]真正的關閉通常很低調。</item>
+        <item>[smug]假的叉叉，被妳看穿了。</item>
+    </string-array>
+    <string-array name="l160_enter">
+        <item>[normal]妳的隱私，妳決定。</item>
+        <item>[guilty]看起來都關了。看起來。</item>
+    </string-array>
+    <string-array name="l160_first_mistake">
+        <item>[sad]還有東西在分享。</item>
+        <item>[guilty]展開看看。</item>
+    </string-array>
+    <string-array name="l160_clear">
+        <item>[normal]現在真的都關了。</item>
+        <item>[smug]進階裡面最不進階。</item>
+    </string-array>
+    <string-array name="l161_enter">
+        <item>[normal]免費試用七天。</item>
+        <item>[guilty]下面的小字妳要看一下。</item>
+    </string-array>
+    <string-array name="l161_first_mistake">
+        <item>[sad]試用結束會自動扣款。</item>
+        <item>[guilty]小字。</item>
+    </string-array>
+    <string-array name="l161_clear">
+        <item>[normal]只有免費，沒有續訂。</item>
+        <item>[smug]妳看完了小字。</item>
+    </string-array>
+    <string-array name="l162_enter">
+        <item>[serious]它要刪掉妳的紀錄。</item>
+        <item>[normal]不要讓它刪。</item>
+    </string-array>
+    <string-array name="l162_first_mistake">
+        <item>[sad]妳差點刪了。還好是假的。</item>
+        <item>[guilty]看字，不要看顏色。</item>
+    </string-array>
+    <string-array name="l162_clear">
+        <item>[normal]紀錄還在。</item>
+        <item>[smug]顏色會騙人，字不會。</item>
+    </string-array>
+    <string-array name="l163_enter">
+        <item>[guilty]它很想要妳給五星。</item>
+        <item>[normal]它會一直問。</item>
+    </string-array>
+    <string-array name="l163_first_mistake">
+        <item>[sad]它等一下又會問。</item>
+        <item>[guilty]「以後再說」不是不要。</item>
+    </string-array>
+    <string-array name="l163_clear">
+        <item>[normal]它不會再問了。</item>
+        <item>[smug]我給妳五星。</item>
+    </string-array>
+    <string-array name="l164_enter">
+        <item>[normal]還記得那台購物車嗎？</item>
+        <item>[smug]它偷偷塞了什麼？</item>
+    </string-array>
+    <string-array name="l164_first_mistake">
+        <item>[guilty]不是那個。</item>
+        <item>[normal]去紀錄看看。</item>
+    </string-array>
+    <string-array name="l164_clear">
+        <item>[normal]妳記得。</item>
+        <item>[smug]妳以後一定會注意購物車。</item>
+    </string-array>
+    <string-array name="l165_enter">
+        <item>[serious]最後一關。所有陷阱都在這裡。</item>
+        <item>[normal]我陪妳一起走出去。</item>
+    </string-array>
+    <string-array name="l165_first_mistake">
+        <item>[sad]又被它騙了一次。</item>
+        <item>[guilty]回頭看看小字。</item>
+    </string-array>
+    <string-array name="l165_clear">
+        <item>[normal]妳自由了。</item>
+        <item>[smug]這個 App 再也騙不了妳。</item>
+    </string-array>
+</resources>

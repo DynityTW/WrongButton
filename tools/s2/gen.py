@@ -61,6 +61,7 @@ def check(mod):
             assert len(lines) >= 2 and len(set(lines)) == len(lines), f"{lv['id']} / {key} 至少 2 句且不重複"
         for k in lv.get("strings", {}):
             assert re.fullmatch(r"[a-z0-9_]+", k), f"{lv['id']} 字串鍵 {k} 只能用小寫英數與底線"
+            assert k not in ("title", "task") and not k.startswith("hint_"), f"{lv['id']} 字串鍵 {k} 和自動產生的鍵衝突"
 
 
 def gen(ch: int):
