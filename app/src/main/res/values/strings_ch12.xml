@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 tools/s2/gen.py 依 tools/s2/ch12.py 產生，請改規格檔再重新產生。台灣繁體中文。 -->
+<resources>
+    <string name="chapter_12">第 12 章　聽不懂</string>
+    <string name="l166_title">按鈕語</string>
+    <string name="l166_hint_1">上面有一張字典。</string>
+    <string name="l166_hint_2">先把它說的話翻成中文。</string>
+    <string name="l166_hint_3">翻成中文後，再看臉：眼睛看旁邊、嘴角翹起就是謊話。</string>
+    <string name="l167_title">例句</string>
+    <string name="l167_hint_1">這次字典只有例句。</string>
+    <string name="l167_hint_2">比對例句，找出每個符號的意思。</string>
+    <string name="l167_hint_3">●＝是、⊘＝不是、◀◆▶＝左中右。翻譯後再看臉。</string>
+    <string name="l168_title">數數</string>
+    <string name="l168_hint_1">候選變成四顆，用數字叫。</string>
+    <string name="l168_hint_2">上面有四個數字的寫法。</string>
+    <string name="l168_hint_3">☽ ☀ ★ ☁ 是 1 到 4。翻譯後再看臉。</string>
+    <string name="l169_title">少一個字</string>
+    <string name="l169_hint_1">字典少了一個字。</string>
+    <string name="l169_hint_2">三顆候選，只有一個方向沒有寫。</string>
+    <string name="l169_hint_3">◀ 是左、▶ 是右，那 ◆ 一定是中間。</string>
+    <string name="l170_title">字典在哪</string>
+    <string name="l170_hint_1">畫面上沒有字典。</string>
+    <string name="l170_hint_2">字典被收進紀錄裡了。</string>
+    <string name="l170_hint_3">暫停 →「紀錄」可以看到整本字典。</string>
+    <string name="l171_title">鏡子</string>
+    <string name="l171_hint_1">它說的左右，是誰的左右？</string>
+    <string name="l171_hint_2">它面對著妳。</string>
+    <string name="l171_hint_3">它的左邊是妳的右邊：◀ 要換成右邊，▶ 要換成左邊。</string>
+    <string name="l172_title">兩句話</string>
+    <string name="l172_hint_1">它說了兩句，每句有自己的臉。</string>
+    <string name="l172_hint_2">一句一句翻譯、一句一句看臉。</string>
+    <string name="l172_hint_3">兩句的真假各自判斷，合起來只剩一顆。</string>
+    <string name="l173_title">聽寫</string>
+    <string name="l173_task">把它說的話翻成中文。</string>
+    <string name="l173_hint_1">每個符號對應一個中文詞。</string>
+    <string name="l173_hint_2">照順序按下對應的中文。</string>
+    <string name="l173_hint_3">●＝是、⊘＝不是、＋＝或、◀◆▶＝左中右。照順序按。</string>
+    <string name="l173_answer">妳的翻譯：%1$s</string>
+    <string name="l173_w_is">是</string>
+    <string name="l173_w_not">不是</string>
+    <string name="l173_w_or">或</string>
+    <string name="l173_w_left">左邊</string>
+    <string name="l173_w_mid">中間</string>
+    <string name="l173_w_right">右邊</string>
+    <string name="l174_title">換妳說</string>
+    <string name="l174_task">用按鈕語告訴它，哪一顆是對的。</string>
+    <string name="l174_hint_1">亮著的那一顆是對的。</string>
+    <string name="l174_hint_2">用符號組一句「是＿＿」。</string>
+    <string name="l174_hint_3">先按 ●（是），再按那一顆的位置，最後按「說」。</string>
+    <string name="l174_say">說</string>
+    <string name="l174_clear">清除</string>
+    <string name="l174_lit">亮著</string>
+    <string name="l174_your">妳說：%1$s</string>
+    <string name="l174_empty">（還沒說）</string>
+    <string name="l175_title">翻譯員</string>
+    <string name="l175_hint_1">旁邊有一個翻譯員。</string>
+    <string name="l175_hint_2">翻譯員的翻譯不一定對。</string>
+    <string name="l175_hint_3">不要看翻譯員，自己查字典翻譯，再看我的臉。</string>
+    <string name="l175_translator">翻譯員：「%1$s」</string>
+    <string name="l176_title">或</string>
+    <string name="l176_hint_1">新的字：＋。</string>
+    <string name="l176_hint_2">例句告訴妳 ＋ 的意思。</string>
+    <string name="l176_hint_3">＋ 是「或」。「⊘ ◀ ＋ ▶」是「不是左邊，也不是右邊」。</string>
+    <string name="l177_title">長句</string>
+    <string name="l177_hint_1">三句話，三張臉。</string>
+    <string name="l177_hint_2">每句都可能有 ＋。</string>
+    <string name="l177_hint_3">一句一句翻譯並判斷真假，合起來只剩一顆。</string>
+    <string name="l178_title">沒有字典</string>
+    <string name="l178_hint_1">畫面上沒有字典。</string>
+    <string name="l178_hint_2">妳已經學會了（紀錄裡也還有）。</string>
+    <string name="l178_hint_3">● 是、⊘ 不是、＋ 或；☽ ☀ ★ ☁ 是 1 到 4。</string>
+    <string name="l179_title">考考妳</string>
+    <string name="l179_task">這個符號是什麼意思？</string>
+    <string name="l179_hint_1">這個字在第 166 關的字典裡。</string>
+    <string name="l179_hint_2">紀錄裡有整本字典。</string>
+    <string name="l179_hint_3">暫停 →「紀錄」查這個符號。</string>
+    <string name="l179_fact">第 %1$d 關的字典：%2$s</string>
+    <string name="l180_title">全部翻譯</string>
+    <string name="l180_hint_1">沒有字典，還照鏡子。</string>
+    <string name="l180_hint_2">它說的左右是它自己的左右；數字不受鏡子影響。</string>
+    <string name="l180_hint_3">翻譯（◀▶ 對調），三句各自看臉，合起來只剩一顆。</string>
+    <string name="ch12_dict_title">字典</string>
+    <string name="ch12_examples_title">例句</string>
+    <string name="ch12_mirror_note">它說的左右，是它自己的左右（它面對著妳）。</string>
+    <string name="ch12_torn">（撕掉了）</string>
+    <string name="ch12_in_records">字典在紀錄裡。</string>
+    <string-array name="ch12_names">
+        <item>圓圈</item>
+        <item>斜線圓</item>
+        <item>加號</item>
+        <item>左三角</item>
+        <item>菱形</item>
+        <item>右三角</item>
+        <item>月亮</item>
+        <item>太陽</item>
+        <item>星星</item>
+        <item>雲</item>
+    </string-array>
+    <string-array name="ch12_meanings">
+        <item>是</item>
+        <item>不是</item>
+        <item>或</item>
+        <item>左邊</item>
+        <item>中間</item>
+        <item>右邊</item>
+        <item>1 號</item>
+        <item>2 號</item>
+        <item>3 號</item>
+        <item>4 號</item>
+    </string-array>
+    <string name="ch12_entry_cd">%1$s，意思是%2$s</string>
+    <string name="ch12_said_cd">按鈕語：%1$s</string>
+    <string name="ch12_wrong_round">不對。回到第一回合。</string>
+</resources>

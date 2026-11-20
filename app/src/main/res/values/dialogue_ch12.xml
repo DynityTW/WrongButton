@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 tools/s2/gen.py 依 tools/s2/ch12.py 產生，請改規格檔再重新產生。台灣繁體中文。 -->
+<resources>
+    <string-array name="ch12_mistakes_3">
+        <item>[guilty]● ⊘ ◀……抱歉，我是說：看一下字典。</item>
+        <item>[normal]字看不懂沒關係，臉看得懂。</item>
+        <item>[normal]先翻譯，再看我的臉。</item>
+    </string-array>
+    <string-array name="ch12_mistakes_6">
+        <item>[sad]我的語言很難嗎？</item>
+        <item>[normal]● 是「是」，⊘ 是「不是」。這個我用中文說。</item>
+        <item>[guilty]提示鈕在右上角。提示是中文的。</item>
+    </string-array>
+    <string-array name="ch12_idle">
+        <item>[normal]☽ ☀ ★ ☁。這是我在數數。</item>
+        <item>[smug]按鈕語是世界上最美的語言。</item>
+        <item>[normal]妳想學更多單字嗎？</item>
+    </string-array>
+    <string-array name="ch12_rapid_tap">
+        <item>[angry]⊘ ⊘ ⊘！</item>
+        <item>[angry]慢一點！</item>
+        <item>[angry]我講話很慢，妳也慢一點。</item>
+    </string-array>
+    <string-array name="ch12_hint">
+        <item>[normal]好，這次我用中文。</item>
+        <item>[smug]需要翻譯嗎？</item>
+        <item>[normal]提示永遠是中文，永遠是實話。</item>
+    </string-array>
+    <string-array name="ch12_special">
+        <item>[guilty]●……我是說，這樣也行。</item>
+        <item>[normal]妳的按鈕語說得比我好。</item>
+        <item>[smug]妳該去當翻譯。</item>
+    </string-array>
+    <string-array name="l166_enter">
+        <item>[normal]● ◀……啊，妳聽不懂。上面有字典。</item>
+        <item>[smug]從今天起，我說按鈕語。</item>
+    </string-array>
+    <string-array name="l166_first_mistake">
+        <item>[guilty]翻譯對了嗎？</item>
+        <item>[normal]再看一次字典，再看一次我的臉。</item>
+    </string-array>
+    <string-array name="l166_clear">
+        <item>[normal]●！……意思是：對。</item>
+        <item>[smug]妳學會第一句按鈕語了。</item>
+    </string-array>
+    <string-array name="l167_enter">
+        <item>[normal]這次沒有字典，只有例句。</item>
+        <item>[smug]妳可以自己推出來。</item>
+    </string-array>
+    <string-array name="l167_first_mistake">
+        <item>[guilty]例句裡有答案。</item>
+        <item>[normal]比一下例句。</item>
+    </string-array>
+    <string-array name="l167_clear">
+        <item>[normal]妳從例句學會了。</item>
+        <item>[smug]這才是學語言的方法。</item>
+    </string-array>
+    <string-array name="l168_enter">
+        <item>[normal]☽ ☀ ★ ☁。我在數數。</item>
+        <item>[smug]四顆候選，我用數字叫它們。</item>
+    </string-array>
+    <string-array name="l168_first_mistake">
+        <item>[guilty]數字對了嗎？</item>
+        <item>[normal]看一下數字的寫法。</item>
+    </string-array>
+    <string-array name="l168_clear">
+        <item>[normal]妳會數數了。</item>
+        <item>[smug]按鈕語的數字很好看吧。</item>
+    </string-array>
+    <string-array name="l169_enter">
+        <item>[guilty]字典被撕掉一角。</item>
+        <item>[normal]少一個字，但妳推得出來。</item>
+    </string-array>
+    <string-array name="l169_first_mistake">
+        <item>[guilty]少的那個字，用刪去法。</item>
+        <item>[normal]三個方向，字典只寫了兩個。</item>
+    </string-array>
+    <string-array name="l169_clear">
+        <item>[normal]妳用刪去法補上了。</item>
+        <item>[smug]字典不完整，難不倒妳。</item>
+    </string-array>
+    <string-array name="l170_enter">
+        <item>[normal]字典不見了。</item>
+        <item>[smug]其實沒有不見，只是收起來了。</item>
+    </string-array>
+    <string-array name="l170_first_mistake">
+        <item>[guilty]去紀錄看看。</item>
+        <item>[normal]暫停選單裡有東西。</item>
+    </string-array>
+    <string-array name="l170_clear">
+        <item>[normal]妳知道去哪裡找了。</item>
+        <item>[smug]紀錄裡什麼都有。</item>
+    </string-array>
+    <string-array name="l171_enter">
+        <item>[normal]我面對著妳說話。</item>
+        <item>[smug]所以我的左邊是……妳想想看。</item>
+    </string-array>
+    <string-array name="l171_first_mistake">
+        <item>[guilty]我說的是我的左右。</item>
+        <item>[normal]站到我這邊想想。</item>
+    </string-array>
+    <string-array name="l171_clear">
+        <item>[normal]妳站到我這邊想了。</item>
+        <item>[smug]鏡子裡的我也很帥。</item>
+    </string-array>
+    <string-array name="l172_enter">
+        <item>[normal]我今天話比較多。</item>
+        <item>[smug]兩句話，兩張臉。</item>
+    </string-array>
+    <string-array name="l172_first_mistake">
+        <item>[guilty]兩句都要看。</item>
+        <item>[normal]每一句旁邊是我說那句時的臉。</item>
+    </string-array>
+    <string-array name="l172_clear">
+        <item>[normal]兩句都被妳拆穿了。</item>
+        <item>[smug]妳越來越會了。</item>
+    </string-array>
+    <string-array name="l173_enter">
+        <item>[normal]這次不用猜。翻譯就好。</item>
+        <item>[smug]我說，妳寫。</item>
+    </string-array>
+    <string-array name="l173_first_mistake">
+        <item>[guilty]那個字不是這個意思。</item>
+        <item>[normal]再對一次字典。</item>
+    </string-array>
+    <string-array name="l173_clear">
+        <item>[normal]妳翻得很好。</item>
+        <item>[smug]妳可以去當翻譯了。</item>
+    </string-array>
+    <string-array name="l174_enter">
+        <item>[normal]換妳說按鈕語給我聽。</item>
+        <item>[smug]哪一顆是對的？用我的語言說。</item>
+    </string-array>
+    <string-array name="l174_first_mistake">
+        <item>[guilty]我聽不懂。再說一次？</item>
+        <item>[normal]那句話的意思不對。</item>
+    </string-array>
+    <string-array name="l174_clear">
+        <item>[normal]妳說的我全聽懂了。</item>
+        <item>[smug]妳的口音很標準。</item>
+    </string-array>
+    <string-array name="l175_enter">
+        <item>[normal]今天有請翻譯員。</item>
+        <item>[guilty]不過……翻譯員的程度我不保證。</item>
+    </string-array>
+    <string-array name="l175_first_mistake">
+        <item>[sad]妳相信翻譯員了。</item>
+        <item>[guilty]自己翻一次。</item>
+    </string-array>
+    <string-array name="l175_clear">
+        <item>[normal]妳沒被翻譯員帶偏。</item>
+        <item>[smug]我早就說不用請翻譯。</item>
+    </string-array>
+    <string-array name="l176_enter">
+        <item>[normal]今天教妳一個新字。</item>
+        <item>[smug]＋。猜猜看是什麼意思。</item>
+    </string-array>
+    <string-array name="l176_first_mistake">
+        <item>[guilty]看看 ＋ 的例句。</item>
+        <item>[normal]兩個位置之間的 ＋。</item>
+    </string-array>
+    <string-array name="l176_clear">
+        <item>[normal]妳學會「或」了。</item>
+        <item>[smug]選擇變多了。</item>
+    </string-array>
+    <string-array name="l177_enter">
+        <item>[serious]今天我要說很多。</item>
+        <item>[normal]三句話。慢慢來。</item>
+    </string-array>
+    <string-array name="l177_first_mistake">
+        <item>[guilty]三句都要看。</item>
+        <item>[normal]有一句的臉不一樣。</item>
+    </string-array>
+    <string-array name="l177_clear">
+        <item>[normal]三句都拆完了。</item>
+        <item>[smug]妳可以聽我演講了。</item>
+    </string-array>
+    <string-array name="l178_enter">
+        <item>[normal]這次畫面上沒有字典。</item>
+        <item>[smug]妳應該已經不需要了。</item>
+    </string-array>
+    <string-array name="l178_first_mistake">
+        <item>[guilty]想一想之前學的。</item>
+        <item>[normal]提示裡有字典。</item>
+    </string-array>
+    <string-array name="l178_clear">
+        <item>[normal]妳已經會說按鈕語了。</item>
+        <item>[smug]我們可以用按鈕語聊天了。</item>
+    </string-array>
+    <string-array name="l179_enter">
+        <item>[normal]小考。</item>
+        <item>[smug]第 166 關的字典，妳還記得嗎？</item>
+    </string-array>
+    <string-array name="l179_first_mistake">
+        <item>[guilty]不是這個意思。</item>
+        <item>[normal]查一下紀錄。</item>
+    </string-array>
+    <string-array name="l179_clear">
+        <item>[normal]滿分。</item>
+        <item>[smug]妳是我最好的學生。</item>
+    </string-array>
+    <string-array name="l180_enter">
+        <item>[serious]最後一關。沒有字典，而且我面對著妳。</item>
+        <item>[normal]用妳學會的全部。</item>
+    </string-array>
+    <string-array name="l180_first_mistake">
+        <item>[guilty]左右是我的左右。</item>
+        <item>[normal]每一句都要看臉。</item>
+    </string-array>
+    <string-array name="l180_clear">
+        <item>[normal]● ● ●。意思是：妳太厲害了。</item>
+        <item>[smug]妳現在是按鈕語的母語者了。</item>
+    </string-array>
+</resources>
