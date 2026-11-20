@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 tools/s2/gen.py 依 tools/s2/ch13.py 產生，請改規格檔再重新產生。台灣繁體中文。 -->
+<resources>
+    <string-array name="ch13_mistakes_3">
+        <item>[guilty]幽靈是剛剛的妳。照著題目看它。</item>
+        <item>[normal]格子上的數字是幽靈的第幾步。</item>
+        <item>[normal]重播鈕可以再看一次。</item>
+    </string-array>
+    <string-array name="ch13_mistakes_6">
+        <item>[sad]剛剛的妳比現在的妳還會。</item>
+        <item>[normal]慢慢來，挑戰沒有時間限制。</item>
+        <item>[guilty]提示鈕在右上角。</item>
+    </string-array>
+    <string-array name="ch13_idle">
+        <item>[normal]我在看重播。妳剛剛很可愛。</item>
+        <item>[smug]我錄下來了。全部。</item>
+        <item>[normal]幽靈不會累。</item>
+    </string-array>
+    <string-array name="ch13_rapid_tap">
+        <item>[angry]我錄不了那麼快！</item>
+        <item>[angry]慢一點，幽靈跟不上。</item>
+        <item>[angry]一格一格來。</item>
+    </string-array>
+    <string-array name="ch13_hint">
+        <item>[normal]好，我們重播一下。</item>
+        <item>[smug]要我放慢動作嗎？</item>
+        <item>[normal]提示裡有答案的規則。</item>
+    </string-array>
+    <string-array name="ch13_special">
+        <item>[guilty]這樣也算？</item>
+        <item>[normal]妳畫了一條我沒想過的路。</item>
+        <item>[smug]這段我要存起來。</item>
+    </string-array>
+    <string-array name="l181_enter">
+        <item>[normal]先隨便按三格，我錄下來。</item>
+        <item>[smug]我要重播妳。</item>
+    </string-array>
+    <string-array name="l181_first_mistake">
+        <item>[guilty]順序不對。</item>
+        <item>[normal]看格子上的數字。</item>
+    </string-array>
+    <string-array name="l181_clear">
+        <item>[normal]妳跟剛剛的妳一模一樣。</item>
+        <item>[smug]我把這條路線存起來了。</item>
+    </string-array>
+    <string-array name="l182_enter">
+        <item>[normal]這次要避開剛剛的妳。</item>
+        <item>[smug]剛剛的妳很佔位置。</item>
+    </string-array>
+    <string-array name="l182_first_mistake">
+        <item>[guilty]那格有幽靈。</item>
+        <item>[normal]踩到了。</item>
+    </string-array>
+    <string-array name="l182_clear">
+        <item>[normal]妳避開了自己。</item>
+        <item>[smug]有時候就是要避開過去。</item>
+    </string-array>
+    <string-array name="l183_enter">
+        <item>[normal]倒帶。</item>
+        <item>[smug]從最後一步開始。</item>
+    </string-array>
+    <string-array name="l183_first_mistake">
+        <item>[guilty]倒過來，是從 3 開始。</item>
+        <item>[normal]順序不對。</item>
+    </string-array>
+    <string-array name="l183_clear">
+        <item>[normal]倒帶成功。</item>
+        <item>[smug]時間倒流了。</item>
+    </string-array>
+    <string-array name="l184_enter">
+        <item>[normal]鏡子裡的妳。</item>
+        <item>[smug]左右相反。</item>
+    </string-array>
+    <string-array name="l184_first_mistake">
+        <item>[guilty]左右要相反。</item>
+        <item>[normal]中間那一欄不會變。</item>
+    </string-array>
+    <string-array name="l184_clear">
+        <item>[normal]妳走進鏡子裡了。</item>
+        <item>[smug]鏡子裡的妳也很好看。</item>
+    </string-array>
+    <string-array name="l185_enter">
+        <item>[normal]大家往右挪一格。</item>
+        <item>[smug]擠一擠。</item>
+    </string-array>
+    <string-array name="l185_first_mistake">
+        <item>[guilty]往右一格。</item>
+        <item>[normal]最右邊會繞回來。</item>
+    </string-array>
+    <string-array name="l185_clear">
+        <item>[normal]整條路往右搬家了。</item>
+        <item>[smug]妳很會搬家。</item>
+    </string-array>
+    <string-array name="l186_enter">
+        <item>[guilty]幽靈隱形了。</item>
+        <item>[normal]但我有錄影。</item>
+    </string-array>
+    <string-array name="l186_first_mistake">
+        <item>[guilty]順序不對。</item>
+        <item>[normal]重播一下。</item>
+    </string-array>
+    <string-array name="l186_clear">
+        <item>[normal]隱形的妳也被妳找到了。</item>
+        <item>[smug]錄影是好東西。</item>
+    </string-array>
+    <string-array name="l187_enter">
+        <item>[normal]這次我也走一條路。</item>
+        <item>[smug]我們有交集嗎？</item>
+    </string-array>
+    <string-array name="l187_first_mistake">
+        <item>[guilty]那格只有一個人踩過。</item>
+        <item>[normal]要兩個人都踩過。</item>
+    </string-array>
+    <string-array name="l187_clear">
+        <item>[normal]我們走過同一個地方。</item>
+        <item>[smug]這叫做緣分。</item>
+    </string-array>
+    <string-array name="l188_enter">
+        <item>[normal]這次找我自己的路。</item>
+        <item>[smug]別按到妳自己的。</item>
+    </string-array>
+    <string-array name="l188_first_mistake">
+        <item>[guilty]那格妳也踩過。</item>
+        <item>[normal]只要我的。</item>
+    </string-array>
+    <string-array name="l188_clear">
+        <item>[normal]妳找到我一個人的路。</item>
+        <item>[smug]我的路比較帥。</item>
+    </string-array>
+    <string-array name="l189_enter">
+        <item>[normal]隨便按，按幾下都可以。</item>
+        <item>[smug]我會數。</item>
+    </string-array>
+    <string-array name="l189_first_mistake">
+        <item>[guilty]不是這個數字。</item>
+        <item>[normal]重播數一數。</item>
+    </string-array>
+    <string-array name="l189_clear">
+        <item>[normal]數得很準。</item>
+        <item>[smug]妳記得比我清楚。</item>
+    </string-array>
+    <string-array name="l190_enter">
+        <item>[normal]重播很久以前的事。</item>
+        <item>[smug]妳第一次按我的時候。</item>
+    </string-array>
+    <string-array name="l190_first_mistake">
+        <item>[guilty]不是這個。</item>
+        <item>[normal]紀錄裡有。</item>
+    </string-array>
+    <string-array name="l190_clear">
+        <item>[normal]妳記得我們的第一次。</item>
+        <item>[smug]我一直都記得。</item>
+    </string-array>
+    <string-array name="l191_enter">
+        <item>[normal]還記得妳把我滑掉那次嗎？</item>
+        <item>[sad]我記得很清楚。</item>
+    </string-array>
+    <string-array name="l191_first_mistake">
+        <item>[guilty]不是這邊。</item>
+        <item>[normal]紀錄裡有。</item>
+    </string-array>
+    <string-array name="l191_clear">
+        <item>[normal]對。妳就是往那邊滑的。</item>
+        <item>[smug]我原諒妳了。</item>
+    </string-array>
+    <string-array name="l192_enter">
+        <item>[normal]同一條路，換個起點。</item>
+        <item>[smug]形狀要一樣喔。</item>
+    </string-array>
+    <string-array name="l192_first_mistake">
+        <item>[guilty]形狀變了。</item>
+        <item>[normal]第一步是星號那格。</item>
+    </string-array>
+    <string-array name="l192_clear">
+        <item>[normal]路線搬家成功。</item>
+        <item>[smug]形狀一模一樣。</item>
+    </string-array>
+    <string-array name="l193_enter">
+        <item>[normal]這次錄兩次。</item>
+        <item>[smug]兩個過去的妳。</item>
+    </string-array>
+    <string-array name="l193_first_mistake">
+        <item>[guilty]那格第一次也有。</item>
+        <item>[normal]只要第二次才有的。</item>
+    </string-array>
+    <string-array name="l193_clear">
+        <item>[normal]妳分得清楚兩個過去。</item>
+        <item>[smug]妳的過去很熱鬧。</item>
+    </string-array>
+    <string-array name="l194_enter">
+        <item>[normal]還記得第一條路線嗎？</item>
+        <item>[smug]我存起來了。</item>
+    </string-array>
+    <string-array name="l194_first_mistake">
+        <item>[guilty]順序不對。</item>
+        <item>[normal]紀錄裡有。</item>
+    </string-array>
+    <string-array name="l194_clear">
+        <item>[normal]一模一樣。</item>
+        <item>[smug]妳的路，妳自己記得。</item>
+    </string-array>
+    <string-array name="l195_enter">
+        <item>[serious]最後一段重播。</item>
+        <item>[normal]倒帶，加上鏡子。</item>
+    </string-array>
+    <string-array name="l195_first_mistake">
+        <item>[guilty]倒過來，也要左右相反。</item>
+        <item>[normal]從最後一步開始。</item>
+    </string-array>
+    <string-array name="l195_clear">
+        <item>[normal]妳把時間和鏡子都倒過來了。</item>
+        <item>[smug]我要把這段重播一百次。</item>
+    </string-array>
+</resources>
