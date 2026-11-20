@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 tools/s2/gen.py 依 tools/s2/ch17.py 產生，請改規格檔再重新產生。台灣繁體中文。 -->
+<resources>
+    <string-array name="ch17_mistakes_3">
+        <item>[guilty]停用的項目下面有寫原因。</item>
+        <item>[normal]設定通常藏在子頁面裡。</item>
+        <item>[normal]搜尋可以省很多時間。</item>
+    </string-array>
+    <string-array name="ch17_mistakes_6">
+        <item>[sad]設定頁是我最害怕的地方。</item>
+        <item>[normal]照著停用的原因一路往回找。</item>
+        <item>[guilty]提示鈕在右上角。</item>
+    </string-array>
+    <string-array name="ch17_idle">
+        <item>[normal]我住在設定頁的最深處。</item>
+        <item>[smug]我是一個很重要的設定。</item>
+        <item>[normal]有人從來不看設定頁。妳不是那種人。</item>
+    </string-array>
+    <string-array name="ch17_rapid_tap">
+        <item>[angry]不要亂開關！</item>
+        <item>[angry]設定會被妳弄亂。</item>
+        <item>[angry]一個一個來。</item>
+    </string-array>
+    <string-array name="ch17_hint">
+        <item>[normal]好，我告訴妳我在哪個分類。</item>
+        <item>[smug]要我幫妳搜尋嗎？</item>
+        <item>[normal]提示會說路徑。</item>
+    </string-array>
+    <string-array name="ch17_special">
+        <item>[guilty]這樣也找得到？</item>
+        <item>[normal]妳找到一條捷徑。</item>
+        <item>[smug]妳比工程師還熟這個設定頁。</item>
+    </string-array>
+    <string-array name="l241_enter">
+        <item>[normal]歡迎來到我的設定頁。</item>
+        <item>[smug]我是其中一個設定。</item>
+    </string-array>
+    <string-array name="l241_first_mistake">
+        <item>[guilty]那不是我。</item>
+        <item>[normal]點分類進去看看。</item>
+    </string-array>
+    <string-array name="l241_clear">
+        <item>[normal]妳找到我了。</item>
+        <item>[smug]我是最重要的設定。</item>
+    </string-array>
+    <string-array name="l242_enter">
+        <item>[normal]我藏在很深的地方。</item>
+        <item>[smug]妳要一直點進去。</item>
+    </string-array>
+    <string-array name="l242_first_mistake">
+        <item>[guilty]還沒到。</item>
+        <item>[normal]再進去一層。</item>
+    </string-array>
+    <string-array name="l242_clear">
+        <item>[normal]好深。妳真有耐心。</item>
+        <item>[smug]最深的地方最安全。</item>
+    </string-array>
+    <string-array name="l243_enter">
+        <item>[guilty]我的設定頁有點亂。</item>
+        <item>[normal]分類有二十個。</item>
+    </string-array>
+    <string-array name="l243_first_mistake">
+        <item>[guilty]不在這裡。</item>
+        <item>[normal]試試看搜尋。</item>
+    </string-array>
+    <string-array name="l243_clear">
+        <item>[normal]搜尋真方便。</item>
+        <item>[smug]妳一下就找到我了。</item>
+    </string-array>
+    <string-array name="l244_enter">
+        <item>[guilty]我被停用了。</item>
+        <item>[normal]看一下原因。</item>
+    </string-array>
+    <string-array name="l244_first_mistake">
+        <item>[guilty]我還是停用的。</item>
+        <item>[normal]原因寫在我下面。</item>
+    </string-array>
+    <string-array name="l244_clear">
+        <item>[normal]啟用了。謝謝。</item>
+        <item>[smug]原因寫清楚很重要。</item>
+    </string-array>
+    <string-array name="l245_enter">
+        <item>[guilty]我需要的東西，也需要別的東西。</item>
+        <item>[normal]一層一層來。</item>
+    </string-array>
+    <string-array name="l245_first_mistake">
+        <item>[guilty]還有一個沒開。</item>
+        <item>[normal]看原因。</item>
+    </string-array>
+    <string-array name="l245_clear">
+        <item>[normal]整條鏈都接起來了。</item>
+        <item>[smug]依賴關係真麻煩。</item>
+    </string-array>
+    <string-array name="l246_enter">
+        <item>[normal]我在這一頁。</item>
+        <item>[guilty]只是被收起來了。</item>
+    </string-array>
+    <string-array name="l246_first_mistake">
+        <item>[guilty]不是那個。</item>
+        <item>[normal]往下看看。</item>
+    </string-array>
+    <string-array name="l246_clear">
+        <item>[normal]打開進階就看到了。</item>
+        <item>[smug]進階的東西都很重要。</item>
+    </string-array>
+    <string-array name="l247_enter">
+        <item>[angry]有人亂調我的設定！</item>
+        <item>[sad]我被關掉了。</item>
+    </string-array>
+    <string-array name="l247_first_mistake">
+        <item>[guilty]我還是停用的。</item>
+        <item>[normal]設定太亂了。</item>
+    </string-array>
+    <string-array name="l247_clear">
+        <item>[normal]恢復正常了。</item>
+        <item>[smug]預設值最好。</item>
+    </string-array>
+    <string-array name="l248_enter">
+        <item>[sleeping]安靜模式開著。</item>
+        <item>[normal]安靜模式的時候我不能出聲。</item>
+    </string-array>
+    <string-array name="l248_first_mistake">
+        <item>[guilty]安靜模式還開著。</item>
+        <item>[normal]我被安靜了。</item>
+    </string-array>
+    <string-array name="l248_clear">
+        <item>[normal]可以出聲了！</item>
+        <item>[smug]我比較喜歡吵一點。</item>
+    </string-array>
+    <string-array name="l249_enter">
+        <item>[guilty]我被藏起來了。</item>
+        <item>[normal]位置是「隱藏」。</item>
+    </string-array>
+    <string-array name="l249_first_mistake">
+        <item>[guilty]我還在隱藏。</item>
+        <item>[normal]換個位置。</item>
+    </string-array>
+    <string-array name="l249_clear">
+        <item>[normal]出來了！</item>
+        <item>[smug]左邊還是右邊，我都好看。</item>
+    </string-array>
+    <string-array name="l250_enter">
+        <item>[guilty]我縮得好小。</item>
+        <item>[normal]調大一點。</item>
+    </string-array>
+    <string-array name="l250_first_mistake">
+        <item>[guilty]我還是太小了。</item>
+        <item>[normal]調顯示大小。</item>
+    </string-array>
+    <string-array name="l250_clear">
+        <item>[normal]這樣剛好。</item>
+        <item>[smug]大大的我比較帥。</item>
+    </string-array>
+    <string-array name="l251_enter">
+        <item>[normal]換個語言試試看。</item>
+        <item>[smug]我會說好幾種語言。</item>
+    </string-array>
+    <string-array name="l251_first_mistake">
+        <item>[guilty]這個語言沒有我。</item>
+        <item>[normal]看一下語言清單。</item>
+    </string-array>
+    <string-array name="l251_clear">
+        <item>[normal]● ● ●。意思是：謝謝。</item>
+        <item>[smug]按鈕語是我的母語。</item>
+    </string-array>
+    <string-array name="l252_enter">
+        <item>[normal]這個設定比較特別。</item>
+        <item>[smug]要重開機。</item>
+    </string-array>
+    <string-array name="l252_first_mistake">
+        <item>[guilty]還沒生效。</item>
+        <item>[normal]要重新啟動。</item>
+    </string-array>
+    <string-array name="l252_clear">
+        <item>[normal]重開機之後神清氣爽。</item>
+        <item>[smug]重開機可以解決九成的問題。</item>
+    </string-array>
+    <string-array name="l253_enter">
+        <item>[guilty]我沒有權限被按。</item>
+        <item>[normal]要先允許。</item>
+    </string-array>
+    <string-array name="l253_first_mistake">
+        <item>[guilty]權限還沒開。</item>
+        <item>[normal]看停用原因。</item>
+    </string-array>
+    <string-array name="l253_clear">
+        <item>[normal]謝謝妳允許我。</item>
+        <item>[smug]被允許的感覺真好。</item>
+    </string-array>
+    <string-array name="l254_enter">
+        <item>[normal]還記得第一次在設定頁找到我嗎？</item>
+        <item>[smug]我在哪個分類？</item>
+    </string-array>
+    <string-array name="l254_first_mistake">
+        <item>[guilty]不是這個分類。</item>
+        <item>[normal]紀錄裡有。</item>
+    </string-array>
+    <string-array name="l254_clear">
+        <item>[normal]妳記得。</item>
+        <item>[smug]我還住在那裡。</item>
+    </string-array>
+    <string-array name="l255_enter">
+        <item>[serious]最後一個設定頁。最亂的那一個。</item>
+        <item>[normal]用妳學會的全部。</item>
+    </string-array>
+    <string-array name="l255_first_mistake">
+        <item>[guilty]還差一步。</item>
+        <item>[normal]看停用原因。</item>
+    </string-array>
+    <string-array name="l255_clear">
+        <item>[normal]妳是設定大師。</item>
+        <item>[smug]以後我的設定都交給妳。</item>
+    </string-array>
+</resources>
