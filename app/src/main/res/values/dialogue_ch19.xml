@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 tools/s2/gen.py 依 tools/s2/ch19.py 產生，請改規格檔再重新產生。台灣繁體中文。 -->
+<resources>
+    <string-array name="ch19_mistakes_3">
+        <item>[guilty]那一格不是我。</item>
+        <item>[normal]點一下儲存格，看上面的內容列。</item>
+        <item>[normal]工具列上的功能都試試看。</item>
+    </string-array>
+    <string-array name="ch19_mistakes_6">
+        <item>[sad]我被埋在表格裡。</item>
+        <item>[normal]欄名有沒有跳號？有沒有篩選？字是不是白色的？</item>
+        <item>[guilty]提示鈕在右上角。</item>
+    </string-array>
+    <string-array name="ch19_idle">
+        <item>[normal]我最喜歡整齊的表格。</item>
+        <item>[smug]我是這張表最重要的一格。</item>
+        <item>[normal]試算表裡什麼都藏得住。</item>
+    </string-array>
+    <string-array name="ch19_rapid_tap">
+        <item>[angry]不要亂點儲存格！</item>
+        <item>[angry]表格會被妳點壞。</item>
+        <item>[angry]一格一格看。</item>
+    </string-array>
+    <string-array name="ch19_hint">
+        <item>[normal]好，我告訴妳我在哪一欄。</item>
+        <item>[smug]要我幫妳選取嗎？</item>
+        <item>[normal]提示會說要用哪個功能。</item>
+    </string-array>
+    <string-array name="ch19_special">
+        <item>[guilty]這樣也找得到？</item>
+        <item>[normal]妳很會用試算表。</item>
+        <item>[smug]妳可以去當會計了。</item>
+    </string-array>
+    <string-array name="l271_enter">
+        <item>[normal]我變成一格了。</item>
+        <item>[smug]找找看我在哪一格。</item>
+    </string-array>
+    <string-array name="l271_first_mistake">
+        <item>[guilty]那一格不是我。</item>
+        <item>[normal]再找找。</item>
+    </string-array>
+    <string-array name="l271_clear">
+        <item>[normal]妳找到我了。</item>
+        <item>[smug]我是最好看的那一格。</item>
+    </string-array>
+    <string-array name="l272_enter">
+        <item>[guilty]我那一欄被藏起來了。</item>
+        <item>[normal]看看欄名。</item>
+    </string-array>
+    <string-array name="l272_first_mistake">
+        <item>[guilty]我不在這一欄。</item>
+        <item>[normal]欄名跳號了。</item>
+    </string-array>
+    <string-array name="l272_clear">
+        <item>[normal]C 欄回來了。</item>
+        <item>[smug]被藏起來的欄最可疑。</item>
+    </string-array>
+    <string-array name="l273_enter">
+        <item>[guilty]我被篩掉了。</item>
+        <item>[normal]我的狀態是「不正常」。</item>
+    </string-array>
+    <string-array name="l273_first_mistake">
+        <item>[guilty]那一格不是我。</item>
+        <item>[normal]看一下篩選。</item>
+    </string-array>
+    <string-array name="l273_clear">
+        <item>[normal]不正常也有不正常的好。</item>
+        <item>[smug]篩選會藏東西。</item>
+    </string-array>
+    <string-array name="l274_enter">
+        <item>[smug]我是第一名。</item>
+        <item>[normal]找分數最高的那一個。</item>
+    </string-array>
+    <string-array name="l274_first_mistake">
+        <item>[guilty]那不是最高分。</item>
+        <item>[normal]比一下分數。</item>
+    </string-array>
+    <string-array name="l274_clear">
+        <item>[normal]第一名就是我。</item>
+        <item>[smug]我一直都是第一名。</item>
+    </string-array>
+    <string-array name="l275_enter">
+        <item>[normal]表格上看到的不一定是全部。</item>
+        <item>[smug]去看公式。</item>
+    </string-array>
+    <string-array name="l275_first_mistake">
+        <item>[guilty]那一格不是我。</item>
+        <item>[normal]看公式。</item>
+    </string-array>
+    <string-array name="l275_clear">
+        <item>[normal]公式不會騙人。</item>
+        <item>[smug]內容列才是真相。</item>
+    </string-array>
+    <string-array name="l276_enter">
+        <item>[normal]我在很遠很遠的地方。</item>
+        <item>[smug]表格比畫面大很多。</item>
+    </string-array>
+    <string-array name="l276_first_mistake">
+        <item>[guilty]我不在這裡。</item>
+        <item>[normal]試試名稱方塊。</item>
+    </string-array>
+    <string-array name="l276_clear">
+        <item>[normal]一下就到了。</item>
+        <item>[smug]名稱方塊是捷徑。</item>
+    </string-array>
+    <string-array name="l277_enter">
+        <item>[guilty]有一大格壓著我。</item>
+        <item>[normal]好重。</item>
+    </string-array>
+    <string-array name="l277_first_mistake">
+        <item>[guilty]那一格不是我。</item>
+        <item>[normal]我在合併的那一格下面。</item>
+    </string-array>
+    <string-array name="l277_clear">
+        <item>[normal]呼吸順暢了。</item>
+        <item>[smug]合併儲存格是試算表最大的敵人。</item>
+    </string-array>
+    <string-array name="l278_enter">
+        <item>[guilty]我穿了白色的衣服。</item>
+        <item>[normal]跟背景一樣顏色。</item>
+    </string-array>
+    <string-array name="l278_first_mistake">
+        <item>[guilty]那一格不是我。</item>
+        <item>[normal]有一格看起來是空的。</item>
+    </string-array>
+    <string-array name="l278_clear">
+        <item>[normal]現身了。</item>
+        <item>[smug]白色的衣服太顯瘦了。</item>
+    </string-array>
+    <string-array name="l279_enter">
+        <item>[normal]表格裡全是數字。</item>
+        <item>[smug]我是最大的那一個。</item>
+    </string-array>
+    <string-array name="l279_first_mistake">
+        <item>[guilty]那一格太小了。</item>
+        <item>[normal]我大於 100。</item>
+    </string-array>
+    <string-array name="l279_clear">
+        <item>[normal]被標出來了。</item>
+        <item>[smug]我一直都很突出。</item>
+    </string-array>
+    <string-array name="l280_enter">
+        <item>[guilty]我被藏到另一張工作表了。</item>
+        <item>[normal]看看下面的分頁。</item>
+    </string-array>
+    <string-array name="l280_first_mistake">
+        <item>[guilty]我不在這裡。</item>
+        <item>[normal]換一張工作表。</item>
+    </string-array>
+    <string-array name="l280_clear">
+        <item>[normal]工作表 3，就是我家。</item>
+        <item>[smug]隱藏的工作表最神秘。</item>
+    </string-array>
+    <string-array name="l281_enter">
+        <item>[guilty]好多冒牌貨。</item>
+        <item>[normal]仔細看拼法。</item>
+    </string-array>
+    <string-array name="l281_first_mistake">
+        <item>[sad]那是冒牌貨。</item>
+        <item>[normal]看清楚拼法。</item>
+    </string-array>
+    <string-array name="l281_clear">
+        <item>[normal]只有一個是真的。</item>
+        <item>[smug]冒牌貨拼錯字了。</item>
+    </string-array>
+    <string-array name="l282_enter">
+        <item>[guilty]我被擠扁了。</item>
+        <item>[normal]B 欄太窄了。</item>
+    </string-array>
+    <string-array name="l282_first_mistake">
+        <item>[guilty]那一格不是我。</item>
+        <item>[normal]### 是放不下的意思。</item>
+    </string-array>
+    <string-array name="l282_clear">
+        <item>[normal]終於能伸展了。</item>
+        <item>[smug]欄寬很重要。</item>
+    </string-array>
+    <string-array name="l283_enter">
+        <item>[sad]有人把我刪掉了。</item>
+        <item>[normal]上面寫著「已刪除 1 格」。</item>
+    </string-array>
+    <string-array name="l283_first_mistake">
+        <item>[sad]我被刪掉了。</item>
+        <item>[normal]試試復原。</item>
+    </string-array>
+    <string-array name="l283_clear">
+        <item>[normal]我回來了。</item>
+        <item>[smug]復原是最棒的發明。</item>
+    </string-array>
+    <string-array name="l284_enter">
+        <item>[normal]還記得我第一次當儲存格嗎？</item>
+        <item>[smug]我在哪一格？</item>
+    </string-array>
+    <string-array name="l284_first_mistake">
+        <item>[guilty]不是那一格。</item>
+        <item>[normal]紀錄裡有。</item>
+    </string-array>
+    <string-array name="l284_clear">
+        <item>[normal]妳記得。</item>
+        <item>[smug]那一格我現在還住著。</item>
+    </string-array>
+    <string-array name="l285_enter">
+        <item>[serious]最後一張表。我藏得最好的一次。</item>
+        <item>[normal]三種藏法一起來。</item>
+    </string-array>
+    <string-array name="l285_first_mistake">
+        <item>[guilty]我還沒出現。</item>
+        <item>[normal]還有東西藏著我。</item>
+    </string-array>
+    <string-array name="l285_clear">
+        <item>[normal]三層都被妳拆掉了。</item>
+        <item>[smug]妳是試算表大師。</item>
+    </string-array>
+</resources>

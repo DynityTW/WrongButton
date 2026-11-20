@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 tools/s2/gen.py 依 tools/s2/ch19.py 產生，請改規格檔再重新產生。台灣繁體中文。 -->
+<resources>
+    <string name="chapter_19">第 19 章　試算表</string>
+    <string name="l271_title">試算表</string>
+    <string name="l271_task">找到 The Button 那一格，點它。</string>
+    <string name="l271_hint_1">我在某一格裡。</string>
+    <string name="l271_hint_2">每一格的字都看看。</string>
+    <string name="l271_hint_3">找到寫著「The Button」的那一格，點它。</string>
+    <string name="l271_fact">第 %1$d 關，The Button 在 %2$s。</string>
+    <string name="l272_title">隱藏的欄</string>
+    <string name="l272_task">找到 The Button 那一格，點它。</string>
+    <string name="l272_hint_1">欄名是 A、B、D。</string>
+    <string name="l272_hint_2">少了 C。</string>
+    <string name="l272_hint_3">按「顯示 C 欄」，我就在 C 欄裡。</string>
+    <string name="l273_title">篩選</string>
+    <string name="l273_task">找到 The Button 那一格，點它。</string>
+    <string name="l273_hint_1">表格只顯示「正常」的列。</string>
+    <string name="l273_hint_2">有一個篩選開著。</string>
+    <string name="l273_hint_3">關掉「狀態：正常」的篩選，我就會出現。</string>
+    <string name="l274_title">最高分</string>
+    <string name="l274_task">找到 The Button 那一格，點它。</string>
+    <string name="l274_hint_1">我是分數最高的那一個。</string>
+    <string name="l274_hint_2">可以依分數排序。</string>
+    <string name="l274_hint_3">按 B 欄的「排序」，最上面那一列的名稱就是我。</string>
+    <string name="l274_name">按鈕 %1$d</string>
+    <string name="l274_not_top">那不是最高分。</string>
+    <string name="l275_title">公式</string>
+    <string name="l275_task">找到 The Button 那一格，點它。</string>
+    <string name="l275_hint_1">A1 叫妳去看 B5。</string>
+    <string name="l275_hint_2">點 B5，看上面的內容列。</string>
+    <string name="l275_hint_3">B5 的公式說我在 D3。點 D3。</string>
+    <string name="l275_a1">去看 B5 的公式</string>
+    <string name="l275_b5">＝The Button 在 D3</string>
+    <string name="l276_title">名稱方塊</string>
+    <string name="l276_task">找到 The Button 那一格，點它。</string>
+    <string name="l276_hint_1">我不在看得到的範圍裡。</string>
+    <string name="l276_hint_2">左上角的名稱方塊可以跳到任何地方。</string>
+    <string name="l276_hint_3">在名稱方塊輸入「BTN」，按「前往」，再按我。</string>
+    <string name="l276_a1">我的名字是 BTN</string>
+    <string name="l276_namebox">名稱方塊</string>
+    <string name="l276_go">前往</string>
+    <string name="l276_found">Z99：The Button</string>
+    <string name="l276_not_found">找不到「%1$s」</string>
+    <string name="l277_title">合併儲存格</string>
+    <string name="l277_task">找到 The Button 那一格，點它。</string>
+    <string name="l277_hint_1">上面兩列被合併成一大格了。</string>
+    <string name="l277_hint_2">我被蓋在下面。</string>
+    <string name="l277_hint_3">按「取消合併」，再點我。</string>
+    <string name="l277_notice">公告</string>
+    <string name="l278_title">白色的字</string>
+    <string name="l278_task">找到 The Button 那一格，點它。</string>
+    <string name="l278_hint_1">有一格看起來是空的。</string>
+    <string name="l278_hint_2">字是白色的。</string>
+    <string name="l278_hint_3">按「清除格式」，我就看得到了。</string>
+    <string name="l279_title">標示規則</string>
+    <string name="l279_task">找到 The Button 那一格，點它。</string>
+    <string name="l279_hint_1">我是唯一大於 100 的數字。</string>
+    <string name="l279_hint_2">可以加標示規則。</string>
+    <string name="l279_hint_3">打開「標示大於 100」，點被標出來的那一格。</string>
+    <string name="l279_rule">標示大於 100</string>
+    <string name="l279_too_small">那一格太小了。</string>
+    <string name="l280_title">隱藏的工作表</string>
+    <string name="l280_task">找到 The Button 那一格，點它。</string>
+    <string name="l280_hint_1">我不在這張工作表。</string>
+    <string name="l280_hint_2">分頁旁邊有東西。</string>
+    <string name="l280_hint_3">按「取消隱藏工作表」，到工作表 3 找我。</string>
+    <string name="l280_sheet">工作表 %1$d</string>
+    <string name="l280_unhide">取消隱藏工作表</string>
+    <string name="l281_title">尋找</string>
+    <string name="l281_task">找到 The Button 那一格，點它。</string>
+    <string name="l281_hint_1">好多格長得很像我。</string>
+    <string name="l281_hint_2">有冒牌貨。</string>
+    <string name="l281_hint_3">用「尋找」輸入 The Button，被標出來的那一格才是真的。</string>
+    <string name="l281_find">尋找</string>
+    <string name="l281_fake">那是冒牌貨，拼錯了。</string>
+    <string name="l282_title">###</string>
+    <string name="l282_task">找到 The Button 那一格，點它。</string>
+    <string name="l282_hint_1">B 欄全部是 ###。</string>
+    <string name="l282_hint_2">欄太窄了，字放不下。</string>
+    <string name="l282_hint_3">按「自動調整欄寬」，我就出現了。</string>
+    <string name="l282_autofit">自動調整欄寬</string>
+    <string name="l283_title">復原</string>
+    <string name="l283_task">找到 The Button 那一格，點它。</string>
+    <string name="l283_hint_1">有一格被刪掉了。</string>
+    <string name="l283_hint_2">那一格就是我。</string>
+    <string name="l283_hint_3">按「復原」，我就回來了。</string>
+    <string name="l283_deleted">已刪除 1 格</string>
+    <string name="l283_undo">復原</string>
+    <string name="l284_title">哪一格</string>
+    <string name="l284_task">第 271 關，我在哪一格？</string>
+    <string name="l284_hint_1">第 271 關我在哪一格？</string>
+    <string name="l284_hint_2">紀錄裡有。</string>
+    <string name="l284_hint_3">暫停 →「紀錄」看第 271 關的位置。</string>
+    <string name="l285_title">全部藏起來</string>
+    <string name="l285_task">找到 The Button 那一格，點它。</string>
+    <string name="l285_hint_1">我被隱藏、被篩掉、還穿了白衣服。</string>
+    <string name="l285_hint_2">一個一個解決。</string>
+    <string name="l285_hint_3">顯示 C 欄 → 關掉篩選 → 清除格式 → 點我。</string>
+    <string name="ch19_formula">內容：%1$s</string>
+    <string name="ch19_formula_empty">內容：（空白）</string>
+    <string name="ch19_selected">已選取</string>
+    <string name="ch19_cell_cd">%1$s，%2$s</string>
+    <string name="ch19_empty">空白</string>
+    <string name="ch19_show_c">顯示 C 欄</string>
+    <string name="ch19_filtering">篩選中：狀態＝正常</string>
+    <string name="ch19_filter_off">關掉篩選</string>
+    <string name="ch19_status_ok">正常</string>
+    <string name="ch19_status_bad">不正常</string>
+    <string name="ch19_sort">排序</string>
+    <string name="ch19_unmerge">取消合併</string>
+    <string name="ch19_clear_fmt">清除格式</string>
+    <string-array name="ch19_words">
+        <item>蘋果</item>
+        <item>香蕉</item>
+        <item>收據</item>
+        <item>會議</item>
+        <item>週報</item>
+        <item>預算</item>
+        <item>地址</item>
+        <item>電話</item>
+        <item>備註</item>
+        <item>日期</item>
+        <item>庫存</item>
+        <item>合計</item>
+        <item>姓名</item>
+        <item>票價</item>
+        <item>編號</item>
+        <item>類別</item>
+        <item>地點</item>
+        <item>訂單</item>
+        <item>顏色</item>
+        <item>數量</item>
+        <item>負責人</item>
+        <item>期限</item>
+        <item>狀態</item>
+        <item>分類</item>
+    </string-array>
+    <string-array name="ch19_fakes">
+        <item>The Butt0n</item>
+        <item>The Buton</item>
+        <item>Teh Button</item>
+        <item>The Bvtton</item>
+        <item>Th3 Button</item>
+        <item>TheButon</item>
+    </string-array>
+</resources>
