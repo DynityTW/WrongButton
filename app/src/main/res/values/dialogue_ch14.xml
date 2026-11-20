@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 tools/s2/gen.py 依 tools/s2/ch14.py 產生，請改規格檔再重新產生。台灣繁體中文。 -->
+<resources>
+    <string-array name="ch14_mistakes_3">
+        <item>[guilty]看一下要求清單。</item>
+        <item>[normal]我會說哪裡沒做到。照著改。</item>
+        <item>[normal]起點在左上角，手指只能上下左右走。</item>
+    </string-array>
+    <string-array name="ch14_mistakes_6">
+        <item>[sad]當設計師很難吧？我懂。</item>
+        <item>[normal]一次只改一個地方，再試玩。</item>
+        <item>[guilty]提示鈕在右上角。</item>
+    </string-array>
+    <string-array name="ch14_idle">
+        <item>[normal]我等妳設計好。</item>
+        <item>[smug]我很會玩，不用對我手下留情。</item>
+        <item>[normal]設計關卡比玩關卡難多了。</item>
+    </string-array>
+    <string-array name="ch14_rapid_tap">
+        <item>[angry]慢慢擺！</item>
+        <item>[angry]零件會被妳弄壞。</item>
+        <item>[angry]一格一格放。</item>
+    </string-array>
+    <string-array name="ch14_hint">
+        <item>[normal]好，我們一起看設計圖。</item>
+        <item>[smug]要我偷偷告訴妳怎麼擺嗎？</item>
+        <item>[normal]提示裡有一種擺法。</item>
+    </string-array>
+    <string-array name="ch14_special">
+        <item>[guilty]這樣擺也過了？</item>
+        <item>[normal]妳的設計比我想的還好。</item>
+        <item>[smug]我要把這關收藏起來。</item>
+    </string-array>
+    <string-array name="l196_enter">
+        <item>[normal]換妳當設計師。</item>
+        <item>[smug]先做一關簡單的。</item>
+    </string-array>
+    <string-array name="l196_first_mistake">
+        <item>[guilty]我還沒在畫面上。</item>
+        <item>[normal]先把我放上去。</item>
+    </string-array>
+    <string-array name="l196_clear">
+        <item>[normal]我按到我自己了。好奇怪的感覺。</item>
+        <item>[smug]第一關都很簡單。</item>
+    </string-array>
+    <string-array name="l197_enter">
+        <item>[smug]上一關太簡單了。</item>
+        <item>[normal]加點難度。</item>
+    </string-array>
+    <string-array name="l197_first_mistake">
+        <item>[guilty]太簡單了。</item>
+        <item>[normal]要有誘餌。</item>
+    </string-array>
+    <string-array name="l197_clear">
+        <item>[normal]我差點按錯。</item>
+        <item>[smug]有進步。</item>
+    </string-array>
+    <string-array name="l198_enter">
+        <item>[normal]這次要難一點。</item>
+        <item>[serious]但要公平。</item>
+    </string-array>
+    <string-array name="l198_first_mistake">
+        <item>[guilty]沒有線索，玩家只能亂猜。</item>
+        <item>[normal]這樣不公平。</item>
+    </string-array>
+    <string-array name="l198_clear">
+        <item>[normal]難，但公平。</item>
+        <item>[smug]妳懂這個遊戲的規則了。</item>
+    </string-array>
+    <string-array name="l199_enter">
+        <item>[guilty]這關是我昨天做的。好像哪裡怪怪的。</item>
+        <item>[normal]幫我修一下。</item>
+    </string-array>
+    <string-array name="l199_first_mistake">
+        <item>[guilty]線索還是會讓人誤會。</item>
+        <item>[normal]線索旁邊有假的我。</item>
+    </string-array>
+    <string-array name="l199_clear">
+        <item>[normal]修好了。謝謝妳。</item>
+        <item>[smug]我昨天一定是太累了。</item>
+    </string-array>
+    <string-array name="l200_enter">
+        <item>[normal]第 200 關！來點特別的。</item>
+        <item>[smug]讓手指走遠一點。</item>
+    </string-array>
+    <string-array name="l200_first_mistake">
+        <item>[guilty]太近了。</item>
+        <item>[normal]擋一下路。</item>
+    </string-array>
+    <string-array name="l200_clear">
+        <item>[normal]好遠。我喜歡。</item>
+        <item>[smug]第 200 關，值得繞路。</item>
+    </string-array>
+    <string-array name="l201_enter">
+        <item>[sad]有人把我關起來了。</item>
+        <item>[normal]我出不去。</item>
+    </string-array>
+    <string-array name="l201_first_mistake">
+        <item>[sad]還是走不到我。</item>
+        <item>[normal]路被擋住了。</item>
+    </string-array>
+    <string-array name="l201_clear">
+        <item>[normal]自由了。</item>
+        <item>[smug]牆不用全拆，拆對的那道就好。</item>
+    </string-array>
+    <string-array name="l202_enter">
+        <item>[normal]我喜歡對稱的東西。</item>
+        <item>[smug]像我的臉。</item>
+    </string-array>
+    <string-array name="l202_first_mistake">
+        <item>[guilty]左右不一樣。</item>
+        <item>[normal]對稱一點。</item>
+    </string-array>
+    <string-array name="l202_clear">
+        <item>[normal]好整齊。</item>
+        <item>[smug]對稱的關卡最漂亮。</item>
+    </string-array>
+    <string-array name="l203_enter">
+        <item>[normal]把我藏到最遠的地方。</item>
+        <item>[smug]我想去旅行。</item>
+    </string-array>
+    <string-array name="l203_first_mistake">
+        <item>[guilty]還有更遠的地方。</item>
+        <item>[normal]數一數步數。</item>
+    </string-array>
+    <string-array name="l203_clear">
+        <item>[normal]好遠的旅行。</item>
+        <item>[smug]妳很會藏東西。</item>
+    </string-array>
+    <string-array name="l204_enter">
+        <item>[normal]這次不要把路堵死。</item>
+        <item>[smug]給玩家選擇。</item>
+    </string-array>
+    <string-array name="l204_first_mistake">
+        <item>[guilty]只有一條路。</item>
+        <item>[normal]路太窄了。</item>
+    </string-array>
+    <string-array name="l204_clear">
+        <item>[normal]兩條路都通。</item>
+        <item>[smug]選擇是好事。</item>
+    </string-array>
+    <string-array name="l205_enter">
+        <item>[normal]這次只准一條路。</item>
+        <item>[serious]不要讓玩家迷路。</item>
+    </string-array>
+    <string-array name="l205_first_mistake">
+        <item>[guilty]路太多了。</item>
+        <item>[normal]擋掉一些。</item>
+    </string-array>
+    <string-array name="l205_clear">
+        <item>[normal]一條路，清清楚楚。</item>
+        <item>[smug]很有方向感。</item>
+    </string-array>
+    <string-array name="l206_enter">
+        <item>[guilty]預算不夠，只能用三樣零件。</item>
+        <item>[normal]省著點用。</item>
+    </string-array>
+    <string-array name="l206_first_mistake">
+        <item>[guilty]超過預算了，或路太短。</item>
+        <item>[normal]三樣零件，每樣都要有用。</item>
+    </string-array>
+    <string-array name="l206_clear">
+        <item>[normal]省錢又好玩。</item>
+        <item>[smug]妳是很會省的設計師。</item>
+    </string-array>
+    <string-array name="l207_enter">
+        <item>[smug]我是很挑剔的玩家。</item>
+        <item>[normal]四個要求。</item>
+    </string-array>
+    <string-array name="l207_first_mistake">
+        <item>[guilty]還有一個要求沒做到。</item>
+        <item>[normal]看一下清單。</item>
+    </string-array>
+    <string-array name="l207_clear">
+        <item>[normal]每個要求都做到了。</item>
+        <item>[smug]妳是我最喜歡的設計師。</item>
+    </string-array>
+    <string-array name="l208_enter">
+        <item>[sad]這是我做過最爛的一關。</item>
+        <item>[normal]幫我修好它。</item>
+    </string-array>
+    <string-array name="l208_first_mistake">
+        <item>[guilty]還有問題。</item>
+        <item>[normal]我會說是哪一個。</item>
+    </string-array>
+    <string-array name="l208_clear">
+        <item>[normal]三個問題都修好了。</item>
+        <item>[smug]妳是專業的。</item>
+    </string-array>
+    <string-array name="l209_enter">
+        <item>[normal]還記得妳設計的第一關嗎？</item>
+        <item>[smug]我想回到那裡。</item>
+    </string-array>
+    <string-array name="l209_first_mistake">
+        <item>[guilty]不是那一格。</item>
+        <item>[normal]去紀錄看看。</item>
+    </string-array>
+    <string-array name="l209_clear">
+        <item>[normal]回到原來的地方了。</item>
+        <item>[smug]那是我們開始的地方。</item>
+    </string-array>
+    <string-array name="l210_enter">
+        <item>[serious]最後一關，由妳出題。</item>
+        <item>[normal]最難，但要公平。</item>
+    </string-array>
+    <string-array name="l210_first_mistake">
+        <item>[guilty]還有一個要求沒做到。</item>
+        <item>[normal]我會說是哪一個。</item>
+    </string-array>
+    <string-array name="l210_clear">
+        <item>[normal]這是我玩過最好的一關。</item>
+        <item>[smug]下一季讓妳來做。</item>
+    </string-array>
+</resources>

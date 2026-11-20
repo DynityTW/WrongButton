@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 tools/s2/gen.py 依 tools/s2/ch14.py 產生，請改規格檔再重新產生。台灣繁體中文。 -->
+<resources>
+    <string name="chapter_14">第 14 章　換妳做</string>
+    <string name="l196_title">第一關</string>
+    <string name="l196_task">設計一關給我玩。</string>
+    <string name="l196_hint_1">選「我」，再點一格。</string>
+    <string name="l196_hint_2">放好之後按「試玩」。</string>
+    <string name="l196_hint_3">隨便選一格放「我」，按「試玩」。</string>
+    <string-array name="l196_req">
+        <item>放一個我</item>
+    </string-array>
+    <string name="l197_title">太簡單了</string>
+    <string name="l197_task">設計一關不那麼簡單的。</string>
+    <string name="l197_hint_1">只有一個我太簡單了。</string>
+    <string name="l197_hint_2">加一些假的我。</string>
+    <string name="l197_hint_3">放一個我、兩個假的我，按「試玩」。</string>
+    <string-array name="l197_req">
+        <item>放一個我</item>
+        <item>至少兩個假的我</item>
+    </string-array>
+    <string name="l198_title">給點線索</string>
+    <string name="l198_task">設計一關，難但公平。</string>
+    <string name="l198_hint_1">假的我一多，就要給玩家線索。</string>
+    <string name="l198_hint_2">線索要放在我旁邊（上下左右）。</string>
+    <string name="l198_hint_3">放一個我、三個假的我，在我旁邊放一張線索。</string>
+    <string-array name="l198_req">
+        <item>放一個我</item>
+        <item>至少三個假的我</item>
+        <item>我旁邊要有線索</item>
+    </string-array>
+    <string name="l199_title">線索放錯了</string>
+    <string name="l199_task">修好這一關。</string>
+    <string name="l199_hint_1">這關是別人做的，線索放錯了。</string>
+    <string name="l199_hint_2">線索旁邊不能有假的我。</string>
+    <string name="l199_hint_3">把線索移到只挨著我的那一格。</string>
+    <string-array name="l199_req">
+        <item>放一個我</item>
+        <item>線索在我旁邊</item>
+        <item>線索不能在假的我旁邊</item>
+    </string-array>
+    <string name="l200_title">繞路</string>
+    <string name="l200_task">讓手指要走遠一點才到得了我。</string>
+    <string name="l200_hint_1">手指從左上角出發。</string>
+    <string name="l200_hint_2">牆可以擋路。</string>
+    <string name="l200_hint_3">用牆把路擋起來，讓最短的路也要走 4 步以上。</string>
+    <string-array name="l200_req">
+        <item>放一個我</item>
+        <item>從起點要走 4 步以上</item>
+    </string-array>
+    <string name="l201_title">走不到</string>
+    <string name="l201_task">修好這一關。</string>
+    <string name="l201_hint_1">手指現在走不到我。</string>
+    <string name="l201_hint_2">拆一道牆就好。</string>
+    <string name="l201_hint_3">拆掉擋住唯一一條路的那道牆，但留下至少兩道。</string>
+    <string-array name="l201_req">
+        <item>放一個我</item>
+        <item>我要走得到</item>
+        <item>至少兩道牆</item>
+    </string-array>
+    <string name="l202_title">對稱</string>
+    <string name="l202_task">設計一關左右對稱的。</string>
+    <string name="l202_hint_1">左邊放什麼，右邊對應的格子就放什麼。</string>
+    <string name="l202_hint_2">我只有一個，所以只能放在中間那一欄。</string>
+    <string name="l202_hint_3">我放中間那一欄，牆左右各一道。</string>
+    <string-array name="l202_req">
+        <item>放一個我</item>
+        <item>左右對稱</item>
+        <item>至少兩道牆</item>
+    </string-array>
+    <string name="l203_title">最遠的地方</string>
+    <string name="l203_task">把我藏在手指走得到的最遠的地方。</string>
+    <string name="l203_hint_1">「最遠」是走路的步數，不是直線距離。</string>
+    <string name="l203_hint_2">先擺牆，再數每一格要走幾步。</string>
+    <string name="l203_hint_3">例如牆放在 5，我放在 9（要走 4 步，最遠）。</string>
+    <string-array name="l203_req">
+        <item>放一個我</item>
+        <item>至少一道牆</item>
+        <item>我在最遠的格子</item>
+    </string-array>
+    <string name="l204_title">兩條路</string>
+    <string name="l204_task">讓手指有兩條一樣短的路可以到我。</string>
+    <string name="l204_hint_1">從起點到我，最短的走法要有兩種以上。</string>
+    <string name="l204_hint_2">沒有牆的時候，斜對角通常有很多走法。</string>
+    <string name="l204_hint_3">例如我放在 6，什麼都不擋：起點往右或往下都可以。</string>
+    <string-array name="l204_req">
+        <item>放一個我</item>
+        <item>最短的路有兩條以上</item>
+        <item>至少要走 3 步</item>
+    </string-array>
+    <string name="l205_title">一條路</string>
+    <string name="l205_task">讓手指只有一條最短的路。</string>
+    <string name="l205_hint_1">這次只能有一種走法。</string>
+    <string name="l205_hint_2">用牆把其他走法擋掉。</string>
+    <string name="l205_hint_3">例如牆放在 4、5，我放在 6：只能走 起點 → 2 → 3 → 6。</string>
+    <string-array name="l205_req">
+        <item>放一個我</item>
+        <item>最短的路只有一條</item>
+        <item>至少要走 3 步</item>
+    </string-array>
+    <string name="l206_title">預算</string>
+    <string name="l206_task">只用三樣零件（包括我），讓手指走 4 步以上。</string>
+    <string name="l206_hint_1">零件有限。</string>
+    <string name="l206_hint_2">兩道牆加上我，剛好三樣。</string>
+    <string name="l206_hint_3">牆放在 4、5，我放在 7。</string>
+    <string-array name="l206_req">
+        <item>放一個我</item>
+        <item>零件最多三樣</item>
+        <item>從起點要走 4 步以上</item>
+    </string-array>
+    <string name="l207_title">它的要求</string>
+    <string name="l207_task">照我的要求設計。</string>
+    <string name="l207_hint_1">我有四個要求，一個一個做。</string>
+    <string name="l207_hint_2">假的我也會擋路，小心別把我堵死。</string>
+    <string name="l207_hint_3">例如我放 9、線索放 8、假的我放 3 和 4（路：起點 → 2 → 5 → 6 → 9）。</string>
+    <string-array name="l207_req">
+        <item>放一個我</item>
+        <item>至少兩個假的我</item>
+        <item>我旁邊要有線索</item>
+        <item>從起點要走 3 步以上</item>
+    </string-array>
+    <string name="l208_title">修好它</string>
+    <string name="l208_task">這一關有三個問題，修好它。</string>
+    <string name="l208_hint_1">有兩個我、我被圍住、線索放錯。</string>
+    <string name="l208_hint_2">一個一個修。</string>
+    <string name="l208_hint_3">拿掉多的那個我、拆一道牆、把線索移到只挨著我的格子。</string>
+    <string-array name="l208_req">
+        <item>只有一個我</item>
+        <item>我要走得到</item>
+        <item>線索在我旁邊，不在假的我旁邊</item>
+    </string-array>
+    <string name="l209_title">原來的位置</string>
+    <string name="l209_task">把我放回第 196 關的位置。</string>
+    <string name="l209_hint_1">第 196 關，妳把我放在哪一格？</string>
+    <string name="l209_hint_2">紀錄裡有。</string>
+    <string name="l209_hint_3">暫停 →「紀錄」看第 196 關的位置。</string>
+    <string-array name="l209_req">
+        <item>放一個我</item>
+        <item>放在第 196 關的位置</item>
+    </string-array>
+    <string name="l210_title">公平的難關</string>
+    <string name="l210_task">設計一關最難、但公平的關卡。</string>
+    <string name="l210_hint_1">五個要求一起來。</string>
+    <string name="l210_hint_2">先用牆和假的我把路拉長，再擺線索。</string>
+    <string name="l210_hint_3">例如假的我放 5 和 7、我放 8、線索放 9：只能走 起點 → 2 → 3 → 6 → 9 → 8。</string>
+    <string-array name="l210_req">
+        <item>放一個我</item>
+        <item>至少兩個假的我</item>
+        <item>我旁邊要有線索</item>
+        <item>從起點要走 5 步以上</item>
+        <item>最短的路只有一條</item>
+    </string-array>
+    <string name="ch14_start">起點</string>
+    <string name="ch14_p_button">我</string>
+    <string name="ch14_p_decoy">假的我</string>
+    <string name="ch14_p_clue">線索</string>
+    <string name="ch14_p_wall">牆</string>
+    <string name="ch14_p_erase">清除</string>
+    <string name="ch14_tool">目前：%1$s</string>
+    <string name="ch14_play">試玩</string>
+    <string name="ch14_budget">零件 %1$d／%2$d</string>
+    <string name="ch14_cell_cd">第 %1$d 格，%2$s</string>
+    <string name="ch14_empty">空的</string>
+    <string name="ch14_reqs_title">要求</string>
+    <string name="ch14_r_no_button">畫面上沒有我。</string>
+    <string name="ch14_r_two_buttons">有兩個我。玩家要按哪一個？</string>
+    <string name="ch14_r_unreachable">手指走不到我。</string>
+    <string name="ch14_r_decoys">假的我不夠多。</string>
+    <string name="ch14_r_need_clue">我旁邊沒有線索。這樣只能亂猜。</string>
+    <string name="ch14_r_clue_bad">線索也挨著假的我，會讓人誤會。</string>
+    <string name="ch14_r_short">路太短了。最短只要走 %1$d 步。</string>
+    <string name="ch14_r_walls">牆不夠。</string>
+    <string name="ch14_r_symmetry">左右不對稱。</string>
+    <string name="ch14_r_farthest">還有更遠的格子。</string>
+    <string name="ch14_r_paths_many">最短的路不只一條。</string>
+    <string name="ch14_r_paths_one">最短的路只有一條。</string>
+    <string name="ch14_r_budget">零件超過預算了。</string>
+    <string name="ch14_r_spot">不是那一格。</string>
+    <string name="ch14_fact">第 %1$d 關，妳把我放在第 %2$d 格。</string>
+</resources>
