@@ -47,7 +47,7 @@
 - **音樂**：三首原創循環曲（主選單、第一季關卡、第二季關卡），預設開啟、音量偏低，會要求音訊焦點。
 - **說謊特徵首次出現**：主選單上的 The Button 不說謊，第一次說謊是第 2 關。
 - **行程被系統收掉**：記憶與進度都保留。關卡狀態存在 SavedState，返回堆疊也會還原，所以可以接續。
-- **applicationId**：暫定 `tw.dynity.wrongbutton`。上架前請確認，上架後就不能改。
+- **applicationId（套件名稱）**：`com.wrongbutton.app`，已確定，上架後就不能改。程式碼的 Kotlin 套件與 `namespace` 仍是 `tw.dynity.wrongbutton`，只在程式內部使用，玩家和 Google Play 看不到。
 
 ## v0.3 新增的假設
 

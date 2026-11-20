@@ -11,6 +11,6 @@
             android:action="android.intent.action.VIEW"
             android:data="wrongbutton://press?from=shortcut"
             android:targetClass="tw.dynity.wrongbutton.app.MainActivity"
-            android:targetPackage="tw.dynity.wrongbutton" />
+            android:targetPackage="com.wrongbutton.app" />
     </shortcut>
 </shortcuts>

@@ -19,6 +19,22 @@ class ResourcesTest {
     private val res = ApplicationProvider.getApplicationContext<android.app.Application>().resources
 
     @Test
+    fun packageNameIsFinalAndShortcutsPointAtIt() {
+        val context = ApplicationProvider.getApplicationContext<android.app.Application>()
+        assertEquals("com.wrongbutton.app", context.packageName)
+        // 桌面捷徑的 targetPackage 寫死在 XML 裡，換套件名稱時很容易漏改。
+        val targets = mutableListOf<String>()
+        val xml = res.getXml(R.xml.shortcuts)
+        while (xml.next() != org.xmlpull.v1.XmlPullParser.END_DOCUMENT) {
+            if (xml.eventType == org.xmlpull.v1.XmlPullParser.START_TAG && xml.name == "intent") {
+                targets += xml.getAttributeValue("http://schemas.android.com/apk/res/android", "targetPackage")
+            }
+        }
+        assertTrue(targets.isNotEmpty())
+        targets.forEach { assertEquals(context.packageName, it) }
+    }
+
+    @Test
     fun everyLevelHasAtLeastTwoLinesPerEvent() {
         (Levels.all.map { "第 ${it.id} 關" to it.dialogue } + ("全域" to GlobalDialogue)).forEach { (name, set) ->
             DialogueEvent.entries.forEach { event ->
