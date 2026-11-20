@@ -2,13 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- 本遊戲不宣告任何權限。androidx.core 會自動合併進來的這兩項一併移除。 -->
-    <permission
-        android:name="${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-        tools:node="remove" />
-    <uses-permission
-        android:name="${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-        tools:node="remove" />
+    <!--
+        本遊戲不向使用者請求任何權限。合併後的 manifest 只會有 androidx.core 自己定義的
+        DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION（簽章權限，只給本 App 自己用）；
+        白名單見 app/build.gradle.kts 的 allowedPermissions。
+    -->
 
     <application
         android:name=".app.WrongButtonApp"

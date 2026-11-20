@@ -1,0 +1,196 @@
+package tw.dynity.wrongbutton.ui.pro
+
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.LiveRegionMode
+import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.liveRegion
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import kotlinx.coroutines.delay
+import tw.dynity.wrongbutton.R
+import tw.dynity.wrongbutton.core.character.ButtonCharacter
+import tw.dynity.wrongbutton.core.character.Expression
+import tw.dynity.wrongbutton.core.character.Mood
+import tw.dynity.wrongbutton.core.character.Tell
+import tw.dynity.wrongbutton.core.engine.Speech
+import tw.dynity.wrongbutton.core.engine.SpeechBubbleView
+import tw.dynity.wrongbutton.core.monetization.AdResult
+import tw.dynity.wrongbutton.core.monetization.MockAd
+import tw.dynity.wrongbutton.core.monetization.MonetizationRepository
+import tw.dynity.wrongbutton.core.monetization.ProProduct
+import tw.dynity.wrongbutton.core.monetization.PurchaseResult
+import tw.dynity.wrongbutton.core.ui.WbDialog
+import tw.dynity.wrongbutton.core.ui.WbOverlay
+import tw.dynity.wrongbutton.levels.Levels
+import tw.dynity.wrongbutton.ui.menu.ScreenScaffold
+
+/**
+ * Pro 購買頁。一款講「介面會騙人」的遊戲，自己的付費頁一定要最誠實：
+ * 價格寫在最上面、沒有倒數、沒有預先勾選、「以後再說」和購買一樣大、The Button 用誠實的臉說話。
+ */
+@Composable
+fun ProScreen(repo: MonetizationRepository, onBack: () -> Unit) {
+    val state by repo.state.collectAsStateWithLifecycle()
+    var confirming by rememberSaveable { mutableStateOf(false) }
+    var message by rememberSaveable { mutableIntStateOf(0) }
+    val proLevels = Levels.all.size - Levels.FREE_LEVELS
+
+    androidx.compose.foundation.layout.Box {
+        ScreenScaffold(title = stringResource(R.string.pro_title), onBack = onBack) {
+            Column(
+                Modifier
+                    .verticalScroll(rememberScrollState())
+                    .padding(horizontal = 20.dp, vertical = 8.dp)
+                    .widthIn(max = 520.dp)
+                    .fillMaxWidth()
+                    .testTag("pro_screen"),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(14.dp),
+            ) {
+                val face = Expression(if (state.pro) Mood.Smug else Mood.Normal, Tell.Honest)
+                ButtonCharacter(face.mood, face.tell, 110.dp)
+                val line = when {
+                    message != 0 -> message
+                    state.pro -> R.string.pro_line_owned
+                    else -> R.string.pro_line_pitch
+                }
+                SpeechBubbleView(Speech(stringResource(line), face, line.toLong()), Modifier.widthIn(max = 420.dp))
+
+                Surface(shape = RoundedCornerShape(24.dp), color = MaterialTheme.colorScheme.surfaceContainer, modifier = Modifier.fillMaxWidth()) {
+                    Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                        Text(
+                            stringResource(R.string.pro_price, ProProduct.PRICE_TEXT),
+                            style = MaterialTheme.typography.headlineSmall,
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier.semantics { heading() }.testTag("pro_price"),
+                        )
+                        Text(stringResource(R.string.pro_once), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        listOf(
+                            stringResource(R.string.pro_benefit_levels, Levels.FREE_LEVELS + 1, Levels.all.size, proLevels),
+                            stringResource(R.string.pro_benefit_hints),
+                            stringResource(R.string.pro_benefit_free_stays, Levels.FREE_LEVELS),
+                        ).forEach { Text("・$it", style = MaterialTheme.typography.bodyLarge) }
+                    }
+                }
+
+                Surface(shape = RoundedCornerShape(16.dp), color = MaterialTheme.colorScheme.tertiaryContainer, modifier = Modifier.fillMaxWidth()) {
+                    Text(
+                        stringResource(R.string.pro_mock_note),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onTertiaryContainer,
+                        modifier = Modifier.padding(14.dp),
+                    )
+                }
+
+                if (state.pro) {
+                    Text(stringResource(R.string.pro_owned), style = MaterialTheme.typography.titleMedium, modifier = Modifier.testTag("pro_owned"))
+                    OutlinedButton(
+                        onClick = { repo.revokeProForTesting(); message = R.string.pro_line_revoked },
+                        modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("pro_revoke"),
+                    ) { Text(stringResource(R.string.pro_revoke_mock)) }
+                } else {
+                    Button(onClick = { confirming = true }, modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp).testTag("pro_buy")) {
+                        Text(stringResource(R.string.pro_buy, ProProduct.PRICE_TEXT))
+                    }
+                    OutlinedButton(
+                        onClick = { message = if (repo.restore()) R.string.pro_line_restored else R.string.pro_line_nothing_to_restore },
+                        modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("pro_restore"),
+                    ) { Text(stringResource(R.string.pro_restore)) }
+                    OutlinedButton(onClick = onBack, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("pro_later")) {
+                        Text(stringResource(R.string.pro_later))
+                    }
+                }
+            }
+        }
+        if (confirming) {
+            WbDialog(face = Expression(Mood.Normal, Tell.Honest)) {
+                Text(stringResource(R.string.pro_confirm_title), style = MaterialTheme.typography.headlineSmall, modifier = Modifier.semantics { heading() })
+                Text(stringResource(R.string.pro_confirm_body, ProProduct.PRICE_TEXT), style = MaterialTheme.typography.bodyLarge)
+                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
+                    TextButton(onClick = { confirming = false }, modifier = Modifier.heightIn(min = 48.dp).testTag("pro_confirm_cancel")) {
+                        Text(stringResource(R.string.pro_confirm_cancel))
+                    }
+                    Button(
+                        onClick = {
+                            confirming = false
+                            message = when (repo.purchasePro()) {
+                                PurchaseResult.Purchased -> R.string.pro_line_thanks
+                                PurchaseResult.Cancelled -> 0
+                            }
+                        },
+                        modifier = Modifier.heightIn(min = 48.dp).testTag("pro_confirm_buy"),
+                    ) { Text(stringResource(R.string.pro_confirm_buy)) }
+                }
+            }
+        }
+    }
+}
+
+/**
+ * 模擬的獎勵廣告。只在玩家自己按「看廣告顯示提示」之後出現，蓋在整個畫面最上層。
+ * 清楚標示是模擬廣告；不模仿任何真實廣告、品牌或系統畫面。
+ */
+@Composable
+fun MockAdOverlay(ad: MockAd, onFinish: (AdResult) -> Unit) {
+    var left by rememberSaveable(ad.serial) { mutableIntStateOf(ad.seconds) }
+    LaunchedEffect(ad.serial) {
+        while (left > 0) {
+            delay(1_000)
+            left--
+        }
+    }
+    WbOverlay(modifier = Modifier.testTag("mock_ad")) {
+        Text(stringResource(R.string.ad_label), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
+        Text(stringResource(R.string.ad_title), style = MaterialTheme.typography.headlineSmall, modifier = Modifier.semantics { heading() })
+        Surface(shape = RoundedCornerShape(16.dp), color = MaterialTheme.colorScheme.surfaceVariant, modifier = Modifier.fillMaxWidth().heightIn(min = 120.dp)) {
+            Text(
+                stringResource(R.string.ad_body),
+                style = MaterialTheme.typography.bodyLarge,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.padding(20.dp),
+            )
+        }
+        Text(
+            if (left > 0) stringResource(R.string.ad_countdown, left) else stringResource(R.string.ad_done),
+            style = MaterialTheme.typography.bodyMedium,
+            modifier = Modifier.semantics { liveRegion = LiveRegionMode.Polite }.testTag("mock_ad_countdown"),
+        )
+        Button(
+            onClick = { onFinish(AdResult.Rewarded) },
+            enabled = left == 0,
+            modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("mock_ad_claim"),
+        ) { Text(stringResource(R.string.ad_claim)) }
+        TextButton(onClick = { onFinish(AdResult.Dismissed) }, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("mock_ad_close")) {
+            Text(stringResource(R.string.ad_close))
+        }
+    }
+}

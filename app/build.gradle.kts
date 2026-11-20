@@ -77,10 +77,13 @@ dependencies {
     testImplementation(libs.compose.ui.test.junit4)
 }
 
-// ---- 權限守門：合併後的 manifest 只要出現任何權限宣告或請求，建置就失敗。 ----
-abstract class VerifyNoPermissionsTask : DefaultTask() {
+// ---- 權限守門：合併後的 manifest 只能出現白名單裡的權限，其他一律讓建置失敗。 ----
+abstract class VerifyPermissionsTask : DefaultTask() {
     @get:InputFile
     abstract val manifest: RegularFileProperty
+
+    @get:Input
+    abstract val allowed: SetProperty<String>
 
     @get:OutputFile
     abstract val report: RegularFileProperty
@@ -88,18 +91,30 @@ abstract class VerifyNoPermissionsTask : DefaultTask() {
     @TaskAction
     fun verify() {
         val text = manifest.get().asFile.readText()
-        val found = Regex("""<(uses-permission(-sdk-23)?|permission|permission-group|permission-tree)\b[^>]*>""")
-            .findAll(text).map { it.value }.toList()
-        check(found.isEmpty()) { "合併後的 manifest 不可宣告或請求任何權限：\n" + found.joinToString("\n") }
-        report.get().asFile.writeText("OK：沒有任何權限。\n")
+        val tags = Regex("""<(uses-permission(-sdk-23)?|permission|permission-group|permission-tree)\b[^>]*>""").findAll(text).map { it.value }.toList()
+        val names = tags.map { Regex("""android:name="([^"]+)"""").find(it)?.groupValues?.get(1) ?: it }
+        val extra = names.filterNot { it in allowed.get() }
+        check(extra.isEmpty()) { "合併後的 manifest 出現了白名單以外的權限：\n" + extra.joinToString("\n") }
+        report.get().asFile.writeText("OK：只有白名單裡的權限。\n" + names.distinct().joinToString("\n"))
     }
 }
+
+/**
+ * 權限白名單。
+ * - DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION：androidx.core 自己定義、只給本 App 用的簽章權限。
+ *   Android 8–12 上 ContextCompat.registerReceiver(…, RECEIVER_NOT_EXPORTED) 需要它，拿掉會當掉；它不是向使用者請求的權限。
+ * - 之後接上真正的廣告與付費時，再加：INTERNET、ACCESS_NETWORK_STATE、com.google.android.gms.permission.AD_ID、com.android.vending.BILLING。
+ */
+fun allowedPermissions(applicationId: String) = setOf(
+    "$applicationId.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+)
 
 androidComponents {
     onVariants { variant ->
         val name = variant.name.replaceFirstChar { it.uppercase() }
-        val verify = tasks.register<VerifyNoPermissionsTask>("verify${name}NoPermissions") {
+        val verify = tasks.register<VerifyPermissionsTask>("verify${name}Permissions") {
             manifest.set(variant.artifacts.get(com.android.build.api.artifact.SingleArtifact.MERGED_MANIFEST))
+            allowed.set(variant.applicationId.map { allowedPermissions(it) })
             report.set(layout.buildDirectory.file("reports/permissions/${variant.name}.txt"))
         }
         tasks.matching { it.name == "assemble$name" }.configureEach { dependsOn(verify) }

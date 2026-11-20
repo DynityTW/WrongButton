@@ -246,6 +246,7 @@ class FullPlaythroughTest {
         assertEquals(Keys.LEFT, memory.text(Keys.L7SwipeDirection))
 
         // 第 4 章以後由各章的測試負責；把〈相信我〉之前的關卡都標成已通關，直接去〈相信我〉。
+        container.monetization.purchasePro()
         container.memory.update { m -> Levels.all.takeWhile { it.id != 10 }.fold(m) { acc, l -> tw.dynity.wrongbutton.core.memory.MemoryOps.completeLevel(acc, l.id, run) } }
         rule.onNodeWithTag("result_exit").performScrollTo().performClick()
         waitForTag("select_grid")

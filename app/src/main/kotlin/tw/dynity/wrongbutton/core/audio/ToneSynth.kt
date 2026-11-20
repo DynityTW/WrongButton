@@ -74,15 +74,26 @@ internal object ToneSynth {
     }
 }
 
-/** 以 AudioTrack 播放合成音效。第一次播放某個音效時才建立它的音軌。 */
+/**
+ * 以 AudioTrack 播放合成音效。
+ * [prewarm] 在背景先把所有音效合成好，第一次播放時就不用在主執行緒上算波形。
+ */
 class ToneSoundPlayer : SoundPlayer {
     override var enabled: Boolean = true
+    private val samples = java.util.concurrent.ConcurrentHashMap<Cue, ShortArray>()
     private val tracks = mutableMapOf<Cue, AudioTrack>()
+
+    private fun samplesFor(cue: Cue): ShortArray = samples.getOrPut(cue) { ToneSynth.render(ToneSynth.cueNotes(cue)) }
+
+    /** 可以在任何執行緒呼叫。 */
+    fun prewarm() {
+        Cue.entries.forEach { samplesFor(it) }
+    }
 
     override fun play(cue: Cue) {
         if (!enabled) return
         runCatching {
-            val track = tracks.getOrPut(cue) { ToneSynth.staticTrack(ToneSynth.render(ToneSynth.cueNotes(cue)), 0.6f) }
+            val track = tracks.getOrPut(cue) { ToneSynth.staticTrack(samplesFor(cue), 0.6f) }
             if (track.playState == AudioTrack.PLAYSTATE_PLAYING) track.stop()
             track.reloadStaticData()
             track.play()
@@ -95,10 +106,31 @@ class ToneSoundPlayer : SoundPlayer {
     }
 }
 
-/** 佔位音樂：一段 8 拍的柔和琶音循環，音量很低。 */
-class ToneMusicPlayer : MusicPlayer {
+/**
+ * 佔位音樂：一段 8 拍的柔和琶音循環，音量很低。
+ * 播放前會要求音訊焦點：玩家正在聽的音樂或 Podcast 會暫停，不會和遊戲音樂疊在一起；
+ * 其他 App 搶走焦點（例如來電、別的播放器）時，遊戲音樂會暫停。
+ */
+class ToneMusicPlayer(context: android.content.Context) : MusicPlayer {
+    private val audioManager = context.getSystemService(android.media.AudioManager::class.java)
     private var track: AudioTrack? = null
     private var foreground = false
+    private var hasFocus = false
+
+    private val focusRequest = android.media.AudioFocusRequest.Builder(android.media.AudioManager.AUDIOFOCUS_GAIN)
+        .setAudioAttributes(
+            AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_GAME)
+                .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                .build(),
+        )
+        .setOnAudioFocusChangeListener { change ->
+            when (change) {
+                android.media.AudioManager.AUDIOFOCUS_GAIN -> { hasFocus = true; sync() }
+                else -> { hasFocus = false; pauseTrack() }
+            }
+        }
+        .build()
 
     override var enabled: Boolean = false
         set(value) {
@@ -116,13 +148,25 @@ class ToneMusicPlayer : MusicPlayer {
         sync()
     }
 
+    private fun pauseTrack() {
+        runCatching { track?.let { if (it.playState == AudioTrack.PLAYSTATE_PLAYING) it.pause() } }
+    }
+
     private fun sync() {
         runCatching {
             if (enabled && foreground) {
+                if (!hasFocus) {
+                    hasFocus = audioManager?.requestAudioFocus(focusRequest) == android.media.AudioManager.AUDIOFOCUS_REQUEST_GRANTED
+                }
+                if (!hasFocus) return@runCatching
                 val t = track ?: build().also { track = it }
                 if (t.playState != AudioTrack.PLAYSTATE_PLAYING) t.play()
             } else {
-                track?.let { if (it.playState == AudioTrack.PLAYSTATE_PLAYING) it.pause() }
+                pauseTrack()
+                if (hasFocus) {
+                    audioManager?.abandonAudioFocusRequest(focusRequest)
+                    hasFocus = false
+                }
             }
         }
     }
@@ -139,5 +183,7 @@ class ToneMusicPlayer : MusicPlayer {
     override fun release() {
         runCatching { track?.release() }
         track = null
+        if (hasFocus) runCatching { audioManager?.abandonAudioFocusRequest(focusRequest) }
+        hasFocus = false
     }
 }

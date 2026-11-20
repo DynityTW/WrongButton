@@ -113,3 +113,56 @@ class MemoryRepositoryTest {
         scope.coroutineContext[kotlinx.coroutines.Job]!!.cancelAndJoin()
     }
 }
+
+/** 存檔讀不進來時：保留壞掉的檔案、改讀備份；舊版本的存檔會先遷移。 */
+class SaveSafetyTest {
+    @get:Rule
+    val tmp = TemporaryFolder()
+
+    private suspend fun open(file: File, migrations: tw.dynity.wrongbutton.core.memory.Migrations = tw.dynity.wrongbutton.core.memory.MemoryMigrations): Pair<PlayerMemory, CoroutineScope> {
+        val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
+        val store = tw.dynity.wrongbutton.core.memory.JsonDataStores.create(file, PlayerMemory(), PlayerMemory.serializer(), scope, migrations)
+        return store.data.first() to scope
+    }
+
+    @Test
+    fun brokenFileIsKeptAndTheBackupIsRestored() = runBlocking {
+        val file = File(tmp.root, "memory.json")
+        val good = MemoryOps.completeLevel(PlayerMemory(), 1, RunResult(0, 10, 1_000, 0, false))
+        file.writeText(kotlinx.serialization.json.Json.encodeToString(PlayerMemory.serializer(), good))
+
+        // 第一次正常開啟：留下備份。
+        val (first, s1) = open(file)
+        assertTrue(first.isCleared(1))
+        s1.coroutineContext[kotlinx.coroutines.Job]!!.cancelAndJoin()
+        assertTrue(tw.dynity.wrongbutton.core.memory.JsonDataStores.backupOf(file).exists())
+
+        // 主檔壞掉：不會清空，改讀備份；壞掉的檔案另存下來。
+        file.writeText("{ broken")
+        val (second, s2) = open(file)
+        assertTrue("應從備份還原", second.isCleared(1))
+        assertEquals("{ broken", tw.dynity.wrongbutton.core.memory.JsonDataStores.brokenOf(file).readText())
+        s2.coroutineContext[kotlinx.coroutines.Job]!!.cancelAndJoin()
+    }
+
+    @Test
+    fun olderSchemaIsMigratedBeforeDecoding() = runBlocking {
+        val file = File(tmp.root, "old.json")
+        // 假想的第 1 版：錯誤總數叫 "mistakesTotal"；第 2 版改名為 "totalMistakes"。
+        file.writeText("""{"schema":1,"mistakesTotal":7}""")
+        val migrations = tw.dynity.wrongbutton.core.memory.Migrations(
+            2,
+            mapOf(1 to { o: kotlinx.serialization.json.JsonObject ->
+                kotlinx.serialization.json.JsonObject(o - "mistakesTotal" + ("totalMistakes" to o.getValue("mistakesTotal")))
+            }),
+        )
+        val (m, s) = open(file, migrations)
+        assertEquals(7, m.totalMistakes)
+        s.coroutineContext[kotlinx.coroutines.Job]!!.cancelAndJoin()
+    }
+
+    @Test(expected = IllegalArgumentException::class)
+    fun aMissingMigrationStepIsCaughtImmediately() {
+        tw.dynity.wrongbutton.core.memory.Migrations(3, mapOf(1 to { o -> o }))
+    }
+}

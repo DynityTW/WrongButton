@@ -38,9 +38,10 @@ interface TextSource {
     fun array(id: Int): List<String>
 }
 
+/** 從字串資源讀文字，並依設定套用「你／妳」（見 [tw.dynity.wrongbutton.core.settings.PronounText]）。 */
 class ResourceTextSource(private val resources: Resources) : TextSource {
-    override fun string(id: Int): String = resources.getString(id)
-    override fun array(id: Int): List<String> = resources.getStringArray(id).toList()
+    override fun string(id: Int): String = tw.dynity.wrongbutton.core.settings.PronounText.apply(resources.getString(id))
+    override fun array(id: Int): List<String> = resources.getStringArray(id).map(tw.dynity.wrongbutton.core.settings.PronounText::apply)
 }
 
 /** 全域備用台詞池。 */
@@ -80,6 +81,8 @@ class LevelHostViewModel(
     private val director: DialogueDirector,
     private val text: TextSource,
     clock: Clock,
+    /** 提示要不要先看廣告（Pro 或看過的就免費）。 */
+    val hints: tw.dynity.wrongbutton.core.monetization.HintGate = tw.dynity.wrongbutton.core.monetization.HintGate.AlwaysFree,
 ) : ViewModel() {
 
     private val session = LevelSession(clock)
@@ -230,12 +233,35 @@ class LevelHostViewModel(
         _overlay.value = HostOverlay.None
     }
 
+    private var unlockingHint = false
+
+    /** 下一階提示是否要先看廣告。 */
+    fun nextHintNeedsAd(): Boolean {
+        val next = _hintTier.value + 1
+        return next <= level.hintRes.size && !hints.isFree(level.id, next)
+    }
+
     fun revealNextHint() {
         val next = (_hintTier.value + 1).coerceAtMost(level.hintRes.size)
-        if (next != _hintTier.value) {
-            _hintTier.value = next
-            if (level.ambientChatter) say(DialogueEvent.Hint)
+        if (next == _hintTier.value || unlockingHint) return
+        if (hints.isFree(level.id, next)) {
+            showHint(next)
+            return
         }
+        unlockingHint = true
+        viewModelScope.launch {
+            try {
+                if (hints.unlock(level.id, next)) showHint(next)
+            } finally {
+                unlockingHint = false
+            }
+        }
+    }
+
+    private fun showHint(tier: Int) {
+        if (tier <= _hintTier.value) return
+        _hintTier.value = tier
+        if (level.ambientChatter) say(DialogueEvent.Hint)
     }
 
     // ---- 輸入與生命週期 ----

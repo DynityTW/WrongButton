@@ -41,9 +41,13 @@ class Player(val rule: AndroidComposeTestRule<ActivityScenarioRule<MainActivity>
     fun speech() = texts(rule.onAllNodesWithTag("speech").onLast().fetchSemanticsNode()).joinToString()
     fun advance(ms: Long) = rule.mainClock.advanceTimeBy(ms)
 
-    /** 把前面幾章標成已通關（每關耗時不同，方便需要「最久那關」的關卡）。 */
+    /** 模擬購買 Pro（第 101 關以後需要）。 */
+    fun grantPro() = container.monetization.purchasePro()
+
+    /** 把前面幾章標成已通關（每關耗時不同，方便需要「最久那關」的關卡）。也會買好 Pro。 */
     fun clearChapters(count: Int) {
         rule.waitUntil(10_000) { exists("menu_levels") }
+        grantPro()
         container.memory.update { m ->
             Levels.chapters.take(count).flatMap { it.levels }.foldIndexed(m) { i, acc, l ->
                 MemoryOps.completeLevel(MemoryOps.startAttempt(acc, l.id), l.id, RunResult(0, 0, 1_000L + i * 37L, 0, false))

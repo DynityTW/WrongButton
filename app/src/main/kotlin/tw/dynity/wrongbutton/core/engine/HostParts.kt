@@ -189,6 +189,7 @@ fun HintOverlay(
     tier: Int,
     face: Expression,
     onReveal: () -> Unit,
+    needsAd: Boolean = false,
     onClose: () -> Unit,
 ) {
     WbDialog(face = face) {
@@ -206,7 +207,10 @@ fun HintOverlay(
         }
         if (tier < hints.size) {
             Button(onClick = onReveal, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("hint_reveal")) {
-                Text(stringResource(R.string.hint_reveal, tier + 1))
+                Text(stringResource(if (needsAd) R.string.hint_reveal_ad else R.string.hint_reveal, tier + 1))
+            }
+            if (needsAd) {
+                Text(stringResource(R.string.hint_ad_note), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
         }
         TextButton(onClick = onClose, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(R.string.hint_close)) }
@@ -220,6 +224,7 @@ fun ResultScreen(
     onNext: () -> Unit,
     onExit: () -> Unit,
     modifier: Modifier = Modifier,
+    nextNeedsPro: Boolean = false,
 ) {
     androidx.compose.foundation.layout.BoxWithConstraints(modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         val compact = maxHeight < 560.dp
@@ -267,7 +272,7 @@ fun ResultScreen(
             Spacer(Modifier.size(4.dp))
             if (hasNext) {
                 Button(onClick = onNext, modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp).testTag("result_next")) {
-                    Text(stringResource(R.string.result_next))
+                    Text(stringResource(if (nextNeedsPro) R.string.result_next_pro else R.string.result_next))
                 }
             }
             OutlinedButton(onClick = onExit, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("result_exit")) {

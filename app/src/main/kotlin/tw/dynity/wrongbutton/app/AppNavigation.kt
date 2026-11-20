@@ -30,20 +30,34 @@ import tw.dynity.wrongbutton.ui.records.RecordsScreen
 @Serializable data object RecordsKey : NavKey
 @Serializable data object SettingsKey : NavKey
 @Serializable data class LevelKey(val id: Int) : NavKey
+@Serializable data object ProKey : NavKey
 
 @Composable
 fun WrongButtonNavigation(container: AppContainer) {
     val backStack = rememberNavBackStack(TitleKey)
     val memory by container.memory.memory.collectAsStateWithLifecycle()
     val ready by container.memory.isReady.collectAsStateWithLifecycle()
+    val shop by container.monetization.state.collectAsStateWithLifecycle()
+    val ad by container.ads.current.collectAsStateWithLifecycle()
 
     if (!ready) {
         Box(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background))
         return
     }
 
-    /** 進關時保證返回堆疊是 標題 → 選關 → 關卡，所以系統返回永遠回到選關畫面。 */
+    fun openPro() {
+        if (backStack.last() != ProKey) backStack.add(ProKey)
+    }
+
+    /**
+     * 進關時保證返回堆疊是 標題 → 選關 → 關卡，所以系統返回永遠回到選關畫面。
+     * 需要 Pro 而還沒買時，改開 Pro 頁（關卡本身不會被打開）。
+     */
     fun openLevel(id: Int) {
+        if (Levels.requiresPro(id) && !container.monetization.state.value.pro) {
+            openPro()
+            return
+        }
         while (backStack.size > 1) backStack.removeAt(backStack.lastIndex)
         backStack.add(LevelSelectKey)
         backStack.add(LevelKey(id))
@@ -53,6 +67,7 @@ fun WrongButtonNavigation(container: AppContainer) {
         while (backStack.size > 1 && backStack.last() != key) backStack.removeAt(backStack.lastIndex)
     }
 
+    androidx.compose.foundation.layout.Box(Modifier.fillMaxSize()) {
     NavDisplay(
         backStack = backStack,
         onBack = { if (backStack.size > 1) backStack.removeAt(backStack.lastIndex) },
@@ -69,13 +84,16 @@ fun WrongButtonNavigation(container: AppContainer) {
                     onLevels = { backStack.add(LevelSelectKey) },
                     onRecords = { backStack.add(RecordsKey) },
                     onSettings = { backStack.add(SettingsKey) },
+                    pro = shop.pro,
+                    onPro = ::openPro,
                 )
             }
             entry<LevelSelectKey> {
                 LevelSelectScreen(
-                    chapters = Levels.chapters.map { it.titleRes to it.levels },
+                    chapters = Levels.chapters.map { Triple(it.titleRes, it.levels, it.standalone) },
                     numberOf = Levels::numberOf,
                     isUnlocked = { Levels.isUnlocked(memory, it) },
+                    needsPro = { Levels.requiresPro(it) && !shop.pro },
                     memory = memory,
                     onPlay = { openLevel(it) },
                     onBack = { popTo(TitleKey) },
@@ -94,18 +112,26 @@ fun WrongButtonNavigation(container: AppContainer) {
                 SettingsScreen(
                     container = container,
                     onBack = { popTo(TitleKey) },
+                    onPro = ::openPro,
+                )
+            }
+            entry<ProKey> {
+                tw.dynity.wrongbutton.ui.pro.ProScreen(
+                    repo = container.monetization,
+                    onBack = { if (backStack.size > 1) backStack.removeAt(backStack.lastIndex) },
                 )
             }
             entry<LevelKey> { key ->
                 val level = Levels.byId(key.id)
                 val vm = viewModel(key = "level-${key.id}") {
-                    LevelHostViewModel(level, container.memory, container.director, container.text, container.clock)
+                    LevelHostViewModel(level, container.memory, container.director, container.text, container.clock, container.hintGate)
                 }
                 val next = Levels.next(key.id)
                 LevelHost(
                     vm = vm,
                     number = Levels.numberOf(key.id),
                     hasNext = next != null,
+                    nextNeedsPro = next != null && Levels.requiresPro(next.id) && !shop.pro,
                     onExit = { popTo(LevelSelectKey) },
                     onNext = { next?.let { openLevel(it.id) } },
                     recordsContent = {
@@ -117,4 +143,7 @@ fun WrongButtonNavigation(container: AppContainer) {
             }
         },
     )
+    // 模擬廣告蓋在最上層（只在玩家自己按「看廣告顯示提示」之後出現）。
+    ad?.let { current -> tw.dynity.wrongbutton.ui.pro.MockAdOverlay(current, container.ads::finish) }
+    }
 }

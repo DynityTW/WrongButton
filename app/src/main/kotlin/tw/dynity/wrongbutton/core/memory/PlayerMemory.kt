@@ -52,9 +52,13 @@ data class PlayerMemory(
     fun isCleared(levelId: Int): Boolean = levels[levelId]?.cleared == true
 
     companion object {
+        /** 存檔格式版本。改了欄位名稱或型別時要加一，並在 [MemoryMigrations] 加一步遷移。 */
         const val SCHEMA = 1
     }
 }
 
 /** 關卡看到的記憶是唯讀快照。 */
 typealias MemorySnapshot = PlayerMemory
+
+/** [PlayerMemory] 的版本遷移。目前只有第 1 版，所以沒有任何步驟。 */
+val MemoryMigrations = Migrations(PlayerMemory.SCHEMA, emptyMap())

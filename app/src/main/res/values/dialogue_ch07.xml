@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 台灣繁體中文。台詞前綴 [mood|tell] 標記表情，見 core/dialogue/LineMarkup。 -->
+<resources>
+    <string-array name="l92_enter">
+        <item>[normal]讓妳看看我是怎麼被做出來的。</item>
+        <item>[smug]聽說有個地方，要敲七下門。</item>
+    </string-array>
+    <string-array name="l92_first_mistake">
+        <item>[smug]不是那裡。</item>
+        <item>[normal]再看一次。</item>
+    </string-array>
+    <string-array name="l92_mistakes_3">
+        <item>[guilty]後台有工具。</item>
+        <item>[normal]打開面板看看。</item>
+    </string-array>
+    <string-array name="l92_mistakes_6">
+        <item>[sad]看一下提示吧。</item>
+        <item>[guilty]我是怎麼被做出來的，妳快知道了。</item>
+    </string-array>
+    <string-array name="l92_idle">
+        <item>[normal]慢慢看。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l92_rapid_tap">
+        <item>[angry]亂按沒用。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l92_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l92_clear">
+        <item>[smug]修好了。</item>
+        <item>[normal]原來我是這樣被做出來的。</item>
+    </string-array>
+    <string-array name="l92_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l93_enter">
+        <item>[normal]我在這裡，只是透明度是 0。</item>
+        <item>[smug]妳看不到我。但我在。</item>
+    </string-array>
+    <string-array name="l93_first_mistake">
+        <item>[smug]後台的東西要小心碰。</item>
+        <item>[normal]不對。</item>
+    </string-array>
+    <string-array name="l93_mistakes_3">
+        <item>[guilty]每一關都多一樣工具。</item>
+        <item>[normal]慢慢來。</item>
+    </string-array>
+    <string-array name="l93_mistakes_6">
+        <item>[sad]別放棄。</item>
+        <item>[guilty]其實不難的。</item>
+    </string-array>
+    <string-array name="l93_idle">
+        <item>[normal]後台不會跑掉。</item>
+        <item>[normal]每個元件都有名字。</item>
+    </string-array>
+    <string-array name="l93_rapid_tap">
+        <item>[angry]先修好再按。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l93_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l93_clear">
+        <item>[smug]妳越來越像工程師了。</item>
+        <item>[normal]謝謝妳。</item>
+    </string-array>
+    <string-array name="l93_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l94_enter">
+        <item>[sad]唔唔唔。</item>
+        <item>[normal]……我在卡片下面。</item>
+    </string-array>
+    <string-array name="l94_first_mistake">
+        <item>[smug]不是那裡。</item>
+        <item>[normal]再看一次。</item>
+    </string-array>
+    <string-array name="l94_mistakes_3">
+        <item>[guilty]後台有工具。</item>
+        <item>[normal]打開面板看看。</item>
+    </string-array>
+    <string-array name="l94_mistakes_6">
+        <item>[sad]看一下提示吧。</item>
+        <item>[guilty]我是怎麼被做出來的，妳快知道了。</item>
+    </string-array>
+    <string-array name="l94_idle">
+        <item>[normal]慢慢看。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l94_rapid_tap">
+        <item>[angry]亂按沒用。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l94_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l94_clear">
+        <item>[smug]修好了。</item>
+        <item>[normal]原來我是這樣被做出來的。</item>
+    </string-array>
+    <string-array name="l94_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l95_enter">
+        <item>[guilty]我是停用的。</item>
+        <item>[normal]讓妳看看我的屬性。</item>
+    </string-array>
+    <string-array name="l95_first_mistake">
+        <item>[smug]後台的東西要小心碰。</item>
+        <item>[normal]不對。</item>
+    </string-array>
+    <string-array name="l95_mistakes_3">
+        <item>[guilty]每一關都多一樣工具。</item>
+        <item>[normal]慢慢來。</item>
+    </string-array>
+    <string-array name="l95_mistakes_6">
+        <item>[sad]別放棄。</item>
+        <item>[guilty]其實不難的。</item>
+    </string-array>
+    <string-array name="l95_idle">
+        <item>[normal]後台不會跑掉。</item>
+        <item>[normal]每個元件都有名字。</item>
+    </string-array>
+    <string-array name="l95_rapid_tap">
+        <item>[angry]先修好再按。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l95_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l95_clear">
+        <item>[smug]妳越來越像工程師了。</item>
+        <item>[normal]謝謝妳。</item>
+    </string-array>
+    <string-array name="l95_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l96_enter">
+        <item>[normal]這次不用撐大我。只要讓我「算數」就好。</item>
+        <item>[smug]16dp。跟以前一樣小。</item>
+    </string-array>
+    <string-array name="l96_first_mistake">
+        <item>[smug]不是那裡。</item>
+        <item>[normal]再看一次。</item>
+    </string-array>
+    <string-array name="l96_mistakes_3">
+        <item>[guilty]後台有工具。</item>
+        <item>[normal]打開面板看看。</item>
+    </string-array>
+    <string-array name="l96_mistakes_6">
+        <item>[sad]看一下提示吧。</item>
+        <item>[guilty]我是怎麼被做出來的，妳快知道了。</item>
+    </string-array>
+    <string-array name="l96_idle">
+        <item>[normal]慢慢看。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l96_rapid_tap">
+        <item>[angry]亂按沒用。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l96_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l96_clear">
+        <item>[smug]修好了。</item>
+        <item>[normal]原來我是這樣被做出來的。</item>
+    </string-array>
+    <string-array name="l96_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l97_enter">
+        <item>[normal]我在這一列的最後面。</item>
+        <item>[sad]這一列不能捲動。</item>
+    </string-array>
+    <string-array name="l97_first_mistake">
+        <item>[smug]後台的東西要小心碰。</item>
+        <item>[normal]不對。</item>
+    </string-array>
+    <string-array name="l97_mistakes_3">
+        <item>[guilty]每一關都多一樣工具。</item>
+        <item>[normal]慢慢來。</item>
+    </string-array>
+    <string-array name="l97_mistakes_6">
+        <item>[sad]別放棄。</item>
+        <item>[guilty]其實不難的。</item>
+    </string-array>
+    <string-array name="l97_idle">
+        <item>[normal]後台不會跑掉。</item>
+        <item>[normal]每個元件都有名字。</item>
+    </string-array>
+    <string-array name="l97_rapid_tap">
+        <item>[angry]先修好再按。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l97_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l97_clear">
+        <item>[smug]妳越來越像工程師了。</item>
+        <item>[normal]謝謝妳。</item>
+    </string-array>
+    <string-array name="l97_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l98_enter">
+        <item>[normal]怎麼按我，寫在下面。</item>
+        <item>[smug]字有點小。</item>
+    </string-array>
+    <string-array name="l98_first_mistake">
+        <item>[smug]不是那裡。</item>
+        <item>[normal]再看一次。</item>
+    </string-array>
+    <string-array name="l98_mistakes_3">
+        <item>[guilty]後台有工具。</item>
+        <item>[normal]打開面板看看。</item>
+    </string-array>
+    <string-array name="l98_mistakes_6">
+        <item>[sad]看一下提示吧。</item>
+        <item>[guilty]我是怎麼被做出來的，妳快知道了。</item>
+    </string-array>
+    <string-array name="l98_idle">
+        <item>[normal]慢慢看。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l98_rapid_tap">
+        <item>[angry]亂按沒用。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l98_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l98_clear">
+        <item>[smug]修好了。</item>
+        <item>[normal]原來我是這樣被做出來的。</item>
+    </string-array>
+    <string-array name="l98_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l99_enter">
+        <item>[normal]做這張卡片的人，忘了在淺色模式下測試。</item>
+        <item>[sad]我在卡片後面。</item>
+    </string-array>
+    <string-array name="l99_first_mistake">
+        <item>[smug]後台的東西要小心碰。</item>
+        <item>[normal]不對。</item>
+    </string-array>
+    <string-array name="l99_mistakes_3">
+        <item>[guilty]每一關都多一樣工具。</item>
+        <item>[normal]慢慢來。</item>
+    </string-array>
+    <string-array name="l99_mistakes_6">
+        <item>[sad]別放棄。</item>
+        <item>[guilty]其實不難的。</item>
+    </string-array>
+    <string-array name="l99_idle">
+        <item>[normal]後台不會跑掉。</item>
+        <item>[normal]每個元件都有名字。</item>
+    </string-array>
+    <string-array name="l99_rapid_tap">
+        <item>[angry]先修好再按。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l99_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l99_clear">
+        <item>[smug]妳越來越像工程師了。</item>
+        <item>[normal]謝謝妳。</item>
+    </string-array>
+    <string-array name="l99_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l100_enter">
+        <item>[sad]我有一大半被切掉了。</item>
+        <item>[normal]卡片邊緣那一條是我。</item>
+    </string-array>
+    <string-array name="l100_first_mistake">
+        <item>[smug]不是那裡。</item>
+        <item>[normal]再看一次。</item>
+    </string-array>
+    <string-array name="l100_mistakes_3">
+        <item>[guilty]後台有工具。</item>
+        <item>[normal]打開面板看看。</item>
+    </string-array>
+    <string-array name="l100_mistakes_6">
+        <item>[sad]看一下提示吧。</item>
+        <item>[guilty]我是怎麼被做出來的，妳快知道了。</item>
+    </string-array>
+    <string-array name="l100_idle">
+        <item>[normal]慢慢看。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l100_rapid_tap">
+        <item>[angry]亂按沒用。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l100_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l100_clear">
+        <item>[smug]修好了。</item>
+        <item>[normal]原來我是這樣被做出來的。</item>
+    </string-array>
+    <string-array name="l100_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l101_enter">
+        <item>[smug]妳抓不到我的。除非有人讓時間慢下來。</item>
+        <item>[smug]我很快喔。</item>
+    </string-array>
+    <string-array name="l101_first_mistake">
+        <item>[smug]後台的東西要小心碰。</item>
+        <item>[normal]不對。</item>
+    </string-array>
+    <string-array name="l101_mistakes_3">
+        <item>[guilty]每一關都多一樣工具。</item>
+        <item>[normal]慢慢來。</item>
+    </string-array>
+    <string-array name="l101_mistakes_6">
+        <item>[sad]別放棄。</item>
+        <item>[guilty]其實不難的。</item>
+    </string-array>
+    <string-array name="l101_idle">
+        <item>[normal]後台不會跑掉。</item>
+        <item>[normal]每個元件都有名字。</item>
+    </string-array>
+    <string-array name="l101_rapid_tap">
+        <item>[angry]先修好再按。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l101_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l101_clear">
+        <item>[smug]妳越來越像工程師了。</item>
+        <item>[normal]謝謝妳。</item>
+    </string-array>
+    <string-array name="l101_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l102_enter">
+        <item>[normal]按我 10 下。</item>
+        <item>[guilty]我數數不太好。</item>
+    </string-array>
+    <string-array name="l102_first_mistake">
+        <item>[smug]不是那裡。</item>
+        <item>[normal]再看一次。</item>
+    </string-array>
+    <string-array name="l102_mistakes_3">
+        <item>[guilty]後台有工具。</item>
+        <item>[normal]打開面板看看。</item>
+    </string-array>
+    <string-array name="l102_mistakes_6">
+        <item>[sad]看一下提示吧。</item>
+        <item>[guilty]我是怎麼被做出來的，妳快知道了。</item>
+    </string-array>
+    <string-array name="l102_idle">
+        <item>[normal]慢慢看。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l102_rapid_tap">
+        <item>[angry]亂按沒用。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l102_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l102_clear">
+        <item>[smug]修好了。</item>
+        <item>[normal]原來我是這樣被做出來的。</item>
+    </string-array>
+    <string-array name="l102_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l103_enter">
+        <item>[normal]橫幅旁邊那條線，是我。</item>
+        <item>[sad]我被擠扁了。</item>
+    </string-array>
+    <string-array name="l103_first_mistake">
+        <item>[smug]後台的東西要小心碰。</item>
+        <item>[normal]不對。</item>
+    </string-array>
+    <string-array name="l103_mistakes_3">
+        <item>[guilty]每一關都多一樣工具。</item>
+        <item>[normal]慢慢來。</item>
+    </string-array>
+    <string-array name="l103_mistakes_6">
+        <item>[sad]別放棄。</item>
+        <item>[guilty]其實不難的。</item>
+    </string-array>
+    <string-array name="l103_idle">
+        <item>[normal]後台不會跑掉。</item>
+        <item>[normal]每個元件都有名字。</item>
+    </string-array>
+    <string-array name="l103_rapid_tap">
+        <item>[angry]先修好再按。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l103_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l103_clear">
+        <item>[smug]妳越來越像工程師了。</item>
+        <item>[normal]謝謝妳。</item>
+    </string-array>
+    <string-array name="l103_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l104_enter">
+        <item>[angry]按我，我就生氣。</item>
+        <item>[normal]規則是這樣寫的。</item>
+    </string-array>
+    <string-array name="l104_first_mistake">
+        <item>[smug]不是那裡。</item>
+        <item>[normal]再看一次。</item>
+    </string-array>
+    <string-array name="l104_mistakes_3">
+        <item>[guilty]後台有工具。</item>
+        <item>[normal]打開面板看看。</item>
+    </string-array>
+    <string-array name="l104_mistakes_6">
+        <item>[sad]看一下提示吧。</item>
+        <item>[guilty]我是怎麼被做出來的，妳快知道了。</item>
+    </string-array>
+    <string-array name="l104_idle">
+        <item>[normal]慢慢看。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l104_rapid_tap">
+        <item>[angry]亂按沒用。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l104_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l104_clear">
+        <item>[smug]修好了。</item>
+        <item>[normal]原來我是這樣被做出來的。</item>
+    </string-array>
+    <string-array name="l104_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l105_enter">
+        <item>[normal]這是我的記憶檔。真的那份。</item>
+        <item>[serious]最下面那一列，是我有多相信妳。</item>
+    </string-array>
+    <string-array name="l105_first_mistake">
+        <item>[smug]後台的東西要小心碰。</item>
+        <item>[normal]不對。</item>
+    </string-array>
+    <string-array name="l105_mistakes_3">
+        <item>[guilty]每一關都多一樣工具。</item>
+        <item>[normal]慢慢來。</item>
+    </string-array>
+    <string-array name="l105_mistakes_6">
+        <item>[sad]別放棄。</item>
+        <item>[guilty]其實不難的。</item>
+    </string-array>
+    <string-array name="l105_idle">
+        <item>[normal]後台不會跑掉。</item>
+        <item>[normal]每個元件都有名字。</item>
+    </string-array>
+    <string-array name="l105_rapid_tap">
+        <item>[angry]先修好再按。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l105_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l105_clear">
+        <item>[smug]妳越來越像工程師了。</item>
+        <item>[normal]謝謝妳。</item>
+    </string-array>
+    <string-array name="l105_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l106_enter">
+        <item>[normal]最後一次。我被拆散了。</item>
+        <item>[serious]四個問題，妳都見過。</item>
+    </string-array>
+    <string-array name="l106_first_mistake">
+        <item>[smug]不是那裡。</item>
+        <item>[normal]再看一次。</item>
+    </string-array>
+    <string-array name="l106_mistakes_3">
+        <item>[guilty]後台有工具。</item>
+        <item>[normal]打開面板看看。</item>
+    </string-array>
+    <string-array name="l106_mistakes_6">
+        <item>[sad]看一下提示吧。</item>
+        <item>[guilty]我是怎麼被做出來的，妳快知道了。</item>
+    </string-array>
+    <string-array name="l106_idle">
+        <item>[normal]慢慢看。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l106_rapid_tap">
+        <item>[angry]亂按沒用。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l106_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[smug]提示，我記下了。</item>
+    </string-array>
+    <string-array name="l106_clear">
+        <item>[smug]修好了。</item>
+        <item>[normal]原來我是這樣被做出來的。</item>
+    </string-array>
+    <string-array name="l106_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+</resources>

@@ -5,6 +5,7 @@ import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performScrollToKey
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Assert.assertEquals
@@ -33,7 +34,8 @@ class RotationTest {
         val run = tw.dynity.wrongbutton.core.memory.RunResult(0, 0, 1_000, 0, false)
         memory.update { m -> listOf(1, 2).fold(m) { acc, id -> tw.dynity.wrongbutton.core.memory.MemoryOps.completeLevel(acc, id, run) } }
         rule.onNodeWithTag("menu_levels").performClick()
-        waitForTag("select_level_3")
+        waitForTag("select_grid")
+        rule.onNodeWithTag("select_grid").performScrollToKey(3)
         rule.onNodeWithTag("select_level_3").performClick()
         waitForTag("l03_task")
         rule.onNodeWithTag("l03_task").performClick()

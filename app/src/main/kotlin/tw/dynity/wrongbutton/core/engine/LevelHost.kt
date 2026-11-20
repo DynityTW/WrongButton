@@ -81,6 +81,8 @@ fun LevelHost(
     /** 這一關在遊戲裡的顯示編號（依關卡順序，不是內部 id）。 */
     number: Int,
     hasNext: Boolean,
+    /** 下一關需要 Pro（按「下一關」會打開 Pro 頁）。 */
+    nextNeedsPro: Boolean = false,
     onExit: () -> Unit,
     onNext: () -> Unit,
     recordsContent: @Composable () -> Unit,
@@ -93,6 +95,8 @@ fun LevelHost(
     val result by vm.result.collectAsState()
     val overlay by vm.overlay.collectAsState()
     val hintTier by vm.hintTier.collectAsState()
+    // 買了 Pro 或看完廣告時重組，讓提示框的按鈕文字跟著變。
+    val hintGateState by vm.hints.changes.collectAsState()
     val scope = remember(vm) { HostScope(vm, memory, speech, mistakes, reduceMotion) }
 
     val feedback = LocalFeedback.current
@@ -116,7 +120,7 @@ fun LevelHost(
     ) {
         val current = result
         if (current != null) {
-            ResultScreen(current, hasNext, onNext, onExit, Modifier.safeDrawingPadding())
+            ResultScreen(current, hasNext, onNext, onExit, Modifier.safeDrawingPadding(), nextNeedsPro)
             return@Box
         }
 
@@ -175,6 +179,7 @@ fun LevelHost(
             HostOverlay.Hints -> HintOverlay(
                 hints = level.hintRes.map { stringResource(it) },
                 tier = hintTier,
+                needsAd = hintGateState.let { vm.nextHintNeedsAd() },
                 // 提示永遠是實話，所以提示框裡的臉永遠是誠實的表情。
                 face = Expression(Mood.Normal, Tell.Honest),
                 onReveal = vm::revealNextHint,

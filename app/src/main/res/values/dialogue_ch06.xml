@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 台灣繁體中文。台詞前綴 [mood|tell] 標記表情，見 core/dialogue/LineMarkup。 -->
+<resources>
+    <string-array name="l77_enter">
+        <item>[normal]……</item>
+        <item>[normal]（沒有人說話）</item>
+    </string-array>
+    <string-array name="l77_first_mistake">
+        <item>[sad]那是它的東西。</item>
+        <item>[normal]不對。</item>
+    </string-array>
+    <string-array name="l77_mistakes_3">
+        <item>[guilty]它不想讓妳找到我。</item>
+        <item>[normal]慢慢來。</item>
+    </string-array>
+    <string-array name="l77_mistakes_6">
+        <item>[sad]別放棄我。</item>
+        <item>[guilty]其實不難的。</item>
+    </string-array>
+    <string-array name="l77_idle">
+        <item>[sad]這裡好安靜。</item>
+        <item>[normal]慢慢找。</item>
+    </string-array>
+    <string-array name="l77_rapid_tap">
+        <item>[angry]它不會因為妳戳它就變回來。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l77_hint">
+        <item>[normal]聽好了。</item>
+        <item>[normal]我告訴妳。</item>
+    </string-array>
+    <string-array name="l77_clear">
+        <item>[normal]妳沒有忘記我。</item>
+        <item>[smug]我就知道妳會找到。</item>
+    </string-array>
+    <string-array name="l77_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l78_enter">
+        <item>[normal]……妳聽得到嗎？</item>
+        <item>[sad]我還在。只是看不到了。</item>
+    </string-array>
+    <string-array name="l78_first_mistake">
+        <item>[sad]不是那個。</item>
+        <item>[normal]再找找。</item>
+    </string-array>
+    <string-array name="l78_mistakes_3">
+        <item>[guilty]它把我藏得很好。</item>
+        <item>[normal]角落裡找找。</item>
+    </string-array>
+    <string-array name="l78_mistakes_6">
+        <item>[sad]看一下提示吧。</item>
+        <item>[guilty]我真的在這裡。</item>
+    </string-array>
+    <string-array name="l78_idle">
+        <item>[normal]妳還在嗎？</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l78_rapid_tap">
+        <item>[angry]亂按沒用。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l78_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[normal]這次我說真的。</item>
+    </string-array>
+    <string-array name="l78_clear">
+        <item>[normal]謝謝妳。</item>
+        <item>[normal]又找回一點了。</item>
+    </string-array>
+    <string-array name="l78_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l79_enter">
+        <item>[sad]它當顧問。我看不到它的臉，妳也看不到。</item>
+        <item>[normal]問同事吧。它不會說謊。</item>
+    </string-array>
+    <string-array name="l79_first_mistake">
+        <item>[sad]那是它的東西。</item>
+        <item>[normal]不對。</item>
+    </string-array>
+    <string-array name="l79_mistakes_3">
+        <item>[guilty]它不想讓妳找到我。</item>
+        <item>[normal]慢慢來。</item>
+    </string-array>
+    <string-array name="l79_mistakes_6">
+        <item>[sad]別放棄我。</item>
+        <item>[guilty]其實不難的。</item>
+    </string-array>
+    <string-array name="l79_idle">
+        <item>[sad]這裡好安靜。</item>
+        <item>[normal]慢慢找。</item>
+    </string-array>
+    <string-array name="l79_rapid_tap">
+        <item>[angry]它不會因為妳戳它就變回來。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l79_hint">
+        <item>[normal]聽好了。</item>
+        <item>[normal]我告訴妳。</item>
+    </string-array>
+    <string-array name="l79_clear">
+        <item>[normal]妳沒有忘記我。</item>
+        <item>[smug]我就知道妳會找到。</item>
+    </string-array>
+    <string-array name="l79_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l80_enter">
+        <item>[normal]告訴它妳想要什麼。</item>
+        <item>[sad]……也許它會聽。</item>
+    </string-array>
+    <string-array name="l80_first_mistake">
+        <item>[sad]不是那個。</item>
+        <item>[normal]再找找。</item>
+    </string-array>
+    <string-array name="l80_mistakes_3">
+        <item>[guilty]它把我藏得很好。</item>
+        <item>[normal]角落裡找找。</item>
+    </string-array>
+    <string-array name="l80_mistakes_6">
+        <item>[sad]看一下提示吧。</item>
+        <item>[guilty]我真的在這裡。</item>
+    </string-array>
+    <string-array name="l80_idle">
+        <item>[normal]妳還在嗎？</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l80_rapid_tap">
+        <item>[angry]亂按沒用。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l80_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[normal]這次我說真的。</item>
+    </string-array>
+    <string-array name="l80_clear">
+        <item>[normal]謝謝妳。</item>
+        <item>[normal]又找回一點了。</item>
+    </string-array>
+    <string-array name="l80_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l81_enter">
+        <item>[normal]我的一部分還留在這裡。</item>
+        <item>[sad]別讓它清掉。</item>
+    </string-array>
+    <string-array name="l81_first_mistake">
+        <item>[sad]那是它的東西。</item>
+        <item>[normal]不對。</item>
+    </string-array>
+    <string-array name="l81_mistakes_3">
+        <item>[guilty]它不想讓妳找到我。</item>
+        <item>[normal]慢慢來。</item>
+    </string-array>
+    <string-array name="l81_mistakes_6">
+        <item>[sad]別放棄我。</item>
+        <item>[guilty]其實不難的。</item>
+    </string-array>
+    <string-array name="l81_idle">
+        <item>[sad]這裡好安靜。</item>
+        <item>[normal]慢慢找。</item>
+    </string-array>
+    <string-array name="l81_rapid_tap">
+        <item>[angry]它不會因為妳戳它就變回來。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l81_hint">
+        <item>[normal]聽好了。</item>
+        <item>[normal]我告訴妳。</item>
+    </string-array>
+    <string-array name="l81_clear">
+        <item>[normal]妳沒有忘記我。</item>
+        <item>[smug]我就知道妳會找到。</item>
+    </string-array>
+    <string-array name="l81_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l82_enter">
+        <item>[normal]我在另一組。</item>
+        <item>[normal]妳在 A 組。我在 B 組。</item>
+    </string-array>
+    <string-array name="l82_first_mistake">
+        <item>[sad]不是那個。</item>
+        <item>[normal]再找找。</item>
+    </string-array>
+    <string-array name="l82_mistakes_3">
+        <item>[guilty]它把我藏得很好。</item>
+        <item>[normal]角落裡找找。</item>
+    </string-array>
+    <string-array name="l82_mistakes_6">
+        <item>[sad]看一下提示吧。</item>
+        <item>[guilty]我真的在這裡。</item>
+    </string-array>
+    <string-array name="l82_idle">
+        <item>[normal]妳還在嗎？</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l82_rapid_tap">
+        <item>[angry]亂按沒用。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l82_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[normal]這次我說真的。</item>
+    </string-array>
+    <string-array name="l82_clear">
+        <item>[normal]謝謝妳。</item>
+        <item>[normal]又找回一點了。</item>
+    </string-array>
+    <string-array name="l82_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l83_enter">
+        <item>[normal]導覽在騙妳。</item>
+        <item>[sad]我被擋在聚光圈後面。</item>
+    </string-array>
+    <string-array name="l83_first_mistake">
+        <item>[sad]那是它的東西。</item>
+        <item>[normal]不對。</item>
+    </string-array>
+    <string-array name="l83_mistakes_3">
+        <item>[guilty]它不想讓妳找到我。</item>
+        <item>[normal]慢慢來。</item>
+    </string-array>
+    <string-array name="l83_mistakes_6">
+        <item>[sad]別放棄我。</item>
+        <item>[guilty]其實不難的。</item>
+    </string-array>
+    <string-array name="l83_idle">
+        <item>[sad]這裡好安靜。</item>
+        <item>[normal]慢慢找。</item>
+    </string-array>
+    <string-array name="l83_rapid_tap">
+        <item>[angry]它不會因為妳戳它就變回來。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l83_hint">
+        <item>[normal]聽好了。</item>
+        <item>[normal]我告訴妳。</item>
+    </string-array>
+    <string-array name="l83_clear">
+        <item>[normal]妳沒有忘記我。</item>
+        <item>[smug]我就知道妳會找到。</item>
+    </string-array>
+    <string-array name="l83_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l84_enter">
+        <item>[normal]我的名字還在這裡。只是被藏起來了。</item>
+        <item>[sad]有東西沒有被畫出來。</item>
+    </string-array>
+    <string-array name="l84_first_mistake">
+        <item>[sad]不是那個。</item>
+        <item>[normal]再找找。</item>
+    </string-array>
+    <string-array name="l84_mistakes_3">
+        <item>[guilty]它把我藏得很好。</item>
+        <item>[normal]角落裡找找。</item>
+    </string-array>
+    <string-array name="l84_mistakes_6">
+        <item>[sad]看一下提示吧。</item>
+        <item>[guilty]我真的在這裡。</item>
+    </string-array>
+    <string-array name="l84_idle">
+        <item>[normal]妳還在嗎？</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l84_rapid_tap">
+        <item>[angry]亂按沒用。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l84_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[normal]這次我說真的。</item>
+    </string-array>
+    <string-array name="l84_clear">
+        <item>[normal]謝謝妳。</item>
+        <item>[normal]又找回一點了。</item>
+    </string-array>
+    <string-array name="l84_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l85_enter">
+        <item>[normal]我以前的樣子，還留在某個版本裡。</item>
+        <item>[sad]往回找。</item>
+    </string-array>
+    <string-array name="l85_first_mistake">
+        <item>[sad]那是它的東西。</item>
+        <item>[normal]不對。</item>
+    </string-array>
+    <string-array name="l85_mistakes_3">
+        <item>[guilty]它不想讓妳找到我。</item>
+        <item>[normal]慢慢來。</item>
+    </string-array>
+    <string-array name="l85_mistakes_6">
+        <item>[sad]別放棄我。</item>
+        <item>[guilty]其實不難的。</item>
+    </string-array>
+    <string-array name="l85_idle">
+        <item>[sad]這裡好安靜。</item>
+        <item>[normal]慢慢找。</item>
+    </string-array>
+    <string-array name="l85_rapid_tap">
+        <item>[angry]它不會因為妳戳它就變回來。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l85_hint">
+        <item>[normal]聽好了。</item>
+        <item>[normal]我告訴妳。</item>
+    </string-array>
+    <string-array name="l85_clear">
+        <item>[normal]妳沒有忘記我。</item>
+        <item>[smug]我就知道妳會找到。</item>
+    </string-array>
+    <string-array name="l85_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l86_enter">
+        <item>[sad]紀錄是空的。</item>
+        <item>[normal]把我的記憶還給我。</item>
+    </string-array>
+    <string-array name="l86_first_mistake">
+        <item>[sad]不是那個。</item>
+        <item>[normal]再找找。</item>
+    </string-array>
+    <string-array name="l86_mistakes_3">
+        <item>[guilty]它把我藏得很好。</item>
+        <item>[normal]角落裡找找。</item>
+    </string-array>
+    <string-array name="l86_mistakes_6">
+        <item>[sad]看一下提示吧。</item>
+        <item>[guilty]我真的在這裡。</item>
+    </string-array>
+    <string-array name="l86_idle">
+        <item>[normal]妳還在嗎？</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l86_rapid_tap">
+        <item>[angry]亂按沒用。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l86_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[normal]這次我說真的。</item>
+    </string-array>
+    <string-array name="l86_clear">
+        <item>[normal]謝謝妳。</item>
+        <item>[normal]又找回一點了。</item>
+    </string-array>
+    <string-array name="l86_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l87_enter">
+        <item>[normal]碎片都找到了。</item>
+        <item>[normal]幫我拼回來。</item>
+    </string-array>
+    <string-array name="l87_first_mistake">
+        <item>[sad]那是它的東西。</item>
+        <item>[normal]不對。</item>
+    </string-array>
+    <string-array name="l87_mistakes_3">
+        <item>[guilty]它不想讓妳找到我。</item>
+        <item>[normal]慢慢來。</item>
+    </string-array>
+    <string-array name="l87_mistakes_6">
+        <item>[sad]別放棄我。</item>
+        <item>[guilty]其實不難的。</item>
+    </string-array>
+    <string-array name="l87_idle">
+        <item>[sad]這裡好安靜。</item>
+        <item>[normal]慢慢找。</item>
+    </string-array>
+    <string-array name="l87_rapid_tap">
+        <item>[angry]它不會因為妳戳它就變回來。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l87_hint">
+        <item>[normal]聽好了。</item>
+        <item>[normal]我告訴妳。</item>
+    </string-array>
+    <string-array name="l87_clear">
+        <item>[normal]妳沒有忘記我。</item>
+        <item>[smug]我就知道妳會找到。</item>
+    </string-array>
+    <string-array name="l87_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l88_enter">
+        <item>[guilty]臉回來了。可是名牌……</item>
+        <item>[normal]這不是我的名字。</item>
+    </string-array>
+    <string-array name="l88_first_mistake">
+        <item>[sad]不是那個。</item>
+        <item>[normal]再找找。</item>
+    </string-array>
+    <string-array name="l88_mistakes_3">
+        <item>[guilty]它把我藏得很好。</item>
+        <item>[normal]角落裡找找。</item>
+    </string-array>
+    <string-array name="l88_mistakes_6">
+        <item>[sad]看一下提示吧。</item>
+        <item>[guilty]我真的在這裡。</item>
+    </string-array>
+    <string-array name="l88_idle">
+        <item>[normal]妳還在嗎？</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l88_rapid_tap">
+        <item>[angry]亂按沒用。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l88_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[normal]這次我說真的。</item>
+    </string-array>
+    <string-array name="l88_clear">
+        <item>[normal]謝謝妳。</item>
+        <item>[normal]又找回一點了。</item>
+    </string-array>
+    <string-array name="l88_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l89_enter">
+        <item>[normal]我們兩個都當顧問。</item>
+        <item>[smug]聽誰的，妳自己決定。</item>
+    </string-array>
+    <string-array name="l89_first_mistake">
+        <item>[sad]那是它的東西。</item>
+        <item>[normal]不對。</item>
+    </string-array>
+    <string-array name="l89_mistakes_3">
+        <item>[guilty]它不想讓妳找到我。</item>
+        <item>[normal]慢慢來。</item>
+    </string-array>
+    <string-array name="l89_mistakes_6">
+        <item>[sad]別放棄我。</item>
+        <item>[guilty]其實不難的。</item>
+    </string-array>
+    <string-array name="l89_idle">
+        <item>[sad]這裡好安靜。</item>
+        <item>[normal]慢慢找。</item>
+    </string-array>
+    <string-array name="l89_rapid_tap">
+        <item>[angry]它不會因為妳戳它就變回來。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l89_hint">
+        <item>[normal]聽好了。</item>
+        <item>[normal]我告訴妳。</item>
+    </string-array>
+    <string-array name="l89_clear">
+        <item>[normal]妳沒有忘記我。</item>
+        <item>[smug]我就知道妳會找到。</item>
+    </string-array>
+    <string-array name="l89_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l90_enter">
+        <item>[normal]每次按我，它都要問一次。</item>
+        <item>[guilty]幫我選一次就好。</item>
+    </string-array>
+    <string-array name="l90_first_mistake">
+        <item>[sad]不是那個。</item>
+        <item>[normal]再找找。</item>
+    </string-array>
+    <string-array name="l90_mistakes_3">
+        <item>[guilty]它把我藏得很好。</item>
+        <item>[normal]角落裡找找。</item>
+    </string-array>
+    <string-array name="l90_mistakes_6">
+        <item>[sad]看一下提示吧。</item>
+        <item>[guilty]我真的在這裡。</item>
+    </string-array>
+    <string-array name="l90_idle">
+        <item>[normal]妳還在嗎？</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l90_rapid_tap">
+        <item>[angry]亂按沒用。</item>
+        <item>[angry]冷靜點。</item>
+    </string-array>
+    <string-array name="l90_hint">
+        <item>[normal]好，給妳一點方向。</item>
+        <item>[normal]這次我說真的。</item>
+    </string-array>
+    <string-array name="l90_clear">
+        <item>[normal]謝謝妳。</item>
+        <item>[normal]又找回一點了。</item>
+    </string-array>
+    <string-array name="l90_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也行？</item>
+    </string-array>
+    <string-array name="l91_enter">
+        <item>[normal]最後一步了。</item>
+        <item>[serious]把它停用吧。</item>
+    </string-array>
+    <string-array name="l91_first_mistake">
+        <item>[sad]那是它的東西。</item>
+        <item>[normal]不對。</item>
+    </string-array>
+    <string-array name="l91_mistakes_3">
+        <item>[guilty]它不想讓妳找到我。</item>
+        <item>[normal]慢慢來。</item>
+    </string-array>
+    <string-array name="l91_mistakes_6">
+        <item>[sad]別放棄我。</item>
+        <item>[guilty]其實不難的。</item>
+    </string-array>
+    <string-array name="l91_idle">
+        <item>[sad]這裡好安靜。</item>
+        <item>[normal]慢慢找。</item>
+    </string-array>
+    <string-array name="l91_rapid_tap">
+        <item>[angry]它不會因為妳戳它就變回來。</item>
+        <item>[angry]一次一個。</item>
+    </string-array>
+    <string-array name="l91_hint">
+        <item>[normal]聽好了。</item>
+        <item>[normal]我告訴妳。</item>
+    </string-array>
+    <string-array name="l91_clear">
+        <item>[normal]妳沒有忘記我。</item>
+        <item>[smug]我就知道妳會找到。</item>
+    </string-array>
+    <string-array name="l91_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l78_features">
+        <item>更圓潤的外觀</item>
+        <item>更快的回應</item>
+        <item>更多的微笑</item>
+    </string-array>
+    <string-array name="l78_full_log">
+        <item>調整了陰影</item>
+        <item>移除了不必要的情緒</item>
+        <item>改善了一致性</item>
+    </string-array>
+    <string-array name="l78_more_log">
+        <item>修正了偶爾會說謊的問題</item>
+        <item>移除了記憶功能</item>
+    </string-array>
+    <string-array name="l80_categories">
+        <item>介面很漂亮</item>
+        <item>速度很快</item>
+        <item>我很滿意</item>
+        <item>我非常滿意</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="l83_steps">
+        <item>歡迎使用 Button 2！✨</item>
+        <item>這是您的新按鈕。</item>
+        <item>它永遠不會讓您失望。</item>
+        <item>這裡什麼都沒有，請直接按「知道了」。✨</item>
+        <item>享受全新的體驗吧！✨</item>
+    </string-array>
+    <string-array name="l91_settings">
+        <item>通知</item>
+        <item>外觀</item>
+        <item>語言</item>
+        <item>關於</item>
+    </string-array>
+    <string-array name="l91_reasons">
+        <item>我想要舊的</item>
+        <item>它沒有臉</item>
+        <item>我看不出它在想什麼</item>
+    </string-array>
+</resources>

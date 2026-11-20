@@ -6,8 +6,12 @@ import tw.dynity.wrongbutton.core.engine.Level
 import tw.dynity.wrongbutton.core.memory.MemoryKey
 import tw.dynity.wrongbutton.core.memory.PlayerMemory
 
-/** 一章。章內關卡依序排列。 */
-data class Chapter(@StringRes val titleRes: Int, val levels: List<Level>)
+/**
+ * 一章。章內關卡依序排列。
+ *
+ * [standalone] 的章（第二季）各自獨立：第一季全部通關後，每一章的第一關都直接開放，章內再依序解鎖。
+ */
+data class Chapter(@StringRes val titleRes: Int, val levels: List<Level>, val standalone: Boolean = false)
 
 /**
  * 關卡註冊表。
@@ -149,25 +153,83 @@ object Levels {
 
     val all: List<Level> = chapters.flatMap { it.levels }
 
-    fun byId(id: Int): Level = all.first { it.id == id }
+    /** 免費的關卡數（依顯示順序）。之後的關卡需要 Pro。 */
+    const val FREE_LEVELS = 100
+
+    /** id → 在 [all] 裡的位置。選關畫面每一格都會查，所以先建好表，不要每次從頭找。 */
+    private val indexById: Map<Int, Int> = all.withIndex().associate { (i, level) -> level.id to i }
+    private val byIdMap: Map<Int, Level> = all.associateBy { it.id }
+
+    /** 每一關所屬的章，以及它在章內的位置。 */
+    private val chapterOf: Map<Int, Pair<Chapter, Int>> =
+        chapters.flatMap { c -> c.levels.mapIndexed { i, l -> l.id to (c to i) } }.toMap()
+
+    /** 第一季的最後一關（〈相信我〉）。通關後第二季的每一章都開放。 */
+    val seasonOneFinale: Level = chapters.last { !it.standalone }.levels.last()
+
+    fun byId(id: Int): Level = byIdMap.getValue(id)
+
+    fun indexOf(id: Int): Int = indexById[id] ?: -1
 
     /** 玩家看到的關卡編號（從 1 開始）。 */
-    fun numberOf(id: Int): Int = all.indexOfFirst { it.id == id } + 1
+    fun numberOf(id: Int): Int = indexOf(id) + 1
 
-    fun next(id: Int): Level? = all.getOrNull(all.indexOfFirst { it.id == id } + 1)
+    fun next(id: Int): Level? = all.getOrNull(indexOf(id) + 1)
 
-    /** 第一關永遠開放；其餘關卡在前一關通關後解鎖。 */
+    /** 這一關是否需要 Pro。 */
+    fun requiresPro(id: Int): Boolean = indexOf(id) >= FREE_LEVELS
+
+    /**
+     * 進度上是否解鎖（不管 Pro）：
+     * - 第一季：第一關永遠開放；其餘在前一關通關後解鎖。
+     * - 第二季：章的第一關在第一季通關後開放；章內在前一關通關後解鎖。
+     */
     fun isUnlocked(memory: PlayerMemory, id: Int): Boolean {
-        val index = all.indexOfFirst { it.id == id }
-        return index == 0 || (index > 0 && memory.isCleared(all[index - 1].id))
+        val index = indexOf(id)
+        if (index < 0) return false
+        if (index == 0) return true
+        val (chapter, inChapter) = chapterOf.getValue(id)
+        return if (chapter.standalone && inChapter == 0) memory.isCleared(seasonOneFinale.id)
+        else memory.isCleared(all[index - 1].id)
     }
+
+    /** 進度解鎖，而且（需要的話）有 Pro。 */
+    fun isPlayable(memory: PlayerMemory, pro: Boolean, id: Int): Boolean = isUnlocked(memory, id) && (pro || !requiresPro(id))
 
     /** 「繼續」要去的關卡：第一個已解鎖但還沒通關的關卡。 */
     fun continueTarget(memory: PlayerMemory): Level? =
-        all.firstOrNull { isUnlocked(memory, it.id) && !memory.isCleared(it.id) }
+        all.firstOrNull { !memory.isCleared(it.id) && isUnlocked(memory, it.id) }
 }
 
-/** 跨關卡共用的記憶鍵（後面的關卡會讀前面關卡留下的紀錄）。 */
+/**
+ * 跨關卡共用的記憶鍵（後面的關卡會讀前面關卡留下的紀錄）。
+ *
+ * **鍵名是永久的存檔鍵，發布後不能改名。** 鍵名裡的數字是當初命名時的編號，和現在的顯示編號不一定一樣：
+ *
+ * | 鍵 | 寫入的關卡（顯示編號） |
+ * |---|---|
+ * | l1_press_delay_ms | 1 |
+ * | l4_solution | 5〈不要再問我〉 |
+ * | l5_solution | 7〈至少 48dp〉 |
+ * | l6_first_side | 16〈顧問〉 |
+ * | l7_swipe_direction、l7_hesitation_ms | 45〈一個都不留〉 |
+ * | l49_grudge、l49_grudge_planted | 47〈忘掉一件事〉 |
+ * | l51_kept_shape | 49〈幫我保管〉 |
+ * | l54_achievement | 52〈成就〉 |
+ * | l55_draft_stage | 53〈草稿〉 |
+ * | l62_nickname | 61〈必填〉 |
+ * | l75_first_stars | 74〈評分〉 |
+ * | frag_* | 80–84（第 6 章的碎片） |
+ * | l92_dev_mode | 91〈敲七下〉 |
+ * | l107_annoying | 106〈換妳說〉 |
+ * | l113_wish | 112〈只有妳記得〉 |
+ * | l114_like | 113〈關於妳的表單〉 |
+ * | l117_lying_switch | 116〈說謊開關〉 |
+ * | l120_keep | 119〈念給妳聽〉 |
+ * | l10_press_delay_ms | 120〈相信我〉 |
+ *
+ * 第二季（121 關以後）的鍵一律用「s2_<內部 id>_<名稱>」，內部 id 和顯示編號相同。
+ */
 object Keys {
     val L1PressDelay = MemoryKey("l1_press_delay_ms")
     val L4Solution = MemoryKey("l4_solution")

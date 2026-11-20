@@ -15,6 +15,8 @@ data class GameSettings(
     val music: Boolean = false,
     val vibration: Boolean = true,
     val reduceMotion: Boolean = false,
+    /** The Button 怎麼稱呼玩家：「你」或「妳」。 */
+    val pronoun: Pronoun = Pronoun.Neutral,
 )
 
 class SettingsRepository(

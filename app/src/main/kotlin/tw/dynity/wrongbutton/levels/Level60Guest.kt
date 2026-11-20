@@ -54,7 +54,7 @@ object Level60Guest : Level {
                 Box {
                     val cd = stringResource(if (state.guest) R.string.l60_guest else R.string.l60_player)
                     Surface(onClick = { state = state.copy(menu = true) }, shape = RoundedCornerShape(50), color = MaterialTheme.colorScheme.primaryContainer, modifier = Modifier.size(48.dp).testTag("l60_avatar").semantics { contentDescription = cd }) {
-                        Box(contentAlignment = Alignment.Center) { Text(if (state.guest) "訪" else "妳", style = MaterialTheme.typography.titleMedium) }
+                        Box(contentAlignment = Alignment.Center) { Text(if (state.guest) "訪" else tw.dynity.wrongbutton.core.settings.PronounText.apply("妳"), style = MaterialTheme.typography.titleMedium) }
                     }
                     DropdownMenu(expanded = state.menu, onDismissRequest = { state = state.copy(menu = false) }) {
                         DropdownMenuItem(text = { Text(stringResource(R.string.l60_player)) }, onClick = { state = state.copy(guest = false, menu = false) }, modifier = Modifier.testTag("l60_as_player"))

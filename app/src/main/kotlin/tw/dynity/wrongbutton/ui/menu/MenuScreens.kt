@@ -24,6 +24,7 @@ import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -50,9 +51,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.launch
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import tw.dynity.wrongbutton.R
 import tw.dynity.wrongbutton.app.AppContainer
@@ -95,6 +98,8 @@ fun TitleScreen(
     onLevels: () -> Unit,
     onRecords: () -> Unit,
     onSettings: () -> Unit,
+    pro: Boolean = false,
+    onPro: () -> Unit = {},
 ) {
     val cue = rememberCuePlayer()
     val fresh = memory.levels.isEmpty()
@@ -151,6 +156,11 @@ fun TitleScreen(
                     OutlinedButton(onClick = onSettings, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("menu_settings")) {
                         Text(stringResource(R.string.menu_settings))
                     }
+                    if (!pro) {
+                        TextButton(onClick = onPro, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("menu_pro")) {
+                            Text(stringResource(R.string.menu_pro))
+                        }
+                    }
                 }
             }
             if (wide) {
@@ -178,36 +188,98 @@ fun TitleScreen(
 
 @Composable
 fun LevelSelectScreen(
-    chapters: List<Pair<Int, List<Level>>>,
+    /** （章名, 關卡, 是否第二季） */
+    chapters: List<Triple<Int, List<Level>, Boolean>>,
     numberOf: (Int) -> Int,
     isUnlocked: (Int) -> Boolean,
     memory: PlayerMemory,
     onPlay: (Int) -> Unit,
     onBack: () -> Unit,
+    needsPro: (Int) -> Boolean = { false },
 ) {
+    val gridState = androidx.compose.foundation.lazy.grid.rememberLazyGridState()
+    val coroutine = androidx.compose.runtime.rememberCoroutineScope()
+    // 每一章標題在格狀清單裡的位置，給「跳到第 N 章」用。
+    val headerIndex = remember(chapters) {
+        var i = 0
+        var seasonShown = false
+        chapters.map { (_, levels, season2) ->
+            if (season2 && !seasonShown) { seasonShown = true; i++ } // 「第二季」標題也佔一格
+            val at = i
+            i += 1 + levels.size
+            at
+        }
+    }
     ScreenScaffold(title = stringResource(R.string.select_title), onBack = onBack) {
+        // 章節捷徑：300 關不用一路捲下去。
+        androidx.compose.foundation.lazy.LazyRow(
+            modifier = Modifier.fillMaxWidth().testTag("select_chapters"),
+            contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 12.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+        ) {
+            items(chapters.size) { c ->
+                val (titleRes, levels) = chapters[c]
+                val cleared = levels.count { memory.isCleared(it.id) }
+                val title = stringResource(titleRes)
+                val short = title.substringBefore('　')
+                val cd = stringResource(R.string.select_jump_cd, title)
+                androidx.compose.material3.AssistChip(
+                    onClick = { coroutine.launch { gridState.animateScrollToItem(headerIndex[c]) } },
+                    label = { Text("$short  " + stringResource(R.string.select_chapter_progress, cleared, levels.size)) },
+                    modifier = Modifier
+                        .heightIn(min = 48.dp)
+                        .testTag("select_jump_$c")
+                        .semantics { contentDescription = cd },
+                )
+            }
+        }
         LazyVerticalGrid(
+            state = gridState,
             columns = GridCells.Adaptive(160.dp),
             modifier = Modifier.fillMaxSize().padding(horizontal = 12.dp).testTag("select_grid"),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            chapters.forEach { (chapterTitle, levels) ->
+            var seasonHeaderShown = false
+            chapters.forEach { (chapterTitle, levels, season2) ->
+            if (season2 && !seasonHeaderShown) {
+                seasonHeaderShown = true
+                item(key = "season_2", span = { GridItemSpan(maxLineSpan) }) {
+                    Text(
+                        stringResource(R.string.select_season_2),
+                        style = MaterialTheme.typography.headlineSmall,
+                        modifier = Modifier.padding(top = 24.dp, start = 4.dp).semantics { heading() },
+                    )
+                }
+            }
             item(key = "chapter_$chapterTitle", span = { GridItemSpan(maxLineSpan) }) {
-                Text(
-                    stringResource(chapterTitle),
-                    style = MaterialTheme.typography.titleMedium,
-                    color = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier.padding(top = 12.dp, bottom = 4.dp, start = 4.dp).semantics { heading() },
-                )
+                val cleared = levels.count { memory.isCleared(it.id) }
+                Row(
+                    Modifier.padding(top = 12.dp, bottom = 4.dp, start = 4.dp, end = 4.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Text(
+                        stringResource(chapterTitle),
+                        style = MaterialTheme.typography.titleMedium,
+                        color = MaterialTheme.colorScheme.primary,
+                        modifier = Modifier.weight(1f).semantics { heading() },
+                    )
+                    Text(
+                        stringResource(R.string.select_chapter_progress, cleared, levels.size),
+                        style = MaterialTheme.typography.labelLarge,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
             }
             items(levels, key = { it.id }) { level ->
                 val unlocked = isUnlocked(level.id)
+                val pro = needsPro(level.id)
                 val number = numberOf(level.id)
                 val cleared = memory.isCleared(level.id)
                 val status = stringResource(
                     when {
                         cleared -> R.string.select_cleared
+                        unlocked && pro -> R.string.pro_locked_cd
                         unlocked -> R.string.select_open
                         else -> R.string.select_locked
                     },
@@ -229,6 +301,16 @@ fun LevelSelectScreen(
                             Text(stringResource(R.string.select_number, number), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
                             if (!unlocked) Icon(WbIcons.Lock, contentDescription = null, modifier = Modifier.size(16.dp))
                             if (cleared) Icon(WbIcons.Check, contentDescription = null, modifier = Modifier.size(16.dp))
+                            if (pro && !cleared) {
+                                Surface(shape = RoundedCornerShape(6.dp), color = MaterialTheme.colorScheme.tertiaryContainer) {
+                                    Text(
+                                        stringResource(R.string.pro_locked),
+                                        style = MaterialTheme.typography.labelSmall,
+                                        color = MaterialTheme.colorScheme.onTertiaryContainer,
+                                        modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp),
+                                    )
+                                }
+                            }
                         }
                         Text(title, style = MaterialTheme.typography.titleMedium)
                         Text(status, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
@@ -242,8 +324,9 @@ fun LevelSelectScreen(
 }
 
 @Composable
-fun SettingsScreen(container: AppContainer, onBack: () -> Unit) {
+fun SettingsScreen(container: AppContainer, onBack: () -> Unit, onPro: () -> Unit = {}) {
     val settings by container.settings.settings.collectAsStateWithLifecycle()
+    val shop by container.monetization.state.collectAsStateWithLifecycle()
     val cue = rememberCuePlayer()
     var confirming by rememberSaveable { mutableStateOf(false) }
     var forgotten by rememberSaveable { mutableStateOf(false) }
@@ -274,6 +357,27 @@ fun SettingsScreen(container: AppContainer, onBack: () -> Unit) {
                     "settings_reduce_motion",
                     stringResource(R.string.settings_reduce_motion_desc),
                 ) { v -> container.settings.update { it.copy(reduceMotion = v) } }
+                PronounSetting(settings.pronoun) { p ->
+                    container.settings.update { it.copy(pronoun = p) }
+                    cue(Cue.Toggle)
+                }
+
+                Row(
+                    Modifier
+                        .fillMaxWidth()
+                        .heightIn(min = 56.dp)
+                        .clickable(role = Role.Button, onClick = onPro)
+                        .testTag("settings_pro")
+                        .padding(horizontal = 8.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Text(stringResource(R.string.settings_pro), style = MaterialTheme.typography.bodyLarge, modifier = Modifier.weight(1f))
+                    Text(
+                        stringResource(if (shop.pro) R.string.settings_pro_owned else R.string.settings_pro_free),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
 
                 Spacer(Modifier.height(16.dp))
                 if (forgotten) {
@@ -303,6 +407,26 @@ fun SettingsScreen(container: AppContainer, onBack: () -> Unit) {
                         modifier = Modifier.heightIn(min = 48.dp).testTag("forget_confirm"),
                     ) { Text(stringResource(R.string.forget_confirm)) }
                 }
+            }
+        }
+    }
+}
+
+/** 「你／妳」二選一。選項文字直接寫在程式裡：放在字串資源的話，「妳」本身也會被替換掉。 */
+@Composable
+private fun PronounSetting(current: tw.dynity.wrongbutton.core.settings.Pronoun, onChange: (tw.dynity.wrongbutton.core.settings.Pronoun) -> Unit) {
+    Column(Modifier.fillMaxWidth().padding(horizontal = 8.dp, vertical = 4.dp)) {
+        Text(stringResource(R.string.settings_pronoun), style = MaterialTheme.typography.bodyLarge)
+        Text(stringResource(R.string.settings_pronoun_desc), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Row(Modifier.padding(top = 8.dp).selectableGroup(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            listOf(tw.dynity.wrongbutton.core.settings.Pronoun.Neutral to "你", tw.dynity.wrongbutton.core.settings.Pronoun.Feminine to "妳").forEach { (p, label) ->
+                androidx.compose.material3.FilterChip(
+                    selected = current == p,
+                    onClick = { if (current != p) onChange(p) },
+                    label = { Text(label, style = MaterialTheme.typography.titleMedium) },
+                    modifier = Modifier.heightIn(min = 48.dp).testTag("settings_pronoun_${p.name.lowercase()}")
+                        .semantics { role = Role.RadioButton },
+                )
             }
         }
     }

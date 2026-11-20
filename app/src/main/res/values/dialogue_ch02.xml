@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 台灣繁體中文。台詞前綴 [mood|tell] 標記表情，見 core/dialogue/LineMarkup。 -->
+<resources>
+    <string-array name="l06_enter">
+        <item>[normal]今天我是顧問。我會告訴妳哪一顆是對的。</item>
+        <item>[smug|lie]今天我是顧問。我說的話絕對可靠。</item>
+    </string-array>
+    <string-array name="l06_first_mistake">
+        <item>[normal|lie]我說謊的時候從來不看妳——我是說，我從來不說謊。</item>
+        <item>[smug|lie]我說謊的時候從來不看妳——我是說，我根本不會說謊。</item>
+    </string-array>
+    <string-array name="l06_mistakes_3">
+        <item>[normal]答案不在按鈕上喔。</item>
+        <item>[guilty]妳有沒有在看我的臉？</item>
+    </string-array>
+    <string-array name="l06_mistakes_6">
+        <item>[sad]看我的眼睛。拜託。</item>
+        <item>[guilty]我的臉其實一直在告訴妳。</item>
+    </string-array>
+    <string-array name="l06_idle">
+        <item>[normal]慢慢想。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l06_rapid_tap">
+        <item>[angry]亂猜是猜不完的。</item>
+        <item>[angry]一次一顆。</item>
+    </string-array>
+    <string-array name="l06_hint">
+        <item>[normal]提示的時候，我不說謊。</item>
+        <item>[normal]好，給妳一點方向。</item>
+    </string-array>
+    <string-array name="l06_clear">
+        <item>[guilty]……妳開始看得懂我了。</item>
+        <item>[smug]三題全對。妳在看我的臉，對吧？</item>
+    </string-array>
+    <string-array name="l06_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也是一種讀法。</item>
+    </string-array>
+    <string-array name="l21_enter">
+        <item>[normal]這三個開關，我各有想法。點 ⓘ 問我。</item>
+        <item>[smug]開或關，我說了算。……大概。</item>
+    </string-array>
+    <string-array name="l21_first_mistake">
+        <item>[smug]妳有在看我的臉嗎？</item>
+        <item>[normal]再看一次。</item>
+    </string-array>
+    <string-array name="l21_mistakes_3">
+        <item>[guilty]每一句都要看。</item>
+        <item>[normal]慢慢來，我不趕妳。</item>
+    </string-array>
+    <string-array name="l21_mistakes_6">
+        <item>[sad]說謊的時候，我不敢看妳。</item>
+        <item>[guilty]我其實很好懂的。</item>
+    </string-array>
+    <string-array name="l21_idle">
+        <item>[normal]臉不會跑掉。</item>
+        <item>[normal]想好了再選。</item>
+    </string-array>
+    <string-array name="l21_rapid_tap">
+        <item>[angry]冷靜點。</item>
+        <item>[angry]先看我的臉！</item>
+    </string-array>
+    <string-array name="l21_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l21_clear">
+        <item>[guilty]我是不是太好懂了？</item>
+        <item>[normal]妳越來越會看我了。</item>
+    </string-array>
+    <string-array name="l21_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l22_enter">
+        <item>[normal]這裡太亮了，我戴著墨鏡。</item>
+        <item>[smug]墨鏡很適合我，對吧？</item>
+    </string-array>
+    <string-array name="l22_first_mistake">
+        <item>[smug]猜錯了。</item>
+        <item>[normal]不是那一個。</item>
+    </string-array>
+    <string-array name="l22_mistakes_3">
+        <item>[guilty]看我的眼睛，還有嘴角。</item>
+        <item>[normal]表情比字誠實。</item>
+    </string-array>
+    <string-array name="l22_mistakes_6">
+        <item>[sad]我的臉一直在告訴妳。</item>
+        <item>[guilty]看一下提示吧。</item>
+    </string-array>
+    <string-array name="l22_idle">
+        <item>[normal]慢慢想。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l22_rapid_tap">
+        <item>[angry]亂猜是猜不完的。</item>
+        <item>[angry]一次一顆。</item>
+    </string-array>
+    <string-array name="l22_hint">
+        <item>[normal]提示的時候，我不說謊。</item>
+        <item>[normal]好，給妳一點方向。</item>
+    </string-array>
+    <string-array name="l22_clear">
+        <item>[guilty]……妳又看穿我了。</item>
+        <item>[smug]不錯嘛。</item>
+    </string-array>
+    <string-array name="l22_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也是一種讀法。</item>
+    </string-array>
+    <string-array name="l23_enter">
+        <item>[guilty]這東西擋到我的嘴了。</item>
+        <item>[normal]公告每一回合都會再跑出來。抱歉。</item>
+    </string-array>
+    <string-array name="l23_first_mistake">
+        <item>[smug]妳有在看我的臉嗎？</item>
+        <item>[normal]再看一次。</item>
+    </string-array>
+    <string-array name="l23_mistakes_3">
+        <item>[guilty]每一句都要看。</item>
+        <item>[normal]慢慢來，我不趕妳。</item>
+    </string-array>
+    <string-array name="l23_mistakes_6">
+        <item>[sad]說謊的時候，我不敢看妳。</item>
+        <item>[guilty]我其實很好懂的。</item>
+    </string-array>
+    <string-array name="l23_idle">
+        <item>[normal]臉不會跑掉。</item>
+        <item>[normal]想好了再選。</item>
+    </string-array>
+    <string-array name="l23_rapid_tap">
+        <item>[angry]冷靜點。</item>
+        <item>[angry]先看我的臉！</item>
+    </string-array>
+    <string-array name="l23_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l23_clear">
+        <item>[guilty]我是不是太好懂了？</item>
+        <item>[normal]妳越來越會看我了。</item>
+    </string-array>
+    <string-array name="l23_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l24_enter">
+        <item>[normal]我今天用傳的。</item>
+        <item>[smug]看得到我的頭像嗎？很小喔。</item>
+    </string-array>
+    <string-array name="l24_first_mistake">
+        <item>[smug]猜錯了。</item>
+        <item>[normal]不是那一個。</item>
+    </string-array>
+    <string-array name="l24_mistakes_3">
+        <item>[guilty]看我的眼睛，還有嘴角。</item>
+        <item>[normal]表情比字誠實。</item>
+    </string-array>
+    <string-array name="l24_mistakes_6">
+        <item>[sad]我的臉一直在告訴妳。</item>
+        <item>[guilty]看一下提示吧。</item>
+    </string-array>
+    <string-array name="l24_idle">
+        <item>[normal]慢慢想。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l24_rapid_tap">
+        <item>[angry]亂猜是猜不完的。</item>
+        <item>[angry]一次一顆。</item>
+    </string-array>
+    <string-array name="l24_hint">
+        <item>[normal]提示的時候，我不說謊。</item>
+        <item>[normal]好，給妳一點方向。</item>
+    </string-array>
+    <string-array name="l24_clear">
+        <item>[guilty]……妳又看穿我了。</item>
+        <item>[smug]不錯嘛。</item>
+    </string-array>
+    <string-array name="l24_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也是一種讀法。</item>
+    </string-array>
+    <string-array name="l25_enter">
+        <item>[normal]這次我會多說一點。</item>
+        <item>[smug]一句不夠，就兩句。</item>
+    </string-array>
+    <string-array name="l25_first_mistake">
+        <item>[smug]妳有在看我的臉嗎？</item>
+        <item>[normal]再看一次。</item>
+    </string-array>
+    <string-array name="l25_mistakes_3">
+        <item>[guilty]每一句都要看。</item>
+        <item>[normal]慢慢來，我不趕妳。</item>
+    </string-array>
+    <string-array name="l25_mistakes_6">
+        <item>[sad]說謊的時候，我不敢看妳。</item>
+        <item>[guilty]我其實很好懂的。</item>
+    </string-array>
+    <string-array name="l25_idle">
+        <item>[normal]臉不會跑掉。</item>
+        <item>[normal]想好了再選。</item>
+    </string-array>
+    <string-array name="l25_rapid_tap">
+        <item>[angry]冷靜點。</item>
+        <item>[angry]先看我的臉！</item>
+    </string-array>
+    <string-array name="l25_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l25_clear">
+        <item>[guilty]我是不是太好懂了？</item>
+        <item>[normal]妳越來越會看我了。</item>
+    </string-array>
+    <string-array name="l25_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l26_enter">
+        <item>[guilty]我剛剛改了一下說法。</item>
+        <item>[normal]訊息改過了。別在意。</item>
+    </string-array>
+    <string-array name="l26_first_mistake">
+        <item>[smug]猜錯了。</item>
+        <item>[normal]不是那一個。</item>
+    </string-array>
+    <string-array name="l26_mistakes_3">
+        <item>[guilty]看我的眼睛，還有嘴角。</item>
+        <item>[normal]表情比字誠實。</item>
+    </string-array>
+    <string-array name="l26_mistakes_6">
+        <item>[sad]我的臉一直在告訴妳。</item>
+        <item>[guilty]看一下提示吧。</item>
+    </string-array>
+    <string-array name="l26_idle">
+        <item>[normal]慢慢想。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l26_rapid_tap">
+        <item>[angry]亂猜是猜不完的。</item>
+        <item>[angry]一次一顆。</item>
+    </string-array>
+    <string-array name="l26_hint">
+        <item>[normal]提示的時候，我不說謊。</item>
+        <item>[normal]好，給妳一點方向。</item>
+    </string-array>
+    <string-array name="l26_clear">
+        <item>[guilty]……妳又看穿我了。</item>
+        <item>[smug]不錯嘛。</item>
+    </string-array>
+    <string-array name="l26_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也是一種讀法。</item>
+    </string-array>
+    <string-array name="l27_enter">
+        <item>[normal]我引用一下我自己。</item>
+        <item>[smug]我說過的話，我自己來評論。</item>
+    </string-array>
+    <string-array name="l27_first_mistake">
+        <item>[smug]妳有在看我的臉嗎？</item>
+        <item>[normal]再看一次。</item>
+    </string-array>
+    <string-array name="l27_mistakes_3">
+        <item>[guilty]每一句都要看。</item>
+        <item>[normal]慢慢來，我不趕妳。</item>
+    </string-array>
+    <string-array name="l27_mistakes_6">
+        <item>[sad]說謊的時候，我不敢看妳。</item>
+        <item>[guilty]我其實很好懂的。</item>
+    </string-array>
+    <string-array name="l27_idle">
+        <item>[normal]臉不會跑掉。</item>
+        <item>[normal]想好了再選。</item>
+    </string-array>
+    <string-array name="l27_rapid_tap">
+        <item>[angry]冷靜點。</item>
+        <item>[angry]先看我的臉！</item>
+    </string-array>
+    <string-array name="l27_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l27_clear">
+        <item>[guilty]我是不是太好懂了？</item>
+        <item>[normal]妳越來越會看我了。</item>
+    </string-array>
+    <string-array name="l27_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l28_enter">
+        <item>[normal]我帶了同事來。它很老實。</item>
+        <item>[smug]問它就好，我休息。</item>
+    </string-array>
+    <string-array name="l28_first_mistake">
+        <item>[smug]猜錯了。</item>
+        <item>[normal]不是那一個。</item>
+    </string-array>
+    <string-array name="l28_mistakes_3">
+        <item>[guilty]看我的眼睛，還有嘴角。</item>
+        <item>[normal]表情比字誠實。</item>
+    </string-array>
+    <string-array name="l28_mistakes_6">
+        <item>[sad]我的臉一直在告訴妳。</item>
+        <item>[guilty]看一下提示吧。</item>
+    </string-array>
+    <string-array name="l28_idle">
+        <item>[normal]慢慢想。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l28_rapid_tap">
+        <item>[angry]亂猜是猜不完的。</item>
+        <item>[angry]一次一顆。</item>
+    </string-array>
+    <string-array name="l28_hint">
+        <item>[normal]提示的時候，我不說謊。</item>
+        <item>[normal]好，給妳一點方向。</item>
+    </string-array>
+    <string-array name="l28_clear">
+        <item>[guilty]……妳又看穿我了。</item>
+        <item>[smug]不錯嘛。</item>
+    </string-array>
+    <string-array name="l28_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也是一種讀法。</item>
+    </string-array>
+    <string-array name="l29_enter">
+        <item>[normal]我有傳訊息給妳，妳有點開嗎？</item>
+        <item>[smug]預覽就夠了吧？……真的嗎？</item>
+    </string-array>
+    <string-array name="l29_first_mistake">
+        <item>[smug]妳有在看我的臉嗎？</item>
+        <item>[normal]再看一次。</item>
+    </string-array>
+    <string-array name="l29_mistakes_3">
+        <item>[guilty]每一句都要看。</item>
+        <item>[normal]慢慢來，我不趕妳。</item>
+    </string-array>
+    <string-array name="l29_mistakes_6">
+        <item>[sad]說謊的時候，我不敢看妳。</item>
+        <item>[guilty]我其實很好懂的。</item>
+    </string-array>
+    <string-array name="l29_idle">
+        <item>[normal]臉不會跑掉。</item>
+        <item>[normal]想好了再選。</item>
+    </string-array>
+    <string-array name="l29_rapid_tap">
+        <item>[angry]冷靜點。</item>
+        <item>[angry]先看我的臉！</item>
+    </string-array>
+    <string-array name="l29_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l29_clear">
+        <item>[guilty]我是不是太好懂了？</item>
+        <item>[normal]妳越來越會看我了。</item>
+    </string-array>
+    <string-array name="l29_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l30_enter">
+        <item>[normal]我只說一次。……騙妳的，會重播。</item>
+        <item>[smug]這次我用動態說。</item>
+    </string-array>
+    <string-array name="l30_first_mistake">
+        <item>[smug]猜錯了。</item>
+        <item>[normal]不是那一個。</item>
+    </string-array>
+    <string-array name="l30_mistakes_3">
+        <item>[guilty]看我的眼睛，還有嘴角。</item>
+        <item>[normal]表情比字誠實。</item>
+    </string-array>
+    <string-array name="l30_mistakes_6">
+        <item>[sad]我的臉一直在告訴妳。</item>
+        <item>[guilty]看一下提示吧。</item>
+    </string-array>
+    <string-array name="l30_idle">
+        <item>[normal]慢慢想。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l30_rapid_tap">
+        <item>[angry]亂猜是猜不完的。</item>
+        <item>[angry]一次一顆。</item>
+    </string-array>
+    <string-array name="l30_hint">
+        <item>[normal]提示的時候，我不說謊。</item>
+        <item>[normal]好，給妳一點方向。</item>
+    </string-array>
+    <string-array name="l30_clear">
+        <item>[guilty]……妳又看穿我了。</item>
+        <item>[smug]不錯嘛。</item>
+    </string-array>
+    <string-array name="l30_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也是一種讀法。</item>
+    </string-array>
+    <string-array name="l31_enter">
+        <item>[normal]我今天不想打字。</item>
+        <item>[smug]我只回貼圖。</item>
+    </string-array>
+    <string-array name="l31_first_mistake">
+        <item>[smug]妳有在看我的臉嗎？</item>
+        <item>[normal]再看一次。</item>
+    </string-array>
+    <string-array name="l31_mistakes_3">
+        <item>[guilty]每一句都要看。</item>
+        <item>[normal]慢慢來，我不趕妳。</item>
+    </string-array>
+    <string-array name="l31_mistakes_6">
+        <item>[sad]說謊的時候，我不敢看妳。</item>
+        <item>[guilty]我其實很好懂的。</item>
+    </string-array>
+    <string-array name="l31_idle">
+        <item>[normal]臉不會跑掉。</item>
+        <item>[normal]想好了再選。</item>
+    </string-array>
+    <string-array name="l31_rapid_tap">
+        <item>[angry]冷靜點。</item>
+        <item>[angry]先看我的臉！</item>
+    </string-array>
+    <string-array name="l31_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l31_clear">
+        <item>[guilty]我是不是太好懂了？</item>
+        <item>[normal]妳越來越會看我了。</item>
+    </string-array>
+    <string-array name="l31_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l32_enter">
+        <item>[normal]我在準備。請稍候。</item>
+        <item>[smug]快好了，真的。</item>
+    </string-array>
+    <string-array name="l32_first_mistake">
+        <item>[smug]猜錯了。</item>
+        <item>[normal]不是那一個。</item>
+    </string-array>
+    <string-array name="l32_mistakes_3">
+        <item>[guilty]看我的眼睛，還有嘴角。</item>
+        <item>[normal]表情比字誠實。</item>
+    </string-array>
+    <string-array name="l32_mistakes_6">
+        <item>[sad]我的臉一直在告訴妳。</item>
+        <item>[guilty]看一下提示吧。</item>
+    </string-array>
+    <string-array name="l32_idle">
+        <item>[normal]慢慢想。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l32_rapid_tap">
+        <item>[angry]亂猜是猜不完的。</item>
+        <item>[angry]一次一顆。</item>
+    </string-array>
+    <string-array name="l32_hint">
+        <item>[normal]提示的時候，我不說謊。</item>
+        <item>[normal]好，給妳一點方向。</item>
+    </string-array>
+    <string-array name="l32_clear">
+        <item>[guilty]……妳又看穿我了。</item>
+        <item>[smug]不錯嘛。</item>
+    </string-array>
+    <string-array name="l32_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也是一種讀法。</item>
+    </string-array>
+    <string-array name="l33_enter">
+        <item>[normal]我來說說妳。</item>
+        <item>[smug]我很了解妳。妳信嗎？</item>
+    </string-array>
+    <string-array name="l33_first_mistake">
+        <item>[smug]妳有在看我的臉嗎？</item>
+        <item>[normal]再看一次。</item>
+    </string-array>
+    <string-array name="l33_mistakes_3">
+        <item>[guilty]每一句都要看。</item>
+        <item>[normal]慢慢來，我不趕妳。</item>
+    </string-array>
+    <string-array name="l33_mistakes_6">
+        <item>[sad]說謊的時候，我不敢看妳。</item>
+        <item>[guilty]我其實很好懂的。</item>
+    </string-array>
+    <string-array name="l33_idle">
+        <item>[normal]臉不會跑掉。</item>
+        <item>[normal]想好了再選。</item>
+    </string-array>
+    <string-array name="l33_rapid_tap">
+        <item>[angry]冷靜點。</item>
+        <item>[angry]先看我的臉！</item>
+    </string-array>
+    <string-array name="l33_hint">
+        <item>[normal]這次我說真的。</item>
+        <item>[normal]聽好了。</item>
+    </string-array>
+    <string-array name="l33_clear">
+        <item>[guilty]我是不是太好懂了？</item>
+        <item>[normal]妳越來越會看我了。</item>
+    </string-array>
+    <string-array name="l33_special">
+        <item>[guilty]這招我沒想到。</item>
+        <item>[smug]厲害。</item>
+    </string-array>
+    <string-array name="l34_enter">
+        <item>[smug]我們三個，各說一句。</item>
+        <item>[normal]這一章的最後一關。三個我。</item>
+    </string-array>
+    <string-array name="l34_first_mistake">
+        <item>[smug]猜錯了。</item>
+        <item>[normal]不是那一個。</item>
+    </string-array>
+    <string-array name="l34_mistakes_3">
+        <item>[guilty]看我的眼睛，還有嘴角。</item>
+        <item>[normal]表情比字誠實。</item>
+    </string-array>
+    <string-array name="l34_mistakes_6">
+        <item>[sad]我的臉一直在告訴妳。</item>
+        <item>[guilty]看一下提示吧。</item>
+    </string-array>
+    <string-array name="l34_idle">
+        <item>[normal]慢慢想。</item>
+        <item>[normal]我等妳。</item>
+    </string-array>
+    <string-array name="l34_rapid_tap">
+        <item>[angry]亂猜是猜不完的。</item>
+        <item>[angry]一次一顆。</item>
+    </string-array>
+    <string-array name="l34_hint">
+        <item>[normal]提示的時候，我不說謊。</item>
+        <item>[normal]好，給妳一點方向。</item>
+    </string-array>
+    <string-array name="l34_clear">
+        <item>[guilty]……妳又看穿我了。</item>
+        <item>[smug]不錯嘛。</item>
+    </string-array>
+    <string-array name="l34_special">
+        <item>[guilty]妳是怎麼……</item>
+        <item>[normal]這也是一種讀法。</item>
+    </string-array>
+</resources>
