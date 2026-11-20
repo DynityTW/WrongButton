@@ -9,8 +9,8 @@ import kotlinx.coroutines.launch
 import tw.dynity.wrongbutton.core.audio.Feedback
 import tw.dynity.wrongbutton.core.audio.MusicPlayer
 import tw.dynity.wrongbutton.core.audio.SoundPlayer
-import tw.dynity.wrongbutton.core.audio.ToneMusicPlayer
-import tw.dynity.wrongbutton.core.audio.ToneSoundPlayer
+import tw.dynity.wrongbutton.core.audio.AssetMusicPlayer
+import tw.dynity.wrongbutton.core.audio.AssetSoundPlayer
 import tw.dynity.wrongbutton.core.dialogue.DialogueDirector
 import tw.dynity.wrongbutton.core.engine.Clock
 import tw.dynity.wrongbutton.core.engine.ResourceTextSource
@@ -69,7 +69,7 @@ class AppContainer(context: Context) {
     val text: TextSource = ResourceTextSource(appContext.resources)
     val clock = Clock { android.os.SystemClock.elapsedRealtime() }
 
-    val sound: SoundPlayer = ToneSoundPlayer().also { player -> scope.launch { player.prewarm() } }
-    val music: MusicPlayer = ToneMusicPlayer(appContext)
+    val sound: SoundPlayer = AssetSoundPlayer(appContext)
+    val music: MusicPlayer = AssetMusicPlayer(appContext)
     val feedback = Feedback(sound) { settings.settings.value.vibration }
 }

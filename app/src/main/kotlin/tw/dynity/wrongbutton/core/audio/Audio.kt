@@ -13,9 +13,13 @@ interface SoundPlayer {
     fun release() {}
 }
 
+/** 背景音樂：主選單、第一季的關卡、第二季的關卡各一首。 */
+enum class MusicTrack { Title, Puzzle, Outside }
+
 /** 音樂播放介面。 */
 interface MusicPlayer {
     var enabled: Boolean
+    fun setTrack(track: MusicTrack) {}
     fun onForeground()
     fun onBackground()
     fun release() {}

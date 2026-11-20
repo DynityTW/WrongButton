@@ -11,8 +11,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class GameSettings(
     val sound: Boolean = true,
-    /** 音樂目前是程式產生的佔位循環，預設關閉。 */
-    val music: Boolean = false,
+    /** 背景音樂（三首原創曲，見 tools/audio/gen_audio.py）。預設開啟，音量偏低。 */
+    val music: Boolean = true,
     val vibration: Boolean = true,
     val reduceMotion: Boolean = false,
     /** The Button 怎麼稱呼玩家：「你」或「妳」。 */

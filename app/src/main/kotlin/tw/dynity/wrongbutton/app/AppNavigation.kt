@@ -82,6 +82,17 @@ fun WrongButtonNavigation(container: AppContainer) {
             }
         }
     }
+    // 背景音樂跟著畫面換：選單一首、第一季的關卡一首、第二季的關卡一首。
+    val top = backStack.lastOrNull()
+    androidx.compose.runtime.LaunchedEffect(top) {
+        container.music.setTrack(
+            when {
+                top is LevelKey && Levels.indexOf(top.id) >= 120 -> tw.dynity.wrongbutton.core.audio.MusicTrack.Outside
+                top is LevelKey -> tw.dynity.wrongbutton.core.audio.MusicTrack.Puzzle
+                else -> tw.dynity.wrongbutton.core.audio.MusicTrack.Title
+            },
+        )
+    }
     NavDisplay(
         backStack = backStack,
         onBack = { if (backStack.size > 1) backStack.removeAt(backStack.lastIndex) },

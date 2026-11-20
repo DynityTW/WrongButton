@@ -40,7 +40,7 @@ app/src/main/kotlin/tw/dynity/wrongbutton/
 ├─ core/character/ ButtonCharacter（Canvas 繪製）、FaceGeometry（說謊特徵，純函式）
 ├─ core/memory/    PlayerMemory、MemoryOps（純函式）、DataStore 儲存
 ├─ core/dialogue/  台詞事件、[mood|tell] 標記、{變數} 模板、最近 5 句不重複的挑選器
-├─ core/audio/     SoundPlayer／MusicPlayer 介面、程式合成的佔位音、震動
+├─ core/audio/     音效（SoundPool）、背景音樂（MediaPlayer，三首循環曲）、震動
 ├─ core/settings/  設定、「減少動態效果」、「你／妳」稱呼（PronounResources）
 ├─ core/monetization/ Pro 與廣告（目前全是模擬）：HintGate、MockAdService、MonetizationRepository
 ├─ core/ui/        遊戲內覆蓋層對話框、滑掉手勢、material3 實驗 API 的包裝
@@ -64,6 +64,10 @@ app/src/main/kotlin/tw/dynity/wrongbutton/
 3. 把它放進 `Levels.chapters` 的某一章。玩家看到的「第 N 關」是它在清單裡的位置；解鎖規則是前一關通關才開。
 
 引擎不需要修改。`ResourcesTest` 會自動檢查新關卡的台詞與提示是否齊全。
+
+### 音效與音樂
+
+`res/raw/` 裡的 7 個音效與 3 首音樂，全部由 `python3 tools/audio/gen_audio.py` 合成（numpy＋ffmpeg 的 libvorbis），不使用任何外部取樣。要調整音色或旋律就改這支腳本再重新產生；要換成外部素材，替換同名的 .ogg 即可。
 
 ### 存檔
 
