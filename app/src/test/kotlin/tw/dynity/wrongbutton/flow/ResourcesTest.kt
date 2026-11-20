@@ -34,8 +34,12 @@ class ResourcesTest {
     fun levelsHaveThreeHintsAndUniqueIds() {
         // 〈最後的提示〉按提示鈕就是解法，刻意沒有三階提示。
         Levels.all.filter { it.id != tw.dynity.wrongbutton.levels.Level118LastHint.id }.forEach { assertEquals("第 ${it.id} 關提示數", 3, it.hintRes.size) }
-        assertEquals("完整版 120 關", 120, Levels.all.size)
-        assertEquals("最後一關是〈相信我〉", 10, Levels.all.last().id)
+        val seasonOne = Levels.chapters.filter { !it.standalone }.flatMap { it.levels }
+        assertEquals("第一季 120 關", 120, seasonOne.size)
+        assertEquals("第一季最後一關是〈相信我〉", 10, seasonOne.last().id)
+        Levels.chapters.filter { it.standalone }.forEach { assertEquals("第二季每章 15 關", 15, it.levels.size) }
+        // 第二季的 id 和顯示編號相同（121 起）。
+        Levels.all.drop(120).forEach { assertEquals("第二季 id 應等於顯示編號", Levels.numberOf(it.id), it.id) }
         assertEquals("關卡 id 不可重複", Levels.all.size, Levels.all.map { it.id }.toSet().size)
     }
 

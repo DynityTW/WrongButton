@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 tools/s2/gen.py 依 tools/s2/ch09.py 產生，請改規格檔再重新產生。台灣繁體中文。 -->
+<resources>
+    <string-array name="ch9_mistakes_3">
+        <item>[guilty]答案不在螢幕裡面。</item>
+        <item>[normal]看看手機的側邊。</item>
+        <item>[normal]這一章，螢幕只是窗戶。</item>
+    </string-array>
+    <string-array name="ch9_mistakes_6">
+        <item>[sad]妳一直在敲玻璃。我在外面。</item>
+        <item>[guilty]提示鈕在右上角。真的。</item>
+        <item>[normal]把手機拿起來，轉一轉、按一按。</item>
+    </string-array>
+    <string-array name="ch9_idle">
+        <item>[normal]外面好大。</item>
+        <item>[smug]妳的手機有好多按鈕，妳知道嗎？</item>
+        <item>[normal]我在想，螢幕外面是什麼樣子。</item>
+    </string-array>
+    <string-array name="ch9_rapid_tap">
+        <item>[angry]玻璃會痛！</item>
+        <item>[angry]敲螢幕沒有用。</item>
+        <item>[angry]不是這裡！</item>
+    </string-array>
+    <string-array name="ch9_hint">
+        <item>[normal]好，往外面想。</item>
+        <item>[smug]需要我指一下方向嗎？</item>
+        <item>[normal]提示會說要按哪裡。</item>
+    </string-array>
+    <string-array name="ch9_special">
+        <item>[guilty]這樣也可以？</item>
+        <item>[normal]妳從另一邊繞過來了。</item>
+        <item>[smug]我沒想過這條路。</item>
+    </string-array>
+    <string-array name="l121_enter">
+        <item>[normal]這次的按鈕，不在螢幕裡。</item>
+        <item>[smug]猜猜看，我在哪裡？</item>
+    </string-array>
+    <string-array name="l121_first_mistake">
+        <item>[smug]那是我的照片。</item>
+        <item>[normal]不是畫面上的那個。</item>
+    </string-array>
+    <string-array name="l121_clear">
+        <item>[normal]妳按到外面的我了。</item>
+        <item>[smug]原來手機也有按鈕。</item>
+    </string-array>
+    <string-array name="l122_enter">
+        <item>[angry]妳好！！！我今天很有精神！！！</item>
+        <item>[angry]聽得到嗎！！！</item>
+    </string-array>
+    <string-array name="l122_first_mistake">
+        <item>[angry]什麼！！！我聽不到！！！</item>
+        <item>[angry]太吵了！！！妳說什麼！！！</item>
+    </string-array>
+    <string-array name="l122_clear">
+        <item>[normal]（小聲）謝謝。</item>
+        <item>[sleeping]……這樣剛好。</item>
+    </string-array>
+    <string-array name="l123_enter">
+        <item>[serious]這是我們的暗號。記好了。</item>
+        <item>[normal]只有我們兩個知道的暗號。</item>
+    </string-array>
+    <string-array name="l123_first_mistake">
+        <item>[serious]不對。從頭來。</item>
+        <item>[normal]順序錯了。</item>
+    </string-array>
+    <string-array name="l123_clear">
+        <item>[smug]暗號正確。歡迎回來。</item>
+        <item>[normal]好，我們有暗號了。之後會用到。</item>
+    </string-array>
+    <string-array name="l124_enter">
+        <item>[sleeping]我躺著比較舒服。</item>
+        <item>[normal]我今天不想站起來。</item>
+    </string-array>
+    <string-array name="l124_first_mistake">
+        <item>[guilty]妳歪著頭看我嗎？</item>
+        <item>[normal]我躺著，按不到。</item>
+    </string-array>
+    <string-array name="l124_clear">
+        <item>[normal]站起來了。謝謝。</item>
+        <item>[smug]換個角度，世界就不一樣。</item>
+    </string-array>
+    <string-array name="l125_enter">
+        <item>[smug]轉一圈給我看。</item>
+        <item>[normal]我想知道頭暈是什麼感覺。</item>
+    </string-array>
+    <string-array name="l125_first_mistake">
+        <item>[normal]還沒轉夠。</item>
+        <item>[smug]再轉。</item>
+    </string-array>
+    <string-array name="l125_clear">
+        <item>[guilty]……好暈。</item>
+        <item>[normal]原來這就是頭暈。</item>
+    </string-array>
+    <string-array name="l126_enter">
+        <item>[sleeping]太亮了，我睡不著。</item>
+        <item>[normal]可以幫我關燈嗎？</item>
+    </string-array>
+    <string-array name="l126_first_mistake">
+        <item>[guilty]燈還開著。</item>
+        <item>[normal]太亮了，我睜不開眼睛。</item>
+    </string-array>
+    <string-array name="l126_clear">
+        <item>[sleeping]晚安。</item>
+        <item>[normal]謝謝妳關燈。晚安。</item>
+    </string-array>
+    <string-array name="l127_enter">
+        <item>[guilty]（很小的字）</item>
+        <item>[normal]我說的話，妳看得到嗎？</item>
+    </string-array>
+    <string-array name="l127_first_mistake">
+        <item>[guilty]妳沒看清楚我說什麼。</item>
+        <item>[normal]先看清楚我說的話。</item>
+    </string-array>
+    <string-array name="l127_clear">
+        <item>[normal]終於看得到了。</item>
+        <item>[smug]我的字很好看吧。</item>
+    </string-array>
+    <string-array name="l128_enter">
+        <item>[sad]好吵。好多訊號在飛。</item>
+        <item>[normal]我想要一點安靜。</item>
+    </string-array>
+    <string-array name="l128_first_mistake">
+        <item>[sad]外面還有訊號。</item>
+        <item>[guilty]還不夠安靜。</item>
+    </string-array>
+    <string-array name="l128_clear">
+        <item>[sleeping]……好安靜。</item>
+        <item>[normal]謝謝。妳可以把飛航模式關掉了。</item>
+    </string-array>
+    <string-array name="l129_enter">
+        <item>[guilty]妳先出去一下，我要換衣服。</item>
+        <item>[normal]請勿打擾。妳先出去。</item>
+    </string-array>
+    <string-array name="l129_first_mistake">
+        <item>[angry]還沒好！妳先出去！</item>
+        <item>[guilty]不要偷看！</item>
+    </string-array>
+    <string-array name="l129_clear">
+        <item>[smug]好看嗎？</item>
+        <item>[normal]換好了。謝謝妳等我。</item>
+    </string-array>
+    <string-array name="l130_enter">
+        <item>[smug]這次妳要從外面按我。</item>
+        <item>[normal]桌面上的那個我，妳見過嗎？</item>
+    </string-array>
+    <string-array name="l130_first_mistake">
+        <item>[smug]那是照片。真的我在外面。</item>
+        <item>[normal]不是這裡。去桌面。</item>
+    </string-array>
+    <string-array name="l130_clear">
+        <item>[normal]妳從外面按到我了。</item>
+        <item>[smug]我在桌面上也很好看吧。</item>
+    </string-array>
+    <string-array name="l131_enter">
+        <item>[normal]我想住在桌面上。</item>
+        <item>[smug]幫我在桌面上找個位置。</item>
+    </string-array>
+    <string-array name="l131_first_mistake">
+        <item>[normal]不是這裡。我想在桌面上被按。</item>
+        <item>[smug]那是照片。</item>
+    </string-array>
+    <string-array name="l131_clear">
+        <item>[smug]我有自己的房間了。</item>
+        <item>[normal]桌面上的風景很好。</item>
+    </string-array>
+    <string-array name="l132_enter">
+        <item>[serious]這一關，不准碰螢幕。</item>
+        <item>[normal]用妳的手指以外的東西。……好啦，用側邊的按鍵。</item>
+    </string-array>
+    <string-array name="l132_first_mistake">
+        <item>[angry]說好不碰螢幕的。</item>
+        <item>[serious]不准碰。</item>
+    </string-array>
+    <string-array name="l132_clear">
+        <item>[smug]妳的手指一次都沒碰到我。</item>
+        <item>[normal]隔空按到了。</item>
+    </string-array>
+    <string-array name="l133_enter">
+        <item>[serious]還記得我們的暗號嗎？</item>
+        <item>[smug]這次，倒過來說。</item>
+    </string-array>
+    <string-array name="l133_first_mistake">
+        <item>[serious]不對。從頭來。</item>
+        <item>[guilty]倒過來，是從最後一個開始。</item>
+    </string-array>
+    <string-array name="l133_clear">
+        <item>[smug]倒過來也正確。</item>
+        <item>[normal]妳真的記得我們的暗號。</item>
+    </string-array>
+    <string-array name="l134_enter">
+        <item>[sad]好吵，我聽不到妳。</item>
+        <item>[normal]把整支手機調成靜音，我才聽得到妳。</item>
+    </string-array>
+    <string-array name="l134_first_mistake">
+        <item>[sad]還聽得到聲音。</item>
+        <item>[guilty]還不夠安靜。</item>
+    </string-array>
+    <string-array name="l134_clear">
+        <item>[normal]我聽到了。</item>
+        <item>[smug]安靜的時候，妳的手指很好聽。</item>
+    </string-array>
+    <string-array name="l135_enter">
+        <item>[serious]最後一課。照順序來。</item>
+        <item>[normal]這是外面的世界。一步一步來。</item>
+    </string-array>
+    <string-array name="l135_first_mistake">
+        <item>[serious]順序不對。從頭來。</item>
+        <item>[normal]先做第一步。</item>
+    </string-array>
+    <string-array name="l135_clear">
+        <item>[smug]妳把整支手機都用上了。</item>
+        <item>[normal]外面的世界，妳都走過了。</item>
+    </string-array>
+</resources>

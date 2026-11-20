@@ -267,8 +267,9 @@ class FullPlaythroughTest {
         assertTrue("最後一回合要是實話", !buttonLooksAway())
         tap("the_button")
         waitForTag("result_title")
-        assertTrue(!exists("result_next")) // 最後一關沒有下一關
-        assertTrue("每一關都應通關", Levels.all.all { memory.isCleared(it.id) })
+        // 第一季結束；下一關是第二季的第一章。
+        assertTrue(exists("result_next"))
+        assertTrue("第一季每一關都應通關", Levels.chapters.filter { !it.standalone }.flatMap { it.levels }.all { memory.isCleared(it.id) })
     }
 
     private val Level04Checkbox = tw.dynity.wrongbutton.levels.Level04DontAsk.SOLUTION_CHECKBOX

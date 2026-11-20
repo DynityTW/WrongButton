@@ -361,6 +361,20 @@ fun SettingsScreen(container: AppContainer, onBack: () -> Unit, onPro: () -> Uni
                     container.settings.update { it.copy(pronoun = p) }
                     cue(Cue.Toggle)
                 }
+                ChoiceSetting(
+                    label = stringResource(R.string.settings_theme),
+                    description = null,
+                    options = listOf(
+                        tw.dynity.wrongbutton.core.settings.ThemeMode.System to stringResource(R.string.settings_theme_system),
+                        tw.dynity.wrongbutton.core.settings.ThemeMode.Light to stringResource(R.string.settings_theme_light),
+                        tw.dynity.wrongbutton.core.settings.ThemeMode.Dark to stringResource(R.string.settings_theme_dark),
+                    ),
+                    current = settings.theme,
+                    tagPrefix = "settings_theme",
+                ) { t ->
+                    container.settings.update { it.copy(theme = t) }
+                    cue(Cue.Toggle)
+                }
 
                 Row(
                     Modifier
@@ -415,16 +429,38 @@ fun SettingsScreen(container: AppContainer, onBack: () -> Unit, onPro: () -> Uni
 /** 「你／妳」二選一。選項文字直接寫在程式裡：放在字串資源的話，「妳」本身也會被替換掉。 */
 @Composable
 private fun PronounSetting(current: tw.dynity.wrongbutton.core.settings.Pronoun, onChange: (tw.dynity.wrongbutton.core.settings.Pronoun) -> Unit) {
+    ChoiceSetting(
+        label = stringResource(R.string.settings_pronoun),
+        description = stringResource(R.string.settings_pronoun_desc),
+        options = listOf(tw.dynity.wrongbutton.core.settings.Pronoun.Neutral to "你", tw.dynity.wrongbutton.core.settings.Pronoun.Feminine to "妳"),
+        current = current,
+        tagPrefix = "settings_pronoun",
+        onChange = onChange,
+    )
+}
+
+/** 幾個選項選一個（一排 Chip）。 */
+@Composable
+private fun <T : Enum<T>> ChoiceSetting(
+    label: String,
+    description: String?,
+    options: List<Pair<T, String>>,
+    current: T,
+    tagPrefix: String,
+    onChange: (T) -> Unit,
+) {
     Column(Modifier.fillMaxWidth().padding(horizontal = 8.dp, vertical = 4.dp)) {
-        Text(stringResource(R.string.settings_pronoun), style = MaterialTheme.typography.bodyLarge)
-        Text(stringResource(R.string.settings_pronoun_desc), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Text(label, style = MaterialTheme.typography.bodyLarge)
+        if (description != null) {
+            Text(description, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
         Row(Modifier.padding(top = 8.dp).selectableGroup(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            listOf(tw.dynity.wrongbutton.core.settings.Pronoun.Neutral to "你", tw.dynity.wrongbutton.core.settings.Pronoun.Feminine to "妳").forEach { (p, label) ->
+            options.forEach { (value, text) ->
                 androidx.compose.material3.FilterChip(
-                    selected = current == p,
-                    onClick = { if (current != p) onChange(p) },
-                    label = { Text(label, style = MaterialTheme.typography.titleMedium) },
-                    modifier = Modifier.heightIn(min = 48.dp).testTag("settings_pronoun_${p.name.lowercase()}")
+                    selected = current == value,
+                    onClick = { if (current != value) onChange(value) },
+                    label = { Text(text, style = MaterialTheme.typography.titleMedium) },
+                    modifier = Modifier.heightIn(min = 48.dp).testTag("${tagPrefix}_${value.name.lowercase()}")
                         .semantics { role = Role.RadioButton },
                 )
             }

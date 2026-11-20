@@ -1,7 +1,13 @@
 package tw.dynity.wrongbutton.app
 
 import android.content.res.Resources
+import android.content.Intent
 import android.os.Bundle
+import android.view.KeyEvent
+import androidx.compose.foundation.isSystemInDarkTheme
+import tw.dynity.wrongbutton.core.settings.ThemeMode
+import tw.dynity.wrongbutton.core.system.ExternalPress
+import tw.dynity.wrongbutton.core.system.LocalSystemSignals
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -30,6 +36,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
+        if (savedInstanceState == null) handleExternal(intent)
         setContent {
             val settings by container.settings.settings.collectAsStateWithLifecycle()
             val systemReduce = remember { SystemMotion.animationsDisabled(this) }
@@ -44,13 +51,36 @@ class MainActivity : ComponentActivity() {
                 container.sound.enabled = settings.sound
                 container.music.enabled = settings.music
             }
-            WrongButtonTheme(reduceMotion = settings.reduceMotion || systemReduce) {
-                CompositionLocalProvider(LocalFeedback provides container.feedback) {
+            val dark = when (settings.theme) {
+                ThemeMode.System -> isSystemInDarkTheme()
+                ThemeMode.Light -> false
+                ThemeMode.Dark -> true
+            }
+            WrongButtonTheme(reduceMotion = settings.reduceMotion || systemReduce, darkTheme = dark) {
+                CompositionLocalProvider(LocalFeedback provides container.feedback, LocalSystemSignals provides container.signals) {
                     WrongButtonNavigation(container)
                 }
             }
         }
     }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        handleExternal(intent)
+    }
+
+    /** 桌面捷徑、桌面小工具送來的「按下 The Button」。 */
+    private fun handleExternal(intent: Intent?) {
+        val data = intent?.data ?: return
+        if (data.scheme == ExternalPress.SCHEME && data.host == ExternalPress.HOST) {
+            container.recordExternalPress(data.getQueryParameter("from") ?: ExternalPress.FROM_SHORTCUT)
+            intent.data = null
+        }
+    }
+
+    /** 實體音量鍵：只有關卡要求時才交給遊戲（第 9 章）。 */
+    override fun dispatchKeyEvent(event: KeyEvent): Boolean =
+        container.signals.onKeyEvent(event) || super.dispatchKeyEvent(event)
 
     override fun onStart() {
         super.onStart()

@@ -241,4 +241,16 @@
     <string name="select_chapter_progress">%1$d／%2$d</string>
     <string name="select_season_2">第二季</string>
     <string name="select_jump_cd">跳到%1$s</string>
+    <!-- 桌面捷徑與小工具 -->
+    <string name="shortcut_press_short">按下 The Button</string>
+    <string name="shortcut_press_long">從外面按下 The Button</string>
+    <string name="widget_name">The Button</string>
+    <string name="widget_description">一顆放在桌面上的 The Button。</string>
+    <string name="widget_label">按我</string>
+    <string name="widget_face_cd">The Button</string>
+    <!-- 主題 -->
+    <string name="settings_theme">主題</string>
+    <string name="settings_theme_system">跟著系統</string>
+    <string name="settings_theme_light">淺色</string>
+    <string name="settings_theme_dark">深色</string>
 </resources>

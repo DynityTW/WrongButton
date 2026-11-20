@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 長按 App 圖示出現的捷徑（第 9 章〈從外面按我〉）。 -->
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="press"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/shortcut_press_short"
+        android:shortcutLongLabel="@string/shortcut_press_long">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="wrongbutton://press?from=shortcut"
+            android:targetClass="tw.dynity.wrongbutton.app.MainActivity"
+            android:targetPackage="tw.dynity.wrongbutton" />
+    </shortcut>
+</shortcuts>

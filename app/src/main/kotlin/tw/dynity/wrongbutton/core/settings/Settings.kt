@@ -17,7 +17,12 @@ data class GameSettings(
     val reduceMotion: Boolean = false,
     /** The Button 怎麼稱呼玩家：「你」或「妳」。 */
     val pronoun: Pronoun = Pronoun.Neutral,
+    /** 淺色／深色主題。預設跟著系統。 */
+    val theme: ThemeMode = ThemeMode.System,
 )
+
+@Serializable
+enum class ThemeMode { System, Light, Dark }
 
 class SettingsRepository(
     private val store: DataStore<GameSettings>,

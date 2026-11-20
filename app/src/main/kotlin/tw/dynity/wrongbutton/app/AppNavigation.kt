@@ -68,6 +68,20 @@ fun WrongButtonNavigation(container: AppContainer) {
     }
 
     androidx.compose.foundation.layout.Box(Modifier.fillMaxSize()) {
+    // 從桌面捷徑或小工具按下：如果對應的關卡正在等這件事，就直接打開它。
+    androidx.compose.runtime.LaunchedEffect(Unit) {
+        container.externalOpen.collect { from ->
+            if (from != null) {
+                container.externalOpen.value = null
+                Levels.externalTarget(from)?.let { id ->
+                    val m = container.memory.memory.value
+                    if (Levels.isPlayable(m, container.monetization.state.value.pro, id) && !m.isCleared(id) &&
+                        (backStack.last() as? LevelKey)?.id != id
+                    ) openLevel(id)
+                }
+            }
+        }
+    }
     NavDisplay(
         backStack = backStack,
         onBack = { if (backStack.size > 1) backStack.removeAt(backStack.lastIndex) },

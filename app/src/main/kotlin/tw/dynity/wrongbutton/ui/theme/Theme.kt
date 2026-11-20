@@ -58,6 +58,9 @@ private val DarkColors: ColorScheme = darkColorScheme(
     error = Color(0xFFFFB4AB),
 )
 
+/** 目前畫面是不是深色主題（系統設定或遊戲自己的主題設定）。第 9 章〈關燈〉會用到。 */
+val LocalDarkTheme = androidx.compose.runtime.staticCompositionLocalOf { false }
+
 /** 正確／錯誤標籤用的語意色（第 10 關）。資訊同時用文字與圖示傳達，顏色只是輔助。 */
 object SemanticColors {
     val Correct = Color(0xFF2E7D32)
@@ -86,7 +89,7 @@ fun WrongButtonTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit,
 ) {
-    CompositionLocalProvider(LocalReduceMotion provides reduceMotion) {
+    CompositionLocalProvider(LocalReduceMotion provides reduceMotion, LocalDarkTheme provides darkTheme) {
         MaterialTheme(
             colorScheme = if (darkTheme) DarkColors else LightColors,
             typography = AppTypography,

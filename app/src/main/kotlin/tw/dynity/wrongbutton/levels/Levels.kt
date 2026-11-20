@@ -149,6 +149,8 @@ object Levels {
                 Level10TrustMe,
             ),
         ),
+        // ---- 第二季：每章獨立，第一季通關後全部開放 ----
+        Chapter(R.string.chapter_9, tw.dynity.wrongbutton.levels.s2.Chapter09, standalone = true),
     )
 
     val all: List<Level> = chapters.flatMap { it.levels }
@@ -195,6 +197,9 @@ object Levels {
 
     /** 進度解鎖，而且（需要的話）有 Pro。 */
     fun isPlayable(memory: PlayerMemory, pro: Boolean, id: Int): Boolean = isUnlocked(memory, id) && (pro || !requiresPro(id))
+
+    /** 從桌面捷徑或小工具按下時，要直接打開哪一關（第 9 章）。 */
+    fun externalTarget(from: String): Int? = tw.dynity.wrongbutton.levels.s2.externalTargetLevel(from)
 
     /** 「繼續」要去的關卡：第一個已解鎖但還沒通關的關卡。 */
     fun continueTarget(memory: PlayerMemory): Level? =

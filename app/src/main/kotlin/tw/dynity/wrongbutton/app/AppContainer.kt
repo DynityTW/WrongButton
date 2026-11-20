@@ -4,6 +4,7 @@ import android.content.Context
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import tw.dynity.wrongbutton.core.audio.Feedback
 import tw.dynity.wrongbutton.core.audio.MusicPlayer
@@ -48,6 +49,21 @@ class AppContainer(context: Context) {
     )
     val ads = tw.dynity.wrongbutton.core.monetization.MockAdService()
     val hintGate = tw.dynity.wrongbutton.core.monetization.AdHintGate(monetization, ads)
+
+    val signals = tw.dynity.wrongbutton.core.system.SystemSignals()
+
+    /** 從桌面捷徑或小工具按下、還沒處理的來源。導覽層讀到後會清成 null，並決定要不要直接打開對應的關卡。 */
+    val externalOpen = kotlinx.coroutines.flow.MutableStateFlow<String?>(null)
+
+    /** 記下一次「從外面按下」。記憶還沒讀進來時先等它讀完，免得被初始讀取蓋掉。 */
+    fun recordExternalPress(from: String) {
+        scope.launch {
+            memory.isReady.first { it }
+            val key = tw.dynity.wrongbutton.core.system.ExternalPress.key(from)
+            memory.update { m -> tw.dynity.wrongbutton.core.memory.MemoryOps.remember(m, key, tw.dynity.wrongbutton.core.memory.MemoryValue.Num((m.long(key) ?: 0) + 1)) }
+            externalOpen.value = from
+        }
+    }
 
     val director = DialogueDirector()
     val text: TextSource = ResourceTextSource(appContext.resources)
