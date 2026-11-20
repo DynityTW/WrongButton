@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 tools/s2/gen.py 依 tools/s2/ch16.py 產生，請改規格檔再重新產生。台灣繁體中文。 -->
+<resources>
+    <string name="chapter_16">第 16 章　播放中</string>
+    <string name="l226_title">播放</string>
+    <string name="l226_task">在影片裡找到我，按下去。</string>
+    <string name="l226_hint_1">影片還沒開始播。</string>
+    <string name="l226_hint_2">按播放，或直接拖進度條。</string>
+    <string name="l226_hint_3">播放（或拖到 0:15 之後），我出現之後按我。</string>
+    <string name="l226_fact">第 %1$d 關，The Button 在第 %2$d 秒出場。</string>
+    <string name="l227_title">拖過去</string>
+    <string name="l227_task">在影片裡找到我，按下去。</string>
+    <string name="l227_hint_1">我在很後面才出現。</string>
+    <string name="l227_hint_2">說明欄寫了時間。</string>
+    <string name="l227_hint_3">把進度條拖到 0:45。</string>
+    <string name="l228_title">章節</string>
+    <string name="l228_task">在影片裡找到我，按下去。</string>
+    <string name="l228_hint_1">影片有分章節。</string>
+    <string name="l228_hint_2">我在「彩蛋」那一章。</string>
+    <string name="l228_hint_3">點章節清單裡的「彩蛋」，再按我。</string>
+    <string name="l229_title">字幕</string>
+    <string name="l229_task">在影片裡找到我，按下去。</string>
+    <string name="l229_hint_1">我有說話，但妳聽不到。</string>
+    <string name="l229_hint_2">打開字幕。</string>
+    <string name="l229_hint_3">打開字幕，看我說幾秒，再拖過去按我。</string>
+    <string name="l229_sub">（字幕）我在 0:%1$d 等妳。</string>
+    <string name="l230_title">慢動作</string>
+    <string name="l230_task">在影片裡找到我，按下去。</string>
+    <string name="l230_hint_1">0:20 那裡閃了一下。</string>
+    <string name="l230_hint_2">正常速度太快了，看不清楚。</string>
+    <string name="l230_hint_3">拖到 0:20，速度改成 0.5×，再按我。</string>
+    <string name="l231_title">怕吵</string>
+    <string name="l231_task">在影片裡找到我，按下去。</string>
+    <string name="l231_hint_1">我很怕吵。</string>
+    <string name="l231_hint_2">影片的聲音太大了。</string>
+    <string name="l231_hint_3">按靜音，我就會出來。</string>
+    <string name="l232_title">再看一次</string>
+    <string name="l232_task">在影片裡找到我，按下去。</string>
+    <string name="l232_hint_1">我只在第二次播的時候出現。</string>
+    <string name="l232_hint_2">打開重複播放。</string>
+    <string name="l232_hint_3">打開重複播放，拖到最後讓它從頭再播一次，我就在了。</string>
+    <string name="l233_title">播放清單</string>
+    <string name="l233_task">在影片裡找到我，按下去。</string>
+    <string name="l233_hint_1">這不是唯一一支影片。</string>
+    <string name="l233_hint_2">播放清單裡有四支。</string>
+    <string name="l233_hint_3">按「下一支」，第三支影片裡有我。</string>
+    <string name="l234_title">隨機播放</string>
+    <string name="l234_task">在影片裡找到我，按下去。</string>
+    <string name="l234_hint_1">播放清單是亂的。</string>
+    <string name="l234_hint_2">清單上有每一支的名字。</string>
+    <string name="l234_hint_3">直接點清單上叫「按我」的那一支。</string>
+    <string name="l235_title">講太慢</string>
+    <string name="l235_task">在影片裡找到我，按下去。</string>
+    <string name="l235_hint_1">我講話太慢了。</string>
+    <string name="l235_hint_2">2× 的時候我講得剛好。</string>
+    <string name="l235_hint_3">速度改成 2×，我就會出現。</string>
+    <string name="l236_title">子母畫面</string>
+    <string name="l236_task">在影片裡找到我，按下去。</string>
+    <string name="l236_hint_1">主畫面裡沒有我。</string>
+    <string name="l236_hint_2">我在一個小視窗裡。</string>
+    <string name="l236_hint_3">打開子母畫面，小視窗裡就是我。</string>
+    <string name="l237_title">剛剛好</string>
+    <string name="l237_task">在影片裡找到我，按下去。</string>
+    <string name="l237_hint_1">說明欄寫了我喜歡的音量。</string>
+    <string name="l237_hint_2">音量要剛好是 7。</string>
+    <string name="l237_hint_3">把音量調到 7，我就出現。</string>
+    <string name="l237_volume">音量 %1$d</string>
+    <string name="l238_title">片尾名單</string>
+    <string name="l238_task">在影片裡找到我，按下去。</string>
+    <string name="l238_hint_1">我在片尾名單裡。</string>
+    <string name="l238_hint_2">拖到最後面。</string>
+    <string name="l238_hint_3">拖到 0:55 之後，片尾名單裡有「The Button（本人）」，按它。</string>
+    <string-array name="l238_credits">
+        <item>導演　按鈕二號</item>
+        <item>燈光　開關</item>
+        <item>音效　滑桿</item>
+        <item>The Button（本人）</item>
+        <item>特別感謝　妳</item>
+    </string-array>
+    <string name="l239_title">第幾秒</string>
+    <string name="l239_task">第 226 關，我在第幾秒出場？</string>
+    <string name="l239_hint_1">第 226 關我是第幾秒出場的？</string>
+    <string name="l239_hint_2">紀錄裡有。</string>
+    <string name="l239_hint_3">暫停 →「紀錄」看第 226 關的秒數。</string>
+    <string name="l239_sec">第 %1$d 秒</string>
+    <string name="l240_title">導演剪輯版</string>
+    <string name="l240_task">在影片裡找到我，按下去。</string>
+    <string name="l240_hint_1">彩蛋章節、慢動作、靜音，三個都要。</string>
+    <string name="l240_hint_2">一個一個調。</string>
+    <string name="l240_hint_3">點「彩蛋」章節、速度改成 0.5×、按靜音，再按我。</string>
+    <string name="ch16_play">播放</string>
+    <string name="ch16_pause">暫停</string>
+    <string name="ch16_back10">倒退 10 秒</string>
+    <string name="ch16_fwd10">快轉 10 秒</string>
+    <string name="ch16_speed">速度 %1$s</string>
+    <string name="ch16_subs">字幕</string>
+    <string name="ch16_mute">靜音</string>
+    <string name="ch16_loop">重複播放</string>
+    <string name="ch16_pip">子母畫面</string>
+    <string name="ch16_time">%1$d:%2$02d／1:00</string>
+    <string name="ch16_seek">進度</string>
+    <string name="ch16_count">播放次數：%1$d</string>
+    <string name="ch16_track">第 %1$d 支：%2$s</string>
+    <string name="ch16_next_track">下一支</string>
+    <string name="ch16_chapters">章節</string>
+    <string-array name="ch16_ch_names">
+        <item>片頭</item>
+        <item>正片</item>
+        <item>彩蛋</item>
+    </string-array>
+    <string-array name="ch16_tracks">
+        <item>海邊</item>
+        <item>城市</item>
+        <item>森林</item>
+        <item>雪地</item>
+    </string-array>
+    <string name="ch16_press_me">按我</string>
+    <string name="ch16_poster">（The Button 的海報）</string>
+    <string name="ch16_poster_cd">The Button 的海報</string>
+    <string name="ch16_poster_wrong">那是海報，不是我。</string>
+    <string name="ch16_scene">（風景）</string>
+    <string name="ch16_too_fast">（太快了，看不清楚）</string>
+    <string name="ch16_loud">（音效轟隆隆）</string>
+    <string name="ch16_slow">（講話非常慢）</string>
+    <string name="ch16_fast_loud">（太快了、太吵了）</string>
+    <string name="ch16_desc_227">0:45　主角登場</string>
+    <string name="ch16_desc_237">主角只在音量 7 的時候出場</string>
+    <string name="ch16_credit_wrong">那不是我。</string>
+    <string name="ch16_pip_cd">子母畫面的小視窗</string>
+</resources>

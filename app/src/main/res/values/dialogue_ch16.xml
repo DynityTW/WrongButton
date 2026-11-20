@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 tools/s2/gen.py 依 tools/s2/ch16.py 產生，請改規格檔再重新產生。台灣繁體中文。 -->
+<resources>
+    <string-array name="ch16_mistakes_3">
+        <item>[guilty]那是海報，不是我。</item>
+        <item>[normal]進度條可以直接拖。</item>
+        <item>[normal]播放器的按鈕都試試看。</item>
+    </string-array>
+    <string-array name="ch16_mistakes_6">
+        <item>[sad]我在影片裡等妳。</item>
+        <item>[normal]時間、速度、聲音、字幕——看看哪個不一樣。</item>
+        <item>[guilty]提示鈕在右上角。</item>
+    </string-array>
+    <string-array name="ch16_idle">
+        <item>[normal]這部片我演得很好。</item>
+        <item>[smug]我是主角。</item>
+        <item>[normal]要不要配爆米花？</item>
+    </string-array>
+    <string-array name="ch16_rapid_tap">
+        <item>[angry]不要一直按暫停！</item>
+        <item>[angry]影片會壞掉。</item>
+        <item>[angry]慢慢看。</item>
+    </string-array>
+    <string-array name="ch16_hint">
+        <item>[normal]好，我告訴妳我在哪一段。</item>
+        <item>[smug]要劇透嗎？</item>
+        <item>[normal]提示會說要調哪一個按鈕。</item>
+    </string-array>
+    <string-array name="ch16_special">
+        <item>[guilty]這樣也找得到我？</item>
+        <item>[normal]妳找到了導演剪輯版。</item>
+        <item>[smug]這個彩蛋連我都不知道。</item>
+    </string-array>
+    <string-array name="l226_enter">
+        <item>[normal]這是我主演的電影。</item>
+        <item>[smug]按播放。</item>
+    </string-array>
+    <string-array name="l226_first_mistake">
+        <item>[guilty]那是海報。</item>
+        <item>[normal]我還沒出場。</item>
+    </string-array>
+    <string-array name="l226_clear">
+        <item>[normal]妳看到我出場了。</item>
+        <item>[smug]我的出場很帥吧。</item>
+    </string-array>
+    <string-array name="l227_enter">
+        <item>[normal]我是壓軸。</item>
+        <item>[smug]我在很後面。</item>
+    </string-array>
+    <string-array name="l227_first_mistake">
+        <item>[guilty]還沒到。</item>
+        <item>[normal]那是海報。</item>
+    </string-array>
+    <string-array name="l227_clear">
+        <item>[normal]妳直接跳到我了。</item>
+        <item>[smug]跳過前面也沒關係。</item>
+    </string-array>
+    <string-array name="l228_enter">
+        <item>[normal]這部片有章節。</item>
+        <item>[smug]我在最後一章。</item>
+    </string-array>
+    <string-array name="l228_first_mistake">
+        <item>[guilty]不在這一章。</item>
+        <item>[normal]看一下章節。</item>
+    </string-array>
+    <string-array name="l228_clear">
+        <item>[normal]妳找到彩蛋了。</item>
+        <item>[smug]彩蛋就是我。</item>
+    </string-array>
+    <string-array name="l229_enter">
+        <item>[normal]我在影片裡說了一句話。</item>
+        <item>[smug]妳要看字幕。</item>
+    </string-array>
+    <string-array name="l229_first_mistake">
+        <item>[guilty]那是海報。</item>
+        <item>[normal]我說了我在哪。</item>
+    </string-array>
+    <string-array name="l229_clear">
+        <item>[normal]字幕告訴妳了。</item>
+        <item>[smug]我的台詞很重要。</item>
+    </string-array>
+    <string-array name="l230_enter">
+        <item>[normal]我在 0:20 跑過去了。</item>
+        <item>[smug]妳看清楚了嗎？</item>
+    </string-array>
+    <string-array name="l230_first_mistake">
+        <item>[guilty]太快了。</item>
+        <item>[normal]放慢一點。</item>
+    </string-array>
+    <string-array name="l230_clear">
+        <item>[normal]慢動作抓到我了。</item>
+        <item>[smug]我跑步的樣子很帥吧。</item>
+    </string-array>
+    <string-array name="l231_enter">
+        <item>[sad]好吵。</item>
+        <item>[normal]我躲起來了。</item>
+    </string-array>
+    <string-array name="l231_first_mistake">
+        <item>[sad]還是好吵。</item>
+        <item>[normal]那是海報。</item>
+    </string-array>
+    <string-array name="l231_clear">
+        <item>[normal]安靜了。謝謝。</item>
+        <item>[smug]我不喜歡音效。</item>
+    </string-array>
+    <string-array name="l232_enter">
+        <item>[normal]第一次看不到我。</item>
+        <item>[smug]要看第二次。</item>
+    </string-array>
+    <string-array name="l232_first_mistake">
+        <item>[guilty]第一次播沒有我。</item>
+        <item>[normal]那是海報。</item>
+    </string-array>
+    <string-array name="l232_clear">
+        <item>[normal]第二次就看到了。</item>
+        <item>[smug]好電影值得看兩次。</item>
+    </string-array>
+    <string-array name="l233_enter">
+        <item>[normal]我在別支影片裡。</item>
+        <item>[smug]找找看。</item>
+    </string-array>
+    <string-array name="l233_first_mistake">
+        <item>[guilty]不在這支。</item>
+        <item>[normal]換一支看看。</item>
+    </string-array>
+    <string-array name="l233_clear">
+        <item>[normal]妳翻遍了播放清單。</item>
+        <item>[smug]我是第三支的主角。</item>
+    </string-array>
+    <string-array name="l234_enter">
+        <item>[normal]播放清單被打亂了。</item>
+        <item>[smug]我在哪一支呢？</item>
+    </string-array>
+    <string-array name="l234_first_mistake">
+        <item>[guilty]不是這支。</item>
+        <item>[normal]看影片的名字。</item>
+    </string-array>
+    <string-array name="l234_clear">
+        <item>[normal]妳看名字就找到了。</item>
+        <item>[smug]我的名字很好認吧。</item>
+    </string-array>
+    <string-array name="l235_enter">
+        <item>[sleeping]我……講話……很……慢……</item>
+        <item>[normal]妳……可以……快轉……嗎……</item>
+    </string-array>
+    <string-array name="l235_first_mistake">
+        <item>[sleeping]還……沒……好……</item>
+        <item>[normal]那是海報。</item>
+    </string-array>
+    <string-array name="l235_clear">
+        <item>[normal]這樣剛好！</item>
+        <item>[smug]2× 的我比較有精神。</item>
+    </string-array>
+    <string-array name="l236_enter">
+        <item>[normal]我在另一個畫面裡。</item>
+        <item>[smug]小小的那個。</item>
+    </string-array>
+    <string-array name="l236_first_mistake">
+        <item>[guilty]主畫面沒有我。</item>
+        <item>[normal]那是海報。</item>
+    </string-array>
+    <string-array name="l236_clear">
+        <item>[normal]小視窗也找得到我。</item>
+        <item>[smug]我小小的也很可愛。</item>
+    </string-array>
+    <string-array name="l237_enter">
+        <item>[normal]音量要剛剛好。</item>
+        <item>[smug]太大太小我都不出來。</item>
+    </string-array>
+    <string-array name="l237_first_mistake">
+        <item>[guilty]音量不對。</item>
+        <item>[normal]那是海報。</item>
+    </string-array>
+    <string-array name="l237_clear">
+        <item>[normal]7，剛剛好。</item>
+        <item>[smug]妳很懂我。</item>
+    </string-array>
+    <string-array name="l238_enter">
+        <item>[normal]我的名字在最後面。</item>
+        <item>[smug]主演都在片尾。</item>
+    </string-array>
+    <string-array name="l238_first_mistake">
+        <item>[guilty]那不是我。</item>
+        <item>[normal]那是燈光師。</item>
+    </string-array>
+    <string-array name="l238_clear">
+        <item>[normal]妳看完了片尾。</item>
+        <item>[smug]很少人看片尾的。</item>
+    </string-array>
+    <string-array name="l239_enter">
+        <item>[normal]還記得我第一次出場嗎？</item>
+        <item>[smug]第幾秒？</item>
+    </string-array>
+    <string-array name="l239_first_mistake">
+        <item>[guilty]不是這一秒。</item>
+        <item>[normal]紀錄裡有。</item>
+    </string-array>
+    <string-array name="l239_clear">
+        <item>[normal]妳記得我的出場。</item>
+        <item>[smug]我會把妳寫進片尾。</item>
+    </string-array>
+    <string-array name="l240_enter">
+        <item>[serious]最後一部片。導演剪輯版。</item>
+        <item>[normal]這次條件很多。</item>
+    </string-array>
+    <string-array name="l240_first_mistake">
+        <item>[guilty]還差一點。</item>
+        <item>[normal]那是海報。</item>
+    </string-array>
+    <string-array name="l240_clear">
+        <item>[normal]妳看完了導演剪輯版。</item>
+        <item>[smug]我要拿影帝了。</item>
+    </string-array>
+</resources>
