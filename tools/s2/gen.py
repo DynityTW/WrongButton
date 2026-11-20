@@ -87,7 +87,12 @@ def gen(ch: int):
                 fmt = "" if re.search(r"%\d\$", v) else ' formatted="false"' if "%" in v else ""
                 out.append(f'    <string name="l{i}_{k}"{fmt}>{esc(v)}</string>\n')
     for k, v in getattr(mod, "STRINGS", {}).items():
-        out.append(f'    <string name="ch{ch}_{k}">{esc(v)}</string>\n')
+        if isinstance(v, list):
+            out.append(f'    <string-array name="ch{ch}_{k}">\n')
+            out.extend(f"        <item>{esc(x)}</item>\n" for x in v)
+            out.append("    </string-array>\n")
+        else:
+            out.append(f'    <string name="ch{ch}_{k}">{esc(v)}</string>\n')
     out.append("</resources>\n")
     with open(os.path.join(RES, f"strings_ch{nn}.xml"), "w") as f:
         f.write("".join(out))

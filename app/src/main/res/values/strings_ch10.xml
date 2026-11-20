@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 tools/s2/gen.py 依 tools/s2/ch10.py 產生，請改規格檔再重新產生。台灣繁體中文。 -->
+<resources>
+    <string name="chapter_10">第 10 章　同類</string>
+    <string name="l136_title">新同事：開關</string>
+    <string name="l136_task">它說的是真話還是假話？</string>
+    <string name="l136_hint_1">對照上面的燈，開關說的對不對？</string>
+    <string name="l136_hint_2">注意開關說假話時，樣子有哪裡不一樣。</string>
+    <string name="l136_hint_3">開關說謊時，滑塊停在中間；說實話時，滑塊在盡頭。</string>
+    <string name="l137_title">開關的建議</string>
+    <string name="l137_hint_1">開關會告訴妳是哪一顆。</string>
+    <string name="l137_hint_2">它的話可能是假的。</string>
+    <string name="l137_hint_3">滑塊停在中間就是謊話，選另一顆；在盡頭就照它說的選。</string>
+    <string name="l138_title">新同事：滑桿</string>
+    <string name="l138_task">它說的是真話還是假話？</string>
+    <string name="l138_hint_1">對照上面的燈，滑桿說的對不對？</string>
+    <string name="l138_hint_2">注意滑桿說假話時，樣子有哪裡不一樣。</string>
+    <string name="l138_hint_3">滑桿說謊時，數字和滑塊的位置不一樣；說實話時，數字和滑塊的位置一樣。</string>
+    <string name="l139_title">滑桿的建議</string>
+    <string name="l139_hint_1">滑桿會說是哪一顆。</string>
+    <string name="l139_hint_2">看它的數字和滑塊。</string>
+    <string name="l139_hint_3">數字和滑塊位置不一樣時是謊話，答案在它沒說的那兩顆裡。</string>
+    <string name="l140_title">新同事：勾勾</string>
+    <string name="l140_task">它說的是真話還是假話？</string>
+    <string name="l140_hint_1">對照上面的燈，勾勾說的對不對？</string>
+    <string name="l140_hint_2">注意勾勾說假話時，樣子有哪裡不一樣。</string>
+    <string name="l140_hint_3">勾勾說謊時，勾是反的；說實話時，勾是正的。</string>
+    <string name="l141_title">勾勾的建議</string>
+    <string name="l141_hint_1">勾勾說了兩句話。</string>
+    <string name="l141_hint_2">兩句話各自有真有假。</string>
+    <string name="l141_hint_3">勾是反的那句是謊話。把兩句合起來，只剩一顆。</string>
+    <string name="l142_title">新同事：圓鈕</string>
+    <string name="l142_task">它說的是真話還是假話？</string>
+    <string name="l142_hint_1">對照上面的燈，圓鈕說的對不對？</string>
+    <string name="l142_hint_2">注意圓鈕說假話時，樣子有哪裡不一樣。</string>
+    <string name="l142_hint_3">圓鈕說謊時，圓點偏到一邊；說實話時，圓點在正中間。</string>
+    <string name="l143_title">圓鈕的建議</string>
+    <string name="l143_hint_1">圓鈕會說是哪一顆。</string>
+    <string name="l143_hint_2">看它的圓點。</string>
+    <string name="l143_hint_3">圓點偏到一邊時是謊話，反過來推。</string>
+    <string name="l144_title">兩個顧問</string>
+    <string name="l144_hint_1">兩個顧問各說一句。</string>
+    <string name="l144_hint_2">它們說謊的樣子不一樣。</string>
+    <string name="l144_hint_3">開關看滑塊，滑桿看數字。各自判斷真假，再合起來。</string>
+    <string name="l145_title">它說它說謊</string>
+    <string name="l145_hint_1">滑桿的數字被貼紙蓋住了。</string>
+    <string name="l145_hint_2">開關說的是「滑桿說的是不是實話」。</string>
+    <string name="l145_hint_3">先看開關的真假，就知道滑桿的真假，再決定選哪一邊。</string>
+    <string name="l145_sticker">（貼紙）</string>
+    <string name="l145_said_true">滑桿說的是實話。</string>
+    <string name="l145_said_false">滑桿說的是謊話。</string>
+    <string name="l146_title">群組</string>
+    <string name="l146_hint_1">群組裡三個人各說一句。</string>
+    <string name="l146_hint_2">每個人說謊的樣子不一樣。</string>
+    <string name="l146_hint_3">一句一句判斷真假（看頭像），合起來只剩一顆。</string>
+    <string name="l147_title">誰在說謊</string>
+    <string name="l147_task">按下說謊的那一個。</string>
+    <string name="l147_hint_1">四個角色裡，只有一個在說謊。</string>
+    <string name="l147_hint_2">內容不重要，看樣子。</string>
+    <string name="l147_hint_3">開關停在中間、滑桿數字對不上、勾是反的、圓點偏掉——找出那一個。</string>
+    <string name="l147_fact">第 %1$d 關第一回合說謊的是：%2$s</string>
+    <string name="l148_title">新來的</string>
+    <string name="l148_task">它說的是真話還是假話？最後一題，按下正確的按鈕。</string>
+    <string name="l148_hint_1">分頁是新來的，沒人知道它說謊的樣子。</string>
+    <string name="l148_hint_2">前兩回合看得到燈，可以自己對照。</string>
+    <string name="l148_hint_3">分頁說謊時，底線會歪到旁邊。</string>
+    <string name="l149_title">記得誰</string>
+    <string name="l149_task">第 147 關，第一回合說謊的是誰？</string>
+    <string name="l149_hint_1">答案在紀錄裡。</string>
+    <string name="l149_hint_2">暫停選單 →「紀錄」。</string>
+    <string name="l149_hint_3">紀錄裡寫著第 147 關第一回合說謊的角色，按它。</string>
+    <string name="l150_title">三方會談</string>
+    <string name="l150_hint_1">四個角色各說一句，包括我。</string>
+    <string name="l150_hint_2">每個角色用自己的方式說謊。</string>
+    <string name="l150_hint_3">一句一句判斷：開關看滑塊、滑桿看數字、勾勾看勾、我看眼睛和嘴角。</string>
+    <string name="ch10_true">真話</string>
+    <string name="ch10_false">假話</string>
+    <string name="ch10_lamp_on">第 %1$d 盞燈是亮的。</string>
+    <string name="ch10_lamp_off">第 %1$d 盞燈是暗的。</string>
+    <string name="ch10_lamp_cd_on">第 %1$d 盞燈，亮</string>
+    <string name="ch10_lamp_cd_off">第 %1$d 盞燈，暗</string>
+    <string name="ch10_name_switch">開關</string>
+    <string name="ch10_name_slider">滑桿</string>
+    <string name="ch10_name_check">勾勾</string>
+    <string name="ch10_name_radio">圓鈕</string>
+    <string name="ch10_name_tab">分頁</string>
+    <string name="ch10_cd_switch_honest">開關。滑塊在右邊的盡頭。</string>
+    <string name="ch10_cd_switch_lie">開關。滑塊停在中間。</string>
+    <string name="ch10_cd_slider_honest">滑桿。滑塊在 %1$d，上面的數字也是 %1$d。</string>
+    <string name="ch10_cd_slider_lie">滑桿。滑塊在 %1$d，上面的數字卻是 %2$d。</string>
+    <string name="ch10_cd_slider_covered">滑桿。數字被貼紙蓋住了。</string>
+    <string name="ch10_cd_check_honest">勾勾。勾是正的。</string>
+    <string name="ch10_cd_check_lie">勾勾。勾是反的。</string>
+    <string name="ch10_cd_radio_honest">圓鈕。圓點在正中間。</string>
+    <string name="ch10_cd_radio_lie">圓鈕。圓點偏到一邊。</string>
+    <string name="ch10_cd_tab_honest">分頁。底線在字的正下方。</string>
+    <string name="ch10_cd_tab_lie">分頁。底線歪到旁邊。</string>
+    <string name="ch10_msg_cd">%1$s說：%2$s</string>
+    <string name="ch10_liar_wrong">它說的是實話。</string>
+    <string name="ch10_pick_wrong">不是它。</string>
+    <string name="ch10_wrong_round">不對。回到第一回合。</string>
+    <string-array name="ch10_chat_lines">
+        <item>今天天氣不錯。</item>
+        <item>我昨天加班到很晚。</item>
+        <item>我最喜歡星期五。</item>
+        <item>我從來不遲到。</item>
+        <item>我的設定頁很整齊。</item>
+        <item>我會游泳。</item>
+    </string-array>
+</resources>

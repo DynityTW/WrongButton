@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 tools/s2/gen.py 依 tools/s2/ch10.py 產生，請改規格檔再重新產生。台灣繁體中文。 -->
+<resources>
+    <string-array name="ch10_mistakes_3">
+        <item>[guilty]它們說謊的樣子，和我不一樣。</item>
+        <item>[normal]每個角色都有自己的破綻。</item>
+        <item>[normal]先看外觀，再聽內容。</item>
+    </string-array>
+    <string-array name="ch10_mistakes_6">
+        <item>[sad]我認識它們很久了。它們說謊時都會露出一點東西。</item>
+        <item>[guilty]開關停在中間、滑桿的數字對不上、勾是反的、圓點歪掉。</item>
+        <item>[normal]提示鈕在右上角。</item>
+    </string-array>
+    <string-array name="ch10_idle">
+        <item>[normal]它們人都不錯。只是偶爾說謊。</item>
+        <item>[smug]我比較帥。</item>
+        <item>[normal]我們以前都在同一個設定頁上班。</item>
+    </string-array>
+    <string-array name="ch10_rapid_tap">
+        <item>[angry]慢慢看！</item>
+        <item>[angry]它們會被妳嚇到。</item>
+        <item>[angry]一個一個來。</item>
+    </string-array>
+    <string-array name="ch10_hint">
+        <item>[normal]好，我幫妳看一下它們。</item>
+        <item>[smug]要我出賣同事嗎？</item>
+        <item>[normal]提示會說它們說謊時長什麼樣子。</item>
+    </string-array>
+    <string-array name="ch10_special">
+        <item>[guilty]這樣也行？</item>
+        <item>[normal]妳比我還了解它們。</item>
+        <item>[smug]妳發現了新的破綻。</item>
+    </string-array>
+    <string-array name="l136_enter">
+        <item>[normal]我介紹一下，我以前的同事。</item>
+        <item>[normal]這是開關。它說話的時候，妳看一下它的樣子。</item>
+    </string-array>
+    <string-array name="l136_first_mistake">
+        <item>[guilty]看一下燈。</item>
+        <item>[normal]開關剛剛說的，和燈對不上。</item>
+    </string-array>
+    <string-array name="l136_clear">
+        <item>[normal]開關說謊的時候，會猶豫。</item>
+        <item>[smug]現在妳知道開關說謊時長什麼樣子了。</item>
+    </string-array>
+    <string-array name="l137_enter">
+        <item>[normal]開關說它知道答案。</item>
+        <item>[smug]妳要相信它嗎？</item>
+    </string-array>
+    <string-array name="l137_first_mistake">
+        <item>[guilty]看它的滑塊。</item>
+        <item>[normal]滑塊在哪裡？</item>
+    </string-array>
+    <string-array name="l137_clear">
+        <item>[normal]妳讀懂開關了。</item>
+        <item>[smug]開關一猶豫，就露餡了。</item>
+    </string-array>
+    <string-array name="l138_enter">
+        <item>[normal]這是滑桿。它很會算數。</item>
+        <item>[normal]這是滑桿。它說話的時候，妳看一下它的樣子。</item>
+    </string-array>
+    <string-array name="l138_first_mistake">
+        <item>[guilty]看一下燈。</item>
+        <item>[normal]滑桿剛剛說的，和燈對不上。</item>
+    </string-array>
+    <string-array name="l138_clear">
+        <item>[normal]滑桿說謊的時候，數字會對不上。</item>
+        <item>[smug]現在妳知道滑桿說謊時長什麼樣子了。</item>
+    </string-array>
+    <string-array name="l139_enter">
+        <item>[normal]滑桿說它知道答案。</item>
+        <item>[smug]三選一。它會幫妳嗎？</item>
+    </string-array>
+    <string-array name="l139_first_mistake">
+        <item>[guilty]看它的數字。</item>
+        <item>[normal]數字和滑塊對得上嗎？</item>
+    </string-array>
+    <string-array name="l139_clear">
+        <item>[normal]妳讀懂滑桿了。</item>
+        <item>[smug]數字不會說謊，滑桿會。</item>
+    </string-array>
+    <string-array name="l140_enter">
+        <item>[normal]這是勾勾。它很有自信。</item>
+        <item>[normal]這是勾勾。它說話的時候，妳看一下它的樣子。</item>
+    </string-array>
+    <string-array name="l140_first_mistake">
+        <item>[guilty]看一下燈。</item>
+        <item>[normal]勾勾剛剛說的，和燈對不上。</item>
+    </string-array>
+    <string-array name="l140_clear">
+        <item>[normal]勾勾說謊的時候，勾會反過來。</item>
+        <item>[smug]現在妳知道勾勾說謊時長什麼樣子了。</item>
+    </string-array>
+    <string-array name="l141_enter">
+        <item>[normal]勾勾話比較多。</item>
+        <item>[smug]兩句話。妳一句一句看。</item>
+    </string-array>
+    <string-array name="l141_first_mistake">
+        <item>[guilty]看每一句旁邊的勾。</item>
+        <item>[normal]兩句都要看。</item>
+    </string-array>
+    <string-array name="l141_clear">
+        <item>[normal]妳讀懂勾勾了。</item>
+        <item>[smug]兩句話也難不倒妳。</item>
+    </string-array>
+    <string-array name="l142_enter">
+        <item>[normal]這是圓鈕。它一次只選一個。</item>
+        <item>[normal]這是圓鈕。它說話的時候，妳看一下它的樣子。</item>
+    </string-array>
+    <string-array name="l142_first_mistake">
+        <item>[guilty]看一下燈。</item>
+        <item>[normal]圓鈕剛剛說的，和燈對不上。</item>
+    </string-array>
+    <string-array name="l142_clear">
+        <item>[normal]圓鈕說謊的時候，心會偏。</item>
+        <item>[smug]現在妳知道圓鈕說謊時長什麼樣子了。</item>
+    </string-array>
+    <string-array name="l143_enter">
+        <item>[normal]圓鈕說它知道答案。</item>
+        <item>[smug]四選一。</item>
+    </string-array>
+    <string-array name="l143_first_mistake">
+        <item>[guilty]看圓點。</item>
+        <item>[normal]圓點在中間嗎？</item>
+    </string-array>
+    <string-array name="l143_clear">
+        <item>[normal]妳讀懂圓鈕了。</item>
+        <item>[smug]心偏了，就看得出來。</item>
+    </string-array>
+    <string-array name="l144_enter">
+        <item>[normal]今天請了兩個顧問。</item>
+        <item>[smug]它們不一定同時說真話。</item>
+    </string-array>
+    <string-array name="l144_first_mistake">
+        <item>[guilty]兩個都要看。</item>
+        <item>[normal]它們的破綻不一樣。</item>
+    </string-array>
+    <string-array name="l144_clear">
+        <item>[normal]兩種破綻妳都會了。</item>
+        <item>[smug]顧問費很貴的。</item>
+    </string-array>
+    <string-array name="l145_enter">
+        <item>[guilty]滑桿的數字被貼紙蓋住了。</item>
+        <item>[normal]還好開關在旁邊。</item>
+    </string-array>
+    <string-array name="l145_first_mistake">
+        <item>[guilty]先看開關。</item>
+        <item>[normal]開關說的是滑桿，不是按鈕。</item>
+    </string-array>
+    <string-array name="l145_clear">
+        <item>[normal]妳用一個顧問讀另一個顧問。</item>
+        <item>[smug]這叫做交叉比對。</item>
+    </string-array>
+    <string-array name="l146_enter">
+        <item>[normal]它們開了一個群組。</item>
+        <item>[smug]我被踢出去了。</item>
+    </string-array>
+    <string-array name="l146_first_mistake">
+        <item>[guilty]看每則訊息的頭像。</item>
+        <item>[normal]頭像是說話那一刻的樣子。</item>
+    </string-array>
+    <string-array name="l146_clear">
+        <item>[normal]群組裡的謊，妳都看穿了。</item>
+        <item>[smug]我要重新加入群組。</item>
+    </string-array>
+    <string-array name="l147_enter">
+        <item>[serious]它們之中有一個在說謊。</item>
+        <item>[normal]找出來。</item>
+    </string-array>
+    <string-array name="l147_first_mistake">
+        <item>[guilty]那個說的是實話。</item>
+        <item>[normal]它的樣子很正常。</item>
+    </string-array>
+    <string-array name="l147_clear">
+        <item>[normal]妳抓到了。</item>
+        <item>[smug]我會記得是誰。妳也記一下。</item>
+    </string-array>
+    <string-array name="l148_enter">
+        <item>[normal]新同事：分頁。我也不認識它。</item>
+        <item>[smug]這次妳要自己找出它的破綻。</item>
+    </string-array>
+    <string-array name="l148_first_mistake">
+        <item>[guilty]看燈，再看它的底線。</item>
+        <item>[normal]它說的和燈對不上。</item>
+    </string-array>
+    <string-array name="l148_clear">
+        <item>[normal]妳自己發現了它的破綻。</item>
+        <item>[smug]我都還沒看出來。</item>
+    </string-array>
+    <string-array name="l149_enter">
+        <item>[normal]還記得第一個被妳抓到的騙子嗎？</item>
+        <item>[smug]我記得。妳呢？</item>
+    </string-array>
+    <string-array name="l149_first_mistake">
+        <item>[guilty]不是它。</item>
+        <item>[normal]去紀錄看看。</item>
+    </string-array>
+    <string-array name="l149_clear">
+        <item>[normal]妳記得。</item>
+        <item>[smug]它應該會很不好意思。</item>
+    </string-array>
+    <string-array name="l150_enter">
+        <item>[serious]最後一次會議。我也會發言。</item>
+        <item>[normal]這次我也在裡面。小心我。</item>
+    </string-array>
+    <string-array name="l150_first_mistake">
+        <item>[guilty]有人說謊了。</item>
+        <item>[normal]每一句都要看。</item>
+    </string-array>
+    <string-array name="l150_clear">
+        <item>[normal]妳把我們全部讀懂了。</item>
+        <item>[smug]下次開會，妳當主席。</item>
+    </string-array>
+</resources>
