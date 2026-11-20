@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 tools/s2/gen.py 依 tools/s2/ch18.py 產生，請改規格檔再重新產生。台灣繁體中文。 -->
+<resources>
+    <string-array name="ch18_mistakes_3">
+        <item>[guilty]那不是我。看一下副檔名或內容。</item>
+        <item>[normal]工具列上的按鈕都試試看。</item>
+        <item>[normal]ⓘ 可以看檔案的內容。</item>
+    </string-array>
+    <string-array name="ch18_mistakes_6">
+        <item>[sad]我被埋在一堆檔案裡。</item>
+        <item>[normal]隱藏檔案、垃圾桶、排序——看看哪個有用。</item>
+        <item>[guilty]提示鈕在右上角。</item>
+    </string-array>
+    <string-array name="ch18_idle">
+        <item>[normal]這個資料夾好亂。</item>
+        <item>[smug]我是最重要的檔案。</item>
+        <item>[normal]有人從來不整理檔案。</item>
+    </string-array>
+    <string-array name="ch18_rapid_tap">
+        <item>[angry]不要亂開檔案！</item>
+        <item>[angry]會中毒的！……好啦，不會。</item>
+        <item>[angry]一個一個看。</item>
+    </string-array>
+    <string-array name="ch18_hint">
+        <item>[normal]好，我告訴妳我在哪。</item>
+        <item>[smug]要我把自己找出來嗎？</item>
+        <item>[normal]提示會說要用哪個工具。</item>
+    </string-array>
+    <string-array name="ch18_special">
+        <item>[guilty]這樣也找得到？</item>
+        <item>[normal]妳很會整理檔案。</item>
+        <item>[smug]妳該去當檔案管理員。</item>
+    </string-array>
+    <string-array name="l256_enter">
+        <item>[normal]我變成一個檔案了。</item>
+        <item>[smug]找找看我在哪個資料夾。</item>
+    </string-array>
+    <string-array name="l256_first_mistake">
+        <item>[guilty]那不是我。</item>
+        <item>[normal]那是別的檔案。</item>
+    </string-array>
+    <string-array name="l256_clear">
+        <item>[normal]妳打開我了。</item>
+        <item>[smug]我是很重要的檔案。</item>
+    </string-array>
+    <string-array name="l257_enter">
+        <item>[guilty]我躲起來了。</item>
+        <item>[normal]這個資料夾看起來是空的。</item>
+    </string-array>
+    <string-array name="l257_first_mistake">
+        <item>[guilty]那不是我。</item>
+        <item>[normal]我是隱藏的。</item>
+    </string-array>
+    <string-array name="l257_clear">
+        <item>[normal]被妳找到了。</item>
+        <item>[smug]隱藏檔案也逃不過妳。</item>
+    </string-array>
+    <string-array name="l258_enter">
+        <item>[sad]有人把我丟進垃圾桶了。</item>
+        <item>[normal]救我出來。</item>
+    </string-array>
+    <string-array name="l258_first_mistake">
+        <item>[sad]我還在垃圾桶裡。</item>
+        <item>[normal]先還原。</item>
+    </string-array>
+    <string-array name="l258_clear">
+        <item>[normal]得救了。</item>
+        <item>[smug]垃圾桶不是我該待的地方。</item>
+    </string-array>
+    <string-array name="l259_enter">
+        <item>[guilty]所有檔案都叫未命名。</item>
+        <item>[normal]我是最新的那一個。</item>
+    </string-array>
+    <string-array name="l259_first_mistake">
+        <item>[guilty]那是舊的。</item>
+        <item>[normal]我是最新的。</item>
+    </string-array>
+    <string-array name="l259_clear">
+        <item>[normal]最新的就是我。</item>
+        <item>[smug]我永遠是最新版。</item>
+    </string-array>
+    <string-array name="l260_enter">
+        <item>[guilty]有兩個冒牌貨。</item>
+        <item>[normal]它們的名字跟我一樣。</item>
+    </string-array>
+    <string-array name="l260_first_mistake">
+        <item>[sad]那是冒牌貨。</item>
+        <item>[normal]看一下副檔名。</item>
+    </string-array>
+    <string-array name="l260_clear">
+        <item>[normal]副檔名不會騙人。</item>
+        <item>[smug].btn 才是真的我。</item>
+    </string-array>
+    <string-array name="l261_enter">
+        <item>[sleeping]……</item>
+        <item>[normal]（檔名：未命名.btn）</item>
+    </string-array>
+    <string-array name="l261_first_mistake">
+        <item>[sleeping]……叫錯名字了。</item>
+        <item>[normal]我不叫這個名字。</item>
+    </string-array>
+    <string-array name="l261_clear">
+        <item>[normal]妳叫醒我了。</item>
+        <item>[smug]名字很重要。</item>
+    </string-array>
+    <string-array name="l262_enter">
+        <item>[angry]這裡好擠。</item>
+        <item>[normal]把其他東西都清掉，只留下我。</item>
+    </string-array>
+    <string-array name="l262_first_mistake">
+        <item>[guilty]還有別的檔案。</item>
+        <item>[normal]先清空。</item>
+    </string-array>
+    <string-array name="l262_clear">
+        <item>[normal]好清爽。</item>
+        <item>[smug]只有我，剛剛好。</item>
+    </string-array>
+    <string-array name="l263_enter">
+        <item>[normal]我想搬家。</item>
+        <item>[smug]我想住在桌面。</item>
+    </string-array>
+    <string-array name="l263_first_mistake">
+        <item>[guilty]我還沒搬家。</item>
+        <item>[normal]我要在桌面。</item>
+    </string-array>
+    <string-array name="l263_clear">
+        <item>[normal]新家真好。</item>
+        <item>[smug]桌面的風景最好。</item>
+    </string-array>
+    <string-array name="l264_enter">
+        <item>[guilty]我被放在很深的地方。</item>
+        <item>[normal]資料夾好多層。</item>
+    </string-array>
+    <string-array name="l264_first_mistake">
+        <item>[guilty]那不是我。</item>
+        <item>[normal]試試看搜尋。</item>
+    </string-array>
+    <string-array name="l264_clear">
+        <item>[normal]搜尋真快。</item>
+        <item>[smug]妳一下就找到我了。</item>
+    </string-array>
+    <string-array name="l265_enter">
+        <item>[smug]真的我比較大。</item>
+        <item>[normal]冒牌貨都很小。</item>
+    </string-array>
+    <string-array name="l265_first_mistake">
+        <item>[sad]那是冒牌貨。</item>
+        <item>[normal]看一下大小。</item>
+    </string-array>
+    <string-array name="l265_clear">
+        <item>[normal]大就是好。</item>
+        <item>[smug]我的檔案很充實。</item>
+    </string-array>
+    <string-array name="l266_enter">
+        <item>[guilty]有一個冒牌貨，連大小都一樣。</item>
+        <item>[normal]看一下作者。</item>
+    </string-array>
+    <string-array name="l266_first_mistake">
+        <item>[sad]那是按鈕二號做的。</item>
+        <item>[normal]看一下內容。</item>
+    </string-array>
+    <string-array name="l266_clear">
+        <item>[normal]作者不會騙人。</item>
+        <item>[smug]我是自己的作者。</item>
+    </string-array>
+    <string-array name="l267_enter">
+        <item>[guilty]這只是捷徑。</item>
+        <item>[normal]真正的我不見了。</item>
+    </string-array>
+    <string-array name="l267_first_mistake">
+        <item>[sad]找不到目標。</item>
+        <item>[normal]捷徑指的檔案不見了。</item>
+    </string-array>
+    <string-array name="l267_clear">
+        <item>[normal]捷徑通了。</item>
+        <item>[smug]捷徑只是路，我才是目的地。</item>
+    </string-array>
+    <string-array name="l268_enter">
+        <item>[guilty]我被壓扁了。</item>
+        <item>[normal]解開我。</item>
+    </string-array>
+    <string-array name="l268_first_mistake">
+        <item>[guilty]我還被壓著。</item>
+        <item>[normal]先解壓縮。</item>
+    </string-array>
+    <string-array name="l268_clear">
+        <item>[normal]呼——伸展開了。</item>
+        <item>[smug]壓縮檔好擠。</item>
+    </string-array>
+    <string-array name="l269_enter">
+        <item>[normal]還記得我第一次當檔案嗎？</item>
+        <item>[smug]我住在哪個資料夾？</item>
+    </string-array>
+    <string-array name="l269_first_mistake">
+        <item>[guilty]不是這個資料夾。</item>
+        <item>[normal]紀錄裡有。</item>
+    </string-array>
+    <string-array name="l269_clear">
+        <item>[normal]妳記得。</item>
+        <item>[smug]我還住在那裡。</item>
+    </string-array>
+    <string-array name="l270_enter">
+        <item>[serious]最後一個檔案。最難找的那一個。</item>
+        <item>[normal]我被丟掉、藏起來、還改了名。</item>
+    </string-array>
+    <string-array name="l270_first_mistake">
+        <item>[guilty]還差一步。</item>
+        <item>[normal]我會說還差什麼。</item>
+    </string-array>
+    <string-array name="l270_clear">
+        <item>[normal]大掃除完成。</item>
+        <item>[smug]妳是最強的檔案管理員。</item>
+    </string-array>
+</resources>

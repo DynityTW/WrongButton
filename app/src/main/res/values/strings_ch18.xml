@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 由 tools/s2/gen.py 依 tools/s2/ch18.py 產生，請改規格檔再重新產生。台灣繁體中文。 -->
+<resources>
+    <string name="chapter_18">第 18 章　檔案</string>
+    <string name="l256_title">檔案</string>
+    <string name="l256_task">打開 The Button。</string>
+    <string name="l256_hint_1">我在某個資料夾裡。</string>
+    <string name="l256_hint_2">點資料夾可以打開它。</string>
+    <string name="l256_hint_3">打開資料夾，找到「The Button.btn」，點它。</string>
+    <string name="l256_fact">第 %1$d 關，The Button 在「%2$s」資料夾。</string>
+    <string name="l257_title">隱藏檔案</string>
+    <string name="l257_task">打開 The Button。</string>
+    <string name="l257_hint_1">這個資料夾看起來是空的。</string>
+    <string name="l257_hint_2">有些檔案是隱藏的。</string>
+    <string name="l257_hint_3">打開「顯示隱藏檔案」，再點我。</string>
+    <string name="l258_title">垃圾桶</string>
+    <string name="l258_task">打開 The Button。</string>
+    <string name="l258_hint_1">我不在任何資料夾裡。</string>
+    <string name="l258_hint_2">有人把我丟掉了。</string>
+    <string name="l258_hint_3">打開垃圾桶，還原我，再到原本的資料夾打開我。</string>
+    <string name="l259_title">最新的</string>
+    <string name="l259_task">打開 The Button。</string>
+    <string name="l259_hint_1">所有檔案都叫「未命名」。</string>
+    <string name="l259_hint_2">我是最新的那一個。</string>
+    <string name="l259_hint_3">排序改成「日期」，最上面那個就是我。</string>
+    <string name="l260_title">副檔名</string>
+    <string name="l260_task">打開 The Button。</string>
+    <string name="l260_hint_1">三個檔案都叫 The Button。</string>
+    <string name="l260_hint_2">副檔名被藏起來了。</string>
+    <string name="l260_hint_3">打開「顯示副檔名」，點 .btn 那一個。</string>
+    <string name="l260_wrong_jpg">那是我的照片。</string>
+    <string name="l260_wrong_txt">那是一份文字檔。</string>
+    <string name="l261_title">改名</string>
+    <string name="l261_task">打開 The Button。</string>
+    <string name="l261_hint_1">我叫「未命名」。</string>
+    <string name="l261_hint_2">要叫對名字我才會醒來。</string>
+    <string name="l261_hint_3">按 ✎ 把我改名成「The Button」，再點我。</string>
+    <string name="l261_note">說明：把我改成正確的名字。</string>
+    <string name="l261_asleep">……我還在睡。叫我的名字。</string>
+    <string name="l262_title">清空</string>
+    <string name="l262_task">打開 The Button。</string>
+    <string name="l262_hint_1">這個資料夾太亂了。</string>
+    <string name="l262_hint_2">只留我，其他都刪掉。</string>
+    <string name="l262_hint_3">按「選取」→「全選」→ 取消勾選我 →「刪除」，再點我。</string>
+    <string name="l262_crowded">還有 %1$d 個別的檔案。</string>
+    <string name="l263_title">搬家</string>
+    <string name="l263_task">打開 The Button。</string>
+    <string name="l263_hint_1">我想住在「桌面」資料夾。</string>
+    <string name="l263_hint_2">選取模式可以移動檔案。</string>
+    <string name="l263_hint_3">選取我 →「移動到」→「桌面」，再到桌面打開我。</string>
+    <string name="l263_not_desktop">我還在原本的地方。我想住桌面。</string>
+    <string name="l264_title">搜尋</string>
+    <string name="l264_task">打開 The Button。</string>
+    <string name="l264_hint_1">資料夾一層又一層。</string>
+    <string name="l264_hint_2">上面有搜尋。</string>
+    <string name="l264_hint_3">搜尋「Button」，點搜尋結果。</string>
+    <string name="l265_title">最大的</string>
+    <string name="l265_task">打開 The Button。</string>
+    <string name="l265_hint_1">三個都是 The Button.btn。</string>
+    <string name="l265_hint_2">真的我比較大。</string>
+    <string name="l265_hint_3">排序改成「大小」，或看每一列的大小，點最大的那個。</string>
+    <string name="l266_title">作者</string>
+    <string name="l266_task">打開 The Button。</string>
+    <string name="l266_hint_1">兩個檔案一模一樣。</string>
+    <string name="l266_hint_2">ⓘ 可以看作者。</string>
+    <string name="l266_hint_3">按 ⓘ 看作者，作者是 The Button 的才是真的。</string>
+    <string name="l266_author">作者：%1$s</string>
+    <string name="l266_author_fake">按鈕二號</string>
+    <string name="l266_fake">那是按鈕二號做的冒牌貨。</string>
+    <string name="l267_title">捷徑</string>
+    <string name="l267_task">打開 The Button。</string>
+    <string name="l267_hint_1">那是一個捷徑。</string>
+    <string name="l267_hint_2">捷徑的目標被刪掉了。</string>
+    <string name="l267_hint_3">到垃圾桶還原「The Button.btn」，再打開捷徑。</string>
+    <string name="l267_shortcut">The Button（捷徑）</string>
+    <string name="l267_broken">找不到目標：The Button.btn</string>
+    <string name="l268_title">壓縮檔</string>
+    <string name="l268_task">打開 The Button。</string>
+    <string name="l268_hint_1">我被壓縮了。</string>
+    <string name="l268_hint_2">壓縮檔要先解開。</string>
+    <string name="l268_hint_3">點「The Button.zip」→「解壓縮」，再打開資料夾裡的我。</string>
+    <string name="l268_extract">解壓縮</string>
+    <string name="l268_zipped">要先解壓縮。</string>
+    <string name="l269_title">哪個資料夾</string>
+    <string name="l269_task">第 256 關，我在哪個資料夾？</string>
+    <string name="l269_hint_1">第 256 關我在哪個資料夾？</string>
+    <string name="l269_hint_2">紀錄裡有。</string>
+    <string name="l269_hint_3">暫停 →「紀錄」看第 256 關的資料夾。</string>
+    <string name="l270_title">大掃除</string>
+    <string name="l270_task">打開 The Button。</string>
+    <string name="l270_hint_1">我在垃圾桶裡、是隱藏的、還被改了名字。</string>
+    <string name="l270_hint_2">一個一個解決。</string>
+    <string name="l270_hint_3">垃圾桶還原 → 顯示隱藏檔案 → ✎ 改名成 The Button → 打開。</string>
+    <string name="ch18_up">上一層</string>
+    <string name="ch18_hidden">顯示隱藏檔案</string>
+    <string name="ch18_ext">顯示副檔名</string>
+    <string name="ch18_sort">排序</string>
+    <string name="ch18_sort_name">名稱</string>
+    <string name="ch18_sort_date">日期</string>
+    <string name="ch18_sort_size">大小</string>
+    <string name="ch18_select">選取</string>
+    <string name="ch18_select_done">完成</string>
+    <string name="ch18_select_all">全選</string>
+    <string name="ch18_delete">刪除</string>
+    <string name="ch18_move">移動到</string>
+    <string name="ch18_move_to">移動到「%1$s」</string>
+    <string name="ch18_trash">垃圾桶</string>
+    <string name="ch18_trash_title">垃圾桶</string>
+    <string name="ch18_restore">還原</string>
+    <string name="ch18_search">搜尋檔案</string>
+    <string name="ch18_info">內容</string>
+    <string name="ch18_rename">重新命名</string>
+    <string name="ch18_rename_ok">確定</string>
+    <string name="ch18_rename_cancel">取消</string>
+    <string name="ch18_new_name">新名稱</string>
+    <string name="ch18_meta">%1$s・%2$s</string>
+    <string name="ch18_size">%1$d KB</string>
+    <string name="ch18_date">11 月 %1$d 日</string>
+    <string name="ch18_root">我的檔案</string>
+    <string-array name="ch18_folders">
+        <item>文件</item>
+        <item>下載</item>
+        <item>音樂</item>
+        <item>桌面</item>
+        <item>照片</item>
+        <item>工作</item>
+        <item>舊東西</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="ch18_junk">
+        <item>收據.pdf</item>
+        <item>截圖.png</item>
+        <item>備忘錄.txt</item>
+        <item>歌單.m3u</item>
+        <item>履歷.doc</item>
+        <item>地圖.png</item>
+        <item>帳單.pdf</item>
+        <item>草稿.txt</item>
+    </string-array>
+    <string name="ch18_readme">說明.txt</string>
+    <string name="ch18_untitled">未命名</string>
+    <string name="ch18_row_cd">%1$s，%2$s</string>
+    <string name="ch18_folder">資料夾</string>
+    <string name="ch18_file">檔案</string>
+    <string name="ch18_checked">已勾選</string>
+    <string name="ch18_not_me">那不是我。</string>
+    <string name="ch18_in_trash">我在垃圾桶裡，先還原。</string>
+    <string name="ch18_hidden_wrong">我還是隱藏的……妳怎麼點到的？</string>
+    <string name="ch18_close">關閉</string>
+    <string name="ch18_info_title">檔案內容</string>
+</resources>
