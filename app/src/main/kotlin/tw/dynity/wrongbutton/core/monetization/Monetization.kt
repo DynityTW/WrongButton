@@ -16,8 +16,9 @@ import kotlinx.serialization.Serializable
 /**
  * 付費與廣告的狀態。**和 PlayerMemory 分開存**：「讓 The Button 忘記我」不會清掉 Pro，也不會清掉已經看過廣告換到的提示。
  *
- * 目前全部是模擬：不連網、不扣款、不播真的廣告。接上 Google Play Billing 與 AdMob 時，
- * 只需要換掉 [Store] 與 [AdService] 的實作；Pro 以 Play 查詢到的購買紀錄為準，這裡只當快取。
+ * 正式版（release）用 Google Play 結帳（[PlayBillingStore]）與 AdMob（[AdMobService]）；
+ * 測試版（debug）與自動測試用模擬的 [MockStore] 與 [MockAdService]，不連網、不扣款。
+ * Pro 以 Play 查詢到的購買紀錄為準，這裡只當快取（離線時也能玩已經買的關卡）。
  */
 @Serializable
 data class MonetizationState(
@@ -37,31 +38,62 @@ object AdRules {
     const val CLEARS_PER_AD_BREAK = 5
 }
 
-/** Pro 的商品資訊。正式版改成從 Play 查詢的價格字串。 */
+/** Pro 的商品資訊。 */
 object ProProduct {
+    /** Google Play Console 裡「應用程式內產品」的商品 ID。建立後永遠不能改。 */
+    const val PRODUCT_ID = "pro"
+
+    /** 還沒從 Play 拿到價格時（離線、模擬版）顯示的價格。 */
     const val PRICE_TEXT = "NT$120"
 }
 
 sealed interface PurchaseResult {
     data object Purchased : PurchaseResult
     data object Cancelled : PurchaseResult
+
+    /** 付款還在處理（例如選了超商代碼繳費）。付完之後 Play 會通知，Pro 會自動開通。 */
+    data object Pending : PurchaseResult
+
+    /** 沒有連上 Google Play、商品還沒上架等。 */
+    data object Failed : PurchaseResult
 }
 
-/** 付費介面。模擬版直接改本機狀態；正式版改成 Play Billing。 */
+enum class RestoreResult { Found, NotFound, Failed }
+
+/** 付費介面。 */
 interface Store {
-    val state: StateFlow<MonetizationState>
-    fun purchasePro(): PurchaseResult
-    /** 恢復購買：有找到 Pro 就回傳 true。 */
-    fun restore(): Boolean
+    /** 要顯示的價格（Play 查到的當地價格；還沒查到時是 null）。 */
+    val price: StateFlow<String?>
+
+    /** 模擬版：畫面上要標示「模擬購買」，並提供測試用的取消按鈕。 */
+    val isMock: Boolean
+
+    suspend fun purchasePro(activity: android.app.Activity): PurchaseResult
+
+    /** 恢復購買：向 Play 查詢這個 Google 帳號買過的東西。 */
+    suspend fun restore(): RestoreResult
+}
+
+/** 模擬的付費：直接改本機狀態，不連網、不扣款。 */
+class MockStore(private val cache: MonetizationRepository) : Store {
+    override val price: StateFlow<String?> = MutableStateFlow(ProProduct.PRICE_TEXT)
+    override val isMock = true
+
+    override suspend fun purchasePro(activity: android.app.Activity): PurchaseResult {
+        cache.setPro(true)
+        return PurchaseResult.Purchased
+    }
+
+    override suspend fun restore(): RestoreResult = if (cache.state.value.pro) RestoreResult.Found else RestoreResult.NotFound
 }
 
 class MonetizationRepository(
     private val store: DataStore<MonetizationState>,
     private val scope: CoroutineScope,
-) : Store {
+) {
     private val _state = MutableStateFlow(MonetizationState())
     private val writeLock = Mutex()
-    override val state: StateFlow<MonetizationState> = _state.asStateFlow()
+    val state: StateFlow<MonetizationState> = _state.asStateFlow()
 
     init {
         scope.launch {
@@ -91,15 +123,16 @@ class MonetizationRepository(
         persist()
     }
 
-    override fun purchasePro(): PurchaseResult {
-        update { it.copy(pro = true) }
-        return PurchaseResult.Purchased
+    /** Pro 的快取。正式版只由 [PlayBillingStore] 依 Play 的購買紀錄設定。 */
+    fun setPro(pro: Boolean) {
+        if (_state.value.pro != pro) update { it.copy(pro = pro) }
     }
 
-    override fun restore(): Boolean = _state.value.pro
+    /** 測試與模擬版用：直接開通 Pro。 */
+    fun purchasePro() = setPro(true)
 
-    /** 模擬用：取消 Pro，方便測試免費版的流程。正式版沒有這個功能。 */
-    fun revokeProForTesting() = update { it.copy(pro = false) }
+    /** 模擬版用：取消 Pro，方便測試免費版的流程。正式版畫面上沒有這個按鈕。 */
+    fun revokeProForTesting() = setPro(false)
 
     /** 過了一關。Pro 不計數。 */
     fun recordClear() {

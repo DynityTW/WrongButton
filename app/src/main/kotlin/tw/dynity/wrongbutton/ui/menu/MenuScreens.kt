@@ -67,6 +67,7 @@ import tw.dynity.wrongbutton.core.character.Mood
 import tw.dynity.wrongbutton.core.character.Tell
 import tw.dynity.wrongbutton.core.engine.Level
 import tw.dynity.wrongbutton.core.legal.LegalKind
+import tw.dynity.wrongbutton.ui.pro.findActivity
 import tw.dynity.wrongbutton.core.engine.Speech
 import tw.dynity.wrongbutton.core.engine.SpeechBubbleView
 import tw.dynity.wrongbutton.core.memory.MemoryOps
@@ -404,6 +405,13 @@ fun SettingsScreen(container: AppContainer, onBack: () -> Unit, onPro: () -> Uni
                 )
                 LinkRow(stringResource(R.string.legal_terms), "settings_terms") { onLegal(LegalKind.Terms) }
                 LinkRow(stringResource(R.string.legal_privacy), "settings_privacy") { onLegal(LegalKind.Privacy) }
+                // 只有法規要求的地區（例如歐洲）才會出現：讓玩家隨時修改廣告的同意設定。
+                val adMob = container.adMob
+                val privacyOptions by (adMob?.privacyOptionsRequired ?: kotlinx.coroutines.flow.MutableStateFlow(false)).collectAsStateWithLifecycle()
+                if (adMob != null && privacyOptions) {
+                    val activity = androidx.compose.ui.platform.LocalContext.current.findActivity()
+                    LinkRow(stringResource(R.string.settings_ad_privacy), "settings_ad_privacy") { activity?.let(adMob::showPrivacyOptions) }
+                }
                 Text(
                     stringResource(R.string.legal_consent),
                     style = MaterialTheme.typography.bodySmall,

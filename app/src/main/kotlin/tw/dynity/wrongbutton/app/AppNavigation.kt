@@ -40,7 +40,7 @@ fun WrongButtonNavigation(container: AppContainer) {
     val memory by container.memory.memory.collectAsStateWithLifecycle()
     val ready by container.memory.isReady.collectAsStateWithLifecycle()
     val shop by container.monetization.state.collectAsStateWithLifecycle()
-    val ad by container.ads.current.collectAsStateWithLifecycle()
+    val ad by container.mockAds.current.collectAsStateWithLifecycle()
 
     if (!ready) {
         Box(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background))
@@ -151,6 +151,7 @@ fun WrongButtonNavigation(container: AppContainer) {
             entry<ProKey> {
                 tw.dynity.wrongbutton.ui.pro.ProScreen(
                     repo = container.monetization,
+                    store = container.store,
                     onBack = { if (backStack.size > 1) backStack.removeAt(backStack.lastIndex) },
                     onTerms = { openLegal(tw.dynity.wrongbutton.core.legal.LegalKind.Terms) },
                 )
@@ -194,6 +195,6 @@ fun WrongButtonNavigation(container: AppContainer) {
         },
     )
     // 模擬廣告蓋在最上層（只在玩家自己按「看廣告顯示提示」之後出現）。
-    ad?.let { current -> tw.dynity.wrongbutton.ui.pro.MockAdOverlay(current, container.ads::finish) }
+    ad?.let { current -> tw.dynity.wrongbutton.ui.pro.MockAdOverlay(current, container.mockAds::finish) }
     }
 }

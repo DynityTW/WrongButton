@@ -3,10 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <!--
-        本遊戲不向使用者請求任何權限。合併後的 manifest 只會有 androidx.core 自己定義的
-        DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION（簽章權限，只給本 App 自己用）；
+        本遊戲不向使用者請求任何「危險」權限（不會跳出權限對話框）。
+        合併後的 manifest 只能有白名單裡的權限（Google Play 結帳、AdMob 需要的網路與廣告 ID），
         白名單見 app/build.gradle.kts 的 allowedPermissions。
     -->
+
+    <!-- AdMob 帶進來的 Privacy Sandbox 權限（廣告歸因、興趣主題）：我們不使用，拿掉。 -->
+    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" tools:node="remove" />
+    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" tools:node="remove" />
+    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_TOPICS" tools:node="remove" />
 
     <application
         android:name=".app.WrongButtonApp"
@@ -32,6 +37,11 @@
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
         </activity>
+
+        <!-- AdMob 應用程式 ID（debug 是測試 ID；正式 ID 在 app/build.gradle.kts 設定）。 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="${admobAppId}" />
 
         <!-- 桌面小工具（第 9 章）。 -->
         <receiver

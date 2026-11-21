@@ -52,14 +52,25 @@ import tw.dynity.wrongbutton.core.ui.WbDialog
 import tw.dynity.wrongbutton.core.ui.WbOverlay
 import tw.dynity.wrongbutton.levels.Levels
 import tw.dynity.wrongbutton.ui.menu.ScreenScaffold
+import kotlinx.coroutines.launch
 
 /**
  * Pro 購買頁。一款講「介面會騙人」的遊戲，自己的付費頁一定要最誠實：
  * 價格寫在最上面、沒有倒數、沒有預先勾選、「以後再說」和購買一樣大、The Button 用誠實的臉說話。
  */
 @Composable
-fun ProScreen(repo: MonetizationRepository, onBack: () -> Unit, onTerms: () -> Unit = {}) {
+fun ProScreen(
+    repo: MonetizationRepository,
+    store: tw.dynity.wrongbutton.core.monetization.Store,
+    onBack: () -> Unit,
+    onTerms: () -> Unit = {},
+) {
     val state by repo.state.collectAsStateWithLifecycle()
+    val livePrice by store.price.collectAsStateWithLifecycle()
+    val price = livePrice ?: ProProduct.PRICE_TEXT
+    val activity = androidx.compose.ui.platform.LocalContext.current.findActivity()
+    val scope = androidx.compose.runtime.rememberCoroutineScope()
+    var busy by rememberSaveable { mutableStateOf(false) }
     var confirming by rememberSaveable { mutableStateOf(false) }
     var message by rememberSaveable { mutableIntStateOf(0) }
     val proLevels = Levels.all.size - Levels.FREE_LEVELS
@@ -88,7 +99,7 @@ fun ProScreen(repo: MonetizationRepository, onBack: () -> Unit, onTerms: () -> U
                 Surface(shape = RoundedCornerShape(24.dp), color = MaterialTheme.colorScheme.surfaceContainer, modifier = Modifier.fillMaxWidth()) {
                     Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                         Text(
-                            stringResource(R.string.pro_price, ProProduct.PRICE_TEXT),
+                            stringResource(R.string.pro_price, price),
                             style = MaterialTheme.typography.headlineSmall,
                             fontWeight = FontWeight.Bold,
                             modifier = Modifier.semantics { heading() }.testTag("pro_price"),
@@ -102,24 +113,32 @@ fun ProScreen(repo: MonetizationRepository, onBack: () -> Unit, onTerms: () -> U
                     }
                 }
 
-                Surface(shape = RoundedCornerShape(16.dp), color = MaterialTheme.colorScheme.tertiaryContainer, modifier = Modifier.fillMaxWidth()) {
-                    Text(
-                        stringResource(R.string.pro_mock_note),
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onTertiaryContainer,
-                        modifier = Modifier.padding(14.dp),
-                    )
+                if (store.isMock) {
+                    Surface(shape = RoundedCornerShape(16.dp), color = MaterialTheme.colorScheme.tertiaryContainer, modifier = Modifier.fillMaxWidth()) {
+                        Text(
+                            stringResource(R.string.pro_mock_note),
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onTertiaryContainer,
+                            modifier = Modifier.padding(14.dp),
+                        )
+                    }
                 }
 
                 if (state.pro) {
                     Text(stringResource(R.string.pro_owned), style = MaterialTheme.typography.titleMedium, modifier = Modifier.testTag("pro_owned"))
-                    OutlinedButton(
-                        onClick = { repo.revokeProForTesting(); message = R.string.pro_line_revoked },
-                        modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("pro_revoke"),
-                    ) { Text(stringResource(R.string.pro_revoke_mock)) }
+                    if (store.isMock) {
+                        OutlinedButton(
+                            onClick = { repo.revokeProForTesting(); message = R.string.pro_line_revoked },
+                            modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("pro_revoke"),
+                        ) { Text(stringResource(R.string.pro_revoke_mock)) }
+                    }
                 } else {
-                    Button(onClick = { confirming = true }, modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp).testTag("pro_buy")) {
-                        Text(stringResource(R.string.pro_buy, ProProduct.PRICE_TEXT))
+                    Button(
+                        onClick = { confirming = true },
+                        enabled = !busy,
+                        modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp).testTag("pro_buy"),
+                    ) {
+                        Text(stringResource(R.string.pro_buy, price))
                     }
                     Text(
                         stringResource(R.string.pro_terms_note),
@@ -131,7 +150,18 @@ fun ProScreen(repo: MonetizationRepository, onBack: () -> Unit, onTerms: () -> U
                         Text(stringResource(R.string.legal_terms))
                     }
                     OutlinedButton(
-                        onClick = { message = if (repo.restore()) R.string.pro_line_restored else R.string.pro_line_nothing_to_restore },
+                        onClick = {
+                            busy = true
+                            scope.launch {
+                                message = when (store.restore()) {
+                                    tw.dynity.wrongbutton.core.monetization.RestoreResult.Found -> R.string.pro_line_restored
+                                    tw.dynity.wrongbutton.core.monetization.RestoreResult.NotFound -> R.string.pro_line_nothing_to_restore
+                                    tw.dynity.wrongbutton.core.monetization.RestoreResult.Failed -> R.string.pro_line_store_failed
+                                }
+                                busy = false
+                            }
+                        },
+                        enabled = !busy,
                         modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("pro_restore"),
                     ) { Text(stringResource(R.string.pro_restore)) }
                     OutlinedButton(onClick = onBack, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("pro_later")) {
@@ -143,7 +173,7 @@ fun ProScreen(repo: MonetizationRepository, onBack: () -> Unit, onTerms: () -> U
         if (confirming) {
             WbDialog(face = Expression(Mood.Normal, Tell.Honest)) {
                 Text(stringResource(R.string.pro_confirm_title), style = MaterialTheme.typography.headlineSmall, modifier = Modifier.semantics { heading() })
-                Text(stringResource(R.string.pro_confirm_body, ProProduct.PRICE_TEXT), style = MaterialTheme.typography.bodyLarge)
+                Text(stringResource(R.string.pro_confirm_body, price), style = MaterialTheme.typography.bodyLarge)
                 Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
                     TextButton(onClick = { confirming = false }, modifier = Modifier.heightIn(min = 48.dp).testTag("pro_confirm_cancel")) {
                         Text(stringResource(R.string.pro_confirm_cancel))
@@ -151,9 +181,16 @@ fun ProScreen(repo: MonetizationRepository, onBack: () -> Unit, onTerms: () -> U
                     Button(
                         onClick = {
                             confirming = false
-                            message = when (repo.purchasePro()) {
-                                PurchaseResult.Purchased -> R.string.pro_line_thanks
-                                PurchaseResult.Cancelled -> 0
+                            val host = activity ?: return@Button
+                            busy = true
+                            scope.launch {
+                                message = when (store.purchasePro(host)) {
+                                    PurchaseResult.Purchased -> R.string.pro_line_thanks
+                                    PurchaseResult.Cancelled -> 0
+                                    PurchaseResult.Pending -> R.string.pro_line_pending
+                                    PurchaseResult.Failed -> R.string.pro_line_store_failed
+                                }
+                                busy = false
                             }
                         },
                         modifier = Modifier.heightIn(min = 48.dp).testTag("pro_confirm_buy"),
@@ -221,4 +258,11 @@ fun MockAdOverlay(ad: MockAd, onFinish: (AdResult) -> Unit) {
             }
         }
     }
+}
+
+/** 從 Compose 的 Context 找到 Activity（Google Play 結帳畫面需要它）。 */
+internal tailrec fun android.content.Context.findActivity(): android.app.Activity? = when (this) {
+    is android.app.Activity -> this
+    is android.content.ContextWrapper -> baseContext.findActivity()
+    else -> null
 }

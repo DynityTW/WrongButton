@@ -47,7 +47,33 @@ class AppContainer(context: Context) {
         ),
         scope,
     )
-    val ads = tw.dynity.wrongbutton.core.monetization.MockAdService()
+    /** true：Google Play 結帳與 AdMob（正式版）。false：模擬（debug 版與自動測試）。 */
+    val realMonetization = tw.dynity.wrongbutton.BuildConfig.REAL_MONETIZATION
+
+    /** 模擬廣告。畫面最上層的覆蓋層讀它；正式版不會用到（current 永遠是 null）。 */
+    val mockAds = tw.dynity.wrongbutton.core.monetization.MockAdService()
+
+    /** AdMob。只有正式版有。 */
+    val adMob: tw.dynity.wrongbutton.core.monetization.AdMobService? =
+        if (realMonetization) {
+            tw.dynity.wrongbutton.core.monetization.AdMobService(
+                appContext,
+                tw.dynity.wrongbutton.BuildConfig.ADMOB_REWARDED_ID,
+                tw.dynity.wrongbutton.BuildConfig.ADMOB_INTERSTITIAL_ID,
+            )
+        } else {
+            null
+        }
+
+    val ads: tw.dynity.wrongbutton.core.monetization.AdService = adMob ?: mockAds
+
+    val store: tw.dynity.wrongbutton.core.monetization.Store =
+        if (realMonetization) {
+            tw.dynity.wrongbutton.core.monetization.PlayBillingStore(appContext, monetization, scope)
+        } else {
+            tw.dynity.wrongbutton.core.monetization.MockStore(monetization)
+        }
+
     val hintGate = tw.dynity.wrongbutton.core.monetization.AdHintGate(monetization, ads)
 
     val signals = tw.dynity.wrongbutton.core.system.SystemSignals()

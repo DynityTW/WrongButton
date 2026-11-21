@@ -18,6 +18,18 @@ val signingProps = Properties().apply {
 fun signingValue(key: String, env: String): String? = signingProps.getProperty(key) ?: System.getenv(env)
 val uploadStore = signingValue("storeFile", "WB_UPLOAD_STORE_FILE")
 
+/**
+ * AdMob 的 ID。這些不是密碼，本來就會包在 App 裡。
+ * TEST_* 是 Google 公開的測試 ID：只會顯示測試廣告、不會有收入，開發時一定要用它們（點自己的正式廣告會被停權）。
+ * 拿到正式 ID 後，只要換掉下面三個 RELEASE_* 值；debug 版永遠用測試 ID。
+ */
+val ADMOB_TEST_APP_ID = "ca-app-pub-3940256099942544~3347511713"
+val ADMOB_TEST_REWARDED_ID = "ca-app-pub-3940256099942544/5224354917"
+val ADMOB_TEST_INTERSTITIAL_ID = "ca-app-pub-3940256099942544/1033173712"
+val ADMOB_RELEASE_APP_ID = ADMOB_TEST_APP_ID
+val ADMOB_RELEASE_REWARDED_ID = ADMOB_TEST_REWARDED_ID
+val ADMOB_RELEASE_INTERSTITIAL_ID = ADMOB_TEST_INTERSTITIAL_ID
+
 android {
     namespace = "tw.dynity.wrongbutton"
     compileSdk = 37
@@ -30,6 +42,11 @@ android {
         versionCode = 5
         versionName = "0.5.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders["admobAppId"] = ADMOB_TEST_APP_ID
+        buildConfigField("String", "ADMOB_REWARDED_ID", "\"$ADMOB_TEST_REWARDED_ID\"")
+        buildConfigField("String", "ADMOB_INTERSTITIAL_ID", "\"$ADMOB_TEST_INTERSTITIAL_ID\"")
+        // false：模擬的付費與廣告（不連網、不扣款），自動測試和 debug 版用。true：Google Play 結帳與 AdMob。
+        buildConfigField("boolean", "REAL_MONETIZATION", "false")
     }
 
     signingConfigs {
@@ -46,6 +63,10 @@ android {
     buildTypes {
         release {
             if (uploadStore != null) signingConfig = signingConfigs.getByName("upload")
+            manifestPlaceholders["admobAppId"] = ADMOB_RELEASE_APP_ID
+            buildConfigField("String", "ADMOB_REWARDED_ID", "\"$ADMOB_RELEASE_REWARDED_ID\"")
+            buildConfigField("String", "ADMOB_INTERSTITIAL_ID", "\"$ADMOB_RELEASE_INTERSTITIAL_ID\"")
+            buildConfigField("boolean", "REAL_MONETIZATION", "true")
             isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
@@ -54,7 +75,10 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    buildFeatures { compose = true }
+    buildFeatures {
+        compose = true
+        buildConfig = true
+    }
     testOptions {
         unitTests {
             isIncludeAndroidResources = true
@@ -90,6 +114,9 @@ dependencies {
     implementation(libs.compose.material3)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.play.billing.ktx)
+    implementation(libs.play.services.ads)
+    implementation(libs.ump)
     debugImplementation(libs.compose.ui.tooling)
     debugImplementation(libs.compose.ui.test.manifest)
 
@@ -129,10 +156,20 @@ abstract class VerifyPermissionsTask : DefaultTask() {
  * 權限白名單。
  * - DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION：androidx.core 自己定義、只給本 App 用的簽章權限。
  *   Android 8–12 上 ContextCompat.registerReceiver(…, RECEIVER_NOT_EXPORTED) 需要它，拿掉會當掉；它不是向使用者請求的權限。
- * - 之後接上真正的廣告與付費時，再加：INTERNET、ACCESS_NETWORK_STATE、com.google.android.gms.permission.AD_ID、com.android.vending.BILLING。
+ * - com.android.vending.BILLING：Google Play 結帳。
+ * - INTERNET、ACCESS_NETWORK_STATE：只有載入廣告與結帳時會連網。
+ * - com.google.android.gms.permission.AD_ID：AdMob 的廣告 ID（Play Console 的資料安全性表單要照實申報）。
+ * - WAKE_LOCK、FOREGROUND_SERVICE：AdMob 內部用的 WorkManager 需要；拿掉可能會閃退。都不會跳出權限對話框。
+ * Privacy Sandbox 的 ACCESS_ADSERVICES_* 已在 AndroidManifest.xml 移除。
  */
 fun allowedPermissions(applicationId: String) = setOf(
     "$applicationId.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+    "com.android.vending.BILLING",
+    "android.permission.INTERNET",
+    "android.permission.ACCESS_NETWORK_STATE",
+    "com.google.android.gms.permission.AD_ID",
+    "android.permission.WAKE_LOCK",
+    "android.permission.FOREGROUND_SERVICE",
 )
 
 androidComponents {

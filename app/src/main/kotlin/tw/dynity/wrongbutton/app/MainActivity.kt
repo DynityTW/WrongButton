@@ -37,6 +37,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         if (savedInstanceState == null) handleExternal(intent)
+        // 正式版：先取得廣告同意（需要時顯示 Google 的同意表單），之後才載入廣告。
+        container.adMob?.gatherConsent(this)
         setContent {
             val settings by container.settings.settings.collectAsStateWithLifecycle()
             val systemReduce = remember { SystemMotion.animationsDisabled(this) }
@@ -62,6 +64,11 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        container.adMob?.attach(this)
     }
 
     override fun onNewIntent(intent: Intent) {

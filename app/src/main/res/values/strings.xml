@@ -238,7 +238,9 @@
     <string name="pro_line_owned">妳是 Pro 了。剩下的關卡都開著。</string>
     <string name="pro_line_thanks">謝謝妳。我會努力讓剩下的關卡都值得。</string>
     <string name="pro_line_restored">找到了。Pro 已經恢復。</string>
-    <string name="pro_line_nothing_to_restore">找不到購買紀錄。如果妳在別的裝置買過，正式版會用同一個 Google 帳號恢復。</string>
+    <string name="pro_line_nothing_to_restore">找不到購買紀錄。Pro 跟著購買時的 Google 帳號走；如果妳用別的帳號買過，請在 Play 商店切換帳號後再試一次。</string>
+    <string name="pro_line_pending">付款還在處理中。付款完成後，Pro 會自動開通，不用再按一次。</string>
+    <string name="pro_line_store_failed">現在連不上 Google Play。請確認網路後再試一次；妳沒有被扣款。</string>
     <string name="pro_line_revoked">好，回到免費版。這只是測試用的開關。</string>
     <string name="pro_locked">Pro</string>
     <string name="pro_locked_cd">需要 Pro</string>
@@ -288,5 +290,6 @@
     <string name="legal_same_as_web">這份文件內建在 App 裡，內容和網站上的版本相同。</string>
     <string name="legal_open_web">用瀏覽器開啟網頁版</string>
     <string name="settings_about">關於</string>
+    <string name="settings_ad_privacy">廣告隱私權選項</string>
     <string name="pro_terms_note">購買即代表你同意服務條款。退款依 Google Play 的退款政策處理。</string>
 </resources>
