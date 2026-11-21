@@ -47,6 +47,25 @@
     <string name="records_level_cleared">第 %1$d 關：嘗試 %2$d 次，按錯 %3$d 次，第一次觸碰 %4$s 秒，通關耗時 %5$s 秒，用了 %6$d 階提示。</string>
     <string name="records_special_suffix">（特殊解）</string>
     <string name="records_empty">還沒有紀錄。</string>
+    <string name="records_stat_cleared">通關</string>
+    <string name="records_stat_cleared_value">%1$d／%2$d</string>
+    <string name="records_stat_mistakes">錯誤總數</string>
+    <string name="records_stat_mistakes_value">%1$d 次</string>
+    <string name="records_stat_hints">用了提示</string>
+    <string name="records_stat_hints_value">%1$d 關</string>
+    <string name="records_stat_special">特殊解</string>
+    <string name="records_stat_special_value">%1$d 個</string>
+    <string name="records_stat_cd">%1$s：%2$s</string>
+    <string name="records_memory_empty">它還沒記住什麼。</string>
+    <string name="records_chapter_progress">%1$d／%2$d 通關</string>
+    <string name="records_chapter_expand">展開</string>
+    <string name="records_chapter_collapse">收起</string>
+    <string name="records_row_detail">嘗試 %1$d 次・按錯 %2$d 次・提示 %3$d 階</string>
+    <string name="records_row_first_touch">第一次觸碰 %1$s 秒</string>
+    <string name="records_row_time">%1$s 秒</string>
+    <string name="records_row_not_cleared">未通關</string>
+    <string name="records_row_attempts">嘗試 %1$d 次</string>
+    <string name="records_special_chip">特殊解</string>
     <string name="menu_start">開始（第 %1$d 關）</string>
     <string name="menu_continue">繼續（第 %1$d 關）</string>
     <string name="menu_levels">選關</string>
@@ -202,7 +221,7 @@
     <string name="pro_price">%1$s</string>
     <string name="pro_once">一次買斷。沒有訂閱，不會自動續費。</string>
     <string name="pro_benefit_levels">解鎖第 %1$d–%2$d 關（共 %3$d 關）</string>
-    <string name="pro_benefit_hints">提示直接看，不用先看廣告</string>
+    <string name="pro_benefit_hints">完全沒有廣告：提示直接看，過關之間也不會跳廣告</string>
     <string name="pro_benefit_free_stays">前 %1$d 關永遠免費，買不買都一樣能玩</string>
     <string name="pro_mock_note">這是模擬購買：不會連線，也不會扣款。正式版會改成 Google Play 結帳。</string>
     <string name="pro_buy">購買 Pro（%1$s）</string>
@@ -217,7 +236,7 @@
     <string name="pro_confirm_buy">購買</string>
     <string name="pro_line_pitch">這頁沒有陷阱。價錢寫在上面，不買也沒關係。</string>
     <string name="pro_line_owned">妳是 Pro 了。剩下的關卡都開著。</string>
-    <string name="pro_line_thanks">謝謝妳。我會努力讓這兩百關值得。</string>
+    <string name="pro_line_thanks">謝謝妳。我會努力讓剩下的關卡都值得。</string>
     <string name="pro_line_restored">找到了。Pro 已經恢復。</string>
     <string name="pro_line_nothing_to_restore">找不到購買紀錄。如果妳在別的裝置買過，正式版會用同一個 Google 帳號恢復。</string>
     <string name="pro_line_revoked">好，回到免費版。這只是測試用的開關。</string>
@@ -229,7 +248,7 @@
     <string name="settings_pro_free">免費版</string>
     <string name="result_next_pro">下一關需要 Pro</string>
     <string name="hint_reveal_ad">看一則廣告，顯示第 %1$d 階提示</string>
-    <string name="hint_ad_note">每一階提示只要看一次。Pro 不用看廣告。</string>
+    <string name="hint_ad_note">第 1 階提示免費；之後每一階第一次看要先看一則廣告，看過就不用再看。Pro 不用看廣告。</string>
     <string name="ad_label">模擬廣告</string>
     <string name="ad_title">這裡會是一則廣告</string>
     <string name="ad_body">正式版會在這裡播放一則獎勵廣告。
@@ -238,6 +257,12 @@
     <string name="ad_done">可以領取了。</string>
     <string name="ad_claim">領取提示</string>
     <string name="ad_close">不看了</string>
+    <string name="ad_break_title">這裡會是一則全版廣告</string>
+    <string name="ad_break_body">免費版每過 %1$d 關，會在關卡之間播一則全版廣告。買 Pro 就不會再出現。
+這是測試用的模擬畫面，沒有連線。</string>
+    <string name="ad_break_countdown">%1$d 秒後可以關閉</string>
+    <string name="ad_break_done">可以關閉了。</string>
+    <string name="ad_break_close">關閉廣告，繼續</string>
     <string name="select_chapter_progress">%1$d／%2$d</string>
     <string name="select_season_2">第二季</string>
     <string name="select_jump_cd">跳到%1$s</string>

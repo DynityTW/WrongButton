@@ -40,26 +40,45 @@ class MonetizationTest {
     private class FixedAds(val result: AdResult) : AdService {
         var shown = 0
         override suspend fun showRewarded(): AdResult { shown++; return result }
+        override suspend fun showInterstitial(): AdResult = AdResult.NotAvailable
     }
 
     @Test
-    fun eachHintTierNeedsOneAdOnlyOnce() = runBlocking {
+    fun firstTierIsFreeAndLaterTiersNeedOneAdOnlyOnce() = runBlocking {
         val r = repo()
         val ads = FixedAds(AdResult.Rewarded)
         val gate = AdHintGate(r, ads)
-        assertFalse(gate.isFree(5, 1))
+        assertTrue("第 1 階免費", gate.isFree(5, 1))
         assertTrue(gate.unlock(5, 1))
-        assertTrue(gate.isFree(5, 1))
-        assertFalse("第 2 階還要再看一次", gate.isFree(5, 2))
-        assertTrue(gate.unlock(5, 1))
+        assertEquals(0, ads.shown)
+        assertFalse(gate.isFree(5, 2))
+        assertTrue(gate.unlock(5, 2))
+        assertTrue(gate.isFree(5, 2))
+        assertFalse("第 3 階還要再看一次", gate.isFree(5, 3))
+        assertTrue(gate.unlock(5, 2))
         assertEquals("看過的那一階不用再看", 1, ads.shown)
-        assertFalse("別關不受影響", gate.isFree(6, 1))
+        assertFalse("別關不受影響", gate.isFree(6, 2))
+    }
+
+    @Test
+    fun adBreakEveryFiveClearsButNeverForPro() {
+        val r = repo()
+        repeat(4) { r.recordClear() }
+        assertFalse(r.adBreakDue())
+        r.recordClear()
+        assertTrue("第 5 關之後要播", r.adBreakDue())
+        r.adBreakDone()
+        assertFalse(r.adBreakDue())
+        assertEquals(0, r.state.value.clearsSinceAd)
+        r.purchasePro()
+        repeat(10) { r.recordClear() }
+        assertFalse("Pro 沒有全版廣告", r.adBreakDue())
     }
 
     @Test
     fun dismissedAdGivesNoHintButMissingAdNeverBlocks() = runBlocking {
-        assertFalse(AdHintGate(repo(), FixedAds(AdResult.Dismissed)).unlock(1, 1))
-        assertTrue("沒有廣告可播時直接給提示", AdHintGate(repo(), FixedAds(AdResult.NotAvailable)).unlock(1, 1))
+        assertFalse(AdHintGate(repo(), FixedAds(AdResult.Dismissed)).unlock(1, 2))
+        assertTrue("沒有廣告可播時直接給提示", AdHintGate(repo(), FixedAds(AdResult.NotAvailable)).unlock(1, 2))
     }
 
     @Test
@@ -87,7 +106,8 @@ class UnlockRulesTest {
     private fun clear(m: PlayerMemory, id: Int) = MemoryOps.completeLevel(m, id, RunResult(0, 0, 1, 0, false))
 
     @Test
-    fun firstHundredAreFreeAndTheRestNeedPro() {
+    fun firstSixtyAreFreeAndTheRestNeedPro() {
+        assertEquals(60, Levels.FREE_LEVELS)
         val all = Levels.all
         assertFalse(Levels.requiresPro(all[Levels.FREE_LEVELS - 1].id))
         all.drop(Levels.FREE_LEVELS).forEach { assertTrue(Levels.requiresPro(it.id)) }

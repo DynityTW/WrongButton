@@ -15,6 +15,7 @@ import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
+import kotlinx.coroutines.launch
 import kotlinx.serialization.Serializable
 import tw.dynity.wrongbutton.core.engine.LevelHost
 import tw.dynity.wrongbutton.core.engine.LevelHostViewModel
@@ -163,7 +164,17 @@ fun WrongButtonNavigation(container: AppContainer) {
             entry<LevelKey> { key ->
                 val level = Levels.byId(key.id)
                 val vm = viewModel(key = "level-${key.id}") {
-                    LevelHostViewModel(level, container.memory, container.director, container.text, container.clock, container.hintGate)
+                    LevelHostViewModel(level, container.memory, container.director, container.text, container.clock, container.hintGate, container.monetization::recordClear)
+                }
+                // 免費版每過 5 關，在離開結算畫面時（關卡之間）播一則全版廣告。關卡進行中不會插播。
+                val adScope = androidx.compose.runtime.rememberCoroutineScope()
+                fun afterAdBreak(go: () -> Unit) {
+                    if (vm.result.value == null || !container.monetization.adBreakDue()) return go()
+                    adScope.launch {
+                        container.ads.showInterstitial()
+                        container.monetization.adBreakDone()
+                        go()
+                    }
                 }
                 val next = Levels.next(key.id)
                 LevelHost(
@@ -171,8 +182,8 @@ fun WrongButtonNavigation(container: AppContainer) {
                     number = Levels.numberOf(key.id),
                     hasNext = next != null,
                     nextNeedsPro = next != null && Levels.requiresPro(next.id) && !shop.pro,
-                    onExit = { popTo(LevelSelectKey) },
-                    onNext = { next?.let { openLevel(it.id) } },
+                    onExit = { afterAdBreak { popTo(LevelSelectKey) } },
+                    onNext = { afterAdBreak { next?.let { openLevel(it.id) } } },
                     recordsContent = {
                         RecordsContent(memory, Levels.all, onForget = { key ->
                             container.memory.update { tw.dynity.wrongbutton.core.memory.MemoryOps.forgetFact(it, key) }

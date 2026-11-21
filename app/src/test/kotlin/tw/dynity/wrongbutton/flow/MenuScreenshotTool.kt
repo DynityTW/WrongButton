@@ -6,6 +6,8 @@ import androidx.compose.ui.test.captureToImage
 import androidx.compose.ui.test.junit4.v2.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onRoot
+import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performScrollTo
 import androidx.compose.ui.test.performScrollToIndex
 import androidx.compose.ui.test.performScrollToKey
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -38,6 +40,17 @@ class MenuScreenshotTool {
         with(Player(rule)) {
             clearChapters(8)
             container.monetization.revokeProForTesting()
+            container.memory.update { m ->
+                // 幾關沒通關、幾關用了提示和特殊解，讓紀錄頁有各種狀態可看。
+                var x = m
+                listOf(121, 122, 136).forEach { id -> x = tw.dynity.wrongbutton.core.memory.MemoryOps.startAttempt(x, id) }
+                x
+            }
+            press("menu_records"); waitFor("records"); shot("records")
+            runCatching { rule.onNodeWithTag("records_levels").performScrollTo(); shot("records_levels") }
+            run { rule.onNodeWithTag("records_chapter_${tw.dynity.wrongbutton.R.string.chapter_1}").performScrollTo().performClick(); rule.onNodeWithTag("records_level_3").performScrollTo(); shot("records_cleared") }
+            rule.activityRule.scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
+            waitFor("menu_levels")
             press("menu_levels"); waitFor("select_grid")
             val proId = tw.dynity.wrongbutton.levels.Levels.all[tw.dynity.wrongbutton.levels.Levels.FREE_LEVELS].id
             rule.onNodeWithTag("select_grid").performScrollToKey(proId)
@@ -46,7 +59,7 @@ class MenuScreenshotTool {
             rule.activityRule.scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
             waitFor("select_grid")
             rule.onNodeWithTag("select_grid").performScrollToKey(1)
-            tap("select_level_1"); tap("host_hint"); tap("hint_reveal"); waitFor("mock_ad"); advance(2_000); shot("ad")
+            tap("select_level_1"); tap("host_hint"); tap("hint_reveal"); tap("hint_reveal"); waitFor("mock_ad"); advance(2_000); shot("ad")
             tap("mock_ad_close"); rule.waitUntil(5_000) { !exists("mock_ad") }
             rule.activityRule.scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
             rule.activityRule.scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }

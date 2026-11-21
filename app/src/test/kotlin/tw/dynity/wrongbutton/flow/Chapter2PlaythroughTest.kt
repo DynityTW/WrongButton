@@ -79,6 +79,7 @@ class Chapter2PlaythroughTest {
         rule.waitUntil(15_000) { exists("result_title") }
         assertTrue("id $id 應已通關", memory.isCleared(id))
         rule.onNodeWithTag("result_next").performScrollTo().performClick()
+        closeAdBreakIfShown(rule)
     }
 
     @Test

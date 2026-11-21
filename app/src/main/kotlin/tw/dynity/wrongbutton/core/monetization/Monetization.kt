@@ -24,7 +24,18 @@ data class MonetizationState(
     val pro: Boolean = false,
     /** 每一關已經靠看廣告解開到第幾階提示（關卡 id → 階數）。解開過的提示之後再看不用再看廣告。 */
     val adHints: Map<Int, Int> = emptyMap(),
+    /** 上一次全版廣告之後又過了幾關（重玩也算）。存起來，關掉 App 再開也不會歸零。 */
+    val clearsSinceAd: Int = 0,
 )
+
+/** 廣告規則。 */
+object AdRules {
+    /** 第 1 階提示免費；從這一階開始，每一階第一次看要先看一則獎勵廣告。 */
+    const val FIRST_AD_HINT_TIER = 2
+
+    /** 免費版每過幾關，在離開結算畫面時播一則全版廣告。 */
+    const val CLEARS_PER_AD_BREAK = 5
+}
 
 /** Pro 的商品資訊。正式版改成從 Play 查詢的價格字串。 */
 object ProProduct {
@@ -71,6 +82,7 @@ class MonetizationRepository(
         fun merge(a: MonetizationState, b: MonetizationState) = MonetizationState(
             pro = a.pro || b.pro,
             adHints = (a.adHints.keys + b.adHints.keys).associateWith { maxOf(a.adHints[it] ?: 0, b.adHints[it] ?: 0) },
+            clearsSinceAd = maxOf(a.clearsSinceAd, b.clearsSinceAd),
         )
     }
 
@@ -89,6 +101,18 @@ class MonetizationRepository(
     /** 模擬用：取消 Pro，方便測試免費版的流程。正式版沒有這個功能。 */
     fun revokeProForTesting() = update { it.copy(pro = false) }
 
+    /** 過了一關。Pro 不計數。 */
+    fun recordClear() {
+        if (_state.value.pro) return
+        update { it.copy(clearsSinceAd = it.clearsSinceAd + 1) }
+    }
+
+    /** 現在離開結算畫面時，要不要先播一則全版廣告。 */
+    fun adBreakDue(): Boolean = _state.value.let { !it.pro && it.clearsSinceAd >= AdRules.CLEARS_PER_AD_BREAK }
+
+    /** 全版廣告播過了（或沒有廣告可播），重新計數。 */
+    fun adBreakDone() = update { it.copy(clearsSinceAd = 0) }
+
     fun recordAdHint(levelId: Int, tier: Int) = update { s ->
         s.copy(adHints = s.adHints + (levelId to maxOf(tier, s.adHints[levelId] ?: 0)))
     }
@@ -105,29 +129,39 @@ sealed interface AdResult {
     data object NotAvailable : AdResult
 }
 
-/** 獎勵廣告介面。 */
+/** 廣告介面。 */
 interface AdService {
+    /** 獎勵廣告：看完才給提示。 */
     suspend fun showRewarded(): AdResult
+
+    /** 全版（插頁式）廣告：只在關卡之間播，播完或關掉都一樣繼續。 */
+    suspend fun showInterstitial(): AdResult
 }
 
+enum class MockAdKind { Rewarded, Interstitial }
+
 /** 畫面上正在播的模擬廣告。 */
-data class MockAd(val serial: Long, val seconds: Int)
+data class MockAd(val serial: Long, val seconds: Int, val kind: MockAdKind = MockAdKind.Rewarded)
 
 /**
  * 模擬的獎勵廣告：在畫面最上層蓋一張清楚標示「模擬廣告」的卡片，倒數 [seconds] 秒後可以領取。
  * 不模仿任何真實廣告或品牌，也不出現在關卡畫面裡（只會在玩家自己按「顯示提示」之後出現）。
  */
-class MockAdService(private val seconds: Int = 5) : AdService {
+class MockAdService(private val seconds: Int = 5, private val interstitialSeconds: Int = 5) : AdService {
     private val _current = MutableStateFlow<MockAd?>(null)
     val current: StateFlow<MockAd?> = _current.asStateFlow()
     private var pending: CompletableDeferred<AdResult>? = null
     private var serial = 0L
 
-    override suspend fun showRewarded(): AdResult {
+    override suspend fun showRewarded(): AdResult = show(MockAd(++serial, seconds, MockAdKind.Rewarded))
+
+    override suspend fun showInterstitial(): AdResult = show(MockAd(++serial, interstitialSeconds, MockAdKind.Interstitial))
+
+    private suspend fun show(ad: MockAd): AdResult {
         pending?.complete(AdResult.Dismissed)
         val deferred = CompletableDeferred<AdResult>()
         pending = deferred
-        _current.value = MockAd(++serial, seconds)
+        _current.value = ad
         return deferred.await()
     }
 
@@ -160,13 +194,15 @@ interface HintGate {
     }
 }
 
-/** 每一階提示放一次廣告：看過就記下來，之後再看這一階不用再看廣告。Pro 全部免費。 */
+/**
+ * 第 1 階提示免費；第 2 階起，每一階第一次看要先看一則廣告，看過就記下來，之後再看不用再看。Pro 全部免費。
+ */
 class AdHintGate(private val repo: MonetizationRepository, private val ads: AdService) : HintGate {
     override val changes: StateFlow<MonetizationState> get() = repo.state
 
     override fun isFree(levelId: Int, tier: Int): Boolean {
         val s = repo.state.value
-        return s.pro || (s.adHints[levelId] ?: 0) >= tier
+        return s.pro || tier < AdRules.FIRST_AD_HINT_TIER || (s.adHints[levelId] ?: 0) >= tier
     }
 
     override suspend fun unlock(levelId: Int, tier: Int): Boolean {

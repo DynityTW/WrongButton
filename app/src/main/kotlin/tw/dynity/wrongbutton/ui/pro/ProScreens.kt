@@ -165,8 +165,9 @@ fun ProScreen(repo: MonetizationRepository, onBack: () -> Unit, onTerms: () -> U
 }
 
 /**
- * 模擬的獎勵廣告。只在玩家自己按「看廣告顯示提示」之後出現，蓋在整個畫面最上層。
- * 清楚標示是模擬廣告；不模仿任何真實廣告、品牌或系統畫面。
+ * 模擬廣告，蓋在整個畫面最上層。清楚標示是模擬廣告；不模仿任何真實廣告、品牌或系統畫面。
+ * - 獎勵廣告：只在玩家自己按「看廣告顯示提示」之後出現；倒數完才能領取，中途可以不看。
+ * - 全版廣告：只在關卡之間（離開結算畫面時）出現；倒數完才能關閉。
  */
 @Composable
 fun MockAdOverlay(ad: MockAd, onFinish: (AdResult) -> Unit) {
@@ -179,27 +180,45 @@ fun MockAdOverlay(ad: MockAd, onFinish: (AdResult) -> Unit) {
     }
     WbOverlay(modifier = Modifier.testTag("mock_ad")) {
         Text(stringResource(R.string.ad_label), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
-        Text(stringResource(R.string.ad_title), style = MaterialTheme.typography.headlineSmall, modifier = Modifier.semantics { heading() })
+        val interstitial = ad.kind == tw.dynity.wrongbutton.core.monetization.MockAdKind.Interstitial
+        Text(
+            stringResource(if (interstitial) R.string.ad_break_title else R.string.ad_title),
+            style = MaterialTheme.typography.headlineSmall,
+            modifier = Modifier.semantics { heading() },
+        )
         Surface(shape = RoundedCornerShape(16.dp), color = MaterialTheme.colorScheme.surfaceVariant, modifier = Modifier.fillMaxWidth().heightIn(min = 120.dp)) {
             Text(
-                stringResource(R.string.ad_body),
+                if (interstitial) stringResource(R.string.ad_break_body, tw.dynity.wrongbutton.core.monetization.AdRules.CLEARS_PER_AD_BREAK) else stringResource(R.string.ad_body),
                 style = MaterialTheme.typography.bodyLarge,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.padding(20.dp),
             )
         }
         Text(
-            if (left > 0) stringResource(R.string.ad_countdown, left) else stringResource(R.string.ad_done),
+            when {
+                left > 0 && interstitial -> stringResource(R.string.ad_break_countdown, left)
+                left > 0 -> stringResource(R.string.ad_countdown, left)
+                interstitial -> stringResource(R.string.ad_break_done)
+                else -> stringResource(R.string.ad_done)
+            },
             style = MaterialTheme.typography.bodyMedium,
             modifier = Modifier.semantics { liveRegion = LiveRegionMode.Polite }.testTag("mock_ad_countdown"),
         )
-        Button(
-            onClick = { onFinish(AdResult.Rewarded) },
-            enabled = left == 0,
-            modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("mock_ad_claim"),
-        ) { Text(stringResource(R.string.ad_claim)) }
-        TextButton(onClick = { onFinish(AdResult.Dismissed) }, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("mock_ad_close")) {
-            Text(stringResource(R.string.ad_close))
+        if (interstitial) {
+            Button(
+                onClick = { onFinish(AdResult.Rewarded) },
+                enabled = left == 0,
+                modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("mock_ad_break_close"),
+            ) { Text(stringResource(R.string.ad_break_close)) }
+        } else {
+            Button(
+                onClick = { onFinish(AdResult.Rewarded) },
+                enabled = left == 0,
+                modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("mock_ad_claim"),
+            ) { Text(stringResource(R.string.ad_claim)) }
+            TextButton(onClick = { onFinish(AdResult.Dismissed) }, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("mock_ad_close")) {
+                Text(stringResource(R.string.ad_close))
+            }
         }
     }
 }

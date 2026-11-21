@@ -23,10 +23,13 @@ class MonetizationFlowTest {
     val rule = createAndroidComposeRule<MainActivity>()
 
     @Test
-    fun eachHintTierShowsOneMockAdThenStaysFree() = with(Player(rule)) {
+    fun firstHintIsFreeThenEachTierShowsOneMockAd() = with(Player(rule)) {
         waitFor("menu_levels")
         openLevel(Levels.all.first().id)
         tap("host_hint")
+        tap("hint_reveal")
+        rule.waitForIdle()
+        assertFalse("第 1 階提示不用看廣告", exists("mock_ad"))
         tap("hint_reveal")
         waitFor("mock_ad")
         assertFalse("倒數結束前不能領取", enabled("mock_ad_claim"))
@@ -34,14 +37,14 @@ class MonetizationFlowTest {
         rule.waitUntil(5_000) { enabled("mock_ad_claim") }
         tap("mock_ad_claim")
         rule.waitUntil(5_000) { !exists("mock_ad") }
-        assertEquals(1, container.monetization.state.value.adHints[Levels.all.first().id])
+        assertEquals(2, container.monetization.state.value.adHints[Levels.all.first().id])
         // 中途關掉廣告：不給第 2 階提示，也不算錯。
         val mistakes = memory.totalMistakes
         tap("hint_reveal")
         waitFor("mock_ad")
         tap("mock_ad_close")
         rule.waitUntil(5_000) { !exists("mock_ad") }
-        assertEquals(1, container.monetization.state.value.adHints[Levels.all.first().id])
+        assertEquals(2, container.monetization.state.value.adHints[Levels.all.first().id])
         assertEquals(mistakes, memory.totalMistakes)
     }
 
@@ -67,7 +70,45 @@ class MonetizationFlowTest {
         waitFor("host_hint")
         tap("host_hint")
         tap("hint_reveal")
+        tap("hint_reveal")
         rule.waitForIdle()
         assertFalse("Pro 不用看廣告", exists("mock_ad"))
+    }
+
+    @Test
+    fun fullScreenAdPlaysBetweenLevelsAfterEveryFifthClear() = with(Player(rule)) {
+        waitFor("menu_levels")
+        container.monetization.update { it.copy(clearsSinceAd = 4) }
+        openLevel(Levels.all.first().id)
+        waitFor("the_button")
+        assertFalse("關卡進行中不插播", exists("mock_ad"))
+        press("the_button")
+        waitFor("result_title")
+        assertFalse("結算畫面本身不插播", exists("mock_ad"))
+        assertTrue(container.monetization.adBreakDue())
+        press("result_next")
+        waitFor("mock_ad")
+        assertFalse("倒數完才能關", enabled("mock_ad_break_close"))
+        advance(6_000)
+        rule.waitUntil(5_000) { enabled("mock_ad_break_close") }
+        tap("mock_ad_break_close")
+        rule.waitUntil(5_000) { !exists("mock_ad") }
+        waitFor("l02_list")
+        assertEquals(0, container.monetization.state.value.clearsSinceAd)
+        assertFalse(container.monetization.adBreakDue())
+    }
+
+    @Test
+    fun proNeverSeesFullScreenAds() = with(Player(rule)) {
+        waitFor("menu_levels")
+        grantPro()
+        container.monetization.update { it.copy(clearsSinceAd = 4) }
+        openLevel(Levels.all.first().id)
+        waitFor("the_button")
+        press("the_button")
+        waitFor("result_title")
+        press("result_next")
+        waitFor("l02_list")
+        assertFalse(exists("mock_ad"))
     }
 }

@@ -83,6 +83,8 @@ class LevelHostViewModel(
     clock: Clock,
     /** 提示要不要先看廣告（Pro 或看過的就免費）。 */
     val hints: tw.dynity.wrongbutton.core.monetization.HintGate = tw.dynity.wrongbutton.core.monetization.HintGate.AlwaysFree,
+    /** 每次過關呼叫一次（給全版廣告計數）。ViewModel 只會在真的過關時呼叫，旋轉或還原不會重算。 */
+    private val onLevelCleared: () -> Unit = {},
 ) : ViewModel() {
 
     private val session = LevelSession(clock)
@@ -188,6 +190,7 @@ class LevelHostViewModel(
             special = special,
         )
         repository.update { MemoryOps.completeLevel(it, level.id, run) }
+        onLevelCleared()
         val event = if (special) DialogueEvent.Special else DialogueEvent.Clear
         val raw = if (line != null) resolve(line).also(director::markUsed) else pick(event).orEmpty()
         val parsed = LineMarkup.parse(raw)

@@ -66,5 +66,22 @@ class Player(val rule: AndroidComposeTestRule<ActivityScenarioRule<MainActivity>
         rule.waitUntil(15_000) { exists("result_title") }
         assertTrue("id $id 應已通關", memory.isCleared(id))
         rule.onNodeWithTag("result_next").performScrollTo().performClick()
+        closeAdBreakIfShown(rule)
     }
+}
+
+/**
+ * 免費版每過 5 關，離開結算畫面時會播一則模擬全版廣告。測試照玩家的方式處理：等倒數結束，按「關閉廣告，繼續」。
+ * 沒有廣告時什麼都不做。
+ */
+fun closeAdBreakIfShown(rule: AndroidComposeTestRule<ActivityScenarioRule<MainActivity>, MainActivity>) {
+    rule.waitForIdle()
+    if (rule.onAllNodesWithTag("mock_ad_break_close").fetchSemanticsNodes().isEmpty()) return
+    rule.mainClock.advanceTimeBy(6_000)
+    rule.waitUntil(5_000) {
+        rule.onAllNodesWithTag("mock_ad_break_close").fetchSemanticsNodes().firstOrNull()
+            ?.config?.getOrNull(androidx.compose.ui.semantics.SemanticsProperties.Disabled) == null
+    }
+    rule.onNodeWithTag("mock_ad_break_close").performClick()
+    rule.waitUntil(5_000) { rule.onAllNodesWithTag("mock_ad").fetchSemanticsNodes().isEmpty() }
 }

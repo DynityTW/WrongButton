@@ -70,6 +70,7 @@ class FullPlaythroughTest {
         waitForTag("result_title")
         assertTrue("id $clearedId 的關卡應已通關", memory.isCleared(clearedId))
         rule.onNodeWithTag("result_next").performScrollTo().performClick()
+        closeAdBreakIfShown(rule)
     }
 
     @Test
@@ -249,6 +250,7 @@ class FullPlaythroughTest {
         container.monetization.purchasePro()
         container.memory.update { m -> Levels.all.takeWhile { it.id != 10 }.fold(m) { acc, l -> tw.dynity.wrongbutton.core.memory.MemoryOps.completeLevel(acc, l.id, run) } }
         rule.onNodeWithTag("result_exit").performScrollTo().performClick()
+        closeAdBreakIfShown(rule)
         waitForTag("select_grid")
         rule.onNodeWithTag("select_grid").performScrollToKey(10)
         rule.onNodeWithTag("select_level_10").performClick()

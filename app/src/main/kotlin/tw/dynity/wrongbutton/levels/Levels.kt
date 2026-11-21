@@ -167,7 +167,7 @@ object Levels {
     val all: List<Level> = chapters.flatMap { it.levels }
 
     /** 免費的關卡數（依顯示順序）。之後的關卡需要 Pro。 */
-    const val FREE_LEVELS = 100
+    const val FREE_LEVELS = 60
 
     /** id → 在 [all] 裡的位置。選關畫面每一格都會查，所以先建好表，不要每次從頭找。 */
     private val indexById: Map<Int, Int> = all.withIndex().associate { (i, level) -> level.id to i }
