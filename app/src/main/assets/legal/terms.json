@@ -234,7 +234,7 @@
     },
     {
      "type": "p",
-     "text": "若你認為處理有誤，請寫信到 <a href=\"mailto:cc20110630@gmail.com\">cc20110630@gmail.com</a> 或 <a href=\"mailto:ericwu100306@gmail.com\">ericwu100306@gmail.com</a> 說明，我們會重新檢查。"
+     "text": "若你認為處理有誤，請寫信到 <a href=\"mailto:support@luarvex.com\">support@luarvex.com</a> 說明，我們會重新檢查。"
     }
    ]
   },
@@ -359,11 +359,7 @@
     },
     {
      "type": "link",
-     "text": "<a href=\"mailto:cc20110630@gmail.com\">cc20110630@gmail.com</a>"
-    },
-    {
-     "type": "link",
-     "text": "<a href=\"mailto:ericwu100306@gmail.com\">ericwu100306@gmail.com</a>"
+     "text": "<a href=\"mailto:support@luarvex.com\">support@luarvex.com</a>"
     }
    ]
   }

@@ -18,7 +18,7 @@
     },
     {
      "type": "p",
-     "text": "有任何隱私相關的問題，都可以寫信到 <a href=\"mailto:cc20110630@gmail.com\">cc20110630@gmail.com</a> 或 <a href=\"mailto:ericwu100306@gmail.com\">ericwu100306@gmail.com</a>。"
+     "text": "有任何隱私相關的問題，都可以寫信到 <a href=\"mailto:support@luarvex.com\">support@luarvex.com</a>。"
     }
    ]
   },
@@ -430,7 +430,7 @@
    "blocks": [
     {
      "type": "p",
-     "text": "本 App 不是為 13 歲以下的兒童設計，也不以兒童為廣告對象；廣告內容的分級上限為「青少年」。我們自己不收集任何人的個人資料，包括兒童。如果你對兒童使用本 App 有任何疑問，請寫信到 <a href=\"mailto:cc20110630@gmail.com\">cc20110630@gmail.com</a> 或 <a href=\"mailto:ericwu100306@gmail.com\">ericwu100306@gmail.com</a>。"
+     "text": "本 App 不是為 13 歲以下的兒童設計，也不以兒童為廣告對象；廣告內容的分級上限為「青少年」。我們自己不收集任何人的個人資料，包括兒童。如果你對兒童使用本 App 有任何疑問，請寫信到 <a href=\"mailto:support@luarvex.com\">support@luarvex.com</a>。"
     },
     {
      "type": "p",
@@ -469,7 +469,7 @@
     },
     {
      "type": "p",
-     "text": "我們自己不收集個人資料，本 App 產生的遊戲資料都只在你的手機上，你可以直接在 App 裡清除（見第 9 節）。Google（AdMob、Google Play）處理的資料，請依 <a href=\"https://policies.google.com/privacy\">Google 隱私權政策</a>向 Google 行使權利。如果你曾寫信給我們，想查詢或刪除那些信件，請寫信到 <a href=\"mailto:cc20110630@gmail.com\">cc20110630@gmail.com</a> 或 <a href=\"mailto:ericwu100306@gmail.com\">ericwu100306@gmail.com</a>，我們會在合理期間內回覆。"
+     "text": "我們自己不收集個人資料，本 App 產生的遊戲資料都只在你的手機上，你可以直接在 App 裡清除（見第 9 節）。Google（AdMob、Google Play）處理的資料，請依 <a href=\"https://policies.google.com/privacy\">Google 隱私權政策</a>向 Google 行使權利。如果你曾寫信給我們，想查詢或刪除那些信件，請寫信到 <a href=\"mailto:support@luarvex.com\">support@luarvex.com</a>，我們會在合理期間內回覆。"
     }
    ]
   },
@@ -522,11 +522,7 @@
     },
     {
      "type": "link",
-     "text": "<a href=\"mailto:cc20110630@gmail.com\">cc20110630@gmail.com</a>"
-    },
-    {
-     "type": "link",
-     "text": "<a href=\"mailto:ericwu100306@gmail.com\">ericwu100306@gmail.com</a>"
+     "text": "<a href=\"mailto:support@luarvex.com\">support@luarvex.com</a>"
     }
    ]
   }
