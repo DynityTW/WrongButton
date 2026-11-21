@@ -1,6 +1,6 @@
 {
  "title": "隱私權政策",
- "updated": "2026 年 11 月 20 日",
+ "updated": "2026 年 11 月 21 日",
  "url": "https://wrongbutton-privacy.pages.dev/",
  "sections": [
   {
@@ -24,23 +24,43 @@
   },
   {
    "id": "offline",
-   "title": "不需要帳號，也不連網",
-   "mission": "不用帳號，也不連網。",
+   "title": "不需要帳號；只有廣告和購買會連網",
+   "mission": "不用帳號；只有廣告和購買會連網。",
    "blocks": [
     {
      "type": "p",
-     "text": "本 App 沒有登入功能，也不需要任何帳號就能玩全部的內容。本 App 沒有要求網路權限，所以技術上無法把任何資料傳出你的手機。"
+     "text": "本 App 沒有登入功能，也不需要任何帳號就能玩全部的內容。遊戲本身（關卡、紀錄、設定）完全在你的手機上運作，不需要網路。"
+    },
+    {
+     "type": "p",
+     "text": "本 App 只在兩種情況下連網，都是透過 Google 的服務（見第 8 節）："
+    },
+    {
+     "type": "li",
+     "text": "免費版載入與播放廣告。"
+    },
+    {
+     "type": "li",
+     "text": "透過 Google Play 購買或恢復 Pro。"
+    },
+    {
+     "type": "p",
+     "text": "沒有網路時，遊戲照常可以玩：需要看廣告的提示會直接給你，關卡之間的廣告會略過。"
     }
    ]
   },
   {
    "id": "collect",
    "title": "我們會收集的資料",
-   "mission": "我們收集的資料：沒有。",
+   "mission": "我們自己收集的資料：沒有。",
    "blocks": [
     {
      "type": "p",
-     "text": "<b>沒有。</b>我們沒有伺服器、資料庫、閃退回報或數據分析工具，也不使用廣告 ID。我們看不到你玩到哪一關、按錯幾次，或你輸入的任何文字。"
+     "text": "<b>我們自己不收集。</b>Dynity 開發團隊沒有伺服器、資料庫、閃退回報或數據分析工具，我們自己也不讀取、不保存你的廣告 ID。我們看不到你玩到哪一關、按錯幾次，或你輸入的任何文字。"
+    },
+    {
+     "type": "p",
+     "text": "不過，免費版的廣告由 Google AdMob 提供，Pro 的付款由 Google Play 處理，Google 會為此處理部分資料（例如廣告 ID），詳見第 8 節。我們從 AdMob 只會看到不含個人身分的統計，例如廣告顯示了幾次、收入多少。"
     },
     {
      "type": "p",
@@ -59,7 +79,7 @@
    "blocks": [
     {
      "type": "p",
-     "text": "為了讓遊戲運作（以及讓 The Button「記得你」），本 App 會在你的手機上保存以下資料。這些資料只存在本 App 自己的私有儲存空間，<b>不會上傳，也不會備份到雲端</b>（本 App 已停用 Android 的雲端備份與裝置轉移）。"
+     "text": "為了讓遊戲運作（以及讓 The Button「記得你」），本 App 會在你的手機上保存以下資料。這些資料只存在本 App 自己的私有儲存空間，<b>不會上傳給我們或任何人，也不會備份到雲端</b>（本 App 已停用 Android 的雲端備份與裝置轉移）。"
     },
     {
      "type": "row",
@@ -134,11 +154,11 @@
      "cells": [
       [
        "資料",
-       "Pro 狀態與已經解開的提示"
+       "Pro 狀態、已經解開的提示、距離下一則全版廣告還有幾關；以及你在 Google 同意表單裡的選擇（由 Google 的工具保存在手機上）"
       ],
       [
        "用途",
-       "決定哪些關卡與提示可以使用"
+       "決定哪些關卡與提示可以使用、什麼時候顯示廣告"
       ],
       [
        "保留多久",
@@ -197,11 +217,35 @@
   {
    "id": "permissions",
    "title": "權限",
-   "mission": "不跟你要任何權限。",
+   "mission": "不會跳出任何權限詢問。",
    "blocks": [
     {
      "type": "p",
-     "text": "本 App 不向你請求任何權限：不使用相機、麥克風、位置、聯絡人、相片、通知，也沒有網路權限。"
+     "text": "本 App 不會向你請求任何需要同意的權限：不使用相機、麥克風、位置、聯絡人、相片、通知。"
+    },
+    {
+     "type": "p",
+     "text": "安裝資訊裡會看到以下項目，都是 Android 不需要你同意的一般權限："
+    },
+    {
+     "type": "li",
+     "text": "網路存取、查看網路連線：載入廣告、Google Play 結帳。"
+    },
+    {
+     "type": "li",
+     "text": "Google Play 結帳服務（com.android.vending.BILLING）：購買與恢復 Pro。"
+    },
+    {
+     "type": "li",
+     "text": "廣告 ID（com.google.android.gms.permission.AD_ID）：由 Google AdMob 使用，見第 8 節。"
+    },
+    {
+     "type": "li",
+     "text": "防止手機進入休眠、執行前景服務：Google AdMob 內部排程工作時使用。"
+    },
+    {
+     "type": "p",
+     "text": "Android 的 Privacy Sandbox 廣告權限（廣告歸因、興趣主題）我們已經移除，本 App 不使用。"
     },
     {
      "type": "note",
@@ -212,23 +256,91 @@
   {
    "id": "third",
    "title": "我們使用的第三方服務",
-   "mission": "現在沒有任何第三方 SDK。",
+   "mission": "只用 Google 的三項服務。",
    "blocks": [
     {
      "type": "li",
      "text": "<b>Google Play</b>：App 的下載與更新。"
     },
     {
-     "type": "p",
-     "text": "目前的版本沒有任何第三方 SDK。封閉測試版裡的「廣告」與「購買 Pro」都是模擬畫面，不會連網、不會扣款，也不會產生任何資料。"
+     "type": "li",
+     "text": "<b>Google Play 結帳</b>：購買 Pro。付款由 Google 處理，我們拿不到你的付款資訊；Google 只會告訴本 App 這個 Google 帳號有沒有買過 Pro，用來開通與恢復購買。"
+    },
+    {
+     "type": "li",
+     "text": "<b>Google AdMob</b>（只有免費版）：顯示廣告。"
+    },
+    {
+     "type": "h3",
+     "text": "AdMob 什麼時候出現"
+    },
+    {
+     "type": "li",
+     "text": "你自己選擇看廣告換第 2、3 階提示時（獎勵廣告）。"
+    },
+    {
+     "type": "li",
+     "text": "免費版每通過 5 關，在關卡之間顯示一則全版廣告。關卡進行中不會插播。"
+    },
+    {
+     "type": "li",
+     "text": "購買 Pro 後不再顯示任何廣告。"
+    },
+    {
+     "type": "h3",
+     "text": "AdMob 可能收集的資料"
     },
     {
      "type": "p",
-     "text": "正式版可能會加入 <b>Google Play 結帳</b>（購買 Pro）與<b>廣告</b>（例如 Google AdMob：你自己選擇看廣告換第 2、3 階提示時的獎勵廣告，以及免費版每過 5 關、在關卡之間出現的全版廣告；購買 Pro 後不會出現）。這兩項服務由 Google 提供，可能會依 Google 自己的政策收集裝置資訊或廣告識別碼。在加入之前，我們會先更新這份政策，清楚列出會收集什麼、由誰收集，以及你可以怎麼選擇。"
+     "text": "依 Google 的說明，AdMob 為了顯示廣告、計算廣告成效、防止詐騙與濫用，可能收集："
+    },
+    {
+     "type": "li",
+     "text": "廣告 ID 與其他裝置識別碼"
+    },
+    {
+     "type": "li",
+     "text": "IP 位址（可能用來推估大概的所在地區）"
+    },
+    {
+     "type": "li",
+     "text": "裝置與系統資訊，例如手機型號、系統版本、語言"
+    },
+    {
+     "type": "li",
+     "text": "你和廣告的互動，例如看了哪些廣告、有沒有點擊"
+    },
+    {
+     "type": "li",
+     "text": "當機與效能等診斷資訊"
     },
     {
      "type": "p",
-     "text": "我們不會把你的資料賣給或分享給任何第三方用於廣告或行銷。"
+     "text": "在你同意的情況下，這些資料也可能用於個人化廣告。資料傳輸都經過加密。這些資料由 Google 依 <a href=\"https://policies.google.com/privacy\">Google 隱私權政策</a>處理，詳見<a href=\"https://policies.google.com/technologies/partner-sites\">Google 如何使用合作夥伴應用程式的資訊</a>。"
+    },
+    {
+     "type": "h3",
+     "text": "你的選擇"
+    },
+    {
+     "type": "li",
+     "text": "購買 Pro：完全沒有廣告，本 App 也不會再為了廣告連網。"
+    },
+    {
+     "type": "li",
+     "text": "歐洲等法規要求的地區，第一次開啟時會出現 Google 的同意表單；之後可以在 App 的「設定 → 廣告隱私權選項」隨時修改。"
+    },
+    {
+     "type": "li",
+     "text": "在手機的系統設定（通常在「Google → 廣告」或「隱私權 → 廣告」）可以重設或刪除廣告 ID，或關閉個人化廣告。"
+    },
+    {
+     "type": "li",
+     "text": "廣告內容的分級上限設為「青少年」（T）。"
+    },
+    {
+     "type": "p",
+     "text": "我們不會把你的資料賣給或分享給任何第三方用於行銷。除了上面列出的 Google 服務，本 App 沒有使用其他第三方 SDK。"
     },
     {
      "type": "p",
@@ -295,7 +407,19 @@
     },
     {
      "type": "li",
-     "text": "Pro 的購買紀錄由 Google Play 保存在你的 Google 帳號，不是由我們保存；重新安裝後可以用「恢復購買」取回。"
+     "text": "Pro 的購買紀錄由 Google Play 保存在你的 Google 帳號，不是由我們保存；重新安裝後會自動恢復，也可以按「恢復購買」。"
+    },
+    {
+     "type": "h3",
+     "text": "Google 處理的資料"
+    },
+    {
+     "type": "li",
+     "text": "AdMob 使用的廣告 ID：可以在手機的系統設定重設或刪除。"
+    },
+    {
+     "type": "li",
+     "text": "其他由 Google 處理的資料，請依 <a href=\"https://policies.google.com/privacy\">Google 隱私權政策</a>向 Google 查詢或刪除。"
     }
    ]
   },
@@ -306,7 +430,7 @@
    "blocks": [
     {
      "type": "p",
-     "text": "本 App 不是為 13 歲以下的兒童設計。本 App 不收集任何人的個人資料，包括兒童。如果你對兒童使用本 App 有任何疑問，請寫信到 <a href=\"mailto:cc20110630@gmail.com\">cc20110630@gmail.com</a> 或 <a href=\"mailto:ericwu100306@gmail.com\">ericwu100306@gmail.com</a>。"
+     "text": "本 App 不是為 13 歲以下的兒童設計，也不以兒童為廣告對象；廣告內容的分級上限為「青少年」。我們自己不收集任何人的個人資料，包括兒童。如果你對兒童使用本 App 有任何疑問，請寫信到 <a href=\"mailto:cc20110630@gmail.com\">cc20110630@gmail.com</a> 或 <a href=\"mailto:ericwu100306@gmail.com\">ericwu100306@gmail.com</a>。"
     },
     {
      "type": "p",
@@ -345,18 +469,18 @@
     },
     {
      "type": "p",
-     "text": "由於我們不收集任何個人資料，本 App 產生的資料都只在你的手機上，你可以直接在 App 裡清除（見第 9 節）。如果你曾寫信給我們，想查詢或刪除那些信件，請寫信到 <a href=\"mailto:cc20110630@gmail.com\">cc20110630@gmail.com</a> 或 <a href=\"mailto:ericwu100306@gmail.com\">ericwu100306@gmail.com</a>，我們會在合理期間內回覆。"
+     "text": "我們自己不收集個人資料，本 App 產生的遊戲資料都只在你的手機上，你可以直接在 App 裡清除（見第 9 節）。Google（AdMob、Google Play）處理的資料，請依 <a href=\"https://policies.google.com/privacy\">Google 隱私權政策</a>向 Google 行使權利。如果你曾寫信給我們，想查詢或刪除那些信件，請寫信到 <a href=\"mailto:cc20110630@gmail.com\">cc20110630@gmail.com</a> 或 <a href=\"mailto:ericwu100306@gmail.com\">ericwu100306@gmail.com</a>，我們會在合理期間內回覆。"
     }
    ]
   },
   {
    "id": "security",
    "title": "資料安全",
-   "mission": "資料出不了你的手機。",
+   "mission": "你的遊戲紀錄出不了你的手機。",
    "blocks": [
     {
      "type": "li",
-     "text": "本 App 沒有網路權限，資料無法被傳出手機。"
+     "text": "遊戲資料（進度、紀錄、你輸入的稱呼、設定）不會被上傳；本 App 只有廣告與結帳會連網，而且都由 Google 的服務以加密連線處理。"
     },
     {
      "type": "li",
@@ -379,7 +503,7 @@
    "blocks": [
     {
      "type": "p",
-     "text": "政策內容變更時，我們會更新本頁上方的「最後更新」日期；重大變更（例如加入第 8 節提到的服務）會另外在 App 的更新說明中公告。"
+     "text": "政策內容變更時，我們會更新本頁上方的「最後更新」日期；重大變更（例如加入新的第三方服務）會另外在 App 的更新說明中公告。"
     }
    ]
   },

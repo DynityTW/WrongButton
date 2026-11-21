@@ -67,6 +67,7 @@ class MenuScreenshotTool {
             waitFor("menu_levels"); shot("title")
             press("menu_settings"); tap("settings_privacy"); waitFor("legal_privacy"); shot("legal_privacy")
             rule.onNodeWithTag("legal_privacy").performScrollToIndex(4); shot("legal_privacy_table")
+            rule.onNodeWithTag("legal_privacy").performScrollToIndex(8); shot("legal_privacy_ads")
         }
     }
 }
